@@ -8,7 +8,6 @@ export default {
     state.postName = payload;
   },
   SET_POST_CONTENT(state, payload) {
-    console.log('### SET_POST_CONTENT', payload);
     state.postContent = mdToHtmlConverter(payload);
   },
 };
