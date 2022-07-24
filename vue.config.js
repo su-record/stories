@@ -15,4 +15,15 @@ module.exports = defineConfig({
       },
     });
   },
+  css: {
+    extract: true,
+    sourceMap: true,
+    loaderOptions: {
+      scss: {
+        additionalData: `
+          @import "@/assets/styles/_variables.scss";
+        `,
+      },
+    },
+  },
 });
