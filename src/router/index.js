@@ -1,26 +1,21 @@
-import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
-
-const routes = [
-  {
-    path: "/",
-    name: "home",
-    component: HomeView,
-  },
-  {
-    path: "/about",
-    name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
-  },
-];
+import { computed } from 'vue';
+import { createRouter, createWebHistory } from 'vue-router';
+import { routes } from '@/router/routes';
+import store from '../store';
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+});
+
+router.beforeEach(async (to, from, next) => {
+  const posts = computed(() => store.state.posts);
+
+  store.commit('SET_POST_NAME', to.params.name);
+
+  if (!posts.value.length) await store.dispatch('GET_POSTS');
+
+  next();
 });
 
 export default router;

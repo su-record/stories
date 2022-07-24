@@ -1,0 +1,86 @@
+/* common css */
+@import './_variables.scss';
+
+.header {
+  width: 100%;
+  height: 4rem;
+  box-shadow: var(--shodow);
+
+  &-content {
+    margin: $marginCenter;
+    max-width: $max-width;
+  }
+}
+
+.aside {
+  position: fixed;
+  right: 0;
+}
+
+.main-container {
+  margin: $marginCenter;
+  padding-top: 1.75rem;
+  max-width: $max-width;
+
+  .post-list {
+    display: flex;
+    gap: 3rem;
+  }
+}
+
+.post-section {
+  &-article {
+    h2 {
+      margin: 4rem 0 1.5rem;
+      font-size: 2rem;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    & > p {
+      margin-top: 0.5rem;
+    }
+
+    blockquote {
+      margin: 0.5rem 0 0.75em;
+      padding: 0.8rem 1.2rem;
+      background-color: var(--bg-lightbray);
+      border-left: 3px solid var(--bg-steelblue);
+    }
+
+    pre {
+      margin: 0.5rem 0 0.75em;
+      padding: 0.8rem 1.2rem;
+      background-color: var(--bg-gray);
+    }
+
+    code {
+      padding: 0.1rem 0.2rem;
+      background-color: var(--bg-gray);
+      border-radius: 2px;
+    }
+
+    img {
+      max-width: 100%;
+      margin: 1rem 0;
+      border: 1px solid var(--bg-gray);
+    }
+
+    a {
+      color: var(--bg-steelblue);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    hr {
+      margin: 4rem 0;
+    }
+  }
+
+  .utterances {
+    max-width: none;
+  }
+}
