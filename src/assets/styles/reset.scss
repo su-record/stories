@@ -143,9 +143,6 @@ html {
   -webkit-touch-callout: none;
   /* 텍스트나 이미지를 선택할 수 있게 하는 여부를 제어 */
   -webkit-user-select: none;
-  /* 링크를 터치했을때 나오는 기본 영역의 색상을 제어 */
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  touch-action: none;
 }
 body {
   user-select: none;
@@ -156,6 +153,6 @@ body {
   font-size: 16px;
   line-height: 1.8;
   -webkit-text-size-adjust: none;
-  -moz-text-size-adjust: none;
-  -ms-text-size-adjust: none;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
