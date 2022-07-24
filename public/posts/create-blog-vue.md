@@ -71,6 +71,7 @@ serve -s dist
 
 ## Site Map
 SPA라서 라우트를 설정해줘야 한다.  
+[Sitemap generation for Vue SPAs using webpack](https://www.suprithreddy.com/sitemap-generation-for-vue-spas-using-webpack/) 이 게시글을 보고 ***[sitemap-webpack-plugin](https://www.npmjs.com/package/vue-cli-plugin-sitemap)*** 을 사용해서 ***sitemap***을 적용했다.  
 
 ## 완성! ✨  
 ***VueJS를 기반으로 마크다운으로 글쓰기를 할 수 있고, git repository gh-pages로 자동으로 배포되는 블로그가 완성됐다.***  
