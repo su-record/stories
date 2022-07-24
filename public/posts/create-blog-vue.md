@@ -69,20 +69,25 @@ serve -s dist
 
 ***끝날때까지 끝난게 아니었다!*** 🤪
 
-## Site Map
-SPA라서 라우트를 설정해줘야 한다.  
-[Sitemap generation for Vue SPAs using webpack](https://www.suprithreddy.com/sitemap-generation-for-vue-spas-using-webpack/) 이 게시글을 보고 ***[sitemap-webpack-plugin](https://www.npmjs.com/package/vue-cli-plugin-sitemap)*** 을 사용해서 ***sitemap***을 적용했다.  
+## 404 📃
+Githp pages는 SPA를 지원하지 않는다고 한다. 그래서 root url 이외의 경로는 404.html을 반환한다.  
+SPA의 라우팅이 지원되지 않기에 근본적인 해결책은 없다. ☠☠☠  
+무료로 제공하는 호스팅 서비스이니까 더 바라는것도 문제지 싶다. 🙄  
+
+구글과 심오한 대화를 하던 중에 [github pages에서 라우팅된 페이지에서 새로고침시 404페이지를 반환합니다.](https://velog.io/@heyoon/github-pages%EC%97%90%EC%84%9C-%EB%9D%BC%EC%9A%B0%ED%8C%85%EB%90%9C-%ED%8E%98%EC%9D%B4%EC%A7%80%EC%97%90%EC%84%9C-%EC%83%88%EB%A1%9C%EA%B3%A0%EC%B9%A8%EC%8B%9C-404%ED%8E%98%EC%9D%B4%EC%A7%80%EB%A5%BC-%EB%B0%98%ED%99%98%ED%95%A9%EB%8B%88%EB%8B%A4)이 게시글을 읽게 됐다.  
+그리고 게시글의 내용에 적혀져 있는 ***꼼수!*** 대로 적용했더니 새로고침을 해도 페이지가 로드된다. 😆  
+블로그 주인장님 감사합니다. 😌😌😌
 
 ## 완성! ✨  
-***VueJS를 기반으로 마크다운으로 글쓰기를 할 수 있고, git repository gh-pages로 자동으로 배포되는 블로그가 완성됐다.***  
+***VueJS를 기반으로 마크다운으로 글쓰기를 할 수 있고, git repository 에 푸쉬하면 gh-pages로 자동 배포되는 블로그가 완성됐다.***  
 
 
 이번에는 삭제하지 않도록, 한 주에 한번씩이라도 글을 기록해야겠다.
 
 ---
-## 참고 📚  
+## 내용참고 📚  
 - 테디노트 **<https://www.youtube.com/watch?v=ACzFIAOsfpM>**
 - 블로그 만들기 참고 **<https://yemsu.github.io/>**
 - Github Actions로 gh-pages 자동 배포하기 **<https://velog.io/@kdeun1/Github-Actions%EB%A1%9C-gh-pages-%EC%9E%90%EB%8F%99-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0>**
 - Webci Yasin **<https://www.youtube.com/watch?v=KEA3baRtsKA&t=445s>**
-- Sitemap generation for Vue SPAs using webpack **<https://www.suprithreddy.com/sitemap-generation-for-vue-spas-using-webpack/>**
+- github pages에서 라우팅된 페이지에서 새로고침시 404페이지를 반환합니다. **<https://velog.io/@heyoon/github-pages%EC%97%90%EC%84%9C-%EB%9D%BC%EC%9A%B0%ED%8C%85%EB%90%9C-%ED%8E%98%EC%9D%B4%EC%A7%80%EC%97%90%EC%84%9C-%EC%83%88%EB%A1%9C%EA%B3%A0%EC%B9%A8%EC%8B%9C-404%ED%8E%98%EC%9D%B4%EC%A7%80%EB%A5%BC-%EB%B0%98%ED%99%98%ED%95%A9%EB%8B%88%EB%8B%A4>**
