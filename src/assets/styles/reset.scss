@@ -147,14 +147,10 @@ html {
   -webkit-user-select: none;
 }
 body {
-  user-select: none;
   color: #282829;
   font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,
     'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic',
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
-  font-size: 16px;
-  line-height: 1.8;
-  -webkit-text-size-adjust: none;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }

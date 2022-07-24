@@ -2,12 +2,16 @@
 @import './_variables.scss';
 
 body {
+  font-size: 16px;
+  line-height: 1.8;
   @include mobile {
     font-size: 14px;
+    line-height: 1.4;
   }
 
   @include tablet {
     font-size: 15px;
+    line-height: 1.6;
   }
 }
 
@@ -23,13 +27,14 @@ body {
 }
 
 .aside {
+  display: none;
   position: fixed;
   right: 0;
 }
 
 .main-container {
   margin: $marginCenter;
-  padding: 1.75rem 0.5rem;
+  padding: 1.5rem 0.5rem;
   width: 100%;
   max-width: $max-width;
 
@@ -41,9 +46,10 @@ body {
 
 .post-section {
   &-article {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
+
     h2 {
-      margin: 4rem 0 1.5rem;
+      margin: 3rem 0 1rem;
       font-size: 2rem;
 
       &:first-child {
@@ -57,14 +63,14 @@ body {
 
     blockquote {
       margin: 0.5rem 0 0.75em;
-      padding: 0.8rem 1.2rem;
+      padding: 0.5rem 1rem;
       background-color: var(--bg-lightbray);
       border-left: 3px solid var(--bg-steelblue);
     }
 
     pre {
-      margin: 0.5rem 0 0.75em;
-      padding: 0.8rem 1.2rem;
+      margin: 0.5rem 0;
+      padding: 0.5rem 1rem;
       background-color: var(--bg-gray);
     }
 
@@ -82,6 +88,7 @@ body {
 
     a {
       color: var(--bg-steelblue);
+      word-break: break-all;
       &:hover {
         text-decoration: underline;
       }
@@ -89,6 +96,14 @@ body {
 
     hr {
       margin: 4rem 0;
+    }
+
+    @include mobile {
+      margin-bottom: 2rem;
+
+      hr {
+        margin: 2rem 0;
+      }
     }
   }
 
