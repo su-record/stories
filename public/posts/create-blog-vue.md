@@ -85,3 +85,4 @@ SPA라서 라우트를 설정해줘야 한다.
 - 블로그 만들기 참고 **<https://yemsu.github.io/>**
 - Github Actions로 gh-pages 자동 배포하기 **<https://velog.io/@kdeun1/Github-Actions%EB%A1%9C-gh-pages-%EC%9E%90%EB%8F%99-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0>**
 - Webci Yasin **<https://www.youtube.com/watch?v=KEA3baRtsKA&t=445s>**
+- Sitemap generation for Vue SPAs using webpack **<https://www.suprithreddy.com/sitemap-generation-for-vue-spas-using-webpack/>**
