@@ -17,7 +17,7 @@
           run: |
             npm ci
             npm run build
-            cd docs/index.html docs/404.html
+            cp docs/index.html docs/404.html
 
         - name: Deploy 🚀
           uses: JamesIves/github-pages-deploy-action@v4
