@@ -33,6 +33,11 @@ store.dispatch('GET_POST_CONTENT', postInfo.value.path);
       }
     }
 
+    h3 {
+      margin: 2rem 0 1rem;
+      font-size: 1.75rem;
+    }
+
     & > p {
       margin-top: 0.5rem;
     }
