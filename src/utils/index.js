@@ -57,3 +57,18 @@ export const mdToHtmlConverter = md => {
   const converter = new showdown.Converter();
   return converter.makeHtml(mdHighlighter(md));
 };
+
+/***
+ * @description random bg color
+ * */
+export const gradientColor = (alpha, colorGenerator) =>
+  `background: linear-gradient(${colorGenerator(alpha)}, ${colorGenerator(alpha)})`;
+
+export const colorGenerator = (alpha = 1) => {
+  const hex = new Array(7).fill('').reduce((acc, v) => {
+    return acc + '0123456789abcdef'[Math.floor(Math.random() * 16)];
+  });
+  const [r, g, b] = hex.match(/\w\w/g).map(x => parseInt(x, 16));
+
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+};
