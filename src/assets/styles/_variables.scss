@@ -1,14 +1,23 @@
 // layout
-$mobile: 640px;
-$tablet: 900px;
-$max-width: 900px;
+$mobile-xs: 480px;
+$mobile: 768px;
+$tablet-s: 900px;
+$tablet: 1024px;
+$max-width: 1200px;
 $marginCenter: 0 auto;
 // theme
 :root {
   --bg-gray: #eee;
   --bg-lightbray: #d3d3d3;
   --bg-steelblue: #4682b4;
-  --bottom-shodow: 0px 4px 4px -4px #333;
+  --bottom-shodow: 0px 4px 4px -4px #ccc;
+  --all-shodow: 4px 4px 5px -2px #dfdfdf;
+}
+
+@mixin mobileXs {
+  @media (max-width: $mobile-xs) {
+    @content;
+  }
 }
 
 @mixin mobile {
@@ -17,8 +26,14 @@ $marginCenter: 0 auto;
   }
 }
 
+@mixin tabletS {
+  @media (min-width: $mobile +1) and (max-width: $tablet-s) {
+    @content;
+  }
+}
+
 @mixin tablet {
-  @media (min-width: $mobile +1) and (max-width: $tablet) {
+  @media (min-width: $tablet-s +1) and (max-width: $tablet) {
     @content;
   }
 }
