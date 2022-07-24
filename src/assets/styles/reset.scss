@@ -107,13 +107,14 @@ section {
   box-sizing: border-box !important;
 }
 
+ul,
+ol {
+  list-style: none;
+}
+
 blockquote,
 q {
   quotes: none;
-}
-
-li {
-  margin-left: 18px;
 }
 
 blockquote:before,
