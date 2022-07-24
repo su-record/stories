@@ -1,5 +1,7 @@
 const { defineConfig } = require('@vue/cli-service');
 const path = require('path');
+const webpackPlugins = require('./webpack.plugin');
+
 module.exports = defineConfig({
   transpileDependencies: true,
   outputDir: 'docs',
@@ -13,5 +15,10 @@ module.exports = defineConfig({
         maxSize: 4 * 1024,
       },
     });
+  },
+  configureWebpack: config => {
+    if (process.env.NODE_ENV === 'production') {
+      config.plugins.push(...webpackPlugins);
+    }
   },
 });

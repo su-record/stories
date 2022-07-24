@@ -59,8 +59,22 @@ serve -s dist
 ***[Vuejs Github Action & Github Page](https://www.youtube.com/watch?v=KEA3baRtsKA&t=445s)***  
 어느 나라 사람인지, 어떤 사람 인지 전혀 모르는 그냥 이 지구 어딘가 계시는 **Webci Yasin** 너무 고맙습니다.💕  
 
+
+## 산넘어 산 😑
+![publish](../images/publish.png)  
+배포가 잘 됐다.  
+그런데...
+
+![404](../images/404.png)  
+
+***끝날때까지 끝난게 아니었다!*** 🤪
+
+## Site Map
+SPA라서 라우트를 설정해줘야 한다.  
+
 ## 완성! ✨  
 ***VueJS를 기반으로 마크다운으로 글쓰기를 할 수 있고, git repository gh-pages로 자동으로 배포되는 블로그가 완성됐다.***  
+
 
 이번에는 삭제하지 않도록, 한 주에 한번씩이라도 글을 기록해야겠다.
 
