@@ -1,4 +1,6 @@
 // layout
+$mobile: 640px;
+$tablet: 900px;
 $max-width: 900px;
 $marginCenter: 0 auto;
 // theme
@@ -6,5 +8,17 @@ $marginCenter: 0 auto;
   --bg-gray: #eee;
   --bg-lightbray: #d3d3d3;
   --bg-steelblue: #4682b4;
-  --shodow: 0px 1px 3px #333;
+  --bottom-shodow: 0px 4px 4px -4px #333;
+}
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $mobile +1) and (max-width: $tablet) {
+    @content;
+  }
 }

@@ -1,10 +1,20 @@
 /* common css */
 @import './_variables.scss';
 
+body {
+  @include mobile {
+    font-size: 13px;
+  }
+
+  @include tablet {
+    font-size: 15px;
+  }
+}
+
 .header {
   width: 100%;
   height: 4rem;
-  box-shadow: var(--shodow);
+  box-shadow: var(--bottom-shodow);
 
   &-content {
     margin: $marginCenter;
@@ -19,7 +29,8 @@
 
 .main-container {
   margin: $marginCenter;
-  padding-top: 1.75rem;
+  padding: 1.75rem 0.8rem 0;
+  width: 100%;
   max-width: $max-width;
 
   .post-list {

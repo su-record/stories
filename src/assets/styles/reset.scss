@@ -99,10 +99,12 @@ figure,
 footer,
 header,
 hgroup,
+main,
 menu,
 nav,
 section {
   display: block;
+  box-sizing: border-box !important;
 }
 
 ol,
