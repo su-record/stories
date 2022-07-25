@@ -14,7 +14,8 @@
     "name": "220716",
     "path": "posts/vuejs/220716.md",
     "date": 1657929600000,
-    "tags": ["tech", "vue"]
+    "tags": ["tech", "vue"],
+    "isHidden": false
   },
   {
     "title": "Vue Router 설정",
@@ -22,7 +23,8 @@
     "name": "220709",
     "path": "posts/vuejs/220709.md",
     "date": 1657324800000,
-    "tags": ["tech", "vue"]
+    "tags": ["tech", "vue"],
+    "isHidden": false
   },
   {
     "title": "개발환경 구성",
@@ -30,7 +32,8 @@
     "name": "220702",
     "path": "posts/vuejs/220702.md",
     "date": 1656720000000,
-    "tags": ["tech", "vue"]
+    "tags": ["tech", "vue"],
+    "isHidden": false
   },
   {
     "title": "Vue.js는 무엇인가?",
@@ -38,7 +41,8 @@
     "name": "220625",
     "path": "posts/vuejs/220625.md",
     "date": 1656115200000,
-    "tags": ["tech", "vue"]
+    "tags": ["tech", "vue"],
+    "isHidden": false
   },
   {
     "title": "Execution Context",
@@ -46,7 +50,8 @@
     "name": "ExecutionContext",
     "path": "posts/js/ExecutionContext.md",
     "date": 1655251200000,
-    "tags": ["tech", "js"]
+    "tags": ["tech", "js"],
+    "isHidden": false
   },
   {
     "title": "ES5 !== ES6",
@@ -54,6 +59,7 @@
     "name": "ES5_ES6",
     "path": "posts/js/ES5_ES6.md",
     "date": 1655078400000,
-    "tags": ["tech", "js"]
+    "tags": ["tech", "js"],
+    "isHidden": false
   }
 ]
