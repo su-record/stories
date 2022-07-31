@@ -12,7 +12,7 @@
 >  
 >root 폴더 위치에서 ```lerna run --scope project-common serve``` 나 project 폴더에서 ```npm run serve``` 등 script를 실행할 수 있다.  
 >하지만, root 폴더에서 lerna 명령어로 실행을 하면 터미널 창에서 에러를 확인할 수 없기 때문에 root package.json 에 스크립트를 추가하거나 project 폴더에서 ```npm run serve``` 를 통해 실행하는 것을 추천한다.  
->```lerna link convert```가 잘 실행됐고, script를 실행했지만, Vue-CLI로 create 하고 타입스크립트를 차용하는 vue 환경에서는 에러가 발생할 수 있다.
+>```lerna link convert```가 잘 실행됐고, script를 실행했지만, ***Vue-CLI로 create 하고 타입스크립트를 차용하는 vue 환경에서는 에러가 발생***할 수 있다.
 
 ![script_error](../../images/lerna/link_script_error.png)
 
