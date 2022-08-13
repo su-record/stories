@@ -11,7 +11,7 @@
 ## 호이스팅
 >선언되기 전에 호출해도 에러가 나지 않고, 변수나 함수를 참조할 수 있는 현상.  
 >즉, 선언문이 마치 최상단에 끌어올려진 듯한 현상.
-```
+```js
 console.log(netflix); // undefined
 
 var netflix = "오징어 게임";
@@ -27,7 +27,7 @@ console.log(netflix); // 오징어 게임
       변수 선언시 메모리 공간을 확보해두고 메모리 주소에 식별자를 연결한다.
     - 초기화 단계  
       식별자를 암묵적으로 undefined 값으로 초기화 한다.
-  ```
+  ```js
   console.log(netflix); // undefined 1
 
   var netflix = "오징어 게임"; // 2
@@ -51,7 +51,7 @@ console.log(netflix); // 오징어 게임
         4. (3) 자바스크립트 엔진이 환경레코드를 참조해서 netflix의 값을 출력.
 - #### let, const
   >선언문 이전에는 변수를 참조할 수 없다.
-  ```
+  ```js
   console.log(netflix); // ? 1
   
   const netflix = "오징어 게임"; // 2
@@ -65,7 +65,7 @@ console.log(netflix); // 오징어 게임
 
 ### 함수 호이스팅 (Function Hoisting)
 - 함수 선언식
-  ```
+  ```js
   start(); // 1
   
   // 2
@@ -78,14 +78,14 @@ console.log(netflix); // 오징어 게임
 
 - 함수 표현식
   >함수를 변수에 할당해서 사용하는 방식으로 변수 호이스팅과 동일하게 동작한다.
-  ```
+  ```js
   start(); // Type error
   
   var start = function() { ... }
   ```
   >var 키워드에 함수를 담으면 자바스크립트 엔진이 var 변수 호이스팅 동작으로 start에 undefined 값으로 초기화한다.  
   >선언문 이전에 실행하려고 하면 환경레코드에 기록되어있는 start의 값이 undefined이고 undefined의 데이터타입은 함수와 달리 호출될 수 없기 때문에 타입 에러가 발생한다.
-  ```
+  ```js
   start(); // ?
   
   const start = function() { ... }
@@ -94,7 +94,7 @@ console.log(netflix); // 오징어 게임
 
 ## 스코프 체이닝
 >스코프 체인 (Scope Chain: 식별자를 결정할 때 활용하는 스코프들의 연결리스트)을 이용해서 식별자를 결정하기 위한 과정
-```
+```js
 /* Global */
 let lamp = false;
 consol.log(lamp) // false

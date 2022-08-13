@@ -19,7 +19,7 @@
   이런 단점을 보완하기 위해 선언 이후에 사용할 수 있고, 변수의 재선언이 되지 않는 블록 레벨 스코프 let, const가 추가.  
   let, const 둘의 차이점은 immutable 여부로서 let은 값의 재할당이 가능하지만, const는 불가능.
 - arrow function
-  ```
+  ```js
   // es5
   var sum = function(a, b) {
     return a+b;
@@ -38,7 +38,7 @@
 
 - default function parameter
   >기본값 함수 매개변수(default function parameter)를 사용하면 값이 없거나 undefined가 전달될 경우 이름붙은 매개변수를 기본값으로 초기화할 수 있다.
-  ```
+  ```js
   function sum(a, b = 3) {
     return a + b;
   }
@@ -51,7 +51,7 @@
   여러 줄로 이뤄진 문자열과 문자 보간기능을 사용할 수 있다.  
   source 내에 삽입되는 newline characters(\n)은 template literal의 일부가 된다.  
   공백도 인식.
-  ```
+  ```js
   `string text` === 'string text'
   `string ${code} text` === 'string' + ' ' + code + ' ' + 'text'
   
@@ -64,7 +64,7 @@
 - class
   >클래스는 객체 지향 프로그래밍에서 특정 객체를 생성하기 위한 변수와 메소드를 정의하는 일종의 틀로, 객체를 정의하기 위한 상태(멤버 변수)와 메소드(함수)로 구성된다.  
   자바스크립트에서 클래스는 객체 생성 방식 중 하나이며 함수의 한 종류이다.
-  ```
+  ```js
   class User {
     constructor(name) {
       this.name = name; // 멤버 변수
@@ -84,20 +84,20 @@
   // 현재 프로토타입에는 메소드가 두 개이다.
   Object.getOwnPropoertyNames(User.prototype) // constructor, sayHi
   
-  const user = new User('Willy")
+  const user = new User('Willy')
   typeof user // object
   console.log(user) // { name: 'Willy' } 
   ```
 - module
   >재사용하기 위한 코드 조각을 뜻하며, 세부사항은 캡슐화시키고, API 부분만 외부에 노출시킨 코드이다.
-  ```
+  ```js
   // type에 module을 추가하고, 파일 확장자를 mjs로 변경시켜 사용한다.
   <script type="module" src="lib.mjs"></script>
   <script type="module" src="app.mjs"></script>
   
   // 모듈 스코프를 가지며 특수한 지시자 export, import 키워드로 사용한다.
   // lib.js
-  export function sayHi(user) { ... }
+  export function sayHi(user) { /* ... */ }
   // app.js
   import { sayHi } from "~/lib.js"
   ```
@@ -116,7 +116,7 @@
 
 - destructuring (구조분해할당)
   >구조 분해 할당 구문은 배열이나 객체의 속성을 해체하며 그 값을 개별 변수에 담을 수 있게 하는 Javascript 표현식이다.
-  ```
+  ```js
   let a, b, rest;
   [a, b] = [10, 20];
   a; // expected output: 10
@@ -136,7 +136,7 @@
 - Promise
   >Promist는 자바스크립트 비동기 처리에 사용되는 객체이다. 자바스크립트의 비동기 처리란 '특정 코드의 실행이 완료될 때까지 기다리지 않고 다음 코드를 먼저 수행하는 자바스크립트의 특성'을 의미한다.  
   자바스크립트 비동기 통신은 콜백 함수를 사용한 콜백 패턴이었으나, 결과적으로 콜백이 되풀이되는 상태를 발생시켰고, 이를 해결하기 위해 Promise가 도입됐다.
-  ```
+  ```js
   // before
   function getData(callbackFunc) {
     $.get('url 주소/products/1', function(response) {
@@ -177,7 +177,7 @@
 
 - for-of
   >단순히 key만을 받아 제공했던 for-in문과 다르게, for-of 문은 완전한 순회를 제공한다.
-  ```
+  ```js
   let nums = [11, 22, 33, 44];
   for(let e in nums) {
     console.log(e) // 0 1 2 3
@@ -190,7 +190,7 @@
 - Generator
   >Generator는 일종의 stack기반 coroutine이다.  
   상태를 저장하며 함수를 정지해서 나오고, 그 상태 그대로 다시 재진입이 가능하다.
-  ```
+  ```js
   function* getCounter() {
     let count = 0;
     
@@ -205,18 +205,17 @@
   console.log(counter.next()); // 1
   console.log(counter.next()); // 2
   console.log(counter.next()); // 3
-  ...
   ```
 - Spread 연산자
   >Spread 연산자는 반복가능한 값을 쉼표로 구분해 풀어낸다.
   인자로 해체해서 전달할 때 유용하다.
-  ```
+  ```js
   const a = [1,2,3];
   const b = [4,5,6];
-  console..log([...a, ...b]) // [1,2,3,4,5,6]
+  console.log([...a, ...b]) // [1,2,3,4,5,6]
   ```
 - 오브젝트 축소 표현
-  ```
+  ```js
   const obj = {
     name: name,
     age: age
@@ -230,7 +229,7 @@
 - string method (includes, startsWith, endsWith)
   >문자열 메서드가 추가됨.  
   포함되어 있는지(includes), 시작되는지(startsWith), 끝나는지(endsWith)를 ture/false 값을 리턴하며 문자열 메소드들로 검사 로직을 수행할 수 있다.
-  ```
+  ```js
   const test = "Hello world! Dream come true";
   
   text.includes("Dream") // true
