@@ -18,6 +18,24 @@
     "isHidden": false
   },
   {
+    "title": "Package Dependency",
+    "description": "lerna 환경에서 의존성 주입하기",
+    "name": "Common_dependency",
+    "path": "posts/lerna/Common_dependency.md",
+    "date": 1657584000000,
+    "tags": ["tech", "lerna"],
+    "isHidden": false
+  },
+  {
+    "title": "Link Convert",
+    "description": "lerna link convert 명령어가 하는 일",
+    "name": "Link_Convert",
+    "path": "posts/lerna/Link_Convert.md",
+    "date": 1657411200000,
+    "tags": ["tech", "lerna"],
+    "isHidden": false
+  },
+  {
     "title": "Vue Router 설정",
     "description": "Vue.js 프로젝트 투입 일주일 전 chapter 04",
     "name": "220709",
