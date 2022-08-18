@@ -1,5 +1,14 @@
 [
   {
+    "title": "Object Merge",
+    "description": "Javascript에서 Object 병합하는 방법",
+    "name": "js-object_merge",
+    "path": "posts/js-object_merge.md",
+    "date": 1658646598643,
+    "tags": ["tech", "js"],
+    "isHidden": false
+  },
+  {
     "title": "Github 블로그 시작하기",
     "description": "Github pages를 활용하여 Vue3로 블로그 만들기",
     "name": "create-blog-vue",
