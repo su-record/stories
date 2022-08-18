@@ -4,7 +4,7 @@
 
 ### 반복문
 >for in, forEach 루프문을 사용하여 병합하려는 객체의 속성값으로 대상 객체에 직접 복사해 주는 방식으로 병합할 수 있다.
-```ecmascript 6
+```js
 const obj1 = {
     name: 'obj1',
     index: 0,
@@ -49,7 +49,7 @@ console.log(obj1)
 >Object,assign(target, ...sources)  
 >함수는 파라미터로 입력받은 ***sources 객체들***의 속성을 target 객체로 복사한다.  
 
-```ecmascript 6
+```js
 const obj3 = {
     name: 'obj3',
     alphabet: ['f', 'g'],
@@ -74,7 +74,7 @@ console.log(obj1)
  */
 ```
 객체와 객체를 병합하지 않고, 새로운 객체를 만들기 위해서는 target 객체 위치에 빈 객체({})를 전달하면 된다.
-```ecmascript 6
+```js
 Object.assign({}, obj1, obj2, obj3)
 /*
 {
@@ -100,7 +100,7 @@ console.log(obj1)
 ### Spread Operator : 전개연산자
 >Spread Operator는 '...'으로 표시하고, 객체나 배열의 원소를 하나씩 펼쳐서 반환하기 때문에, 여러 개의 객체를 하나로 병합할 수 있다.
 
-```ecmascript 6
+```js
 const newObj = {...obj1, ...obj2, ...obj3}
 console.log(newObj)
 /*
@@ -119,7 +119,7 @@ console.log(newObj)
 >Reference Type이 아닌 Primitive(원시 값) 은 주소값이 아닌 실제 값이 복사된다.  
 
 실제 값이 아닌 주소값이 복사되었기 때문에, 위 코드에서 마지막 객체인 obj3.alphabet의 배열에 새로운 값을 추가하면 newObj.alphabet의 값도 변경된다.
-```ecmascript 6
+```js
 obj3.alphabet.push('mz')
 console.log(newObj)
 /*
@@ -154,7 +154,7 @@ console.log(newObj.alphabet === obj3.alphabet)
 깊은 복사를 하기 위한 방법에 대해 알아보자.  
 
 ### JSON 객체 메소드
-```ecmascript 6
+```js
 const newObj = JSON.parse(JSON.stringfy(obj1))
 console.log(newObj.alphabet === obj1.alphabet)
 // false
@@ -224,7 +224,7 @@ console.log(newObj.alphabet === obj1.alphabet)
   예제 코드를 사용해 보니 여러 번 병합을 하다 보면 최종 사용되는 target 객체에서 새로 병합되지 않는 프로퍼티는 기존 값을 유지하고 있어서 original 객체를 기준으로 병합되지 않는 프로퍼티들이 최초 설정된 기본값을 갖도록 수정했다.  
 
 위 방법들은 하위 레벨의 자식 요소들을 병합시키기는 하지만, 배열에 대한 고민이 필요한 부분이 있다.
-```ecmascript 6
+```js
 const a = {
   c: [
     {
@@ -266,7 +266,7 @@ const b = {
 배열의 각 원소 index를 기준으로 덮어 씌우는 형태가 된다.  
 배열이 병합되면서 각각의 값이 별개로 병합되기만을 원할 수 있다.  
 이런 결과를 얻고자 한다면 NPM package의 deepmerge 라이브러리를 사용하면 된다.
-```ecmascript 6
+```js
 import deepmerge from 'deepmerge'
 
 deepmerge(a, b)
