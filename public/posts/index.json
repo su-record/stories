@@ -11,8 +11,8 @@
   {
     "title": "Component",
     "description": "Vue.js 프로젝트 투입 일주일 전 chapter 05",
-    "name": "vue_220716",
-    "path": "posts/vue_220716.md",
+    "name": "vue-220716",
+    "path": "posts/vue-220716.md",
     "date": 1657929600000,
     "tags": ["tech", "vue"],
     "isHidden": false
@@ -20,8 +20,8 @@
   {
     "title": "Package Dependency",
     "description": "lerna 환경에서 의존성 주입하기",
-    "name": "lerna_dependency",
-    "path": "posts/lerna_dependency.md",
+    "name": "lerna-dependency",
+    "path": "posts/lerna-dependency.md",
     "date": 1657584000000,
     "tags": ["tech", "lerna"],
     "isHidden": false
@@ -29,8 +29,8 @@
   {
     "title": "Link Convert",
     "description": "lerna link convert 명령어가 하는 일",
-    "name": "lerna_link_convert",
-    "path": "posts/lerna_link_convert.md",
+    "name": "lerna-link_convert",
+    "path": "posts/lerna-link_convert.md",
     "date": 1657411200000,
     "tags": ["tech", "lerna"],
     "isHidden": false
@@ -38,8 +38,8 @@
   {
     "title": "Vue Router 설정",
     "description": "Vue.js 프로젝트 투입 일주일 전 chapter 04",
-    "name": "vue_220709",
-    "path": "posts/vue_220709.md",
+    "name": "vue-220709",
+    "path": "posts/vue-220709.md",
     "date": 1657324800000,
     "tags": ["tech", "vue"],
     "isHidden": false
@@ -47,8 +47,8 @@
   {
     "title": "개발환경 구성",
     "description": "Vue.js 프로젝트 투입 일주일 전 chapter 02 ~ 03",
-    "name": "vue_220702",
-    "path": "posts/vue_220702.md",
+    "name": "vue-220702",
+    "path": "posts/vue-220702.md",
     "date": 1656720000000,
     "tags": ["tech", "vue"],
     "isHidden": false
@@ -56,8 +56,8 @@
   {
     "title": "Vue.js는 무엇인가?",
     "description": "Vue.js 프로젝트 투입 일주일 전 chapter 01",
-    "name": "vue_220625",
-    "path": "posts/vue_220625.md",
+    "name": "vue-220625",
+    "path": "posts/vue-220625.md",
     "date": 1656115200000,
     "tags": ["tech", "vue"],
     "isHidden": false
@@ -65,8 +65,8 @@
   {
     "title": "Execution Context",
     "description": "실행 컨텍스트에 대해 알아보기",
-    "name": "js_ExecutionContext",
-    "path": "posts/js_ExecutionContext.md",
+    "name": "js-execution_context",
+    "path": "posts/js-execution_context.md",
     "date": 1655251200000,
     "tags": ["tech", "js"],
     "isHidden": false
@@ -74,8 +74,8 @@
   {
     "title": "ES5 !== ES6",
     "description": "Javascript ES5, ES6의 차이점에 대해 알아보기",
-    "name": "js_ES5_ES6",
-    "path": "posts/js_ES5_ES6.md",
+    "name": "js-es5_es6",
+    "path": "posts/js-es5_es6.md",
     "date": 1655078400000,
     "tags": ["tech", "js"],
     "isHidden": false
