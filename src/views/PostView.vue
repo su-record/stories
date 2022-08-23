@@ -1,6 +1,6 @@
 <template>
   <main class="main-container post-section">
-    <header>post header</header>
+    <!-- <header>post header</header> -->
     <article class="post-section-article" v-html="postContent" />
 
     <VueUtterances repo="su-record/stories" issue-term="pathname" />
@@ -36,6 +36,11 @@ store.dispatch('GET_POST_CONTENT', postInfo.value.path);
     h3 {
       margin: 2rem 0 1rem;
       font-size: 1.75rem;
+    }
+
+    h4 {
+      margin: 1.5rem 0 0.5rem;
+      font-size: 1.3rem;
     }
 
     & > p {
@@ -85,7 +90,7 @@ store.dispatch('GET_POST_CONTENT', postInfo.value.path);
     }
 
     li {
-      margin-left: 23px;
+      margin: 0 0 1em 23px;
     }
 
     @include mobile {
