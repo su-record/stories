@@ -1,5 +1,14 @@
 [
   {
+    "title": "Component 2",
+    "description": "Vue.js 프로젝트 투입 일주일 전 chapter 08",
+    "name": "vue-220827",
+    "path": "posts/vue-220827.md",
+    "date": 1661375864574,
+    "tags": ["tech", "vue"],
+    "isHidden": false
+  },
+  {
     "title": "Browser",
     "description": "Browser 작동방식과 렌더링 방식",
     "name": "fe-browser",
@@ -27,7 +36,7 @@
     "isHidden": false
   },
   {
-    "title": "Component",
+    "title": "Component 1",
     "description": "Vue.js 프로젝트 투입 일주일 전 chapter 05",
     "name": "vue-220716",
     "path": "posts/vue-220716.md",
