@@ -26,23 +26,23 @@ store.dispatch('GET_POST_CONTENT', postInfo.value.path);
     width: 100%;
     margin: 1em 0;
   }
-  
+
   table th,
   table td {
     border: 1px solid #ddd;
     padding: 8px 12px;
     text-align: left;
   }
-  
+
   table th {
     background-color: #f5f5f5;
     font-weight: bold;
   }
-  
+
   table tr:nth-child(even) {
     background-color: #f9f9f9;
   }
-  
+
   &-article {
     margin-bottom: 3rem;
 
