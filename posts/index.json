@@ -106,5 +106,14 @@
     "date": 1655078400000,
     "tags": ["tech", "js"],
     "isHidden": false
+  },
+  {
+    "title": "AI 프롬프팅",
+    "description": "Ai 프롬프트 가이드",
+    "name": "prompt",
+    "path": "posts/prompt.md",
+    "date": 1750134813447,
+    "tags": ["tech", "Ai"],
+    "isHidden": false
   }
 ]
