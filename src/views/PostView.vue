@@ -93,6 +93,29 @@ store.dispatch('GET_POST_CONTENT', postInfo.value.path);
       margin: 0 0 1em 23px;
     }
 
+  /* 테이블 스타일링 */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1em 0;
+    }
+    
+    table th,
+    table td {
+      border: 1px solid #ddd;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    
+    table th {
+      background-color: #f5f5f5;
+      font-weight: bold;
+    }
+    
+    table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
     @include mobile {
       margin-bottom: 2rem;
 
