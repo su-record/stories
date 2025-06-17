@@ -3,7 +3,6 @@ import hljs from 'highlight.js';
 import mermaid from 'mermaid';
 
 // Mermaid 초기화
-let mermaid;
 if (typeof window !== 'undefined') {
   mermaid = require('mermaid');
   mermaid.initialize({ 
