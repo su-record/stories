@@ -3,10 +3,14 @@ import hljs from 'highlight.js';
 import mermaid from 'mermaid';
 
 // Mermaid 초기화
-mermaid.initialize({ 
-  startOnLoad: false,
-  theme: 'default'
-});
+let mermaid;
+if (typeof window !== 'undefined') {
+  mermaid = require('mermaid');
+  mermaid.initialize({ 
+    startOnLoad: false,
+    theme: 'default'
+  });
+}
 
 /***
  * @description 엘리먼트 비교하여 조건에 맞는 tag 찾기
@@ -47,7 +51,7 @@ const mdHighlighter = md => {
     const code = codeArea.substr(codeStartIndex).trim();
     
     // Mermaid 처리 추가
-    if (codeType === 'mermaid') {
+    if (codeType === 'mermaid' && mermaid) {  // mermaid 체크 추가
       highlightSplitMd.push(splitMd[index] + '\n');
       highlightSplitMd.push(
         `<div class="mermaid" id="mermaid-${mermaidId++}">${code}</div>`
