@@ -54,7 +54,9 @@ export function generatePostIndex(posts) {
  * @returns {Promise<object>} PostIndex entity
  */
 export async function loadPostIndex() {
-  const response = await fetch('/stories/posts-index.json')
+  // Add build timestamp for cache busting
+  const buildTime = typeof __BUILD_TIME__ !== 'undefined' ? __BUILD_TIME__ : Date.now()
+  const response = await fetch(`/stories/posts-index.json?v=${buildTime}`)
   if (!response.ok) {
     throw new Error('Failed to load posts index')
   }
@@ -77,7 +79,9 @@ export async function loadPostIndex() {
  */
 export async function loadPost(slug) {
   // Load from pre-built index instead of parsing markdown at runtime
-  const response = await fetch('/stories/posts-index.json')
+  // Add build timestamp for cache busting
+  const buildTime = typeof __BUILD_TIME__ !== 'undefined' ? __BUILD_TIME__ : Date.now()
+  const response = await fetch(`/stories/posts-index.json?v=${buildTime}`)
   if (!response.ok) {
     throw new Error('Failed to load posts index')
   }
