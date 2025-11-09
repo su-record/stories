@@ -12,5 +12,28 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <!-- Unregister old Vue PWA Service Worker -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+          for (let registration of registrations) {
+            registration.unregister().then(function(success) {
+              console.log('Service Worker unregistered:', success);
+              // Clear all caches
+              if ('caches' in window) {
+                caches.keys().then(function(cacheNames) {
+                  return Promise.all(
+                    cacheNames.map(function(cacheName) {
+                      console.log('Deleting cache:', cacheName);
+                      return caches.delete(cacheName);
+                    })
+                  );
+                });
+              }
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>
