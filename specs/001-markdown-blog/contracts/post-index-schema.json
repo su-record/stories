@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/grove/stories/schemas/post-index.json",
+  "title": "PostIndex",
+  "description": "Schema for the generated posts-index.json file containing all blog post metadata",
+  "type": "object",
+  "required": ["posts", "totalCount", "lastUpdated"],
+  "properties": {
+    "posts": {
+      "type": "array",
+      "description": "Array of all blog post metadata",
+      "items": {
+        "$ref": "#/definitions/PostMetadata"
+      }
+    },
+    "totalCount": {
+      "type": "integer",
+      "description": "Total number of posts",
+      "minimum": 0
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of when the index was generated"
+    }
+  },
+  "definitions": {
+    "PostMetadata": {
+      "type": "object",
+      "required": ["slug", "title", "date"],
+      "properties": {
+        "slug": {
+          "type": "string",
+          "description": "URL-friendly identifier for the post",
+          "pattern": "^[a-z0-9-]+$",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "title": {
+          "type": "string",
+          "description": "Post title",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Publication date in ISO 8601 format"
+        },
+        "description": {
+          "type": "string",
+          "description": "Short description or excerpt",
+          "maxLength": 300
+        },
+        "tags": {
+          "type": "array",
+          "description": "Array of tags for categorization",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 30
+          },
+          "maxItems": 10,
+          "uniqueItems": true
+        },
+        "author": {
+          "type": "string",
+          "description": "Author name",
+          "maxLength": 100
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

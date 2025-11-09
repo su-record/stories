@@ -1,0 +1,140 @@
+.post-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.post-list h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 3rem 0;
+  color: #6c757d;
+}
+
+.error {
+  color: #dc3545;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.post-card {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1.5rem;
+  background-color: #fff;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.post-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.post-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.post-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  color: #212529;
+}
+
+.post-card time {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.post-card p {
+  margin: 0 0 1rem 0;
+  color: #495057;
+  line-height: 1.6;
+}
+
+.tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: 0.25rem 0.75rem;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #495057;
+}
+
+.observer-target {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.loading-more {
+  color: #6c757d;
+  font-size: 0.9rem;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.end-message {
+  text-align: center;
+  padding: 2rem 0;
+  color: #6c757d;
+  font-size: 0.9rem;
+  border-top: 1px solid #dee2e6;
+  margin-top: 2rem;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .post-card {
+    background-color: #1a1a1a;
+    border-color: #333;
+  }
+
+  .post-card h3 {
+    color: #e9ecef;
+  }
+
+  .post-card p {
+    color: #adb5bd;
+  }
+
+  .tag {
+    background-color: #333;
+    color: #adb5bd;
+  }
+
+  .end-message {
+    border-top-color: #333;
+    color: #adb5bd;
+  }
+
+  .loading-more {
+    color: #adb5bd;
+  }
+}

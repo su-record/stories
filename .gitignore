@@ -24,3 +24,6 @@ pnpm-debug.log*
 *.sw?
 
 package-lock.json
+
+# Build artifacts
+public/posts-index.json
