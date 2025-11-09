@@ -6,6 +6,8 @@ description: "find_symbol, find_references 도구 추가 - 코드 탐색과 리�
 tags: ["hi-ai", "mcp", "semantic-analysis", "code-navigation", "typescript", "release"]
 author: "Su Ham"
 lang: "ko"
+series: "hi-ai MCP 기술 심화"
+seriesOrder: 3
 ---
 
 # hi-ai MCP v1.1.0: 시맨틱 코드 분석으로 코드 이해도 향상

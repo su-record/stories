@@ -6,6 +6,8 @@ description: "AI가 읽고 일할 수 있는 문서를 만들기까지의 시행
 tags: ["ai-first", "prd", "documentation", "claude"]
 author: "Su Ham"
 lang: "ko"
+series: "AI 개발 방법론"
+seriesOrder: 2
 ---
 
 # AI를 위한 문서 작성법

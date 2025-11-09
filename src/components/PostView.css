@@ -153,14 +153,79 @@
   margin-top: 4rem;
   padding-top: 2rem;
   border-top: 2px solid #dee2e6;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .post-footer .author {
-  margin: 0;
+  margin: 0 0 2rem 0;
   color: #6c757d;
+}
+
+/* Series Navigation */
+.series-navigation {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #007bff;
+}
+
+.series-title {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  color: #495057;
+}
+
+.series-nav-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.series-nav-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: white;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.series-nav-link:hover {
+  border-color: #007bff;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.1);
+}
+
+.series-nav-link.prev {
+  grid-column: 1;
+}
+
+.series-nav-link.next {
+  grid-column: 2;
+  text-align: right;
+}
+
+.series-nav-link .nav-label {
+  font-size: 0.85rem;
+  color: #007bff;
+  font-weight: 500;
+}
+
+.series-nav-link .nav-title {
+  font-size: 0.95rem;
+  color: #212529;
+  line-height: 1.4;
+}
+
+/* When only one link exists, make it full width */
+.series-nav-links:has(.series-nav-link:only-child) {
+  grid-template-columns: 1fr;
+}
+
+.series-nav-links .series-nav-link:only-child {
+  grid-column: 1;
 }
 
 @media (max-width: 768px) {
@@ -172,10 +237,17 @@
     font-size: 1rem;
   }
 
-  .post-footer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
+  .series-nav-links {
+    grid-template-columns: 1fr;
+  }
+
+  .series-nav-link.next {
+    text-align: left;
+  }
+
+  .series-nav-link.prev,
+  .series-nav-link.next {
+    grid-column: 1;
   }
 }
 
@@ -217,6 +289,33 @@
 
   .back-link {
     color: #4dabf7;
+  }
+
+  .series-navigation {
+    background-color: #1a1a1a;
+    border-left-color: #4dabf7;
+  }
+
+  .series-title {
+    color: #e9ecef;
+  }
+
+  .series-nav-link {
+    background-color: #2d2d2d;
+    border-color: #333;
+  }
+
+  .series-nav-link:hover {
+    border-color: #4dabf7;
+    box-shadow: 0 2px 8px rgba(77, 171, 247, 0.1);
+  }
+
+  .series-nav-link .nav-label {
+    color: #4dabf7;
+  }
+
+  .series-nav-link .nav-title {
+    color: #e9ecef;
   }
 }
 

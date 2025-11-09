@@ -6,6 +6,8 @@ description: "ASCII 아트 기반 UI 미리보기 - 6가지 레이아웃 타입 
 tags: ["hi-ai", "mcp", "ui-preview", "ascii-art", "developer-tools", "release"]
 author: "Su Ham"
 lang: "ko"
+series: "hi-ai MCP 기술 심화"
+seriesOrder: 4
 ---
 
 # hi-ai MCP v1.2.0: UI 미리보기 시스템으로 개발 워크플로우 혁신

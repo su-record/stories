@@ -6,6 +6,8 @@ description: "Claude Projects와 Gemini Gems로도 부족해서, 직접 MCP를 �
 tags: ["ai-first", "mcp", "hi-ai", "claude", "consistency"]
 author: "Su Ham"
 lang: "ko"
+series: "AI 개발 방법론"
+seriesOrder: 3
 ---
 
 # MCP 만들기 - AI 일관성 문제를 직접 해결해보다

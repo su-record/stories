@@ -6,6 +6,8 @@ description: "SpecKit 도입으로 문서 품질이 향상되고, 백엔드와 �
 tags: ["ai-first", "speckit", "fallingo", "completion"]
 author: "Su Ham"
 lang: "ko"
+series: "AI 개발 방법론"
+seriesOrder: 5
 ---
 
 # SpecKit으로 완성하기

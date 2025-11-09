@@ -6,6 +6,8 @@ description: "순차적 문서 작성과 교차 검증으로 AI의 일관성 문
 tags: ["ai-first", "methodology", "entity-driven", "sequential"]
 author: "Su Ham"
 lang: "ko"
+series: "AI 개발 방법론"
+seriesOrder: 4
 ---
 
 # AI와 협업하는 새로운 방법론

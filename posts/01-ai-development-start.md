@@ -6,6 +6,8 @@ description: "기술을 몰라도 AI와 함께라면? 10년차 개발자가 Fast
 tags: ["ai-first", "vibe-coding", "cursor", "claude"]
 author: "Su Ham"
 lang: "ko"
+series: "AI 개발 방법론"
+seriesOrder: 1
 ---
 
 # 10년차 프론트엔드 개발자, AI와 앱 만들기 시작하다

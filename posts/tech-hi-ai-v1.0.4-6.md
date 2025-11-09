@@ -6,6 +6,8 @@ description: "ts-morph 기반 AST 코드 분석, 프롬프트 최적화, 다국�
 tags: ["hi-ai", "mcp", "ast", "code-analysis", "typescript", "release"]
 author: "Su Ham"
 lang: "ko"
+series: "hi-ai MCP 기술 심화"
+seriesOrder: 2
 ---
 
 # hi-ai MCP v1.0.4-6: AST 기반 코드 분석과 자연어 실행 시스템 도입

@@ -2,12 +2,13 @@ import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import Giscus from '@giscus/react'
-import { loadPost } from '../utils/postLoader'
+import { loadPost, loadPostIndex, getSeriesNavigation } from '../utils/postLoader'
 import './PostView.css'
 
 function PostView() {
   const { slug } = useParams()
   const [post, setPost] = useState(null)
+  const [seriesNav, setSeriesNav] = useState({ prev: null, next: null })
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
@@ -17,6 +18,15 @@ function PostView() {
         setLoading(true)
         const postData = await loadPost(slug)
         setPost(postData)
+
+        // Load series navigation if post is part of a series
+        if (postData.series && postData.seriesOrder) {
+          const postIndex = await loadPostIndex()
+          const navigation = getSeriesNavigation(postData, postIndex.posts)
+          setSeriesNav(navigation)
+        } else {
+          setSeriesNav({ prev: null, next: null })
+        }
 
         // Set document title
         document.title = `${postData.title} | Fallingo Blog`
@@ -180,6 +190,28 @@ function PostView() {
             Written by <strong>{post.author}</strong>
           </p>
         )}
+
+        {/* Series Navigation */}
+        {post.series && (seriesNav.prev || seriesNav.next) && (
+          <div className="series-navigation">
+            <h3 className="series-title">📚 {post.series}</h3>
+            <div className="series-nav-links">
+              {seriesNav.prev && (
+                <Link to={`/posts/${seriesNav.prev.slug}`} className="series-nav-link prev">
+                  <span className="nav-label">← 이전 글</span>
+                  <span className="nav-title">{seriesNav.prev.title}</span>
+                </Link>
+              )}
+              {seriesNav.next && (
+                <Link to={`/posts/${seriesNav.next.slug}`} className="series-nav-link next">
+                  <span className="nav-label">다음 글 →</span>
+                  <span className="nav-title">{seriesNav.next.title}</span>
+                </Link>
+              )}
+            </div>
+          </div>
+        )}
+
         <Link to="/" className="back-link">
           ← Back to Posts
         </Link>

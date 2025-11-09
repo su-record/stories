@@ -131,3 +131,31 @@ export function searchPosts(posts, query) {
     post.title.toLowerCase().includes(lowerQuery)
   )
 }
+
+/**
+ * Get series navigation for a post (previous and next posts in series)
+ * @param {object} currentPost - Current post with series info
+ * @param {Array<object>} allPosts - All posts (from posts-index.json)
+ * @returns {{ prev: object|null, next: object|null }} Series navigation
+ */
+export function getSeriesNavigation(currentPost, allPosts) {
+  // Return null if post is not part of a series
+  if (!currentPost.series || !currentPost.seriesOrder) {
+    return { prev: null, next: null }
+  }
+
+  // Filter posts in the same series
+  const seriesPosts = allPosts
+    .filter((post) => post.series === currentPost.series)
+    .sort((a, b) => a.seriesOrder - b.seriesOrder)
+
+  // Find previous and next posts
+  const currentIndex = seriesPosts.findIndex(
+    (post) => post.slug === currentPost.slug
+  )
+
+  return {
+    prev: currentIndex > 0 ? seriesPosts[currentIndex - 1] : null,
+    next: currentIndex < seriesPosts.length - 1 ? seriesPosts[currentIndex + 1] : null,
+  }
+}

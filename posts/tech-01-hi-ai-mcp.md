@@ -6,6 +6,8 @@ description: "키워드 기반 자연어로 작동하는 MCP 1.0 표준 개발 �
 tags: ["mcp", "ai-tools", "typescript", "developer-tools", "hi-ai"]
 author: "Su Ham"
 lang: "ko"
+series: "hi-ai MCP 기술 심화"
+seriesOrder: 1
 ---
 
 # hi-ai MCP: 개발자를 위한 34개 도구의 똑똑한 AI 비서

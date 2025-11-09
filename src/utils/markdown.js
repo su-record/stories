@@ -87,6 +87,8 @@ export function createPostEntity(fileContent, filePath) {
     image: frontmatter.image || null,
     author: frontmatter.author || null,
     lang: frontmatter.lang || 'ko',
+    series: frontmatter.series || null,
+    seriesOrder: frontmatter.seriesOrder || null,
     filePath,
   }
 }
@@ -106,5 +108,7 @@ export function createPostMetadata(post) {
     tags: post.tags,
     image: post.image,
     lang: post.lang,
+    series: post.series,
+    seriesOrder: post.seriesOrder,
   }
 }
