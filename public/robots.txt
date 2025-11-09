@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://su-record.github.io/stories/sitemap.xml
