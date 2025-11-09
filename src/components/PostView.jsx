@@ -185,8 +185,15 @@ function PostView() {
         </Link>
       </footer>
 
-      {/* Giscus Comments */}
-      <div className="comments-section">
+      {/* Giscus Comments - Temporarily disabled
+          TODO: Enable after setting up GitHub Discussions + Giscus App
+          Steps:
+          1. Enable GitHub Discussions at https://github.com/su-record/stories/settings
+          2. Install Giscus app at https://github.com/apps/giscus
+          3. Generate new IDs at https://giscus.app/ko
+          4. Update repo-id and category-id below
+      */}
+      {/* <div className="comments-section">
         <Giscus
           repo="su-record/stories"
           repoId="R_kgDONWfbCw"
@@ -201,7 +208,7 @@ function PostView() {
           lang="ko"
           loading="lazy"
         />
-      </div>
+      </div> */}
     </article>
   )
 }
