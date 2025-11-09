@@ -23,7 +23,5 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
-package-lock.json
-
 # Build artifacts
 public/posts-index.json
