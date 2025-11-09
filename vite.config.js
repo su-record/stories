@@ -5,6 +5,10 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/stories/', // GitHub Pages repository name
+  define: {
+    // Inject build timestamp for cache busting
+    __BUILD_TIME__: JSON.stringify(Date.now()),
+  },
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
