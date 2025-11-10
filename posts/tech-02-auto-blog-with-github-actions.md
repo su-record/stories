@@ -4,7 +4,7 @@ date: "2025-11-10"
 category: "tech"
 description: "블로그 작성이 어려운 개발자를 위한 해결책. 프로젝트 저장소의 커밋 히스토리를 Gemini API로 자동 분석하여 블로그 포스팅을 생성하고, GitHub Actions로 배포까지 자동화하는 시스템 구축 가이드"
 tags: ["github-actions", "gemini-api", "automation", "blog", "devops"]
-author: "Su Ham"
+author: "Su"
 lang: "ko"
 ---
 
@@ -18,7 +18,7 @@ lang: "ko"
 - **"프로젝트 진행 상황을 기록하고 싶은데 귀찮다"**
 - **"커밋은 매일 하는데 문서화는 못하고 있다"**
 
-저도 Fallingo 개발하면서 같은 문제를 겪었습니다. 매주 개발 일지를 작성하려고 했지만, 막상 앉아서 쓰려니 "뭐 했더라?" 하면서 커밋 히스토리를 다시 읽어야 했습니다.
+저도 fallingo 개발하면서 같은 문제를 겪었습니다. 매주 개발 일지를 작성하려고 했지만, 막상 앉아서 쓰려니 "뭐 했더라?" 하면서 커밋 히스토리를 다시 읽어야 했습니다.
 
 ## 해결책: 커밋 20개마다 자동으로 블로그 포스팅 생성
 
@@ -40,7 +40,7 @@ lang: "ko"
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  1. Fallingo Repository (프로젝트 저장소)                    │
+│  1. fallingo Repository (프로젝트 저장소)                    │
 │                                                               │
 │  ┌─────────────────────────────────────┐                    │
 │  │  GitHub Actions Workflow            │                    │
@@ -122,9 +122,9 @@ Google의 생성형 AI API입니다. **무료 티어로도 충분히 사용 가�
 
 ## 2단계: GitHub Secrets에 API 키 등록
 
-### Fallingo Repository에 Secrets 등록
+### fallingo Repository에 Secrets 등록
 
-1. **Fallingo Repository** → **Settings** → **Secrets and variables** → **Actions**
+1. **fallingo Repository** → **Settings** → **Secrets and variables** → **Actions**
 2. **New repository secret** 클릭
 3. 2개의 Secret 등록:
 
@@ -146,7 +146,7 @@ Secret: ghp_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 1. **GitHub** → **Settings** → **Developer settings** → **Personal access tokens** → **Tokens (classic)**
 2. **Generate new token (classic)** 클릭
-3. **Note**: `Fallingo to Stories Blog`
+3. **Note**: `fallingo to Stories Blog`
 4. **Expiration**: `No expiration` (또는 원하는 기간)
 5. **Select scopes**:
    - ✅ `repo` (전체 선택)
@@ -156,7 +156,7 @@ Secret: ghp_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 **⚠️ 주의:** 토큰은 한 번만 표시되니 반드시 저장하세요.
 
-## 3단계: Fallingo Repository에 GitHub Actions Workflow 작성
+## 3단계: fallingo Repository에 GitHub Actions Workflow 작성
 
 ### `.github/workflows/auto-blog-post.yml` 작성
 
@@ -206,7 +206,7 @@ Stories 블로그 저장소는 이미 설정되어 있습니다. `.github/workfl
 
 **20개의 커밋이 쌓였을 때 수동으로 실행합니다:**
 
-1. **Fallingo Repository** → **Actions** → **Auto Generate Blog Post**
+1. **fallingo Repository** → **Actions** → **Auto Generate Blog Post**
 2. **Run workflow** 클릭
 3. 워크플로우 실행 확인
 
@@ -227,7 +227,7 @@ Stories 블로그 저장소는 이미 설정되어 있습니다. `.github/workfl
 ### 1. 커밋 히스토리 (20개)
 
 ```bash
-# Fallingo Repository에서 최근 20개 커밋
+# fallingo Repository에서 최근 20개 커밋
 a1b2c3d - feat: Add Redis caching to feed API (Su Ham, 2 hours ago)
 e4f5g6h - fix: Resolve FCM notification timeout (Su Ham, 4 hours ago)
 i7j8k9l - refactor: Optimize SQL query with indexing (Su Ham, 1 day ago)
@@ -247,7 +247,7 @@ k8l9m0n - test: Add integration tests for feed (Su Ham, 4 days ago)
 
 ```
 ---
-title: "Fallingo 개발일지 - 최근 20개 커밋 분석 (2025.11.10)"
+title: "fallingo 개발일지 - 최근 20개 커밋 분석 (2025.11.10)"
 date: "2025-11-10"
 category: "dev-log"
 tags: ["fallingo", "개발일지"]
@@ -439,7 +439,7 @@ GitHub Actions Cron으로 매일 체크:
 ### 4. 다중 프로젝트 지원
 
 Matrix 전략으로 여러 프로젝트 동시 처리:
-- Fallingo, hi-ai 등 여러 저장소
+- fallingo, hi-ai 등 여러 저장소
 - 각 프로젝트별로 독립적으로 포스팅 생성
 
 ### 5. Slack 알림 연동
@@ -470,5 +470,5 @@ Slack Webhook으로 알림 전송:
 **참고 링크:**
 - [Google AI Studio (Gemini API)](https://aistudio.google.com/)
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
-- [Fallingo Blog (Stories)](https://su-record.github.io/stories/)
+- [fallingo Blog (Stories)](https://su-record.github.io/stories/)
 - [Gemini API Pricing](https://ai.google.dev/pricing)

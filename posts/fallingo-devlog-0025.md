@@ -1,14 +1,14 @@
 ---
-title: "Fallingo 개발일지 - 2025-10-25 (20개 커밋)"
+title: "fallingo 개발일지 - 2025-10-25 (20개 커밋)"
 date: "2025-10-25"
 category: "dev-log"
 description: "Cloud Run 배포 최적화 및 169개 API 엔드포인트 정상화"
 tags: ["fallingo", "개발일지"]
-author: "Su Ham"
+author: "Su"
 lang: "ko"
 ---
 
-# Fallingo 개발일지 - 2025-10-25 (20개 커밋)
+# fallingo 개발일지 - 2025-10-25 (20개 커밋)
 
 ## 📝 이번 기간 작업 내용
 

@@ -1,9 +1,45 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import mermaid from 'mermaid'
 import Giscus from '@giscus/react'
 import { loadPost } from '../utils/postLoader'
 import './PostView.css'
+
+// Mermaid component for diagrams
+function Mermaid({ chart }) {
+  const ref = useRef(null)
+  const [svg, setSvg] = useState('')
+
+  useEffect(() => {
+    if (ref.current && chart) {
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: 'default',
+        themeVariables: {
+          primaryColor: '#3b82f6',
+          primaryTextColor: '#1a1a1a',
+          primaryBorderColor: '#2563eb',
+          lineColor: '#6b7280',
+          secondaryColor: '#f3f4f6',
+          tertiaryColor: '#fffff8',
+        }
+      })
+
+      const id = `mermaid-${Math.random().toString(36).substr(2, 9)}`
+      mermaid.render(id, chart).then(({ svg }) => {
+        setSvg(svg)
+      }).catch((error) => {
+        console.error('Mermaid render error:', error)
+      })
+    }
+  }, [chart])
+
+  return <div ref={ref} dangerouslySetInnerHTML={{ __html: svg }} />
+}
 
 function PostView() {
   const { slug } = useParams()
@@ -171,7 +207,44 @@ function PostView() {
       </header>
 
       <div className="post-content">
-        <ReactMarkdown>{post.content}</ReactMarkdown>
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          components={{
+            code({ node, inline, className, children, ...props }) {
+              const match = /language-(\w+)/.exec(className || '')
+              const language = match ? match[1] : ''
+
+              // Handle mermaid diagrams
+              if (!inline && language === 'mermaid') {
+                return <Mermaid chart={String(children).replace(/\n$/, '')} />
+              }
+
+              return !inline && language ? (
+                <SyntaxHighlighter
+                  style={oneDark}
+                  language={language}
+                  PreTag="div"
+                  customStyle={{
+                    margin: 0,
+                    borderRadius: '8px',
+                    fontSize: '0.9375rem',
+                    lineHeight: '1.6',
+                    backgroundColor: '#2d2d2d',
+                  }}
+                  {...props}
+                >
+                  {String(children).replace(/\n$/, '')}
+                </SyntaxHighlighter>
+              ) : (
+                <code className={className} {...props}>
+                  {children}
+                </code>
+              )
+            },
+          }}
+        >
+          {post.content}
+        </ReactMarkdown>
       </div>
 
       <footer className="post-footer">
@@ -197,7 +270,7 @@ function PostView() {
           reactionsEnabled="1"
           emitMetadata="0"
           inputPosition="top"
-          theme="preferred_color_scheme"
+          theme="light"
           lang="ko"
           loading="lazy"
         />

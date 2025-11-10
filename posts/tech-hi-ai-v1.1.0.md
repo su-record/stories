@@ -4,7 +4,7 @@ date: "2025-11-10"
 category: "tech"
 description: "find_symbol, find_references 도구 추가 - 코드 탐색과 리팩토링을 위한 시맨틱 분석 기능 강화"
 tags: ["hi-ai", "mcp", "semantic-analysis", "code-navigation", "typescript", "release"]
-author: "Su Ham"
+author: "Su"
 lang: "ko"
 ---
 

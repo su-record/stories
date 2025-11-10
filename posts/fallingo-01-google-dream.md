@@ -4,13 +4,13 @@ date: "2025-11-10"
 category: "story"
 description: "갈 수 없을 것 같은 꿈. 그래서 모든 기술을 구글로 만들기로 했다"
 tags: ["fallingo", "google-cloud", "dev-journey", "dream"]
-author: "Su Ham"
+author: "Su"
 lang: "ko"
 ---
 
 # 나의 꿈은 구글이니까
 
-2025년 5월 말, 폴링고(Fallingo) 앱을 만들기로 결심하고 가장 먼저 한 결정이 있었다.
+2025년 5월 말, 폴링고(fallingo) 앱을 만들기로 결심하고 가장 먼저 한 결정이 있었다.
 
 > "나의 꿈. 하지만, 갈 수 없이 너무 멀리 있기에 내가 만드는 앱의 모든 기술스택을 구글로 결정했다."
 

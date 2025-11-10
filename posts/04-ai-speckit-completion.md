@@ -4,7 +4,7 @@ date: "2025-11-10"
 category: "methodology"
 description: "SpecKit 도입으로 일관성 문제가 해결되고, 백엔드와 프론트엔드가 완성되기까지의 여정"
 tags: ["ai-first", "speckit", "fallingo", "completion", "methodology"]
-author: "Su Ham"
+author: "Su"
 lang: "ko"
 ---
 

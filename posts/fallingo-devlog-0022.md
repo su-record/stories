@@ -1,14 +1,14 @@
 ---
-title: "Fallingo 개발일지 - 2025-10-17 ~ 2025-10-22 (20개 커밋)"
+title: "fallingo 개발일지 - 2025-10-17 ~ 2025-10-22 (20개 커밋)"
 date: "2025-10-22"
 category: "dev-log"
 description: "소셜 로그인, AI 콘텐츠 검수, GCP 프로젝트 마이그레이션"
 tags: ["fallingo", "개발일지"]
-author: "Su Ham"
+author: "Su"
 lang: "ko"
 ---
 
-# Fallingo 개발일지 - 2025-10-17 ~ 2025-10-22 (20개 커밋)
+# fallingo 개발일지 - 2025-10-17 ~ 2025-10-22 (20개 커밋)
 
 ## 📝 이번 기간 작업 내용
 

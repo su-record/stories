@@ -1,14 +1,14 @@
 ---
-title: "Fallingo 개발일지 - 2025-11-06 ~ 2025-11-07 (20개 커밋)"
+title: "fallingo 개발일지 - 2025-11-06 ~ 2025-11-07 (20개 커밋)"
 date: "2025-11-07"
 category: "dev-log"
 description: "전체 화면 API 연동 및 FCM 푸시 알림 구현"
 tags: ["fallingo", "개발일지"]
-author: "Su Ham"
+author: "Su"
 lang: "ko"
 ---
 
-# Fallingo 개발일지 - 2025-11-06 ~ 2025-11-07 (20개 커밋)
+# fallingo 개발일지 - 2025-11-06 ~ 2025-11-07 (20개 커밋)
 
 ## 📝 이번 기간 작업 내용
 
@@ -48,7 +48,7 @@ lang: "ko"
 - **ProfileScreen**: 사용자 프로필 API
 - **AIRecommendScreen**: AI 추천 API
 
-이제 Fallingo 프론트엔드는 **100% 실제 데이터**로 작동합니다.
+이제 fallingo 프론트엔드는 **100% 실제 데이터**로 작동합니다.
 
 **FCM 푸시 알림 시스템**
 

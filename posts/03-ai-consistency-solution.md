@@ -4,7 +4,7 @@ date: "2025-11-10"
 category: "methodology"
 description: "순차적 문서 작성과 교차 검증으로 AI의 일관성 문제를 극복한 과정. 그리고 Spec-kit과의 만남"
 tags: ["ai-first", "methodology", "entity-driven", "sequential", "spec-kit"]
-author: "Su Ham"
+author: "Su"
 lang: "ko"
 ---
 
@@ -100,7 +100,7 @@ AI와 함께 찾아낸 새로운 방법은 이렇습니다:
 
 ## 나의 역할
 
-Fallingo가 어떻게 개발되는지 알겠죠?
+fallingo가 어떻게 개발되는지 알겠죠?
 
 나의 역할은:
 - **기획에 맞는가?**
@@ -119,4 +119,4 @@ Fallingo가 어떻게 개발되는지 알겠죠?
 
 AI와 함께라면 가능합니다.
 
-**Fallingo는 지금 이 순간에도 발전하고 있습니다.**
+**fallingo는 지금 이 순간에도 발전하고 있습니다.**

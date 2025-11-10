@@ -1,20 +1,20 @@
 ---
-title: "Fallingo 개발일지 - 2025-05-31 (20개 커밋)"
+title: "fallingo 개발일지 - 2025-05-31 (20개 커밋)"
 date: "2025-05-31"
 category: "dev-log"
 description: "문서 구조 개편 및 파일명 정리"
 tags: ["fallingo", "개발일지"]
-author: "Su Ham"
+author: "Su"
 lang: "ko"
 ---
 
-# Fallingo 개발일지 - 2025-05-31 (20개 커밋)
+# fallingo 개발일지 - 2025-05-31 (20개 커밋)
 
 ## 📝 이번 기간 작업 내용
 
 ### 문서 구조 정리 (6개 삭제)
 - **docs/ 폴더 정리**: 중복 및 불필요 문서 6개 삭제
-  - 00_Fallingo_철학.md
+  - 00_fallingo_철학.md
   - 01_서비스_개요.md
   - 02_서비스_비전_미션.md
   - 06_기술_스택.md

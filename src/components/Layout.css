@@ -5,15 +5,19 @@
 }
 
 .header {
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #dee2e6;
-  padding: 1rem 0;
+  background-color: var(--color-bg-primary);
+  border-bottom: 1px solid var(--color-border);
+  padding: 1.25rem 0;
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
 }
 
 .header .container {
@@ -32,48 +36,73 @@
 .logo h1 {
   margin: 0;
   font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
 }
 
 .nav {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
+  align-items: center;
 }
 
 .nav a {
   text-decoration: none;
-  color: #495057;
+  color: var(--color-text-secondary);
   font-weight: 500;
-  transition: color 0.2s;
+  font-size: 0.9375rem;
+  transition: color 0.2s ease;
+  position: relative;
 }
 
 .nav a:hover {
-  color: #007bff;
+  color: var(--color-accent);
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.nav a:hover::after {
+  transform: scaleX(1);
 }
 
 .main {
   flex: 1;
-  padding: 2rem 0;
+  padding: 2.5rem 0;
 }
 
 .footer {
-  background-color: #f8f9fa;
-  border-top: 1px solid #dee2e6;
-  padding: 2rem 0;
+  background-color: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border);
+  padding: 2.5rem 0;
   margin-top: 4rem;
   text-align: center;
-  color: #6c757d;
+  color: var(--color-text-secondary);
 }
 
 .footer p {
   margin: 0.5rem 0;
+  font-size: 0.9375rem;
 }
 
 .footer a {
-  color: #007bff;
+  color: var(--color-accent);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .footer a:hover {
+  color: var(--color-accent-hover);
   text-decoration: underline;
 }
 
@@ -89,26 +118,3 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .header,
-  .footer {
-    background-color: #1a1a1a;
-    border-color: #333;
-  }
-
-  .nav a {
-    color: #adb5bd;
-  }
-
-  .nav a:hover {
-    color: #4dabf7;
-  }
-
-  .footer {
-    color: #adb5bd;
-  }
-
-  .footer a {
-    color: #4dabf7;
-  }
-}

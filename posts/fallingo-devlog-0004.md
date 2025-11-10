@@ -1,14 +1,14 @@
 ---
-title: "Fallingo 개발일지 - 2025-05-31 ~ 2025-06-02 (20개 커밋)"
+title: "fallingo 개발일지 - 2025-05-31 ~ 2025-06-02 (20개 커밋)"
 date: "2025-06-02"
 category: "dev-log"
 description: "README 대폭 개선 및 개발 시작 준비"
 tags: ["fallingo", "개발일지"]
-author: "Su Ham"
+author: "Su"
 lang: "ko"
 ---
 
-# Fallingo 개발일지 - 2025-05-31 ~ 2025-06-02 (20개 커밋)
+# fallingo 개발일지 - 2025-05-31 ~ 2025-06-02 (20개 커밋)
 
 ## 📝 이번 기간 작업 내용
 

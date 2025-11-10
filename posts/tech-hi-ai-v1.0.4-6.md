@@ -4,7 +4,7 @@ date: "2025-11-10"
 category: "tech"
 description: "ts-morph 기반 AST 코드 분석, 프롬프트 최적화, 다국어 키워드 지원 - 31개 도구로 확장된 MCP 서버"
 tags: ["hi-ai", "mcp", "ast", "code-analysis", "typescript", "release"]
-author: "Su Ham"
+author: "Su"
 lang: "ko"
 ---
 

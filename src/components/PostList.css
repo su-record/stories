@@ -1,37 +1,41 @@
 .post-list h2 {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
   text-transform: capitalize;
+  color: var(--color-text-primary);
 }
 
 .loading,
 .error {
   text-align: center;
   padding: 3rem 0;
-  color: #6c757d;
+  color: var(--color-text-secondary);
 }
 
 .error {
-  color: #dc3545;
+  color: #ef4444;
 }
 
 .posts {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .post-card {
-  border: 1px solid #dee2e6;
-  border-radius: 8px;
-  padding: 1.5rem;
-  background-color: #fff;
-  transition: box-shadow 0.2s, transform 0.2s;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 2rem;
+  background-color: var(--color-bg-primary);
+  transition: all 0.2s ease;
 }
 
 .post-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   transform: translateY(-2px);
+  border-color: var(--color-accent);
 }
 
 .post-card a {
@@ -41,36 +45,43 @@
 }
 
 .post-card h3 {
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.75rem 0;
   font-size: 1.5rem;
-  color: #212529;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+  line-height: 1.4;
 }
 
 .post-card time {
   display: block;
   margin-bottom: 0.75rem;
-  color: #6c757d;
-  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  font-size: 0.9375rem;
+  font-weight: 500;
 }
 
 .post-card p {
   margin: 0 0 1rem 0;
-  color: #495057;
-  line-height: 1.6;
+  color: var(--color-text-secondary);
+  line-height: 1.2;
+  font-size: 1rem;
 }
 
-.tags {
+.post-card .tags {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
 }
 
-.tag {
-  padding: 0.25rem 0.75rem;
-  background-color: #e9ecef;
-  border-radius: 4px;
-  font-size: 0.85rem;
-  color: #495057;
+.post-card .tag {
+  padding: 0.375rem 0.875rem;
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
 }
 
 .observer-target {
@@ -82,17 +93,17 @@
 }
 
 .loading-more {
-  color: #6c757d;
-  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  font-size: 0.9375rem;
   animation: pulse 1.5s ease-in-out infinite;
 }
 
 .end-message {
   text-align: center;
   padding: 2rem 0;
-  color: #6c757d;
-  font-size: 0.9rem;
-  border-top: 1px solid #dee2e6;
+  color: var(--color-text-secondary);
+  font-size: 0.9375rem;
+  border-top: 1px solid var(--color-border);
   margin-top: 2rem;
 }
 
@@ -105,31 +116,3 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .post-card {
-    background-color: #1a1a1a;
-    border-color: #333;
-  }
-
-  .post-card h3 {
-    color: #e9ecef;
-  }
-
-  .post-card p {
-    color: #adb5bd;
-  }
-
-  .tag {
-    background-color: #333;
-    color: #adb5bd;
-  }
-
-  .end-message {
-    border-top-color: #333;
-    color: #adb5bd;
-  }
-
-  .loading-more {
-    color: #adb5bd;
-  }
-}

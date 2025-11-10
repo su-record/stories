@@ -2,15 +2,15 @@
 title: "Google for Startups Cloud Program 승인받기 - $2,000 크레딧 획득 여정"
 date: "2025-11-10"
 category: "story"
-description: "Fallingo의 Google for Startups Cloud Program 신청부터 승인까지. 웹사이트 검증 요청, fallingo.app/about.html 페이지 작성, 그리고 Start Tier $2,000 크레딧 승인까지의 실제 과정"
+description: "fallingo의 Google for Startups Cloud Program 신청부터 승인까지. 웹사이트 검증 요청, fallingo.app/about.html 페이지 작성, 그리고 Start Tier $2,000 크레딧 승인까지의 실제 과정"
 tags: ["google-cloud", "startup", "cloud-credits", "fallingo"]
-author: "Su Ham"
+author: "Su"
 lang: "ko"
 ---
 
 # Google for Startups Cloud Program 승인받기
 
-Fallingo를 개발하면서 Google Cloud Platform을 전폭적으로 사용하고 있었습니다. Cloud Run, Cloud SQL, Vision API, Gemini AI, Maps Platform... 인프라 비용이 생각보다 많이 지출되더군요. 그냥 테스트만 하는 중인데.
+fallingo를 개발하면서 Google Cloud Platform을 전폭적으로 사용하고 있었습니다. Cloud Run, Cloud SQL, Vision API, Gemini AI, Maps Platform... 인프라 비용이 생각보다 많이 지출되더군요. 그냥 테스트만 하는 중인데.
 
 그때 생각난 것이 **Google for Startups Cloud Program**이었습니다.
 
@@ -58,7 +58,7 @@ From: Google for Startups Cloud Program Team
 - **백엔드 100% 완료**: 145개 API 엔드포인트, 17개 모듈
 - **프로덕션 배포 중**: GCP Cloud Run, Cloud SQL PostgreSQL + PostGIS
 - **API 문서 공개**: https://fallingo.app/api/docs (Swagger), https://fallingo.app/api/redoc (ReDoc)
-- **상세 문서 첨부**: Fallingo_Project_Overview.pdf
+- **상세 문서 첨부**: fallingo_Project_Overview.pdf
 
 **"실제로 돌아가는 시스템이 있습니다. 확인해보세요."**
 
@@ -203,7 +203,7 @@ Google이 확인하는 것:
 
 ### 4. Bootstrapped 스타트업도 가능
 
-Fallingo는:
+fallingo는:
 - 2인 스타트업
 - 투자 없음 (Self-funded)
 - 아직 출시 전
@@ -228,4 +228,4 @@ Google for Startups Cloud Program은 **초기 스타트업에게 정말 큰 도�
 
 **참고 링크:**
 - [Google for Startups Cloud Program](https://cloud.google.com/startup)
-- [Fallingo About Page](https://fallingo.app/about.html)
+- [fallingo About Page](https://fallingo.app/about.html)

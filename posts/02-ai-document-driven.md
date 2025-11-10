@@ -4,7 +4,7 @@ date: "2025-11-10"
 category: "methodology"
 description: "AI가 읽고 일할 수 있는 문서를 만들기까지의 시행착오와 깨달음. 그리고 바이브코딩을 위한 MCP 도구를 만들다"
 tags: ["ai-first", "prd", "documentation", "claude", "mcp"]
-author: "Su Ham"
+author: "Su"
 lang: "ko"
 ---
 
@@ -72,7 +72,7 @@ AI가 **항상 요구하지 않은 내용을 자꾸 추가하는 게 문제 발�
 
 ## 바이브코딩을 위한 도구가 필요하다
 
-Fallingo 백엔드 API를 개발하던 중이었습니다.
+fallingo 백엔드 API를 개발하던 중이었습니다.
 
 FastAPI로 RESTful 엔드포인트를 구현하고, Redis 캐싱 전략을 짜고, BackgroundTasks로 FCM 알림을 비동기 처리하는 복잡한 아키텍처를 다루고 있었죠.
 
@@ -142,11 +142,11 @@ AI가 알아서 분석하고 제안합니다.
 
 ## 포기하려던 순간
 
-그래도 여전히 Fallingo 개발은 막혔습니다.
+그래도 여전히 fallingo 개발은 막혔습니다.
 
 DB 스키마와 모델이 일관성을 갖지 못하니까 수정하고 하는데 **돈만 들더라고요.**
 
-MCP를 만드는 건 재미있었지만, 정작 Fallingo는 앞으로 나아가지 못했습니다.
+MCP를 만드는 건 재미있었지만, 정작 fallingo는 앞으로 나아가지 못했습니다.
 
 그래도 내가 질문하는 그리고 요구사항을 전달하는 **내 능력이 더 문제라고 생각**했습니다.
 

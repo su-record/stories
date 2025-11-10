@@ -4,7 +4,7 @@ date: "2025-11-10"
 category: "tech"
 description: "ASCII 아트 기반 UI 미리보기 - 6가지 레이아웃 타입 지원으로 터미널에서 즉시 확인 가능한 시각화 시스템"
 tags: ["hi-ai", "mcp", "ui-preview", "ascii-art", "developer-tools", "release"]
-author: "Su Ham"
+author: "Su"
 lang: "ko"
 ---
 

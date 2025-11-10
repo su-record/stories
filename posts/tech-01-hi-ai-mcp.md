@@ -4,15 +4,15 @@ date: "2025-11-10"
 category: "tech"
 description: "키워드 기반 자연어로 작동하는 MCP 1.0 표준 개발 도구 - 100ms 이하 응답, 50MB 이하 메모리"
 tags: ["mcp", "ai-tools", "typescript", "developer-tools", "hi-ai"]
-author: "Su Ham"
+author: "Su"
 lang: "ko"
 ---
 
 # hi-ai MCP: 개발자를 위한 34개 도구의 똑똑한 AI 비서
 
-## 시작: Fallingo를 개발하던 어느 날
+## 시작: fallingo를 개발하던 어느 날
 
-Fallingo 백엔드 API를 개발하던 중이었습니다. FastAPI로 RESTful 엔드포인트를 구현하고, Redis 캐싱 전략을 짜고, BackgroundTasks로 FCM 알림을 비동기 처리하는 복잡한 아키텍처를 다루고 있었죠.
+fallingo 백엔드 API를 개발하던 중이었습니다. FastAPI로 RESTful 엔드포인트를 구현하고, Redis 캐싱 전략을 짜고, BackgroundTasks로 FCM 알림을 비동기 처리하는 복잡한 아키텍처를 다루고 있었죠.
 
 Claude와 함께 코딩하면서(바이브코딩) 반복되는 패턴을 발견했습니다:
 
@@ -63,9 +63,9 @@ Model Context Protocol(MCP) 1.0 표준을 구현한 TypeScript 기반 개발 도
 
 ## WHY: 왜 필요했나?
 
-### Fallingo 개발 중 마주한 문제들
+### fallingo 개발 중 마주한 문제들
 
-Fallingo를 개발하면서 Claude와 바이브코딩할 때 이런 불편함이 있었습니다:
+fallingo를 개발하면서 Claude와 바이브코딩할 때 이런 불편함이 있었습니다:
 
 1. **매번 긴 프롬프트 작성**: "이 FastAPI 엔드포인트의 성능을 분석하고, Redis 캐싱 전략을 평가하고, 개선점을 제안하고..."
 2. **컨텍스트 손실**: 대화가 길어지면 AI가 "이 프로젝트는 FastAPI를 사용합니다"라고 매번 다시 설명해야 함
@@ -80,7 +80,7 @@ Fallingo를 개발하면서 Claude와 바이브코딩할 때 이런 불편함이
 
 **모듈화된 아키텍처**로 각 도구가 독립적으로 작동하면서도 서로 협력합니다. 메모리 관리 시스템이 컨텍스트를 유지하고, 코드 분석 도구가 일관된 평가 기준을 제공합니다.
 
-실제로 Fallingo 개발에 적용한 결과, 프롬프트 작성 시간이 70% 감소했고, AI와의 대화 효율성이 크게 향상되었습니다.
+실제로 fallingo 개발에 적용한 결과, 프롬프트 작성 시간이 70% 감소했고, AI와의 대화 효율성이 크게 향상되었습니다.
 
 ## HOW: 어떻게 사용하나?
 
@@ -402,7 +402,7 @@ hi-ai MCP의 가치:
 - **100ms 응답, 50MB 메모리**: 개발 흐름 방해 없음
 - **MCP 1.0 표준**: Claude Desktop, Cursor 등 즉시 통합
 
-실제로 Fallingo를 개발하면서 이런 도구의 필요성을 절실히 느꼈습니다. AI와 대화하듯 개발하는 시대, 이제 시작입니다.
+실제로 fallingo를 개발하면서 이런 도구의 필요성을 절실히 느꼈습니다. AI와 대화하듯 개발하는 시대, 이제 시작입니다.
 
 ---
 

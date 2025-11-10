@@ -1,21 +1,21 @@
 ---
-title: "Fallingo 개발일지 - 2025-10-27 ~ 2025-10-28 (20개 커밋)"
+title: "fallingo 개발일지 - 2025-10-27 ~ 2025-10-28 (20개 커밋)"
 date: "2025-10-28"
 category: "dev-log"
 description: "CORS 및 API 경로 문제 집중 해결"
 tags: ["fallingo", "개발일지"]
-author: "Su Ham"
+author: "Su"
 lang: "ko"
 ---
 
-# Fallingo 개발일지 - 2025-10-27 ~ 2025-10-28 (20개 커밋)
+# fallingo 개발일지 - 2025-10-27 ~ 2025-10-28 (20개 커밋)
 
 ## 📝 이번 기간 작업 내용
 
 ### 프론트엔드 UI 개선 (4개 커밋)
 - **Add assets/images/ to pubspec.yaml**: 이미지 에셋 추가
 - **Always use production API URL and UI improvements**: 프로덕션 URL 고정
-- **Update favicon and branding to Fallingo logo**: Fallingo 로고 적용
+- **Update favicon and branding to fallingo logo**: fallingo 로고 적용
 - **Remove CORS-blocked pravatar.cc avatar images**: CORS 차단 이미지 제거
 
 ### API 경로 수정 (8개 커밋)
@@ -71,5 +71,5 @@ lang: "ko"
 - **API 경로**: API_BASE_URL 환경변수 관리, /v1 제거
 - **CORS**: 프로덕션 도메인 추가, redirect_slashes 설정
 - **파싱**: Feed 모델을 백엔드 응답 구조와 매칭
-- **UI**: Fallingo 로고, CORS 차단 이미지 제거
+- **UI**: fallingo 로고, CORS 차단 이미지 제거
 
