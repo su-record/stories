@@ -55,4 +55,3 @@ Cloud Run 배포를 위해 **PORT 환경변수** 처리를 개선하고, Dockerf
 - **보안**: JWT_SECRET_KEY 명확화, TrustedHost 설정
 - **DB**: psycopg2-binary 추가
 
-다음 마일스톤: Cloud Run 배포 안정화 완료 후 기능 개발 재개가 예상됩니다.

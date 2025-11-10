@@ -60,4 +60,3 @@ lang: "ko"
 - **버그 수정**: NoneType 에러 11개 수정 커밋
 - **안정성**: feeds, gamification, restaurant API 안정화
 
-다음 마일스톤: API 안정성 확보 후 프론트엔드 연동이 예상됩니다.

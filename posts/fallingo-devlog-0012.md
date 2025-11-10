@@ -59,4 +59,3 @@ lang: "ko"
 - **문서**: Cloud SQL Proxy 가이드, Identity Platform 통합 문서
 - **테스트**: aiosqlite 추가, pytest 설정 개선
 
-다음 마일스톤: 정리된 코드베이스 위에서 신규 기능 개발이 예상됩니다.

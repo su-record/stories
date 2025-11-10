@@ -59,4 +59,3 @@ lang: "ko"
 - **문서화**: 100% 완성 (DB 설계, 백엔드, Cloud SQL, REST API 가이드)
 - **전략**: 문서 우선 → 개발 (Document-First Development)
 
-다음 마일스톤: 완성된 문서를 기반으로 안정적인 개발 시작이 예상됩니다.

@@ -65,4 +65,3 @@ FeedService Facade에 **VisionService와 DocumentAIService 의존성**을 추가
 - **프론트엔드**: Flutter UI Cloud Run 배포, Artifact Registry
 - **인프라**: fallingo.app/api 프로덕션 URL
 
-다음 마일스톤: 프론트엔드-백엔드 통합 테스트 및 버그 수정이 예상됩니다.
