@@ -14,7 +14,14 @@
       "Bash(node:*)",
       "Bash(for i in {1..5})",
       "Bash(do mv flavorpoint-devlog-0$i.md fallingo-devlog-0$i.md)",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(npm run dev:*)",
+      "Bash(pkill:*)",
+      "Bash(find:*)",
+      "Bash(git log:*)",
+      "Bash(git -C /Users/su/workspace/stories add posts/fallingo-tech-01-redis-optimization.md)",
+      "Bash(git -C /Users/su/workspace/stories commit --amend --no-edit)",
+      "Bash(git -C /Users/su/workspace/stories status)"
     ],
     "deny": [],
     "ask": []
