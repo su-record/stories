@@ -1,6 +1,6 @@
 ---
 title: "[기술 심화] Redis 캐싱으로 API 응답속도 76% 개선하기 - 실전 최적화 가이드"
-date: "2025-11-09"
+date: "2025-11-10"
 category: "tech"
 description: "GCP Memorystore Redis를 활용한 FastAPI 백엔드 성능 최적화. 실제 성능 측정 데이터와 함께하는 캐싱 전략 완벽 가이드"
 tags: ["fallingo", "redis", "caching", "performance", "fastapi", "gcp", "optimization", "technical"]

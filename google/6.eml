@@ -1,0 +1,388 @@
+Delivered-To: su@fallingo.app
+Received: by 2002:a05:7010:a7a1:b0:48c:7935:172c with SMTP id bw33csp1861445mdb;
+        Fri, 7 Nov 2025 03:01:07 -0800 (PST)
+X-Received: by 2002:a17:903:2f8e:b0:267:8b4f:df1f with SMTP id d9443c01a7336-297c038bf0dmr20692415ad.1.1762513266786;
+        Fri, 07 Nov 2025 03:01:06 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1762513266; cv=none;
+        d=google.com; s=arc-20240605;
+        b=JxtR7qsWbOkTn3bcnpzx/jHUx6NU6e4KnGkc9pQKniJOHhRMTmBsgtlSQnUjMGWfEw
+         1nIpdc2ZMAqdiY5ea0rbPY1B9p7emMmcSr9TFWBm+0qZ8j9LJ0uq2/OtRSi0VhhdhXRz
+         x2f4nyMObIm5GpUO8Ymofm0ImNaN9zjtswMwCngeFDvnCv+i0juf/zLXEF3ceYRkKS7z
+         ZoxTZ/wUgyWctNUGflOzki9/riJe7DEcVfxvizbshfH2Al6gupcBNw4QmNlTnC46qa7w
+         r9hJcqPuhYqN592Nw5m2eU5brs1EVCXHYH6uLgoumlDxSriEyz6yFofzW3RSfITEXeft
+         Q/VA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=mime-version:subject:references:in-reply-to:message-id:to:from:date
+         :dkim-signature;
+        bh=Bofl0PJG7li5RaaoeGUoBLfgg+5mxeMCQk/WfnAQcwQ=;
+        fh=HPfGQewSmzN+9tGOZ8TvRDAxsqecDl7YfyB9kcN2V1g=;
+        b=NN4hM0EQRSCIViLSVYu+Ss0bSDZherIxYFBceRUyOA8VmjcDHgx2pXFCrGG7RgPY9W
+         dWx0htbQwTeUXGjqajvWY93EtshMPL/87Lz5OOA2ZVWwJg2IkEWbxkOUCA8keR12B2ko
+         uYJKRsY+vms5lWacrxWX+qSmuiPEsquf8bq4pQLACAx+Bdk6iZ9h6f9w+d6XY1xizDc9
+         H/4grAnpv1PugkTh7jeV5NfC0B45BJFNJYRWXgDATYLIjer7H1sArwzxGzyGz8VE9Dp0
+         FxXh8HcOiXta1ro8sQEIm1Par7myr1El7moVtab1LWD8PgPt90Ml7XNk8Tw1tate5Zzt
+         d3vw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@google.com header.s=20230601 header.b=CKTN54vN;
+       spf=pass (google.com: domain of cloudstartupsupport@google.com designates 209.85.220.73 as permitted sender) smtp.mailfrom=cloudstartupsupport@google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com;
+       dara=neutral header.i=@fallingo.app
+Return-Path: <cloudstartupsupport@google.com>
+Received: from mail-sor-f73.google.com (mail-sor-f73.google.com. [209.85.220.73])
+        by mx.google.com with SMTPS id d9443c01a7336-29651d23b82sor26778035ad.2.2025.11.07.03.01.06
+        for <su@fallingo.app>
+        (Google Transport Security);
+        Fri, 07 Nov 2025 03:01:06 -0800 (PST)
+Received-SPF: pass (google.com: domain of cloudstartupsupport@google.com designates 209.85.220.73 as permitted sender) client-ip=209.85.220.73;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@google.com header.s=20230601 header.b=CKTN54vN;
+       spf=pass (google.com: domain of cloudstartupsupport@google.com designates 209.85.220.73 as permitted sender) smtp.mailfrom=cloudstartupsupport@google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com;
+       dara=neutral header.i=@fallingo.app
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20230601; t=1762513266; x=1763118066; darn=fallingo.app;
+        h=mime-version:subject:references:in-reply-to:message-id:to:from:date
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=Bofl0PJG7li5RaaoeGUoBLfgg+5mxeMCQk/WfnAQcwQ=;
+        b=CKTN54vNuYvynCVWu8wAX1hIph+It/CYvs7oQtTyqkq4R25y85Z6sXxErz2TkoUtSR
+         THxxlfDpBwYDgo/gpCIM4+FdJQ65iDisR1+7HSh0MsV7i2jeh1qzFxJT/sxll+ajrzvU
+         HIwLpht+NPn+YB4UgBBJWDv84rcZpWEkRlnWw5dwWxGcT3y2UStSOgPuUxW/qO2Z7yQd
+         OzQTxC8b6+1LCnLXZJDtxpr1jNd481lUVRSUuyk7j1Fhy1EFFKW898/yP9P7EYcvKaI1
+         okWajtB6URcRXWQmXRX7qPE+A/J2F4l6qdZOH5xataejzyr9E7yWk89HNys38U/mt0mx
+         eluQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1762513266; x=1763118066;
+        h=mime-version:subject:references:in-reply-to:message-id:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=Bofl0PJG7li5RaaoeGUoBLfgg+5mxeMCQk/WfnAQcwQ=;
+        b=gniuKEHtL1Sno8nw3/QsGc328c+OSYijx1FI1WjdTrZOoxGy229XyV3nA5skqXy22K
+         bowzuul7okJUom4Dqs70cyjBveRkeMhbUNqowUL1qyvU5m4V/pdW9gPnb12bMPUw5bLm
+         CsM6J6aRnkhGGvuwrAg9fZnGqahzjGNk+Rxrg919Pfj9WVejDZA8TOdoViWWjzz407U/
+         gCEIEqEAun2r4BFYG4NX2pEpV3OfOMnKkT7J66SZr/iTMzQoRtqFMAASg11hODkyLnvY
+         RfgoRKbwqjneQPFVmR4Tq2aPtecKIpnzKLe8bxSIo5AwTX88Mg1bUWpxsW2EkD2lPatd
+         mCHQ==
+X-Gm-Message-State: AOJu0YyOm2WP2X+17sBlvbptnkVtibAqQk1PW6a+gM3bfDJadihXU5f0
+	oyRUpIDUHmx9HIvw879T77u3hsCuVsSFELxT8qvjVT/qX3BaUeUcj6yPlfwicoI9WBMvF02fPZs
+	YoUBCC3/LsH77dVh9gLXejMrIgRMd4ZgWyBBelWABoUNZuLe5T4pODK9xk0U+YdHXR0geR0mySN
+	d5
+X-Google-Smtp-Source: AGHT+IH2cR7atnakmFVOsES2so9ZG7Pdkg1YS1w4kr+41y6orxCPV0GwqDUvkwvjfCm+ZmX0VHAGA70lnwZspKQ=
+X-Received: by 2002:a17:903:2290:b0:272:f9c3:31fb with SMTP id d9443c01a7336-297c04aa5f1mr38114145ad.58.1762513266251;
+        Fri, 07 Nov 2025 03:01:06 -0800 (PST)
+Return-Path: <cloudstartupsupport@google.com>
+Received: from smtp02-ia6-sp4.mta.salesforce.com (smtp02-ia6-sp4.mta.salesforce.com. [13.110.242.177])
+        by gmr-mx.google.com with ESMTPS id 41be03b00d2f7-ba8ffb3c3c2si188522a12.4.2025.11.07.03.01.06
+        for <su@fallingo.app>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 07 Nov 2025 03:01:06 -0800 (PST)
+Return-Path: <cloudstartupsupport@google.com>
+Authentication-Results:  mx3-ia6-sp4.mta.salesforce.com x-tls.subject="/C=US/ST=California/L=San Francisco/O=salesforce.com, inc./OU=0:app;1:ia6;2:ia6-sp4;3:na252;4:prod/CN=na252-app2-36-ia6.ops.sfdc.net"; auth=pass (cipher=TLS_AES_256_GCM_SHA384)
+Received: from [10.224.204.84] ([10.224.204.84:53258] helo=na252-app2-36-ia6.ops.sfdc.net)
+	by mx3-ia6-sp4.mta.salesforce.com (envelope-from <cloudstartupsupport@google.com>)
+	(ecelerity 4.7.0.20111 r(msys-ecelerity:tags/4.7.0-ga^0)) with ESMTPS (cipher=TLS_AES_256_GCM_SHA384
+	subject="/C=US/ST=California/L=San Francisco/O=salesforce.com, inc./OU=0:app;1:ia6;2:ia6-sp4;3:na252;4:prod/CN=na252-app2-36-ia6.ops.sfdc.net") 
+	id 43/68-06191-071DD096; Fri, 07 Nov 2025 11:01:04 +0000
+Date: Fri, 7 Nov 2025 11:01:04 +0000 (GMT)
+From: Google Cloud Startup Support <cloudstartupsupport@google.com>
+To: "su@fallingo.app" <su@fallingo.app>
+Message-ID: <Arn1y000000000000000000000000000000000000000000000T5CRXR00XXYTWq3mSF2rYVhqzxt4Pg@sfdc.net>
+In-Reply-To: <CADn5KYW_5Y-ZVbO5j1pV8LYk-byGkpqqhm_ehNfRTFHgYqxVhQ@mail.gmail.com>
+References: <a98fa52b260247523ed3508fdf4643f0781204a1-20106069-111245194@google.com>
+ <CADn5KYV879S_XS52MeDOe+ciEu_Ja-bXQ=Sj16oPD6SyvvvdTw@mail.gmail.com>
+ <6wPwY000000000000000000000000000000000000000000000T55NAD00eZ3A4vVuRhmphn4wqzRHCA@sfdc.net>
+ <CADn5KYW_5Y-ZVbO5j1pV8LYk-byGkpqqhm_ehNfRTFHgYqxVhQ@mail.gmail.com>
+Subject: =?UTF-8?Q?Re:_[=EC=A1=B0=EC=B9=98_=ED=95=84=EC=9A=94]_Sutory:_Google_fo?=
+ =?UTF-8?Q?r_Startups_Cloud_Program_=EC=97=85=EB=8D=B0=EC=9D=B4=ED=8A=B8?=
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_10802_40419738.1762513264525"
+X-SFDC-LK: 00D1U00000118G1
+X-SFDC-User: 0051U00000AJZzf
+X-Sender: postmaster@salesforce.com
+X-mail_abuse_inquiries: http://www.salesforce.com/company/abuse.jsp
+X-SFDC-CORRELATION-ID: 0002vt9k94dpswtw
+X-SFDCOrgRelay: 00D1U00000118G1
+X-SFDC-Binding: 1WrIRBV94myi25uB
+X-SFDC-EmailCategory: quickActionEmail
+X-SFDC-EntityId: 500Ki00000Ax7po
+X-SFDC-Interface: internal
+X-SFDC-Restrict: ^(.*)
+X-SFDCRelayAddr: gmr-smtp-in.l.google.com
+X-SFDCRelayPort: 25
+X-SFDCTLS: 4
+
+------=_Part_10802_40419738.1762513264525
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi Su,
+
+Thank you for providing the necessary information.
+
+My name is Nancy and I'm supporting Sa=C5=A1o with this request.
+
+Fantastic news! We're delighted to let you know that your application for t=
+he Google for Startups Cloud Program has been approved for the Start Tier!
+
+Your credits will be reflected in your Google Cloud Billing Account ID: 01D=
+A53-B2E942-D793BA in the next 24-48h.
+
+You'll receive a separate welcome email very soon with more details about y=
+our specific program tier benefits and how to make the most of them. You ca=
+n also check all the details through https://cloud.google.com/startup.
+
+Let us know if you need anything else!
+
+
+Regards,
+
+Nancy S.(She-Her)
+Startup Support Operations
+Google Cloud (Powered by Concentrix)
+
+
+--------------- Original Message ---------------
+From: =ED=95=A8=EC=88=98=EC=9B=90 [su@fallingo.app]
+Sent: 5/11/2025 6:23
+To: cloudstartupsupport@google.com
+Subject: Re: [=EC=A1=B0=EC=B9=98 =ED=95=84=EC=9A=94] Sutory: Google for Sta=
+rtups Cloud Program =EC=97=85=EB=8D=B0=EC=9D=B4=ED=8A=B8
+Dear Sa=C5=A1o,
+Thank you for reviewing our application and providing clear guidance on the=
+ additional requirements.
+I've updated our public website to include all the requested information:
+=F0=9F=94=97 Updated Website: https://fallingo.app/about.html
+The page now includes comprehensive details about:
+1. Business Description
+
+Our mission to revolutionize food discovery through gamified location-based=
+ social platform
+Core problems we solve (authentic reviews, discovery barriers, social dinin=
+g)
+Target audience (food enthusiasts, travelers, local explorers)
+
+2. Team Information
+
+Founder/CEO background and relevant experience
+Technical expertise in mobile development and AI/ML
+
+3. Product Details
+
+Complete feature showcase with visual demonstrations
+Current development stage (fully functional backend with 149 API endpoints)
+Technology stack (FastAPI, Flutter, Google Cloud Platform)
+Screenshots and product videos
+
+4. Technical Infrastructure
+
+Production deployment on GCP Cloud Run
+PostgreSQL + PostGIS database on Cloud SQL
+Integration with Google Cloud Vision API and Gemini AI
+
+Current Development Status:
+
+=E2=9C=85 Backend: 100% complete (149 REST API endpoints in production)
+=F0=9F=9A=A7 Frontend: 60% complete (core screens implemented)
+=F0=9F=93=B1 Platforms: iOS, Android, Web (single Flutter codebase)
+
+As a bootstrapped two-person startup, we've built Fallingo from the ground =
+up, investing personal time and resources to create a production-ready plat=
+form with 149 API endpoints. Google Cloud credits would allow us to focus o=
+n product iteration and user growth during our launch phase without infrast=
+ructure cost constraints.
+Additionally, our 3-tier verification system (GPS + Vision API + OCR) gener=
+ates verified multi-modal datasets that could contribute to improving Googl=
+e Cloud Vision, Gemini, and Maps accuracy, along with YouTube content ecosy=
+stem integration. Full details are available on our updated website.
+Please let me know if you need any additional information. I'm happy to pro=
+vide more details or schedule a call to discuss our product further.
+Thank you for considering our application!
+Best regards,
+Su Grove
+Founder & CEO, Fallingo
+=F0=9F=93=A7 su@fallingo.app
+=F0=9F=8C=90 https://fallingo.app
+
+
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to limo-support--general-test-external+unsubscribe@google.com.
+ref:!00D1U0118G1.!500Ki0Ax7po:ref
+------=_Part_10802_40419738.1762513264525
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+=09<title></title>
+</head>
+<body>
+<p style=3D"line-height:1.38">Hi Su,</p>
+
+<p>Thank you for providing the necessary information.<br />
+<br />
+My name is Nancy and I&#39;m supporting Sa&scaron;o with this request.</p>
+
+<p>Fantastic news! We&#39;re delighted to let you know that your applicatio=
+n for the Google for Startups Cloud Program has been approved for the Start=
+ Tier!</p>
+
+<p>Your credits will be reflected in your Google Cloud Billing Account ID: =
+01DA53-B2E942-D793BA&nbsp;in the next 24-48h.</p>
+
+<p>You&#39;ll receive a separate welcome email very soon with more details =
+about your specific program tier benefits and how to make the most of them.=
+ You can also check all the details through <a href=3D"https://cloud.google=
+.com/startup">https://cloud.google.com/startup</a>.</p>
+
+<p>Let us know if you need anything else!</p>
+<br />
+Regards,<br />
+<br />
+Nancy S.(She-Her)<br />
+Startup Support Operations<br />
+Google Cloud (Powered by Concentrix)<br clear=3D"none" />
+<br clear=3D"none" />
+<br clear=3D"none" />
+--------------- Original Message ---------------<br clear=3D"none" />
+<b>From:</b> =ED=95=A8=EC=88=98=EC=9B=90 [su@fallingo.app]<br clear=3D"none=
+" />
+<b>Sent:</b> 5/11/2025 6:23<br clear=3D"none" />
+<b>To:</b> cloudstartupsupport@google.com<br clear=3D"none" />
+<b>Subject:</b> Re: [=EC=A1=B0=EC=B9=98 =ED=95=84=EC=9A=94] Sutory: Google =
+for Startups Cloud Program =EC=97=85=EB=8D=B0=EC=9D=B4=ED=8A=B8<br clear=3D=
+"none" />
+&nbsp;
+<div dir=3D"ltr">
+<div dir=3D"ltr">
+<div class=3D"gmail-greeting" style=3D"margin-bottom:15px;color:rgb(51,51,5=
+1);font-family:Arial,sans-serif;font-size:medium">
+<div class=3D"gmail-greeting" style=3D"margin-bottom:15px">Dear Sa&scaron;o=
+,</div>
+
+<div class=3D"gmail-section" style=3D"margin:20px 0px">Thank you for review=
+ing our application and providing clear guidance on the additional requirem=
+ents.</div>
+
+<div class=3D"gmail-section" style=3D"margin:20px 0px">I&#39;ve updated our=
+ public website to include all the requested information:</div>
+
+<div class=3D"gmail-section" style=3D"margin:20px 0px"><strong>=F0=9F=94=97=
+ Updated Website:</strong>&nbsp;<a class=3D"gmail-link" href=3D"https://fal=
+lingo.app/about.html" shape=3D"rect" style=3D"color:rgb(26,115,232);text-de=
+coration-line:none;font-weight:bold" target=3D"_blank">https://fallingo.app=
+/about.html</a></div>
+
+<div class=3D"gmail-section" style=3D"margin:20px 0px">The page now include=
+s comprehensive details about:</div>
+
+<div class=3D"gmail-list-item" style=3D"margin:8px 0px;padding-left:20px">
+<div class=3D"gmail-section-title" style=3D"font-weight:bold;margin-top:15p=
+x;margin-bottom:8px">1. Business Description</div>
+
+<ul>
+=09<li>Our mission to revolutionize food discovery through gamified locatio=
+n-based social platform</li>
+=09<li>Core problems we solve (authentic reviews, discovery barriers, socia=
+l dining)</li>
+=09<li>Target audience (food enthusiasts, travelers, local explorers)</li>
+</ul>
+</div>
+
+<div class=3D"gmail-list-item" style=3D"margin:8px 0px;padding-left:20px">
+<div class=3D"gmail-section-title" style=3D"font-weight:bold;margin-top:15p=
+x;margin-bottom:8px">2. Team Information</div>
+
+<ul>
+=09<li>Founder/CEO background and relevant experience</li>
+=09<li>Technical expertise in mobile development and AI/ML</li>
+</ul>
+</div>
+
+<div class=3D"gmail-list-item" style=3D"margin:8px 0px;padding-left:20px">
+<div class=3D"gmail-section-title" style=3D"font-weight:bold;margin-top:15p=
+x;margin-bottom:8px">3. Product Details</div>
+
+<ul>
+=09<li>Complete feature showcase with visual demonstrations</li>
+=09<li>Current development stage (fully functional backend with 149 API end=
+points)</li>
+=09<li>Technology stack (FastAPI, Flutter, Google Cloud Platform)</li>
+=09<li>Screenshots and product videos</li>
+</ul>
+</div>
+
+<div class=3D"gmail-list-item" style=3D"margin:8px 0px;padding-left:20px">
+<div class=3D"gmail-section-title" style=3D"font-weight:bold;margin-top:15p=
+x;margin-bottom:8px">4. Technical Infrastructure</div>
+
+<ul>
+=09<li>Production deployment on GCP Cloud Run</li>
+=09<li>PostgreSQL + PostGIS database on Cloud SQL</li>
+=09<li>Integration with Google Cloud Vision API and Gemini AI</li>
+</ul>
+</div>
+
+<div class=3D"gmail-status" style=3D"background:rgb(232,240,254);padding:15=
+px;border-radius:5px;margin:15px 0px"><strong>Current Development Status:</=
+strong>
+
+<ul style=3D"margin:10px 0px">
+=09<li>=E2=9C=85 Backend: 100% complete (149 REST API endpoints in producti=
+on)</li>
+=09<li>=F0=9F=9A=A7 Frontend: 60% complete (core screens implemented)</li>
+=09<li>=F0=9F=93=B1 Platforms: iOS, Android, Web (single Flutter codebase)<=
+/li>
+</ul>
+</div>
+
+<div class=3D"gmail-section" style=3D"margin:20px 0px">As a bootstrapped tw=
+o-person startup, we&#39;ve built Fallingo from the ground up, investing pe=
+rsonal time and resources to create a production-ready platform with 149 AP=
+I endpoints. Google Cloud credits would allow us to focus on product iterat=
+ion and user growth during our launch phase without infrastructure cost con=
+straints.</div>
+
+<div class=3D"gmail-section" style=3D"margin:20px 0px">Additionally, our 3-=
+tier verification system (GPS + Vision API + OCR) generates verified multi-=
+modal datasets that could contribute to improving Google Cloud Vision, Gemi=
+ni, and Maps accuracy, along with YouTube content ecosystem integration. Fu=
+ll details are available on our updated website.</div>
+
+<div class=3D"gmail-section" style=3D"margin:20px 0px">Please let me know i=
+f you need any additional information. I&#39;m happy to provide more detail=
+s or schedule a call to discuss our product further.</div>
+
+<div class=3D"gmail-section" style=3D"margin:20px 0px">Thank you for consid=
+ering our application!</div>
+
+<div class=3D"gmail-signature" style=3D"margin-top:30px;border-top:2px soli=
+d rgb(221,221,221);padding-top:20px">
+<div>Best regards,</div>
+
+<div class=3D"gmail-signature-name" style=3D"font-weight:bold;font-size:1.1=
+em">Su Grove</div>
+
+<div class=3D"gmail-signature-title" style=3D"color:rgb(102,102,102);font-s=
+tyle:italic">Founder &amp; CEO, Fallingo</div>
+
+<div style=3D"margin-top:10px">=F0=9F=93=A7&nbsp;<a class=3D"gmail-link" hr=
+ef=3D"mailto:su@fallingo.app" shape=3D"rect" style=3D"color:rgb(26,115,232)=
+;text-decoration-line:none;font-weight:bold" target=3D"_blank">su@fallingo.=
+app</a><br clear=3D"none" />
+=F0=9F=8C=90&nbsp;<a class=3D"gmail-link" href=3D"https://fallingo.app" sha=
+pe=3D"rect" style=3D"color:rgb(26,115,232);text-decoration-line:none;font-w=
+eight:bold" target=3D"_blank">https://fallingo.app</a></div>
+</div>
+</div>
+</div>
+</div>
+
+<p>&nbsp;</p>
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to <a href=3D"mailto:limo-support--general-test-external+unsubscribe@g=
+oogle.com" shape=3D"rect" target=3D"_blank">limo-support--general-test-exte=
+rnal+unsubscribe@google.com</a>.<img alt=3D"" src=3D"https://limo.my.salesf=
+orce.com/servlet/servlet.ImageServer?oid=3D00D1U00000118G1&esid=3D018Ki0000=
+06Tngu&from=3Dext"><br><br>ref:!00D1U0118G1.!500Ki0Ax7po:ref</body>
+</html>
+------=_Part_10802_40419738.1762513264525--

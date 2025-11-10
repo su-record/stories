@@ -1,6 +1,6 @@
 ---
 title: "hi-ai MCP v1.2.0: UI 미리보기 시스템으로 개발 워크플로우 혁신"
-date: "2024-10-17"
+date: "2025-11-10"
 category: "tech"
 description: "ASCII 아트 기반 UI 미리보기 - 6가지 레이아웃 타입 지원으로 터미널에서 즉시 확인 가능한 시각화 시스템"
 tags: ["hi-ai", "mcp", "ui-preview", "ascii-art", "developer-tools", "release"]

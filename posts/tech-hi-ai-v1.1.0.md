@@ -1,6 +1,6 @@
 ---
 title: "hi-ai MCP v1.1.0: 시맨틱 코드 분석으로 코드 이해도 향상"
-date: "2024-08-13"
+date: "2025-11-10"
 category: "tech"
 description: "find_symbol, find_references 도구 추가 - 코드 탐색과 리팩토링을 위한 시맨틱 분석 기능 강화"
 tags: ["hi-ai", "mcp", "semantic-analysis", "code-navigation", "typescript", "release"]

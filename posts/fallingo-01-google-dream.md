@@ -1,6 +1,6 @@
 ---
 title: "나의 꿈은 구글이니까 - 기술스택을 100% 구글로 결정한 이유"
-date: "2025-05-25"
+date: "2025-11-10"
 category: "story"
 description: "갈 수 없을 것 같은 꿈. 그래서 모든 기술을 구글로 만들기로 했다"
 tags: ["fallingo", "google-cloud", "dev-journey", "dream"]

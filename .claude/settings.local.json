@@ -10,7 +10,11 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git push:*)",
-      "Bash(gh run:*)"
+      "Bash(gh run:*)",
+      "Bash(node:*)",
+      "Bash(for i in {1..5})",
+      "Bash(do mv flavorpoint-devlog-0$i.md fallingo-devlog-0$i.md)",
+      "Bash(done)"
     ],
     "deny": [],
     "ask": []

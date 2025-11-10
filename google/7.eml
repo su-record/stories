@@ -1,0 +1,781 @@
+Delivered-To: su@fallingo.app
+Received: by 2002:a05:7010:a7a1:b0:48c:7935:172c with SMTP id bw33csp1884412mdb;
+        Fri, 7 Nov 2025 03:46:07 -0800 (PST)
+X-Received: by 2002:a05:6602:1611:b0:93e:2b1f:83bf with SMTP id ca18e2360f4ac-94888e40297mr152386539f.1.1762515967754;
+        Fri, 07 Nov 2025 03:46:07 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1762515967; cv=none;
+        d=google.com; s=arc-20240605;
+        b=T4+60pcLr8JESjhVGI9vKqVezsC08odZYZEEwkkAy1YLTHHlYL+4I5d+w0383Oj8Ts
+         3z7V1gldzr+UmdBzQUWa0GzioetkKNvP1ZuPy1Ejf7y9voAsPAySH5ty4GuAvj+oGrbw
+         7HQyoqUA+fw93ES5HuW8wlrc04Y8FdlZNAFv7ysKVUVge8UAQIkpdyUkAmRnO7NjT/H/
+         n0+32KmLTuswI1bLG09ndcv6xNzn3JOg47jCDvt1H+GG9mWDHNsmCtNRLwEGveGprEsA
+         /6iqzyeCwKCszP2/lCUTM7aFe57vOy3ZL7vIndcloMmq8625e6TRsB4ZYTSZl3iIeH4F
+         alXA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:from:subject:message-id:feedback-id:reply-to:date:mime-version
+         :dkim-signature;
+        bh=ED4WuBvOQXXtvyPuGp2kGCYoH+wVu+IQR0yyYUPgXaU=;
+        fh=PBNdJWiIkR1AF4S4UFcCSvwiOTK7G5npS25VI2Ky/Pw=;
+        b=hkikAwsuMnZeeiP2KUnolo19oq/h1rfbntMg9etn/Zjf0kwiGoXp7D7HRtauQkE78z
+         9fHxPku07fsFRF2G3eWFRvG+u+LU2jm/795SCM32pmL4LI7EiwayP40I+cvaaZgP2O7X
+         CsS46jFAV7mauBQTtZhWrmP2fKRSoWLpkQQBvuH/WuUTDsUE07Gqy4AdMHB4EKv0bUCZ
+         VDw1fLOOpvBzsk5229Pblv3p0gSE7AB8lbqWxfDvvRu44cx+jYXK/m6NSTYgaA2GJOQ3
+         U9QKf1+DGVAZ4tklRfsTjQWpJP9b9RZAAuP+SMenV1zVZ6n0NcdBNN1U18ixW7NbchEL
+         ma1A==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@google.com header.s=20230601 header.b=cQXFqSLi;
+       spf=pass (google.com: domain of 3_9snarskaj4hqtzixyfwyzuxzuutwy-stwjuq3lttlqj.htrxzkfqqnslt.fuu@scoutcamp.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3_9sNaRsKAj4hqtzixyfwyzuxzuutwy-stwjuq3lttlqj.htrxzkfqqnslt.fuu@scoutcamp.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com;
+       dara=neutral header.i=@fallingo.app
+Return-Path: <3_9sNaRsKAj4hqtzixyfwyzuxzuutwy-stwjuq3lttlqj.htrxzkfqqnslt.fuu@scoutcamp.bounces.google.com>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id ca18e2360f4ac-94879630786sor214634839f.8.2025.11.07.03.46.07
+        for <su@fallingo.app>
+        (Google Transport Security);
+        Fri, 07 Nov 2025 03:46:07 -0800 (PST)
+Received-SPF: pass (google.com: domain of 3_9snarskaj4hqtzixyfwyzuxzuutwy-stwjuq3lttlqj.htrxzkfqqnslt.fuu@scoutcamp.bounces.google.com designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@google.com header.s=20230601 header.b=cQXFqSLi;
+       spf=pass (google.com: domain of 3_9snarskaj4hqtzixyfwyzuxzuutwy-stwjuq3lttlqj.htrxzkfqqnslt.fuu@scoutcamp.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3_9sNaRsKAj4hqtzixyfwyzuxzuutwy-stwjuq3lttlqj.htrxzkfqqnslt.fuu@scoutcamp.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com;
+       dara=neutral header.i=@fallingo.app
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20230601; t=1762515967; x=1763120767; darn=fallingo.app;
+        h=to:from:subject:message-id:feedback-id:reply-to:date:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=ED4WuBvOQXXtvyPuGp2kGCYoH+wVu+IQR0yyYUPgXaU=;
+        b=cQXFqSLiXU9fnZ1GwZL/4e4oRC3I7XjXourvbgQv0rtL7q/4rfesb3ClT0S6J4p0k+
+         ztxOQp1BjWLOlSXOj+iQu/heoSdSE1hN7GwaRN2NvRKzdziwpvftoXUYETi1D8CHEIAU
+         tOtBK4zXoGF7AGmftOUOmc7N1vAF0kG6TMLs4zj1Hy3FAm0x4WGNQ9IJwWPGaZfA0NRo
+         Rqvm2uaBGkiIh7qrhNjPi0gxRxQlJXnrU2p0q/46F8B6oyzfSvwxav5V9mcVj0pQvevb
+         gmnz1K2zhsxF99QB/zeUunpUODEiaw+CQ8rGAmI1iAxI72SX/+AFkpDWQQ5nl8MFTFpl
+         UhuA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1762515967; x=1763120767;
+        h=to:from:subject:message-id:feedback-id:reply-to:date:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=ED4WuBvOQXXtvyPuGp2kGCYoH+wVu+IQR0yyYUPgXaU=;
+        b=RO7W640XNwcSbJyEZ0nRBXWPFO1HlX0fo3yw9Gsl/qD9ZJXA2rZPMjLF3HHaQp+mLZ
+         CzfkAXcKdH6ke4eIkaViDKYQA5NXO/lu+fh8bLWFmd8sWl89Pllzw4B3PWjqpzSXDKCe
+         5+1vIVr4lNiUwGxL0BTuLQXmq37x8TwCFM/LGUzUoL7/eDYEQ81G5Um964ywSPHx5Viy
+         zMqKAeQP4OB35pxCMxCT5mJuDo853sCZP524nn7oUMwD9MHYBlvYfvTzq2NZQSeMfM6c
+         EhTFzIrpDRPIGFnIMnA4hcqjYLPhKzPzhgcaRMojdgj2PVyhX5lV6LvmI269DqUp3cfs
+         mBHA==
+X-Gm-Message-State: AOJu0Yye4ZJpeKOWEpfGr6H+0y+v3MqIdN2ALsPVmwMNhq0rFOAAVP/i
+	4CUZfCKswodfi6tEvD0N2qJrbq99g9aDyM/fHC7/dH2rUzJH97c=
+X-Google-Smtp-Source: AGHT+IHRllanCc/PfzgBo3DZvxuYjQCm9QtvTOMS8lUNENooD1EVosqMkqgDAF5P+TM+6F5xykoV5VE=
+MIME-Version: 1.0
+X-Received: by 2002:a05:6e02:160c:b0:433:4f43:231e with SMTP id
+ e9e14a558f8ab-4335f3e1a4cmr37963625ab.4.1762515967528; Fri, 07 Nov 2025
+ 03:46:07 -0800 (PST)
+Date: Fri, 07 Nov 2025 03:46:07 -0800
+Reply-To: cloudstartupsupport@google.com
+X-Trak-Extra-Language: en-US
+X-Google-Ads-Sender: auto_adsense_emails
+X-Google-Id: 4232108
+Feedback-ID: P-209-0:C20106069:M110635614-en-US:gamma
+X-Notifications: a6d84ee22f860000
+X-Notifications-Bounce-Info: AeTnV4ElVyPKDhKMPX3WF0t8WTP15_rtmOGikkXxEn6NXSDC2ID_sc09dTm6guIzj36pqf4PZ7jYaBDuDwEG-pZGXb95FlDhgUeOTOt8DdMQ5eIPVrE7D36tnCcHbxwEO6UwgvJJPCJt2K7Hl-z2OfxdwQr9KpCtgjhTqhLJdD9kn-dmNPjT9VOiCsKJ-YqgPziBaplCLIRyeaiipRqmKUEHA4o7KU1ovT-Nkn4Q7dvcKWZGjgZhdZG0MEG1g8E9UVVqDkUpG8hqfW0fKbjnPz7BNpL01DGvXYo_DxGZ-FlByag-daX0b3jOH9ObrPU4gdCjmDPFI1TT_56ZNwrQMhBcXJssKrd9C6v5ROvg-5r4ZW5At_kP_gNi92PWUdX2ULkTlgg0vOeRuPbBC_nXYNOo-QTw5UIRPkPDJZUgixbhO9PFKaFrOXke2LkhM_8ByY4RDAvaZzMY08HWRYhEAohp8DAbHLvE_ANjAwNjA0MDQxNTM1NTk2OTMzMg
+Message-ID: <f62e2dcc81a22ab17404bb183b5ceb816c2b70ab-20106069-111242862@google.com>
+Subject: =?UTF-8?Q?_=5BApproved=5D_Sutory=3A_You=E2=80=99re_Approved_for_the_Google?=
+	=?UTF-8?Q?_for_Startups_Cloud_Program?=
+From: Google for Startups Cloud Program Team <cloudstartupsupport-noreply@google.com>
+To: su@fallingo.app
+Content-Type: multipart/alternative; boundary="00000000000027d12f0642ffba09"
+
+--00000000000027d12f0642ffba09
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+Content-Transfer-Encoding: base64
+
+DQoNCg0KV2VsY29tZSB0byB0aGUgR29vZ2xlIGZvciBTdGFydHVwcyBDbG91ZCBQcm9ncmFtIQ0K
+DQoNCldlJ3JlIHBsZWFzZWQgdG8gb2ZmZXIgeW91ciBjb21wYW55ICQyLDAwMCBVU0QqIGluIEdv
+b2dsZSBDbG91ZCBjcmVkaXRzIHRvICANCnVzZSBvdmVyIHRoZSBuZXh0IHR3byB5ZWFycyB0byBo
+ZWxwIGJ1aWxkIGFuZCBncm93IHlvdXIgc2VsZi1mdW5kZWQgc3RhcnR1cC4NCg0KDQpIZXJlIGFy
+ZSBmZXcgcmVzb3VyY2VzIHRvIGhlbHAgeW91IG1ha2UgdGhlIG1vc3Qgb2YgeW91ciBHb29nbGUg
+Q2xvdWQgIA0KY3JlZGl0czoNCg0KLSBDcmVkaXRzIGNhbiBiZSB1c2VkIGZvciBGaXJlYmFzZSBh
+bmQgIA0KPGh0dHBzOi8vYy5nbGUvQVB5MkFkM0VwVTZYWElEU1hTWXlQdnlpZzdkVEc3anQzSmNW
+aVBhRzhWTXdGRmlBYWZvRjFQOHc2NTc5TThUek9kVVgzVWpxWVNZZTVhRFJUMXVlWVAxVkVDWGh5
+NHNjMjF4bE5Xd3V1Zk5kSmNlM0gtMm5PcmtjNllCbndaejdlSzVKUXU2ZkV0a0p0bnF3NXJuSnpR
+cHZ3Y0NWcFhvY01nTmlWZHJhPkdvb2dsZSAgDQpDbG91ZCBQbGF0Zm9ybSBTZXJ2aWNlcyBzdWNo
+IGFzIEJpZ1F1ZXJ5IGFuZCBDbG91ZCBSdW4sIGFzIHdlbGwgYXMgIA0KPGh0dHBzOi8vYy5nbGUv
+QVB5MkFkMmVRXzlpejJWTktKRDZrdllNSXJOeks2NUdRZnhlanFPTDVYcURXUDZ3Y1cyVVFpX3dx
+M2wzaEI2eGN3NHpjNTA2X0ZIS1Vxc2s3b3c2cGNWZ2lQdS1Va2Y0aXNOSnBDWWVSajJOTnBUZnc1
+ODVjTWJEUVpMMHd0M3NldzcyVUUzb09iRVpHS2o3LU1uMUI4QUkwRGk5R183aXN5eUVHTW1WakZl
+d1RmQWJQOFNQdHlUaDk2OEQ0X0M1MFh2UUVtalo+U2VsZWN0ICANCkdvb2dsZSBDbG91ZCBPZmZl
+cmluZ3MgbGlrZSBMb29rZXINCi0gVmlldyB5b3VyIGNyZWRpdHMgYW5kIHRyYWNrIHVzYWdlIGlu
+IHlvdXIgR29vZ2xlIENsb3VkICANCjxodHRwczovL2MuZ2xlL0FQeTJBZDFtQ0l5OVo3a2ZLVV8y
+TDdQU19PSHRsQ01Xb2UyTnd4QWtNY2hKems4RW5RTHMzV3FGcm83VFIzbUxvdkoyd0pFa2oxQU95
+SFQ1ZDdfblFRLU9aNlNGOHJHeXJwZXdKTFBja1VvaHRlZVhjVGppd0M4bWVWNmlSNmktLWhmTEl4
+N3RUSjVFdlRTRDFsdjA+Y29uc29sZQ0KLSBHZXQgc3RhcnRlZCB3aXRoIHRoZSAgDQo8aHR0cHM6
+Ly9jLmdsZS9BUHkyQWQyS2JqUzZ1Z2Nnd3JJeElpeUZfZlpWZ1lNSlFvTTdJWU02Yy00QVktNWdz
+NnR2MUJscXJuZG9LMk5tLThNUktWT3dfQ2J0QmdMR2JlLXltTzZ2SEYtVy1jY3YxNjhkWWVvR0Rn
+YTZmemUtYmJQd3NSeFZVRW9jSDhRb3NJS3JoQUZielVEel9Ja1ptcUtwV0dCOUR6Y0otenZ2a3Zq
+VzZrOU1Zb3dtPkNsb3VkICANClNldHVwIENoZWNrbGlzdCwgIA0KPGh0dHBzOi8vYy5nbGUvQVB5
+MkFkMlByd19SM1VzV3FQcWcwYzBpZDFxWm11ZGpJd1lOUXMxMENnR2ZqcGJUWGtEWDJmb0FWeE15
+ZVJ3SlZKdzgzbk1oZUJaN08zX2Jqd1pOTEJ5Qkh5bzZNclBxZnlURWRSaXJ5aUhZb19PX0xBcDhk
+XzVrUXpRdXJoemxDRzBUUnRVTEZsRzhUOE4taW93TzRHWE0+RG9jdW1lbnRhdGlvbiwgIA0KYW5k
+ICANCjxodHRwczovL2MuZ2xlL0FQeTJBZDBRaFp0UVQ4Rk9rRTdUMlpMeTA4TDBFNWkxRVRENVR1
+MEZ3UC1zT0pQcG9QMGdkY1N5a2xRVVQ2RnA2TDdlLVhkOWRlaWlFUkpaZzRQckRKN2lvbS13NUFT
+REVtWWUweUl3Tkh3c084dUFBMDExVVVDd0xVLUtQNnJBQmpKUnFwZnQ5azFpVW5vckptZmVybFVX
+aFNVV0Jnc3R1M3FBSjB1ajhBLTIzTXBCTkhRY0RtMUw1S1RTV1NENF9aQjR5QUdHYjRLcz5UZWNo
+bmljYWwgIA0KR3VpZGVzIGZvciBTdGFydHVwcw0KLSBSZWRlZW0gJDIwMCBjcmVkaXRzIG9uICAN
+CjxodHRwczovL2MuZ2xlL0FQeTJBZDB1YWJPTmVjajlINVVpSWxmVnRfTU93NFUxYTZLZFFRUDhp
+alJMcUZmbHFQSnQtVWNFRG9oWHNlUWVrRzh3bE5EeU1yTTQzVzYxNnZScHV3UXliU1pZLWxyY3Rk
+dlQ4MjN1R19SVjlxSjRrYW1oN3VPcExqcGxibnJFd2pGZUZ5U3Z2SE5QZ3d2WFcyYzlHVjJCY2tM
+UEROWT5Hb29nbGUgIA0KQ2xvdWQgU2tpbGxzIEJvb3N0IHRvIGxlYXJuIGhvdyB0byBidWlsZCBv
+biBHb29nbGUgQ2xvdWQgdGhyb3VnaCBvbmxpbmUgIA0KY291cnNlcyBhbmQgaGFuZHMtb24gbGFi
+cy4gIA0KPGh0dHBzOi8vYy5nbGUvQVB5MkFkMWc1cGpqYkNOZXprNXVITFZIR2YxR3RkdFlKdkNK
+NXptbElNeEltcTU1ZUJqQlRrSFdyRWozNTFHSk9IUmlDT21iaVVmcVRqNDdrMXE4cm1BUmZLMklX
+UXFEY0tHeHNudUtlT0paN2JEemw5aWs5WHRzZ1g3S0JKOWstSlNrU2hvS3JLcjZEZElBdGEzUlpl
+MW1kUXJYNnpuTGItakhPVUhqS2RxZXpQdW1KXzFzMjhCMl83ek1xYXJzWTZZYXJxREdJR2NobFdk
+V0ROMGRQRUs0RFMyWFdaR011dEU0cmgtUXNWMG5wYU1HWHJzS1hieGE+QXBwbHkgIA0KaGVyZS4N
+Ci0gV2UndmUgcGFydG5lcmVkIHdpdGggTW9uZ29EQiB0byBleHBhbmQgc3VwcG9ydCBmb3Igc3Rh
+cnR1cHMgaW4gb3VyICANCnByb2dyYW0uIFVuaWZ5IG9wZXJhdGlvbmFsLCBhbmFseXRpY2FsLCBh
+bmQgQUkgc2VydmljZXMgZm9yIGludGVsbGlnZW50ICANCmFwcHMsIGVuc3VyaW5nIGFjY3VyYWN5
+LCBzY2FsZSwgYW5kIHNlY3VyaXR5IGluIHlvdXIgZGV2ZWxvcG1lbnQgam91cm5leSAgDQp3aXRo
+IE1vbmdvREIgQXRsYXMgb24gR29vZ2xlIENsb3VkLiBBcHBseSB0b2RheSAgDQo8aHR0cHM6Ly9j
+LmdsZS9BUHkyQWQwbTB5Nm01WWdwdVQ0QWtid3k1RWFSN29uSnRuVXV5WWVSaDVDSnpMUU1hRkdF
+dnFFVDFSYlFNdWF2Q3pHTEp1eEotQmdyRnNSUW9TNnZFSk9xWUREQkk2N213ZXVuOWhEQVd1QjZ2
+SWE4ZXVfV0hUeXpsSjdmMHRMeFlHT01tVUxFSzRjRGpkSjlBVC1DSlVWTUVKNUFJUThfVU8yTXg0
+T3NwRGlOVzNNVHJBPnRvICANCnJlY2VpdmUgJDUwMCBpbiBjcmVkaXRzIGZvciBNb25nb0RCIEF0
+bGFzLg0KLSBKb2luIHRoZSAgDQo8aHR0cHM6Ly9jLmdsZS9BUHkyQWQxelhkX2ZNX2ZNNkczWENv
+djlFSEV5OTlPUjZNUG1OdkliWld1UEYxS2N2bUZwbGpLQVlUUENwb2NjMFVreU9EMmtyMFBJb010
+eUJ2bHFSVjlleHFadVhWejlsRWdXQ1R3elNsOG5ybkwxV3R4RDl5cmRXQlRlYThTMmtSNDZadWti
+MHJZMFI3cXp4dDFmUV9TbUtILVN3d0FDUkpVM3RSR3BnTkhsOWNYX0FIWEdjaW4zU2E5MThNME4+
+R29vZ2xlICANCkNsb3VkIFN0YXJ0dXAgQ29tbXVuaXR5DQoNCllvdSBjYW4gYWxzbyBhY2Nlc3Mg
+dGhlIGZvbGxvd2luZyBiZW5lZml0cyBvbiBvdGhlciBHb29nbGUgcHJvZHVjdHM6DQoNCg0KPGh0
+dHBzOi8vYy5nbGUvQVB5MkFkMEZKTEp3QmZUcVJ1RTdnTXVwMlVIWWtlSTgwdlNXdldiRmFlNzR6
+d0lMZXFneURBTUh5UjY1YjFldTkwVEwwRUxrTzVmNUY3cjM5Y0N0c0drMTY0UFU3QUJHTVJZWmM1
+enBIV0M1Q09FVGNpMjJQdVFHdEZRZEdrcERiZ3U2NXhQX1RacDhkdz5Hb29nbGUgIA0KV29ya3Nw
+YWNlICANCmRpc2NvdW50cyouIDEyIG1vbnRocyBvZiBmcmVlIEJ1c2luZXNzIFBsdXMgc2VhdHMg
+Zm9yIG5ldyoqICANCkdvb2dsZSBXb3Jrc3BhY2UgYWNjb3VudHMgZm9yIGFsbCB5b3VyIHByb2R1
+Y3Rpdml0eSBhbmQgdGVhbSBjb2xsYWJvcmF0aW9uICANCm5lZWRzLiAgDQo8aHR0cHM6Ly9jLmds
+ZS9BUHkyQWQzaTA1WmFidUk3WUtJUHZtX0R6WFM0bEFPdkU0UjlleWRNdnhmczNmdl9CdVdnNHRC
+eGhfSmN6ZUNpaUFLSFcybFZQNVpKVVI4UlZBaF92cm5PSVlKUHZyd0JIVmpVaXV1QkRjM3pmT0hv
+aFU1a3Z6Y19ubkJ0d2xxZDU3TE5WbzR2U1FxdTBZY3ZZQTJ6WDJkZnZlRVhZcmJkblhQSlk5RGNX
+c2V1QTlaaVVBbHl4eW9WUG1XR0NhT0Q5U0tuR25tQ1dYNWx4c2tPNHNtWWdiNEc3SHVCM1RsTll6
+T0dueVVOaVZBY19hZU9zVFlpa3l2UGcweWVpUT5BcHBseSAgDQpoZXJlLg0KPGVtPioqTXVzdCBu
+b3QgaGF2ZSBiZWVuIHN1YnNjcmliZWQgdG8gYSBwYWlkIGVkaXRpb24gb2YgR29vZ2xlIFdvcmtz
+cGFjZSAgDQpmcm9tIHdpdGhpbiAzMSBkYXlzIG9mIGFwcGx5aW5nIGZvciB0aGUgR29vZ2xlIGZv
+ciBTdGFydHVwcyBDbG91ZCBQcm9ncmFtICANCnRvIHRoZSB0aW1lIG9mIGFwcGx5aW5nIHRvIHRo
+aXMgYmVuZWZpdC4NCg0KDQo8aHR0cHM6Ly9jLmdsZS9BUHkyQWQxanhDTXdyclMtZ09obVN3cGkt
+bnM0YXBjVV9BOGswQ0RGaHhZb1dfVkJKMEt4cHp5bmZKVW5aZlZSX2RGVzB1NHZIVWhlUUhlWmdp
+MTJuaTZXSGZoQUJ5VERYWVBVbVdDc3VQQXhOZDdGdmVVWGRBallZUUd2N043TWFCb05UMElTZk5z
+d2o5V3BxTnlGMHZVPkdvb2dsZSAgDQpNYXBzICANClBsYXRmb3JtIGNyZWRpdHMqLiBBbGwgR29v
+Z2xlIE1hcHMgUGxhdGZvcm0gY3VzdG9tZXJzIHJlY2VpdmUgJDIwMCAgDQptb250aGx5IGZyZWUg
+dXNhZ2UuIFRoYXQncyAyOCw1MDAgbWFwIGxvYWRzLCBwZXIgbW9udGggZm9yIHlvdXIgc3RhcnR1
+cCdzICANCmxvY2F0aW9uIGFuZCBtYXBwaW5nIG5lZWRzLiAgDQo8aHR0cHM6Ly9jLmdsZS9BUHky
+QWQzbjlMcVV3bV9mQUk2SlBYajZkYTFqdlNDbXZ2eXBFVDYxMW5vR2VrdldRSkhWczRDbnAtOUFB
+MGhVSXo2VC1aOWdsV1BPVUlEOGhLR0ZpNVdFTHY2cm1vUzFFMGgzWk5uM3ZKV3d5MUI0SXk5eDFS
+aDNaeWtja1U2YjNmWGVQSmZjRjUtQ2ZtWXlDOVdYZU5xcGFRc3gxVW1mbDYwM20yZU1mZlo5dkVv
+MUJtdV9yOG5qN0xZUnY0anc+QXBwbHkgIA0KSGVyZS4NCg0KDQo8aHR0cHM6Ly9jLmdsZS9BUHky
+QWQyZEMwUHZMYjBlWUZpMkZfOEVNb2EzZ2xFRmxkRDhoSGNBZ2ZTeHg4SHBsSzZDaXdHYWFDVUM1
+SFpRQmFENFg1Z01SMS1VR3hUZzEzUGo4clE4UE5Fa0U1ZC1wSHZIcXRKV2FEMC16TGVxeEtrcTZH
+U3V1Yy05ZFZlcEs3RFlfcnQzalJhc2dSRUpSMFZESGp1TTFyUXE2Z2I4amVNSFp0VllKelBsZGlM
+U0h6ZDJ4dXVKeHNDQVF6bW1qamIzNjFqQ2lzNWZQVjVCcmZkWG9TTXZuU2FaQ3FfbmZtT3R3VVU+
+U2lnbiAgDQp1cCAgDQpoZXJlIHRvIGdldCByZW1pbmRlcnMgYWJvdXQgeW91ciBjcmVkaXQgY29u
+c3VtcHRpb24gYW5kIHJlY2VpdmUgIA0KaW1wb3J0YW50IHVwZGF0ZXMuDQoNCg0KPGVtPiogQ2Vy
+dGFpbiBleGNsdXNpb25zIHRlcm1zIGFuZCBjb25kaXRpb25zIGFwcGx5LiBGb3IgZnVydGhlciBk
+ZXRhaWxzLCAgDQpwbGVhc2Ugc2VlIHRoZSBHb29nbGUgZm9yIFN0YXJ0dXBzIENsb3VkIFByb2dy
+YW0gdGVybXMgIA0KPGh0dHBzOi8vYy5nbGUvQVB5MkFkMVhMNndXbGZsMjA4TWhvblZYSmZUX3hh
+dVFpa2NhYTB0TDRUcVl6Qkp0bkl0VkNYMEJKQ1YteXJocGFCbU40ejZtT29LVi03ckYybW4wR1FR
+R2JJUS14MmJxbkFuZWp6YWpGVExwbDRwMDRhN3pwV1c0SnZiZU1Mak5rdVZTREZCR2Fwa2dqZnRp
+UldPaW15UXhtM05FX2R3MkpFRT5oZXJlLg0KDQoNClNpbmNlcmVseSwNCg0KDQpUaGUgR29vZ2xl
+IGZvciBTdGFydHVwcyBDbG91ZCBQcm9ncmFtIFRlYW0NCg0KDQoNCg0KDQo=
+--00000000000027d12f0642ffba09
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:v=3Durn:schemas-microsoft-com:vml lang=3Den xml_lang=3Den dir=
+=3Dltr style=3Dheight:100% height=3D100%>
+<head>
+<meta http-equiv=3DContent-Type content=3D"text/html; charset=3Dutf-8">
+<meta name=3Dx-apple-disable-message-reformatting>
+<meta name=3Dviewport content=3D"width=3Ddevice-width, initial-scale=3D1.0"=
+>
+<meta name=3Dviewport content=3Dtarget-densitydpi=3Ddevice-dpi>
+<meta name=3Dformat-detection content=3Dtelephone=3Dno>
+
+<title></title>
+
+<style type=3Dtext/css>
+@import url('https://fonts.googleapis.com/css?family=3DGoogle+Sans:wght@400=
+,500,700&display=3Dswap');
+@import url('https://fonts.googleapis.com/css?family=3DGoogle+Sans+Text:wgh=
+t@400,500,700&display=3Dswap');
+
+@import url('https://fonts.googleapis.com/css?family=3DRoboto:100,300,400,5=
+00,700');
+@import url('https://fonts.googleapis.com/css?family=3DRoboto+Mono:100,300,=
+400,500,700');
+
+@import url('https://fonts.googleapis.com/css?family=3DNoto+Sans:300,400,50=
+0,700&display=3Dswap');
+@import url('https://fonts.googleapis.com/css?family=3DNoto+Sans+JP:300,400=
+,500,700&display=3Dswap');
+</style>
+
+<style type=3Dtext/css>
+@media screen {
+  /* web fonts */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/googlesans/v36/4UaGrENHsxJlGDuGo1O=
+IlL3Kwp5eKQtGBlc.woff2) format('woff2');
+  }
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/googlesans/v36/4UabrENHsxJlGDuGo1O=
+IlLU94Yt3CwZsPF4oxIs.woff2) format('woff2');
+  }
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/googlesans/v36/4UabrENHsxJlGDuGo1O=
+IlLV154twCwZsPF4oxIs.woff2) format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Google Sans Text';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/googlesanstext/v16/5aUu9-KzpRiLCAt=
+4Unrc-xIKmCU5qEp2i0VBuxM.woff2) format('woff2');
+  }
+  @font-face {
+    font-family: 'Google Sans Text';
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/googlesanstext/v16/5aUp9-KzpRiLCAt=
+4Unrc-xIKmCU5oLlVnmhjtjm4DZw.woff2) format('woff2');
+  }
+  @font-face {
+    font-family: 'Google Sans Text';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/googlesanstext/v16/5aUp9-KzpRiLCAt=
+4Unrc-xIKmCU5oPFTnmZjtjm4DZzFQQ.woff2) format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Roboto Thin'), local('Roboto-Thin'), url(https://fonts.gsta=
+tic.com/s/roboto/v20/KFOkCnqEu92Fr1MmgVxFIzIXKMnyrYk.woff2) format('woff2')=
+;
+  }
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gs=
+tatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5fCRc4AMP6lbBP.woff2) format('woff=
+2');
+  }
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstati=
+c.com/s/roboto/v20/KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2) format('woff2');
+  }
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.=
+gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmEU9fCRc4AMP6lbBP.woff2) format('wo=
+ff2');
+  }
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gsta=
+tic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfCRc4AMP6lbBP.woff2) format('woff2'=
+);
+  }
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Roboto Black'), local('Roboto-Black'), url(https://fonts.gs=
+tatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmYUtfCRc4AMP6lbBP.woff2) format('woff=
+2');
+  }
+}
+</style>
+
+<style type=3Dtext/css>
+.ExternalClass {width: 100%;}
+.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font,=
+ .ExternalClass td, .ExternalClass div {
+  line-height: 100%;}
+body {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: none;
+  margin: 0; padding: 0;}
+table, td {
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+  margin: 0; padding: 0;
+ }
+span, td, table, div {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;}
+img {
+  -ms-interpolation-mode: bicubic;
+  text-decoration: none;
+  outline: none;}
+a img {
+  border: none;}
+h1, h2, h3, h4, h5 {
+  margin: 0; padding: 0;
+  font-weight: normal; font-size: 1.0em;}
+p {
+  margin: 0; padding: 0;}
+[data-browser=3D"useragent"] {
+  display: none;}
+.ios-link-date a {
+  color: #666666 !important;
+  text-decoration: none !important;}
+
+
+@media screen {/* Blue links on iOS */
+  span.ios-link-date a {
+    color: #666666 !important;
+    text-decoration: none !important;}
+  span.ios-link-disclaimer a {
+    color: #999999 !important;
+    text-decoration: none !important;}
+}
+
+
+@media=20
+only screen and (max-width: 599px),
+/* ios */
+screen and (max-device-width: 414px) {
+  #ios-gmail-fix {
+    width: 100% !important;}
+  div#email {
+    /* padding: 20px 10px !important; */
+  }
+
+  div.stackable-div {
+    display: flex !important;=20
+    width: 100% !important;}
+  div.stackable-div table.col {
+    width: 100% !important;}
+
+  .desktop-img {
+    display: none !important; visibility: hidden !important;
+    width: 100% !important; max-width: 100% !important;}
+  .mobile-img {
+    display: block !important; visibility: visible !important;
+    width: 100% !important;
+    max-width: 100% !important;}
+
+  td.m-show {
+    display: block !important; visibility: visible !important;}
+
+  .m-img {
+    width: 100% !important; max-width: 100% !important;}
+
+  .body-content,
+  .footer-content {
+    padding-left: 20px !important; padding-right: 20px !important;
+  }
+}
+</style>
+</head>
+
+<body height=3D100% bgcolor=3D#fafafa style=3D"-webkit-text-size-adjust:100=
+%; height:100%; padding: 0;">
+<!--[if mso]>
+<style type=3D"text/css">
+body, table, td, center, ul {font-family: Arial, Helvetica, sans-serif !imp=
+ortant;}
+li {text-indent: -1em; /* Normalise space between bullets and text */}
+</style>
+<![endif]-->
+<div style=3D"font-size:0px; display:none; visibility:hidden; opacity:0; co=
+lor:transparent; max-height:0px; height:0; width:0; mso-hide:all;">&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&n=
+bsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&n=
+bsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&n=
+bsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&n=
+bsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&z=
+wnj;</div>
+
+<table role=3Dpresentation id=3Dtable-parent width=3D100% bgcolor=3D#fafafa=
+ border=3D0 cellpadding=3D0 cellspacing=3D0 style=3D"background-color:#fafa=
+fa; border:0 none; mso-table-lspace:0; mso-table-rspace:0;">
+  <tr>
+    <td id=3Dtd-parent align=3Dcenter bgcolor=3D#fafafa style=3D"padding: 0=
+;">
+    <!--[if mso]>
+    <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacin=
+g=3D"0" border=3D"0" style=3D"table-width:fixed;" align=3D"center">
+    <tr><td style=3D"width: 600px !important;">
+    <![endif]-->
+      <div id=3Demail bgcolor=3D#fafafa style=3D"margin:0 auto; padding:20p=
+x 10px; background-color:#fafafa;">
+
+        <table role=3Dpresentation class=3DbodyWrap width=3D100% align=3Dce=
+nter border=3D0 cellpadding=3D0 cellspacing=3D0 style=3D"margin: 0; padding=
+: 0; max-width: 600px; border: 0 none; mso-table-lspace:0; mso-table-rspace=
+:0;">
+          <tr>
+            <td width=3D100% align=3Dleft valign=3Dtop style=3D"">
+              <img class=3D"" alt=3D"" src=3Dhttps://services.google.com/fh=
+/files/emails/googleforstartups_horizontal.png width=3D220 style=3D"display=
+: inline-block; max-width: 220px;" />
+            </td>
+          </tr>
+
+          <tr><td style=3D"padding: 35px 0 0; font-size: 0; line-height: 0;=
+">&nbsp;</td></tr>
+
+          <tr>
+            <td class=3DbodyWrap-td style=3D"padding: 0; border: 1px solid =
+#dddddd">
+              <table role=3Dpresentation width=3D100% border=3D0 cellpaddin=
+g=3D0 cellspacing=3D0 style=3D"border:0 none; mso-table-lspace:0; mso-table=
+-rspace:0;">
+                <tr>
+                  <td class=3Dbody-content width=3D100% align=3Dleft valign=
+=3Dtop bgcolor=3D#ffffff style=3D"padding: 0 40px;">
+                    <table role=3Dpresentation width=3D100% align=3Dcenter =
+border=3D0 cellpadding=3D0 cellspacing=3D0 style=3D"border: 0 none; mso-tab=
+le-lspace:0; mso-table-rspace:0;">
+                      <!-- spacer -->
+                      <tr><td class=3Dspacer-top style=3D"padding: 30px 0 0=
+; font-size: 1; line-height: 1;">&nbsp;</td></tr>
+
+                      <tr>
+                        <td class=3Dcopy width=3D100% valign=3Dtop style=3D=
+"padding: 0; font-family: Roboto, sans-serif; font-size: 14px; line-height:=
+ 24px; color: #5d7987;">
+
+
+                          <p>Welcome to the Google for Startups Cloud Progr=
+am!</p>
+
+
+
+
+
+
+
+
+
+                          <p style=3D"line-height: 14px;">&zwnj;<br /></p>
+
+
+                          <p><strong>We're pleased to offer your company $2=
+,000 USD* in Google Cloud credits to use over the next two years</strong> t=
+o help build and grow your self-funded startup.</p>
+
+
+
+
+
+
+
+
+
+                          <p style=3D"line-height: 14px;">&zwnj;<br /></p>
+
+
+                          <p>Here are few resources to help you make the mo=
+st of your Google Cloud credits:</p>
+
+
+
+                          <ul align=3Dleft type=3Ddisc style=3D"margin:0; m=
+argin-left: 40px; padding: 14px 0 0; font-family: Roboto, 'Open Sans', sans=
+-serif; font-weight: 400; font-size: 14px; line-height: 24px; color: #5d798=
+7;">
+                            <li style=3D"padding: 0;">Credits can be used f=
+or Firebase and <a href=3Dhttps://c.gle/APy2Ad3q7ZmndJWh5jwLSO2Wuqp-l4NHX7s=
+3N-vqvgDv2zx9H6NPZhFmWcAQWV8JTf58fVvORGedZz2nOws4bF05bEz_2Nkk2MN_NkCCrl5EyH=
+EOndEh1FmbCnfNauVyVkzHrGMNbgigZSB1HNnsFLdpHY7TPraR-n4V7O5XG2g style=3D"colo=
+r: #1a73e8; text-decoration: none;">Google Cloud Platform Services</a> such=
+ as BigQuery and Cloud Run, as well as <a href=3Dhttps://c.gle/APy2Ad0DvJaD=
+9WmQNsmmc7e5jcwp6RnRgTbrPMPc2u5tP35oitXkP5sbYinvSbwR5pFhNRF3vTmsBcPhIm0NGpX=
+-EkAqmpNMFA-po6FgOjWw4EEGeNj5wvEab__73rTs1loz1iWuHhmOfZpv_QwmHZGupyTvoz8lQT=
+9NJI8UjvFFtUBGbp-ejs3GoRauQaRIHhpiTvvbKOE style=3D"color: #1a73e8; text-dec=
+oration: none;">Select Google Cloud Offerings</a> like Looker</li>
+
+
+                            <li style=3D"padding: 0;">View your credits and=
+ track usage in your Google Cloud <a href=3Dhttps://c.gle/APy2Ad0kKTbKXumC7=
+Ar8yXf37teNwGOvcpXSeFodpHxC9XYbBYx25JfG88ykVc-9DrUwurc6Kd9vfB-jrWRUH1C2Dr9V=
+iHx5sV1bRMJanRr1d8EJrmeQYs9s06F2548xeiI-Zd2h50ZbAjXYvTCS5i8 style=3D"color:=
+ #1a73e8; text-decoration: none;">console</a></li>
+
+
+                            <li style=3D"padding: 0;">Get started with the =
+<a href=3Dhttps://c.gle/APy2Ad3vv5pat68eQgjXAlSlJBhCMr-Ii8Kupy9UM6vP2SXB-0q=
+Fkhbh-9DoVOWbLCu7b6v4IpssubToDXP0kRoqeTzqjtemASHQ6g-fPuW8S06tpJ26QzKIo4HAcQ=
+dKcyTtxprmLwHUJM7Bp29GNM6hVVmbUOVrQl8h97Re7R3kvIw style=3D"color: #1a73e8; =
+text-decoration: none;">Cloud Setup Checklist</a>, <a href=3Dhttps://c.gle/=
+APy2Ad0AWL1Sp3sMvMk9ODjqYHXQPi_OuWYJA9Np36uGwjlSUFA9hvRjJaF--LmUW86wELwjL5a=
+65kySJjLecFxOF714_E8z3icd-RZajBpxR9scwYCA9MsiFfIO53aDzmLNM9mK4s8ig1pFHPQoZO=
+decQM style=3D"color: #1a73e8; text-decoration: none;">Documentation</a>, a=
+nd <a href=3Dhttps://c.gle/APy2Ad1orLzgC-sV-bgraYO7nCePGFDI7fc339yuOo-DW0ns=
+RcMRsEWDAtmCSmDYhs62HvuLU1M5e5LoD4lZKxUZLNqBz_oL3ypQxNg_TYvQvP1iv6NQlZASPoP=
+9ZChL0L4Q7fBzPt-HSVglhlvX9HElo53-yJEcYP6yf2CUYMrrtL6KXcqG3aEiPKlyFKxNd8ZQm_=
+_bD2Wcmjg style=3D"color: #1a73e8; text-decoration: none;">Technical Guides=
+ for Startups</a></li>
+
+
+                            <li style=3D"padding: 0;">Redeem $200 credits o=
+n <a href=3Dhttps://c.gle/APy2Ad3kuA1kKSvR5JXqhkiyQ_kgo4BPgiCgLqftIThJSy11B=
+_09B3Odksa5kkpK-_JXlWjbOtGkpzvhjORaFepxftu_pANIZcImep9axzEUV_-K86_FQRjJVjnc=
+Vj6vj1gDUA8r8tbtOCTZItHbCuAlwr87XEZPDg style=3D"color: #1a73e8; text-decora=
+tion: none;">Google Cloud Skills Boost</a> to learn how to build on Google =
+Cloud through online courses and hands-on labs. <a href=3Dhttps://c.gle/APy=
+2Ad3ug-8NvI0mla9gxPan75pMyRVGUYSMei7MSdUjUn_FhaQR966P9kw91JZl_0lHN-AVmHlr2F=
+ZVmKSYlQ55kHwoiNaD4zPFL5bWzsdMLELn5DXXUvBVMnBskwbd1_XyYHF5jnrb7QpULt_itsDh9=
+-wLiLeU_n1Wezie13JpKyApDPaG54XGtuVABZgRtywyu3qNqEFX-hSew-SxXiSDz70R1q5mdh9K=
+UJqJoTXvEPRb__ZHolyP-3Q style=3D"color: #1a73e8; text-decoration: none;">Ap=
+ply here</a>.</li>
+
+
+                            <li style=3D"padding: 0;">We=E2=80=99ve partner=
+ed with MongoDB to expand support for startups in our program. Unify operat=
+ional, analytical, and AI services for intelligent apps, ensuring accuracy,=
+ scale, and security in your development journey with MongoDB Atlas on Goog=
+le Cloud. Apply today <a href=3Dhttps://c.gle/APy2Ad1OhqbGl1wZ1HyGZmmeG3f_8=
+OD3wvNwWCfO0Hvj1wFPWAkIwPQd45rL1ZRaz4bwpP-RcH-DH9_J8yjASbpygW7uxE4TpbyjUlx_=
+w7UeP-0R6dPn-TlsBKqnaRIOgPF4AY-V108if1CvPFWLFocdow7-17VvUjC-Y3jbC8L7smjsjm-=
+d style=3D"color: #1a73e8; text-decoration: none;">to receive $500 in credi=
+ts for MongoDB Atlas</a>.</li>
+
+
+                            <li style=3D"padding: 0;">Join the <a href=3Dht=
+tps://c.gle/APy2Ad0uS0MRJ0_Kf4n6vNeNSeGVZ1dS9zeSuUjk4NpRObmKAm89SdL0Uactdcf=
+Rxpm13H_PjETeRTcdoMWbYIt_N1H2pO8f-O73KpDsI4Vl_QyMaQVXhLO6tG7SLXVrkHiE6-8z1q=
+4VsVVnbg3BGdYU4VHkxaKDZBgrcQPKSMdtUygZn1UiIBDLJL7Hbn77QhQ style=3D"color: #=
+1a73e8; text-decoration: none;">Google Cloud Startup Community</a></li>
+
+
+                          </ul>
+
+
+
+
+
+
+                          <p style=3D"line-height: 14px;">&zwnj;<br /></p>
+
+
+                          <p>You can also access the following benefits on =
+other Google products:</p>
+
+
+
+
+
+
+
+
+
+                          <p style=3D"line-height: 14px;">&zwnj;<br /></p>
+
+
+                          <p><a href=3Dhttps://c.gle/APy2Ad3wBgasgbnmqHdE0_=
+b_mTakizlxgArvFYXM222IzXSaW_q1QzAOyWrzEn--kYhB3B4ES1Ah2JcCmnnXxtHUbObjGgswm=
+xz0dSBtqqzX5ssn47iz4gfzUch1jo40zyynNa_pX2uHcZSl style=3D"font-weight: 700; =
+color: #1a73e8; text-decoration: none;">Google Workspace</a> discounts*. 12=
+ months of free Business Plus seats for new** Google Workspace accounts for=
+ all your productivity and team collaboration needs. <a href=3Dhttps://c.gl=
+e/APy2Ad1-cTU0OgrFXvK43rr44F4mOb5G2ZtXbUMpfiyAO32CZBJ2Deuz0F8DhLSMkz7yUb0au=
+besnve3FZvPlmrePD9iKmwTMfm9d4YsiSOrpQTVnu3EcupJT_38zCFXwL7N4F_t47bFtdhMm7NC=
+OD2sLZ6z793gupqxtyZayzdQTISTdcIYSbM6G0r6deN4A1tWqr-MXoCUJSZTnPG2WLKPin9aGk6=
+Pc8l-rFbq1tRrx27tkzo7Zmd2cZNcyfKr style=3D"color: #1a73e8; text-decoration:=
+ none;">Apply here</a>.<br><em>**Must not have been subscribed to a paid ed=
+ition of Google Workspace from within 31 days of applying for the Google fo=
+r Startups Cloud Program to the time of applying to this benefit.</em></p>
+
+
+
+
+
+
+
+
+
+                          <p style=3D"line-height: 14px;">&zwnj;<br /></p>
+
+
+                          <p><a href=3Dhttps://c.gle/APy2Ad2AuGJA7xE9VBmFl9=
+ypOdO9vaXuS0Ey5EKt9GdLSjvmy7aICDYwQHjs4_l_inDODgqTlbXo6C7CgMNNDwQEZFMAquYr0=
+M2RKI9ko473GLQ9-oAwRUe3JRti9JYebyBagmgQKBRh1RSArsJp5nfdJQ style=3D"font-wei=
+ght: 700; color: #1a73e8; text-decoration: none;">Google Maps Platform</a> =
+credits*. All Google Maps Platform customers receive $200 monthly free usag=
+e. That=E2=80=99s 28,500 map loads, per month for your startup=E2=80=99s lo=
+cation and mapping needs. <a href=3Dhttps://c.gle/APy2Ad3CINPb3d5C-prCiOheN=
+kOIEjwg4yxwkNxaVFd2MihHctWl8EIK_gceXcwg-9tKTec1h0iIirXV85ySSTWROFgGFxOyZInY=
+U9gMef2be3m5KZM5YnaUR_Xs3bAUMuYm8oR7UJLG5J7zv84DWz1Q2eMje3vnaHRSRK7MLcPDcss=
+9b1SK7IUO9JYBqlCzz0E style=3D"color: #1a73e8; text-decoration: none;">Apply=
+ Here</a>.</p>
+
+
+
+
+
+
+
+
+
+                          <p style=3D"line-height: 14px;">&zwnj;<br /></p>
+
+
+                          <p><a href=3Dhttps://c.gle/APy2Ad2dnbSd4ZBc_v4flJ=
+bL-GldZ4taL0iEEo46bbg0By43rP7MT62baGGWZ4dpcliUbT3dx9wRgYGR9Iv0gPWHEE8jdJ0KN=
+Mq3o8EWcwZKi8RO-L6xoAIDsR9CH5hrZPHjhpS4tECiXFMlPVsry1rR6wgs9CQd_cw8B-GgY63A=
+Cc4DUN8srXb6T6hV-nZaGLFuz-dXr3eR2N2LJrV-JsumKqKFHp7KJGSgsXJx0w style=3D"fon=
+t-weight: 700; color: #1a73e8; text-decoration: none;">Sign up here</a> to =
+get reminders about your credit consumption and receive important updates.<=
+/p>
+
+
+
+
+
+
+
+
+
+                          <p style=3D"line-height: 14px;">&zwnj;<br /></p>
+
+
+                          <p><em>* Certain exclusions terms and conditions =
+apply. For further details, please see the Google for Startups Cloud Progra=
+m terms <a href=3Dhttps://c.gle/APy2Ad2U1wjp-xIKJQZNYZ1CLBb_tjszJUirrMUXAll=
+LDNqhlJ5kZXXh5AZYPv-2Vyf7xOTcOHB_NT0COGKDKsAR336H2j1dawJF8WzMBp8VktDaR7oExv=
+b7FUwiVAjyzULMtQTjCM3csc4_J0oHkPf4oRSousLJIeIcqg style=3D"color: #1a73e8; t=
+ext-decoration: none;">here</a>.</em></p>
+
+
+
+
+
+
+
+
+
+                          <p style=3D"line-height: 14px;">&zwnj;<br /></p>
+
+
+                          <p>Sincerely,</p>
+
+
+
+
+
+
+
+
+
+                          <p style=3D"line-height: 14px;">&zwnj;<br /></p>
+
+
+                          <p>The Google for Startups Cloud Program Team</p>
+
+
+
+
+
+
+
+
+
+
+
+                        </td>
+                      </tr>
+
+                    </table>
+                  </td>
+                </tr>
+
+
+                <tr>
+                  <td class=3Dfooter-content width=3D100% align=3Dcenter va=
+lign=3Dtop bgcolor=3D#ffffff style=3D"padding: 0 40px;">
+                    <table role=3Dpresentation width=3D100% align=3Dcenter =
+border=3D0 cellpadding=3D0 cellspacing=3D0 style=3D"border: 0 none; mso-tab=
+le-lspace:0; mso-table-rspace:0;">
+                      <!-- spacer -->
+                      <tr><td class=3Dspacer-btm style=3D"padding: 50px 0 0=
+; font-size: 1; line-height: 1;">&nbsp;</td></tr>
+                      <tr>
+                        <td class=3Dlogo width=3D100% align=3Dcenter style=
+=3D"">
+                          <img class=3D"" alt=3D"" src=3Dhttps://services.g=
+oogle.com/fh/files/emails/gcp_newsletter_email_cloud_footer_logo_new.png wi=
+dth=3D77 style=3D"display: inline-block; max-width: 77px;" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class=3Dcopy width=3D100% align=3Dcenter style=
+=3D"padding: 14px 0 20px; font-family: Roboto, sans-serif; font-size: 12px;=
+ line-height: 17px; color: #717171;">
+                          <p>&copy; Google LLC 1600, Amphitheatre Parkway, =
+Mountain View, CA 94043</p>
+                          <p>You received this email because it contains im=
+portant information about your Google for Startups Cloud Program applicatio=
+n.</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+              </table>
+            </td>
+          </tr>
+
+        </table>
+      </div>
+    <!--[if mso]>
+    </td></tr></table>
+    <![endif]-->
+    </td>
+  </tr>
+
+</table>
+</body>
+</html>
+
+
+
+--00000000000027d12f0642ffba09--

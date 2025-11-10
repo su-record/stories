@@ -1,0 +1,147 @@
+MIME-Version: 1.0
+Date: Wed, 5 Nov 2025 14:23:16 +0900
+References: <a98fa52b260247523ed3508fdf4643f0781204a1-20106069-111245194@google.com>
+	<CADn5KYV879S_XS52MeDOe+ciEu_Ja-bXQ=Sj16oPD6SyvvvdTw@mail.gmail.com>
+	<6wPwY000000000000000000000000000000000000000000000T55NAD00eZ3A4vVuRhmphn4wqzRHCA@sfdc.net>
+In-Reply-To: <6wPwY000000000000000000000000000000000000000000000T55NAD00eZ3A4vVuRhmphn4wqzRHCA@sfdc.net>
+Message-ID: <CADn5KYW_5Y-ZVbO5j1pV8LYk-byGkpqqhm_ehNfRTFHgYqxVhQ@mail.gmail.com>
+Subject: =?UTF-8?B?UmU6IFvsobDsuZgg7ZWE7JqUXSBTdXRvcnk6IEdvb2dsZSBmb3IgU3RhcnR1cHMgQ2xvdQ==?=
+	=?UTF-8?B?ZCBQcm9ncmFtIOyXheuNsOydtO2KuA==?=
+From: =?UTF-8?B?7ZWo7IiY7JuQ?= <su@fallingo.app>
+To: Google Cloud Startup Support <cloudstartupsupport@google.com>
+Content-Type: multipart/alternative; boundary="00000000000050ff510642d225bf"
+
+--00000000000050ff510642d225bf
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Dear Sa=C5=A1o,
+Thank you for reviewing our application and providing clear guidance on the
+additional requirements.
+I've updated our public website to include all the requested information:
+*=F0=9F=94=97 Updated Website:* https://fallingo.app/about.html
+The page now includes comprehensive details about:
+1. Business Description
+
+   - Our mission to revolutionize food discovery through gamified
+   location-based social platform
+   - Core problems we solve (authentic reviews, discovery barriers, social
+   dining)
+   - Target audience (food enthusiasts, travelers, local explorers)
+
+2. Team Information
+
+   - Founder/CEO background and relevant experience
+   - Technical expertise in mobile development and AI/ML
+
+3. Product Details
+
+   - Complete feature showcase with visual demonstrations
+   - Current development stage (fully functional backend with 149 API
+   endpoints)
+   - Technology stack (FastAPI, Flutter, Google Cloud Platform)
+   - Screenshots and product videos
+
+4. Technical Infrastructure
+
+   - Production deployment on GCP Cloud Run
+   - PostgreSQL + PostGIS database on Cloud SQL
+   - Integration with Google Cloud Vision API and Gemini AI
+
+*Current Development Status:*
+
+   - =E2=9C=85 Backend: 100% complete (149 REST API endpoints in production=
+)
+   - =F0=9F=9A=A7 Frontend: 60% complete (core screens implemented)
+   - =F0=9F=93=B1 Platforms: iOS, Android, Web (single Flutter codebase)
+
+As a bootstrapped two-person startup, we've built Fallingo from the ground
+up, investing personal time and resources to create a production-ready
+platform with 149 API endpoints. Google Cloud credits would allow us to
+focus on product iteration and user growth during our launch phase without
+infrastructure cost constraints.
+Additionally, our 3-tier verification system (GPS + Vision API + OCR)
+generates verified multi-modal datasets that could contribute to improving
+Google Cloud Vision, Gemini, and Maps accuracy, along with YouTube content
+ecosystem integration. Full details are available on our updated website.
+Please let me know if you need any additional information. I'm happy to
+provide more details or schedule a call to discuss our product further.
+Thank you for considering our application!
+Best regards,
+Su Grove
+Founder & CEO, Fallingo
+=F0=9F=93=A7 su@fallingo.app
+=F0=9F=8C=90 https://fallingo.app
+
+--00000000000050ff510642d225bf
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div dir=3D"ltr"><div class=3D"gmail-greeting" style=3D"ma=
+rgin-bottom:15px;color:rgb(51,51,51);font-family:Arial,sans-serif;font-size=
+:medium"><div class=3D"gmail-greeting" style=3D"margin-bottom:15px">Dear Sa=
+=C5=A1o,</div><div class=3D"gmail-section" style=3D"margin:20px 0px">Thank =
+you for reviewing our application and providing clear guidance on the addit=
+ional requirements.</div><div class=3D"gmail-section" style=3D"margin:20px =
+0px">I&#39;ve updated our public website to include all the requested infor=
+mation:</div><div class=3D"gmail-section" style=3D"margin:20px 0px"><strong=
+>=F0=9F=94=97 Updated Website:</strong>=C2=A0<a href=3D"https://fallingo.ap=
+p/about.html" class=3D"gmail-link" style=3D"color:rgb(26,115,232);text-deco=
+ration-line:none;font-weight:bold">https://fallingo.app/about.html</a></div=
+><div class=3D"gmail-section" style=3D"margin:20px 0px">The page now includ=
+es comprehensive details about:</div><div class=3D"gmail-list-item" style=
+=3D"margin:8px 0px;padding-left:20px"><div class=3D"gmail-section-title" st=
+yle=3D"font-weight:bold;margin-top:15px;margin-bottom:8px">1. Business Desc=
+ription</div><ul><li>Our mission to revolutionize food discovery through ga=
+mified location-based social platform</li><li>Core problems we solve (authe=
+ntic reviews, discovery barriers, social dining)</li><li>Target audience (f=
+ood enthusiasts, travelers, local explorers)</li></ul></div><div class=3D"g=
+mail-list-item" style=3D"margin:8px 0px;padding-left:20px"><div class=3D"gm=
+ail-section-title" style=3D"font-weight:bold;margin-top:15px;margin-bottom:=
+8px">2. Team Information</div><ul><li>Founder/CEO background and relevant e=
+xperience</li><li>Technical expertise in mobile development and AI/ML</li><=
+/ul></div><div class=3D"gmail-list-item" style=3D"margin:8px 0px;padding-le=
+ft:20px"><div class=3D"gmail-section-title" style=3D"font-weight:bold;margi=
+n-top:15px;margin-bottom:8px">3. Product Details</div><ul><li>Complete feat=
+ure showcase with visual demonstrations</li><li>Current development stage (=
+fully functional backend with 149 API endpoints)</li><li>Technology stack (=
+FastAPI, Flutter, Google Cloud Platform)</li><li>Screenshots and product vi=
+deos</li></ul></div><div class=3D"gmail-list-item" style=3D"margin:8px 0px;=
+padding-left:20px"><div class=3D"gmail-section-title" style=3D"font-weight:=
+bold;margin-top:15px;margin-bottom:8px">4. Technical Infrastructure</div><u=
+l><li>Production deployment on GCP Cloud Run</li><li>PostgreSQL + PostGIS d=
+atabase on Cloud SQL</li><li>Integration with Google Cloud Vision API and G=
+emini AI</li></ul></div><div class=3D"gmail-status" style=3D"background:rgb=
+(232,240,254);padding:15px;border-radius:5px;margin:15px 0px"><strong>Curre=
+nt Development Status:</strong><ul style=3D"margin:10px 0px"><li>=E2=9C=85 =
+Backend: 100% complete (149 REST API endpoints in production)</li><li>=F0=
+=9F=9A=A7 Frontend: 60% complete (core screens implemented)</li><li>=F0=9F=
+=93=B1 Platforms: iOS, Android, Web (single Flutter codebase)</li></ul></di=
+v><div class=3D"gmail-section" style=3D"margin:20px 0px">As a bootstrapped =
+two-person startup, we&#39;ve built Fallingo from the ground up, investing =
+personal time and resources to create a production-ready platform with 149 =
+API endpoints. Google Cloud credits would allow us to focus on product iter=
+ation and user growth during our launch phase without infrastructure cost c=
+onstraints.</div><div class=3D"gmail-section" style=3D"margin:20px 0px">Add=
+itionally, our 3-tier verification system (GPS + Vision API + OCR) generate=
+s verified multi-modal datasets that could contribute to improving Google C=
+loud Vision, Gemini, and Maps accuracy, along with YouTube content ecosyste=
+m integration. Full details are available on our updated website.</div><div=
+ class=3D"gmail-section" style=3D"margin:20px 0px">Please let me know if yo=
+u need any additional information. I&#39;m happy to provide more details or=
+ schedule a call to discuss our product further.</div><div class=3D"gmail-s=
+ection" style=3D"margin:20px 0px">Thank you for considering our application=
+!</div><div class=3D"gmail-signature" style=3D"margin-top:30px;border-top:2=
+px solid rgb(221,221,221);padding-top:20px"><div>Best regards,</div><div cl=
+ass=3D"gmail-signature-name" style=3D"font-weight:bold;font-size:1.1em">Su =
+Grove</div><div class=3D"gmail-signature-title" style=3D"color:rgb(102,102,=
+102);font-style:italic">Founder &amp; CEO, Fallingo</div><div style=3D"marg=
+in-top:10px">=F0=9F=93=A7=C2=A0<a href=3D"mailto:su@fallingo.app" class=3D"=
+gmail-link" style=3D"color:rgb(26,115,232);text-decoration-line:none;font-w=
+eight:bold">su@fallingo.app</a><br>=F0=9F=8C=90=C2=A0<a href=3D"https://fal=
+lingo.app" class=3D"gmail-link" style=3D"color:rgb(26,115,232);text-decorat=
+ion-line:none;font-weight:bold">https://fallingo.app</a></div></div></div><=
+/div>
+</div>
+
+--00000000000050ff510642d225bf--

@@ -1,0 +1,1392 @@
+Delivered-To: su@fallingo.app
+Received: by 2002:a05:7010:ea86:b0:48c:7935:172c with SMTP id pm6csp1601324mdb;
+        Mon, 3 Nov 2025 06:37:28 -0800 (PST)
+X-Received: by 2002:a05:6e02:b4a:b0:433:277c:8e81 with SMTP id e9e14a558f8ab-433277c8f22mr31279935ab.5.1762180648517;
+        Mon, 03 Nov 2025 06:37:28 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1762180648; cv=none;
+        d=google.com; s=arc-20240605;
+        b=HLwOUK6rv+m3msMuxYRwF+nNbICLws68c6r7hKL+fsjjJOifYcE3Cb616R0a+1Xovi
+         e3uau6uBM5Zr2LwAsx6aaeako441nzAkDq4yqF8L+WNOH7qvyvxhmnjluj7RKj8+rk3K
+         ln47XE/4NkqwzQfZOI/Tusx9CnCr+U/uXP1Qkq4IreCWmWyyx5zt4cIICEZvctAhu9Zi
+         ax5ZcuJKJ8rCPL9ARTL3nKz6PVv2dN5A2Ryu1I33H6TO2v4GxBBwtowjgY9MTgEYhEpS
+         vQQ8b03ha+hEEyubEgh3I5P+/WJQi33ByzG0i4BEJ/Xf90BMW0NTzEdCdqjqCRBlAQ2z
+         DzoA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=mime-version:subject:references:in-reply-to:message-id:to:from:date
+         :dkim-signature;
+        bh=2GvzRYfgpDrwe5EAU+rl9hxjLfRl+6b7EqO4eip4FZY=;
+        fh=HPfGQewSmzN+9tGOZ8TvRDAxsqecDl7YfyB9kcN2V1g=;
+        b=LP52D44XndI91ZAL1mlwiJgdyCmFCg6Q4zAEpWIT3212YjWHe28r3Z1Xl5v4QsYD81
+         OuZVahnkXuNpbnMVuSJE3cuKVBUMrNFsGjSNSK8cAybdbWbGEFHD17XtS2OKROeiyTVq
+         O2veJ5EKnl9R/sOg/qQLZ+6dV425aZ5oU3jjNn4ICWE3ey8vzqPCSH1Oh09+nhnWWf3v
+         y3fvE9vh6Ed2QIob8UmE6mTfgrOqngNdViioUgoIZfIvXmtdwhji/jnhe0MYxM94DxoS
+         Wbl1HIReOj+aoKYAbujB5amCEXlfF1wkFyrT1cfEh3xtuywgAxhNm4hXz5SZm7ebZ8gY
+         yecw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@google.com header.s=20230601 header.b=nEqw2foy;
+       spf=pass (google.com: domain of cloudstartupsupport@google.com designates 209.85.220.73 as permitted sender) smtp.mailfrom=cloudstartupsupport@google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com;
+       dara=neutral header.i=@fallingo.app
+Return-Path: <cloudstartupsupport@google.com>
+Received: from mail-sor-f73.google.com (mail-sor-f73.google.com. [209.85.220.73])
+        by mx.google.com with SMTPS id e9e14a558f8ab-4331031a335sor18642435ab.9.2025.11.03.06.37.28
+        for <su@fallingo.app>
+        (Google Transport Security);
+        Mon, 03 Nov 2025 06:37:28 -0800 (PST)
+Received-SPF: pass (google.com: domain of cloudstartupsupport@google.com designates 209.85.220.73 as permitted sender) client-ip=209.85.220.73;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@google.com header.s=20230601 header.b=nEqw2foy;
+       spf=pass (google.com: domain of cloudstartupsupport@google.com designates 209.85.220.73 as permitted sender) smtp.mailfrom=cloudstartupsupport@google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com;
+       dara=neutral header.i=@fallingo.app
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20230601; t=1762180648; x=1762785448; darn=fallingo.app;
+        h=mime-version:subject:references:in-reply-to:message-id:to:from:date
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=2GvzRYfgpDrwe5EAU+rl9hxjLfRl+6b7EqO4eip4FZY=;
+        b=nEqw2foyVq/xUMf/AfIZy3szj45uxGmchloJ6FIPJl+rc33pyHVHO09FDIaezdJ1hp
+         rGxengJuaNMzKsyuu25/jqM3vP+u7I7b5O9gNvEciFufEV56Z2wOwdWfLmV6XSPri3tC
+         p7r2Wme/liFP1CcSkkTGetw/09WoPZz+5V7OaIlYSo94NtWBFEVV9grKdqmzo0mVmxVK
+         M1hXZy5j4lvzlV/93ZcSG5fxcFZR2715zZq2lw+dGUyEF0j4+AE/SCIRUpWrYravbkC3
+         hclZZ10S0d07R3sK4ThibEh8a7uNoqcmwIVeX7T/90P1ZhZz0DfAutMM6xVL1icrLQtF
+         RLsA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1762180648; x=1762785448;
+        h=mime-version:subject:references:in-reply-to:message-id:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=2GvzRYfgpDrwe5EAU+rl9hxjLfRl+6b7EqO4eip4FZY=;
+        b=uKM6OLjCMmFG1Gw6bsRzpirNEk6US6H0M3uPNH5Xrz6lfVp7OXnb0X3NLaqJ1pDlfT
+         ZQTHrJ6xwDrQHt7G6xLm4zu3jTYrYfhAOqGt25QQwBMVp1NgfRdhKGCDBQAvwj8/drm3
+         DPklY9wqkMoy/aH9kBmK0OOcccHjBOdr3hUwEJvyvuiKRkKOpoixanUI741FTBIQclev
+         qYbewQXUp3wyaUHUUz4QmxKCuh7VDMyYZyyIMaxtOMIdFv43r9gtj8JjU63Buuy4XPOD
+         WtRJHuuHiumpmizyduL1cf/JKAwczAqres/70eGLo+g3iLxyhXCPuIG+JT2APIKXTtXE
+         aEGA==
+X-Gm-Message-State: AOJu0Yw1B6jqVFw+nbkYqWAJ39huSP0XKuU61ZfRzSy2Rk/4PzYI76w+
+	ad/TNkn1u8SftpnvwHFDOdR4WVTkRHurT5EpDmEfTbx2RZfQfADJhJBkuziTvptfTQtWhtIR3ww
+	yCRSB0onxjB4yl0E7H8SF9GZ8+ZOxfSLpS3jUQQLRXat8CHMBRvsoTQeHYGinHoe8eQ0QT5TlUa
+	aU
+X-Google-Smtp-Source: AGHT+IFOTmwQccJ2aC19al5azip3FdRehIPayIz3ch0aYsyYUWfGQmfDnnr0b4Z9XPkIC5qKlOq5sVXTsfn+y6k=
+X-Received: by 2002:a05:6e02:1a4f:b0:433:3322:e35a with SMTP id e9e14a558f8ab-4333322e4b2mr29265215ab.15.1762180647926;
+        Mon, 03 Nov 2025 06:37:27 -0800 (PST)
+Return-Path: <cloudstartupsupport@google.com>
+Received: from smtp02-ia6-sp4.mta.salesforce.com (smtp02-ia6-sp4.mta.salesforce.com. [13.110.242.177])
+        by gmr-mx.google.com with ESMTPS id 8926c6da1cb9f-5b722597159si33962173.2.2025.11.03.06.37.27
+        for <su@fallingo.app>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 03 Nov 2025 06:37:27 -0800 (PST)
+Return-Path: <cloudstartupsupport@google.com>
+Authentication-Results:  mx4-ia6-sp4.mta.salesforce.com x-tls.subject="/C=US/ST=California/L=San Francisco/O=salesforce.com, inc./OU=0:app;1:ia6;2:ia6-sp4;3:na252;4:prod/CN=na252-app1-27-ia6.ops.sfdc.net"; auth=pass (cipher=TLS_AES_256_GCM_SHA384)
+Received: from [10.224.204.108] ([10.224.204.108:55882] helo=na252-app1-27-ia6.ops.sfdc.net)
+	by mx4-ia6-sp4.mta.salesforce.com (envelope-from <cloudstartupsupport@google.com>)
+	(ecelerity 4.7.0.20111 r(msys-ecelerity:tags/4.7.0-ga^0)) with ESMTPS (cipher=TLS_AES_256_GCM_SHA384
+	subject="/C=US/ST=California/L=San Francisco/O=salesforce.com, inc./OU=0:app;1:ia6;2:ia6-sp4;3:na252;4:prod/CN=na252-app1-27-ia6.ops.sfdc.net") 
+	id 23/AE-06358-72EB8096; Mon, 03 Nov 2025 14:37:27 +0000
+Date: Mon, 3 Nov 2025 14:37:27 +0000 (GMT)
+From: Google Cloud Startup Support <cloudstartupsupport@google.com>
+To: "su@fallingo.app" <su@fallingo.app>
+Message-ID: <6wPwY000000000000000000000000000000000000000000000T55NAD00eZ3A4vVuRhmphn4wqzRHCA@sfdc.net>
+In-Reply-To: <CADn5KYV879S_XS52MeDOe+ciEu_Ja-bXQ=Sj16oPD6SyvvvdTw@mail.gmail.com>
+References: <a98fa52b260247523ed3508fdf4643f0781204a1-20106069-111245194@google.com>
+ <CADn5KYV879S_XS52MeDOe+ciEu_Ja-bXQ=Sj16oPD6SyvvvdTw@mail.gmail.com>
+Subject: =?UTF-8?Q?Re:_[=EC=A1=B0=EC=B9=98_=ED=95=84=EC=9A=94]_Sutory:_Google_fo?=
+ =?UTF-8?Q?r_Startups_Cloud_Program_=EC=97=85=EB=8D=B0=EC=9D=B4=ED=8A=B8?=
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_1092_1988285513.1762180647353"
+X-SFDC-LK: 00D1U00000118G1
+X-SFDC-User: 005Ki000001kPch
+X-Sender: postmaster@salesforce.com
+X-mail_abuse_inquiries: http://www.salesforce.com/company/abuse.jsp
+X-SFDC-CORRELATION-ID: 0001ic5l4996l5q5
+X-SFDCOrgRelay: 00D1U00000118G1
+X-SFDC-Binding: 1WrIRBV94myi25uB
+X-SFDC-EmailCategory: quickActionEmail
+X-SFDC-EntityId: 500Ki00000Awp5a
+X-SFDC-Interface: internal
+X-SFDC-Restrict: ^(.*)
+X-SFDCRelayAddr: gmr-smtp-in.l.google.com
+X-SFDCRelayPort: 25
+X-SFDCTLS: 4
+
+------=_Part_1092_1988285513.1762180647353
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi Su,
+
+
+Thanks for reaching out and for the details about your project.
+
+After carefully reviewing your application, we've found that we're unable t=
+o approve it at this time because there isn't enough public information abo=
+ut your product.
+
+For eligibility, our program requires a globally available website that cle=
+arly showcases a digital-native business model, identifying your company so=
+lely as a tech startup offering its own app, tool, or platform. You can fin=
+d all our application requirements in our FAQs here: Google for Startups Cl=
+oud Program FAQ
+
+This means we need to see clear details about your:
+
+Business Description: What you do, problems you solve, and target audience.
+Team Information: Key members and relevant experience.
+Products: What you're building/offering and its current development stage, =
+with images/videos/demos/link to app etc.
+
+All of this information must be visible and easily accessible on your publi=
+c website for us to determine eligibility and approve your application.
+
+Once your website is updated with these details, please feel free to reply =
+to this email, and we'll be happy to re-evaluate your application!
+
+If you have any other questions, please let me know
+
+
+
+
+
+
+Best regards,
+
+
+Sa=C5=A1o P. (He-him)
+Startup Support Operations
+Google Cloud (Powered by Concentrix)
+
+
+--------------- Original Message ---------------
+From: =ED=95=A8=EC=88=98=EC=9B=90 [su@fallingo.app]
+Sent: 10/31/2025 3:11 AM
+To: cloudstartupsupport@google.com
+Subject: Re: [=EC=A1=B0=EC=B9=98 =ED=95=84=EC=9A=94] Sutory: Google for Sta=
+rtups Cloud Program =EC=97=85=EB=8D=B0=EC=9D=B4=ED=8A=B8
+Re: Additional Information for Google for Startups Cloud Program Applicatio=
+n - Fallingo  Dear Google for Startups Cloud Program Team,
+
+Thank you for reviewing our application and providing guidance on the addit=
+ional information needed.
+
+I understand that our website requires more detailed information about our =
+product. Fallingo is currently in active development as a location-based fo=
+od social platform, and while our consumer-facing web/mobile app is still b=
+eing finalized (60% complete), our backend infrastructure is fully operatio=
+nal and deployed on Google Cloud Platform.
+
+=F0=9F=93=8A Current Development Status
+
+Backend (100% Complete):
+
+145 API endpoints fully implemented across 17 modules (Authentication, Feed=
+s, Restaurants, AI Services, Search, Maps, etc.)
+107 database tables on Cloud SQL PostgreSQL 16 + PostGIS 3.5
+Production deployment on GCP Cloud Run (us-central1)
+API Test Results: 142/143 endpoints passing (99.3% success rate)
+
+Frontend (60% Complete):
+
+Flutter app (iOS/Android/Web) with core screens implemented
+Splash, authentication, feed, profile, search screens completed
+Camera and map screens in active development
+Expected completion: February 2025
+
+=F0=9F=94=97 Technical Documentation
+
+Our backend API is fully operational and documented:
+
+API Documentation (Swagger UI): https://fallingo.app/api/docs
+API Documentation (ReDoc): https://fallingo.app/api/redoc
+Detailed Project Overview: Attached PDF
+
+(Note: I can provide temporary API access credentials for your team to expl=
+ore our endpoints if needed)
+
+=E2=98=81=EF=B8=8F Google Cloud Services We Use
+
+We are heavily invested in the Google Cloud ecosystem:
+
+Core Infrastructure:
+
+=E2=9C=85 Cloud Run: FastAPI backend hosting (145 endpoints)
+=E2=9C=85 Cloud SQL: PostgreSQL 16 + PostGIS 3.5 (107 tables, 30 performanc=
+e indexes)
+=E2=9C=85 Cloud Storage: Image/video storage with signed URLs
+=E2=9C=85 Identity Platform: Multi-provider authentication (Google, Apple, =
+Email)
+=E2=9C=85 Secret Manager: Secure credential management
+
+AI/ML Services (Core to our product):
+
+=E2=9C=85 Cloud Vision API: Food recognition for feed verification (0.8+ co=
+nfidence threshold)
+=E2=9C=85 Gemini 2.5 Flash API: Automated review generation, menu descripti=
+ons, recommendations
+=E2=9C=85 Document AI: Receipt OCR for 24-hour visit verification
+=E2=9C=85 Google Translate API: Automatic translation to 14 languages
+
+Observability:
+
+=E2=9C=85 Cloud Monitoring: Prometheus metrics, structured logging
+=E2=9C=85 Cloud Logging: Request/response tracking, error monitoring
+
+=F0=9F=92=A1 Our Product: Why It's Different
+
+The Problem: Traditional restaurant review platforms suffer from fake revie=
+ws, lack of proof of visit, and limited authentic discovery.
+
+Our Solution: 3-tier verification system
+
+GPS Verification: PostGIS spatial queries (50-meter radius)
+AI Food Recognition: Cloud Vision API (real-time camera preview)
+OCR Receipt Verification: Document AI (24-hour window)
+
+Key Features:
+
+11-tier gamification system (Tier 1 "Nurungji" =E2=86=92 Tier 11 "Daejangge=
+um=E2=AD=90=E2=AD=90=E2=AD=90")
+No rating system - quality signals via likes, OCR badges, user tier credibi=
+lity
+Smart feed curation with Menu-Aware Round Robin algorithm
+AI-powered content generation (Gemini AI)
+Multi-language support (14 languages via Google Translate API)
+
+=F0=9F=93=8E Attached Documents
+
+Fallingo_Project_Overview.pdf
+
+Executive summary
+Technical architecture
+Google Cloud integration details
+API documentation screenshots
+Development roadmap
+
+
+=F0=9F=99=8F Request for Reconsideration
+
+We believe Fallingo is a strong fit for the Google for Startups Cloud Progr=
+am because:
+
+AI-First Architecture: We are not just "using" Google Cloud - we are buildi=
+ng our entire product around Vision API, Gemini AI, and Document AI
+Technical Maturity: 100% backend completion demonstrates serious developmen=
+t progress
+Clear Launch Plan: Q2 2025 public launch with multi-region expansion
+Scalability: Our architecture is designed for millions of users on GCP infr=
+astructure
+
+Would you be able to reconsider our application with this additional contex=
+t?
+
+I am happy to provide:
+
+Live API demo walkthrough
+Temporary API access for your technical review
+Additional documentation or architecture diagrams
+Schedule a call to discuss our GCP usage in detail
+
+Thank you for your time and consideration. We are excited about the opportu=
+nity to build the future of food social platforms on Google Cloud's world-c=
+lass services.
+
+Korean Version (=EC=B0=B8=EA=B3=A0=EC=9A=A9)
+
+Google for Startups Cloud Program =ED=8C=80 =EA=B7=80=EC=A4=91,
+
+=EC=8B=A0=EC=B2=AD=EC=84=9C=EB=A5=BC =EA=B2=80=ED=86=A0=ED=95=B4 =EC=A3=BC=
+=EC=8B=9C=EA=B3=A0 =EC=B6=94=EA=B0=80 =EC=A0=95=EB=B3=B4=EC=97=90 =EB=8C=80=
+=ED=95=9C =EC=95=88=EB=82=B4=EB=A5=BC =EC=A3=BC=EC=85=94=EC=84=9C =EA=B0=90=
+=EC=82=AC=ED=95=A9=EB=8B=88=EB=8B=A4.
+
+=EC=9B=B9=EC=82=AC=EC=9D=B4=ED=8A=B8=EC=97=90 =EC=A0=9C=ED=92=88 =EC=A0=95=
+=EB=B3=B4=EA=B0=80 =EB=8D=94 =ED=95=84=EC=9A=94=ED=95=98=EB=8B=A4=EB=8A=94 =
+=EC=A0=90=EC=9D=84 =EC=9D=B4=ED=95=B4=ED=96=88=EC=8A=B5=EB=8B=88=EB=8B=A4. =
+Fallingo=EB=8A=94 =ED=98=84=EC=9E=AC =ED=99=9C=EB=B0=9C=ED=9E=88 =EA=B0=9C=
+=EB=B0=9C =EC=A4=91=EC=9D=B8 =EC=9C=84=EC=B9=98 =EA=B8=B0=EB=B0=98 =EC=9D=
+=8C=EC=8B=9D =EC=86=8C=EC=85=9C =ED=94=8C=EB=9E=AB=ED=8F=BC=EC=9D=B4=EB=A9=
+=B0, =EC=82=AC=EC=9A=A9=EC=9E=90 =EB=8C=80=EB=A9=B4 =EC=9B=B9/=EB=AA=A8=EB=
+=B0=94=EC=9D=BC =EC=95=B1=EC=9D=80 =EC=95=84=EC=A7=81 =EC=99=84=EC=84=B1 =
+=EB=8B=A8=EA=B3=84(60%)=EC=97=90 =EC=9E=88=EC=A7=80=EB=A7=8C, =EB=B0=B1=EC=
+=97=94=EB=93=9C =EC=9D=B8=ED=94=84=EB=9D=BC=EB=8A=94 Google Cloud Platform=
+=EC=97=90 =EC=99=84=EC=A0=84=ED=9E=88 =EA=B5=AC=EC=B6=95=EB=90=98=EC=96=B4 =
+=EC=9A=B4=EC=98=81 =EC=A4=91=EC=9E=85=EB=8B=88=EB=8B=A4.
+
+=F0=9F=93=8A =ED=98=84=EC=9E=AC =EA=B0=9C=EB=B0=9C =EC=83=81=ED=83=9C
+
+=EB=B0=B1=EC=97=94=EB=93=9C (100% =EC=99=84=EB=A3=8C):
+
+17=EA=B0=9C =EB=AA=A8=EB=93=88=EC=97=90 =EA=B1=B8=EC=B3=90 145=EA=B0=9C API=
+ =EC=97=94=EB=93=9C=ED=8F=AC=EC=9D=B8=ED=8A=B8 =EC=99=84=EC=A0=84 =EA=B5=AC=
+=ED=98=84
+Cloud SQL PostgreSQL 16 + PostGIS 3.5=EC=97=90 107=EA=B0=9C =EB=8D=B0=EC=9D=
+=B4=ED=84=B0=EB=B2=A0=EC=9D=B4=EC=8A=A4 =ED=85=8C=EC=9D=B4=EB=B8=94
+GCP Cloud Run=EC=97=90 =ED=94=84=EB=A1=9C=EB=8D=95=EC=85=98 =EB=B0=B0=ED=8F=
+=AC =EC=99=84=EB=A3=8C (us-central1)
+API =ED=85=8C=EC=8A=A4=ED=8A=B8 =EA=B2=B0=EA=B3=BC: 143=EA=B0=9C =EC=A4=91 =
+142=EA=B0=9C =EC=84=B1=EA=B3=B5 (99.3%)
+
+=ED=94=84=EB=A1=A0=ED=8A=B8=EC=97=94=EB=93=9C (60% =EC=99=84=EB=A3=8C):
+
+Flutter =EC=95=B1 (iOS/Android/Web) =ED=95=B5=EC=8B=AC =ED=99=94=EB=A9=B4 =
+=EA=B5=AC=ED=98=84 =EC=99=84=EB=A3=8C
+=EC=9D=B8=EC=A6=9D, =ED=94=BC=EB=93=9C, =ED=94=84=EB=A1=9C=ED=95=84, =EA=B2=
+=80=EC=83=89 =ED=99=94=EB=A9=B4 =EC=99=84=EB=A3=8C
+=EC=B9=B4=EB=A9=94=EB=9D=BC, =EC=A7=80=EB=8F=84 =ED=99=94=EB=A9=B4 =EA=B0=
+=9C=EB=B0=9C =EC=A4=91
+=EC=98=88=EC=83=81 =EC=99=84=EB=A3=8C: 2025=EB=85=84 2=EC=9B=94
+
+=F0=9F=94=97 =EA=B8=B0=EC=88=A0 =EB=AC=B8=EC=84=9C
+
+=EB=B0=B1=EC=97=94=EB=93=9C API=EA=B0=80 =EC=99=84=EC=A0=84=ED=9E=88 =EC=9E=
+=91=EB=8F=99=ED=95=98=EB=A9=B0 =EB=AC=B8=EC=84=9C=ED=99=94=EB=90=98=EC=96=
+=B4 =EC=9E=88=EC=8A=B5=EB=8B=88=EB=8B=A4:
+
+API =EB=AC=B8=EC=84=9C (Swagger UI): https://fallingo.app/api/docs
+API =EB=AC=B8=EC=84=9C (ReDoc): https://fallingo.app/api/redoc
+=EC=83=81=EC=84=B8 =ED=94=84=EB=A1=9C=EC=A0=9D=ED=8A=B8 =EA=B0=9C=EC=9A=94:=
+ PDF =EC=B2=A8=EB=B6=80
+
+(=EC=B0=B8=EA=B3=A0: =ED=95=84=EC=9A=94=ED=95=98=EC=8B=9C=EB=A9=B4 =EA=B7=
+=80=EC=82=AC =ED=8C=80=EC=9D=B4 =EC=97=94=EB=93=9C=ED=8F=AC=EC=9D=B8=ED=8A=
+=B8=EB=A5=BC =ED=83=90=EC=83=89=ED=95=A0 =EC=88=98 =EC=9E=88=EB=8F=84=EB=A1=
+=9D =EC=9E=84=EC=8B=9C API =EC=95=A1=EC=84=B8=EC=8A=A4 =EA=B6=8C=ED=95=9C=
+=EC=9D=84 =EC=A0=9C=EA=B3=B5=ED=95=A0 =EC=88=98 =EC=9E=88=EC=8A=B5=EB=8B=88=
+=EB=8B=A4)
+
+=E2=98=81=EF=B8=8F =EC=82=AC=EC=9A=A9 =EC=A4=91=EC=9D=B8 Google Cloud =EC=
+=84=9C=EB=B9=84=EC=8A=A4
+
+Google Cloud =EC=83=9D=ED=83=9C=EA=B3=84=EC=97=90 =EA=B9=8A=EC=9D=B4 =ED=88=
+=AC=EC=9E=90=ED=95=98=EA=B3=A0 =EC=9E=88=EC=8A=B5=EB=8B=88=EB=8B=A4:
+
+=ED=95=B5=EC=8B=AC =EC=9D=B8=ED=94=84=EB=9D=BC:
+
+=E2=9C=85 Cloud Run: FastAPI =EB=B0=B1=EC=97=94=EB=93=9C =ED=98=B8=EC=8A=A4=
+=ED=8C=85 (145=EA=B0=9C =EC=97=94=EB=93=9C=ED=8F=AC=EC=9D=B8=ED=8A=B8)
+=E2=9C=85 Cloud SQL: PostgreSQL 16 + PostGIS 3.5 (107=EA=B0=9C =ED=85=8C=EC=
+=9D=B4=EB=B8=94, 30=EA=B0=9C =EC=84=B1=EB=8A=A5 =EC=9D=B8=EB=8D=B1=EC=8A=A4=
+)
+=E2=9C=85 Cloud Storage: =EC=9D=B4=EB=AF=B8=EC=A7=80/=EB=B9=84=EB=94=94=EC=
+=98=A4 =EC=A0=80=EC=9E=A5 (Signed URLs)
+=E2=9C=85 Identity Platform: =EB=8B=A4=EC=A4=91 =EC=A0=9C=EA=B3=B5=EC=97=85=
+=EC=B2=B4 =EC=9D=B8=EC=A6=9D (Google, Apple, =EC=9D=B4=EB=A9=94=EC=9D=BC)
+=E2=9C=85 Secret Manager: =EB=B3=B4=EC=95=88 =EC=9E=90=EA=B2=A9 =EC=A6=9D=
+=EB=AA=85 =EA=B4=80=EB=A6=AC
+
+AI/ML =EC=84=9C=EB=B9=84=EC=8A=A4 (=EC=A0=9C=ED=92=88 =ED=95=B5=EC=8B=AC):
+
+=E2=9C=85 Cloud Vision API: =ED=94=BC=EB=93=9C =EA=B2=80=EC=A6=9D=EC=9A=A9 =
+=EC=9D=8C=EC=8B=9D =EC=9D=B8=EC=8B=9D (=EC=8B=A0=EB=A2=B0=EB=8F=84 0.8+ =EC=
+=9E=84=EA=B3=84=EA=B0=92)
+=E2=9C=85 Gemini 2.5 Flash API: =EB=A6=AC=EB=B7=B0 =EC=9E=90=EB=8F=99 =EC=
+=83=9D=EC=84=B1, =EB=A9=94=EB=89=B4 =EC=84=A4=EB=AA=85, =EC=B6=94=EC=B2=9C
+=E2=9C=85 Document AI: 24=EC=8B=9C=EA=B0=84 =EB=B0=A9=EB=AC=B8 =EC=9D=B8=EC=
+=A6=9D=EC=9A=A9 =EC=98=81=EC=88=98=EC=A6=9D OCR
+=E2=9C=85 Google Translate API: 14=EA=B0=9C =EC=96=B8=EC=96=B4 =EC=9E=90=EB=
+=8F=99 =EB=B2=88=EC=97=AD
+
+=EA=B4=80=EC=B0=B0=EC=84=B1:
+
+=E2=9C=85 Cloud Monitoring: Prometheus =EB=A9=94=ED=8A=B8=EB=A6=AD, =EA=B5=
+=AC=EC=A1=B0=ED=99=94=EB=90=9C =EB=A1=9C=EA=B9=85
+=E2=9C=85 Cloud Logging: =EC=9A=94=EC=B2=AD/=EC=9D=91=EB=8B=B5 =EC=B6=94=EC=
+=A0=81, =EC=98=A4=EB=A5=98 =EB=AA=A8=EB=8B=88=ED=84=B0=EB=A7=81
+
+=F0=9F=92=A1 =EC=9A=B0=EB=A6=AC =EC=A0=9C=ED=92=88=EC=9D=98 =EC=B0=A8=EB=B3=
+=84=EC=84=B1
+
+=EB=AC=B8=EC=A0=9C=EC=A0=90: =EA=B8=B0=EC=A1=B4 =EB=A0=88=EC=8A=A4=ED=86=A0=
+=EB=9E=91 =EB=A6=AC=EB=B7=B0 =ED=94=8C=EB=9E=AB=ED=8F=BC=EC=9D=80 =EA=B0=80=
+=EC=A7=9C =EB=A6=AC=EB=B7=B0, =EB=B0=A9=EB=AC=B8 =EC=A6=9D=EB=AA=85 =EB=B6=
+=80=EC=A1=B1, =EC=A0=9C=ED=95=9C=EC=A0=81=EC=9D=B8 =EC=A7=84=EC=A0=95=ED=95=
+=9C =EB=B0=9C=EA=B2=AC =EA=B2=BD=ED=97=98=EC=9C=BC=EB=A1=9C =EC=96=B4=EB=A0=
+=A4=EC=9B=80=EC=9D=84 =EA=B2=AA=EA=B3=A0 =EC=9E=88=EC=8A=B5=EB=8B=88=EB=8B=
+=A4.
+
+=EC=9A=B0=EB=A6=AC=EC=9D=98 =EC=86=94=EB=A3=A8=EC=85=98: 3=EB=8B=A8=EA=B3=
+=84 =EC=9D=B8=EC=A6=9D =EC=8B=9C=EC=8A=A4=ED=85=9C
+
+GPS =EC=9D=B8=EC=A6=9D: PostGIS =EA=B3=B5=EA=B0=84 =EC=BF=BC=EB=A6=AC (50m =
+=EB=B0=98=EA=B2=BD)
+AI =EC=9D=8C=EC=8B=9D =EC=9D=B8=EC=8B=9D: Cloud Vision API (=EC=8B=A4=EC=8B=
+=9C=EA=B0=84 =EC=B9=B4=EB=A9=94=EB=9D=BC =ED=94=84=EB=A6=AC=EB=B7=B0)
+OCR =EC=98=81=EC=88=98=EC=A6=9D =EC=9D=B8=EC=A6=9D: Document AI (24=EC=8B=
+=9C=EA=B0=84 =EC=9C=88=EB=8F=84=EC=9A=B0)
+
+=EC=A3=BC=EC=9A=94 =EA=B8=B0=EB=8A=A5:
+
+11=EB=8B=A8=EA=B3=84 =EA=B2=8C=EC=9D=B4=EB=AF=B8=ED=94=BC=EC=BC=80=EC=9D=B4=
+=EC=85=98 =EC=8B=9C=EC=8A=A4=ED=85=9C (1=EB=8B=A8=EA=B3=84 "=EB=88=84=EB=A3=
+=BD=EC=A7=80" =E2=86=92 11=EB=8B=A8=EA=B3=84 "=EB=8C=80=EC=9E=A5=EA=B8=88=
+=E2=AD=90=E2=AD=90=E2=AD=90")
+=ED=8F=89=EC=A0=90 =EC=8B=9C=EC=8A=A4=ED=85=9C =EC=97=86=EC=9D=8C - =EC=A2=
+=8B=EC=95=84=EC=9A=94, OCR =EB=B1=83=EC=A7=80, =EC=82=AC=EC=9A=A9=EC=9E=90 =
+=ED=8B=B0=EC=96=B4 =EC=8B=A0=EB=A2=B0=EB=8F=84=EB=A1=9C =ED=92=88=EC=A7=88 =
+=ED=8F=89=EA=B0=80
+Menu-Aware Round Robin =EC=95=8C=EA=B3=A0=EB=A6=AC=EC=A6=98=EC=9D=84 =EC=82=
+=AC=EC=9A=A9=ED=95=9C =EC=8A=A4=EB=A7=88=ED=8A=B8 =ED=94=BC=EB=93=9C =ED=81=
+=90=EB=A0=88=EC=9D=B4=EC=85=98
+AI =EA=B8=B0=EB=B0=98 =EC=BD=98=ED=85=90=EC=B8=A0 =EC=83=9D=EC=84=B1 (Gemin=
+i AI)
+=EB=8B=A4=EA=B5=AD=EC=96=B4 =EC=A7=80=EC=9B=90 (Google Translate API=EB=A1=
+=9C 14=EA=B0=9C =EC=96=B8=EC=96=B4)
+
+=F0=9F=93=8E =EC=B2=A8=EB=B6=80 =EB=AC=B8=EC=84=9C
+
+Fallingo_Project_Overview.pdf
+
+=EC=9A=94=EC=95=BD =EC=A0=95=EB=B3=B4
+=EA=B8=B0=EC=88=A0 =EC=95=84=ED=82=A4=ED=85=8D=EC=B2=98
+Google Cloud =ED=86=B5=ED=95=A9 =EC=84=B8=EB=B6=80 =EC=A0=95=EB=B3=B4
+API =EB=AC=B8=EC=84=9C =EC=8A=A4=ED=81=AC=EB=A6=B0=EC=83=B7
+=EA=B0=9C=EB=B0=9C =EB=A1=9C=EB=93=9C=EB=A7=B5
+
+
+=F0=9F=99=8F =EC=9E=AC=EA=B2=80=ED=86=A0 =EC=9A=94=EC=B2=AD
+
+Fallingo=EA=B0=80 Google for Startups Cloud Program=EC=97=90 =EC=A0=81=ED=
+=95=A9=ED=95=98=EB=8B=A4=EA=B3=A0 =EB=AF=BF=EB=8A=94 =EC=9D=B4=EC=9C=A0:
+
+AI =EC=9A=B0=EC=84=A0 =EC=95=84=ED=82=A4=ED=85=8D=EC=B2=98: =EB=8B=A8=EC=88=
+=9C=ED=9E=88 Google Cloud=EB=A5=BC "=EC=82=AC=EC=9A=A9"=ED=95=98=EB=8A=94 =
+=EA=B2=83=EC=9D=B4 =EC=95=84=EB=8B=88=EB=9D=BC, Vision API, Gemini AI, Docu=
+ment AI=EB=A5=BC =EC=A4=91=EC=8B=AC=EC=9C=BC=EB=A1=9C =EC=A0=84=EC=B2=B4 =
+=EC=A0=9C=ED=92=88=EC=9D=84 =EA=B5=AC=EC=B6=95=ED=95=98=EA=B3=A0 =EC=9E=88=
+=EC=8A=B5=EB=8B=88=EB=8B=A4
+=EA=B8=B0=EC=88=A0=EC=A0=81 =EC=84=B1=EC=88=99=EB=8F=84: 100% =EB=B0=B1=EC=
+=97=94=EB=93=9C =EC=99=84=EC=84=B1=EC=9D=80 =EC=A7=84=EC=A7=80=ED=95=9C =EA=
+=B0=9C=EB=B0=9C =EC=A7=84=ED=96=89=EC=9D=84 =EC=A6=9D=EB=AA=85=ED=95=A9=EB=
+=8B=88=EB=8B=A4
+=EB=AA=85=ED=99=95=ED=95=9C =EC=B6=9C=EC=8B=9C =EA=B3=84=ED=9A=8D: 2025=EB=
+=85=84 Q2 =EA=B3=B5=EA=B0=9C =EC=B6=9C=EC=8B=9C =EB=B0=8F =EB=8B=A4=EC=A4=
+=91 =EC=A7=80=EC=97=AD =ED=99=95=EC=9E=A5
+=ED=99=95=EC=9E=A5=EC=84=B1: GCP =EC=9D=B8=ED=94=84=EB=9D=BC=EC=97=90=EC=84=
+=9C =EC=88=98=EB=B0=B1=EB=A7=8C =EC=82=AC=EC=9A=A9=EC=9E=90=EB=A5=BC =EC=9C=
+=84=ED=95=9C =EC=95=84=ED=82=A4=ED=85=8D=EC=B2=98 =EC=84=A4=EA=B3=84
+
+=EC=9D=B4 =EC=B6=94=EA=B0=80 =EC=BB=A8=ED=85=8D=EC=8A=A4=ED=8A=B8=EB=A1=9C =
+=EC=8B=A0=EC=B2=AD=EC=9D=84 =EC=9E=AC=EA=B2=80=ED=86=A0=ED=95=B4 =EC=A3=BC=
+=EC=8B=A4 =EC=88=98 =EC=9E=88=EC=9D=84=EA=B9=8C=EC=9A=94?
+
+=EB=8B=A4=EC=9D=8C=EC=9D=84 =EC=A0=9C=EA=B3=B5=ED=95=A0 =EC=88=98 =EC=9E=88=
+=EC=8A=B5=EB=8B=88=EB=8B=A4:
+
+=EB=9D=BC=EC=9D=B4=EB=B8=8C API =EB=8D=B0=EB=AA=A8 =EC=9B=8C=ED=81=AC=EC=8A=
+=A4=EB=A3=A8
+=EA=B8=B0=EC=88=A0 =EA=B2=80=ED=86=A0=EB=A5=BC =EC=9C=84=ED=95=9C =EC=9E=84=
+=EC=8B=9C API =EC=95=A1=EC=84=B8=EC=8A=A4
+=EC=B6=94=EA=B0=80 =EB=AC=B8=EC=84=9C =EB=98=90=EB=8A=94 =EC=95=84=ED=82=A4=
+=ED=85=8D=EC=B2=98 =EB=8B=A4=EC=9D=B4=EC=96=B4=EA=B7=B8=EB=9E=A8
+GCP =EC=82=AC=EC=9A=A9=EC=97=90 =EB=8C=80=ED=95=B4 =EC=9E=90=EC=84=B8=ED=9E=
+=88 =EB=85=BC=EC=9D=98=ED=95=98=EA=B8=B0 =EC=9C=84=ED=95=9C =ED=86=B5=ED=99=
+=94 =EC=9D=BC=EC=A0=95
+
+=EC=8B=9C=EA=B0=84=EC=9D=84 =EB=82=B4=EC=96=B4 =EA=B2=80=ED=86=A0=ED=95=B4 =
+=EC=A3=BC=EC=85=94=EC=84=9C =EA=B0=90=EC=82=AC=ED=95=A9=EB=8B=88=EB=8B=A4. =
+Google Cloud=EC=9D=98 =EC=84=B8=EA=B3=84=EC=A0=81 =EC=88=98=EC=A4=80=EC=9D=
+=98 =EC=84=9C=EB=B9=84=EC=8A=A4=EB=A1=9C =EC=9D=8C=EC=8B=9D =EC=86=8C=EC=85=
+=9C =ED=94=8C=EB=9E=AB=ED=8F=BC=EC=9D=98 =EB=AF=B8=EB=9E=98=EB=A5=BC =EA=B5=
+=AC=EC=B6=95=ED=95=A0 =EC=88=98 =EC=9E=88=EB=8A=94 =EA=B8=B0=ED=9A=8C=EC=97=
+=90 =EB=8C=80=ED=95=B4 =EA=B8=B0=EB=8C=80=ED=95=98=EA=B3=A0 =EC=9E=88=EC=8A=
+=B5=EB=8B=88=EB=8B=A4.
+
+=EA=B0=90=EC=82=AC=ED=95=A9=EB=8B=88=EB=8B=A4,
+
+2025=EB=85=84 10=EC=9B=94 30=EC=9D=BC (=EB=AA=A9) =EC=98=A4=ED=9B=84 5:58, =
+Google for Startups Cloud Program Team <cloudstartupsupport-noreply@google.=
+com>=EB=8B=98=EC=9D=B4 =EC=9E=91=EC=84=B1:
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C
+
+Google for Startups Cloud Program =EC=9D=84 =EC=8B=A0=EC=B2=AD=ED=95=B4 =EC=
+=A3=BC=EC=85=94=EC=84=9C =EA=B0=90=EC=82=AC=ED=95=A9=EB=8B=88=EB=8B=A4. =EC=
+=8B=A0=EC=B2=AD=EC=84=9C =EC=B2=98=EB=A6=AC=EB=A5=BC =EB=A7=88=EB=AC=B4=EB=
+=A6=AC=ED=95=98=EA=B8=B0 =EC=9C=84=ED=95=B4=EC=84=9C=EB=8A=94 =EC=95=84=EB=
+=9E=98=EC=99=80 =EA=B0=99=EC=9D=80 =EC=A1=B0=EC=B9=98=EA=B0=80 =ED=95=84=EC=
+=9A=94=ED=95=A9=EB=8B=88=EB=8B=A4.
+
+=E2=80=8C
+
+=EC=8B=A0=EC=B2=AD =EC=8B=9C =EA=B8=B0=EC=9E=AC=ED=95=98=EC=8B=A0 =ED=9A=8C=
+=EC=82=AC =EC=9B=B9=EC=82=AC=EC=9D=B4=ED=8A=B8=EA=B0=80 =ED=99=95=EC=9D=B8=
+=EB=90=98=EC=A7=80 =EC=95=8A=EC=8A=B5=EB=8B=88=EB=8B=A4. =EC=A6=89, =EB=A7=
+=81=ED=81=AC=EA=B0=80 =EB=A1=9C=EB=93=9C=EB=90=98=EC=A7=80 =EC=95=8A=EA=B1=
+=B0=EB=82=98, =EA=B7=80=EC=82=AC=EC=9D=98 =EB=8F=84=EB=A9=94=EC=9D=B8=EA=B3=
+=BC =EC=9D=BC=EC=B9=98=ED=95=98=EC=A7=80 =EC=95=8A=EB=8A=94 =EB=8B=A4=EB=A5=
+=B8 =ED=8E=98=EC=9D=B4=EC=A7=80=EB=A1=9C =EC=97=B0=EA=B2=B0=EB=90=98=EA=B1=
+=B0=EB=82=98, =EC=9B=B9=EC=82=AC=EC=9D=B4=ED=8A=B8=EC=97=90 =EA=B7=80=EC=82=
+=AC=EC=9D=98 =EC=A0=9C=ED=92=88=EC=97=90 =EA=B4=80=ED=95=9C =EC=A0=95=EB=B3=
+=B4=EA=B0=80 =EC=B6=A9=EB=B6=84=ED=95=98=EC=A7=80 =EC=95=8A=EC=8A=B5=EB=8B=
+=88=EB=8B=A4.
+
+=E2=80=8C
+
+=EA=B7=80=ED=95=98=EC=9D=98 =EC=8A=A4=ED=83=80=ED=8A=B8=EC=97=85=EC=9D=B4 =
+=EC=8A=A4=ED=85=94=EC=8A=A4 =EB=AA=A8=EB=93=9C(stealth mode)=EC=9D=B8 =EA=
+=B2=BD=EC=9A=B0, =ED=88=AC=EC=9E=90=EC=9E=90=EC=9D=98 =ED=98=91=EC=A1=B0=EB=
+=A5=BC =EA=B5=AC=ED=95=B4 Google Cloud =EB=8B=B4=EB=8B=B9=EC=9E=90=EC=97=90=
+=EA=B2=8C =ED=88=AC=EC=9E=90 =EC=82=AC=EC=8B=A4=EC=9D=84 =EC=A6=9D=EB=AA=85=
+=ED=95=98=EA=B1=B0=EB=82=98 =EC=9D=B4 =EC=9D=B4=EB=A9=94=EC=9D=BC=EC=97=90 =
+=EC=A7=81=EC=A0=91 =ED=9A=8C=EC=8B=A0=ED=95=B4 =ED=88=AC=EC=9E=90 =EC=82=AC=
+=EC=8B=A4=EC=9D=84 =ED=99=95=EC=9D=B8=ED=95=A0 =EC=88=98 =EC=9E=88=EB=8A=94=
+ =EB=B0=A9=EB=B2=95=EC=9D=84 Google Cloud=EC=9D=98 =EC=A7=80=EC=9B=90=ED=8C=
+=80=EA=B3=BC =EB=85=BC=EC=9D=98=ED=95=98=EC=8B=9C=EA=B8=B0 =EB=B0=94=EB=9E=
+=8D=EB=8B=88=EB=8B=A4.
+
+=E2=80=8C
+
+=EC=8A=A4=ED=85=94=EC=8A=A4 =EB=AA=A8=EB=93=9C=EA=B0=80 =EC=95=84=EB=8B=88=
+=EB=9D=BC=EB=A9=B4 Google Cloud=ED=8C=80=EC=97=90=EC=84=9C =EA=B2=80=ED=86=
+=A0=ED=95=A0 =EC=88=98 =EC=9E=88=EB=8A=94 =EC=98=A8=EB=9D=BC=EC=9D=B8 =EC=
+=9E=90=EB=A3=8C=EA=B0=80 =EC=B6=94=EA=B0=80=EB=A1=9C =EC=9E=88=EC=9D=84 =EB=
+=95=8C =EB=8B=A4=EC=8B=9C =EC=8B=A0=EC=B2=AD=ED=95=98=EA=B1=B0=EB=82=98 =EC=
+=9D=B4 =EC=9D=B4=EB=A9=94=EC=9D=BC=EC=97=90 =ED=9A=8C=EC=8B=A0=ED=95=B4 =EC=
+=95=8C=EB=A0=A4=EC=A3=BC=EC=8B=9C=EB=A9=B4 =EC=8B=A0=EC=B2=AD=EC=84=9C=EB=
+=A5=BC =EB=8B=A4=EC=8B=9C =EC=B2=98=EB=A6=AC=ED=95=B4 =EB=93=9C=EB=A6=AC=EA=
+=B2=A0=EC=8A=B5=EB=8B=88=EB=8B=A4.
+
+=E2=80=8C
+
+=EA=B7=B8=EC=A0=84=EA=B9=8C=EC=A7=80=EB=8A=94 =EC=97=AC=EA=B8=B0=EC=97=90=
+=EC=84=9C Google for Startups Cloud Program =EA=B3=BC =EA=B4=80=EB=A0=A8=EB=
+=90=9C =EC=A4=91=EC=9A=94=ED=95=9C =EC=97=85=EB=8D=B0=EC=9D=B4=ED=8A=B8=EB=
+=A5=BC =EB=B0=9B=EC=95=84=EB=B3=B4=EC=8B=A4 =EC=88=98 =EC=9E=88=EC=8A=B5=EB=
+=8B=88=EB=8B=A4.
+
+=E2=80=8C
+
+=EA=B0=90=EC=82=AC=ED=95=A9=EB=8B=88=EB=8B=A4
+
+=E2=80=8C
+
+Google for Startups Cloud Program =ED=8C=80
+
+=C2=A9 Google LLC 1600, Amphitheatre Parkway, Mountain View, CA 94043
+
+=EB=B3=B8 =EC=9D=B4=EB=A9=94=EC=9D=BC=EC=9D=80 =EA=B7=80=ED=95=98=EC=9D=98 =
+Google for Startups =ED=81=B4=EB=9D=BC=EC=9A=B0=EB=93=9C =ED=94=84=EB=A1=9C=
+=EA=B7=B8=EB=9E=A8 =EC=8B=A0=EC=B2=AD=EC=97=90 =EB=8C=80=ED=95=9C =EC=A4=91=
+=EC=9A=94=ED=95=9C =EC=A0=95=EB=B3=B4=EA=B0=80 =ED=8F=AC=ED=95=A8=EB=90=98=
+=EC=96=B4 =EC=9E=88=EA=B8=B0 =EB=95=8C=EB=AC=B8=EC=97=90 =EB=B0=9C=EC=86=A1=
+=EB=90=98=EC=97=88=EC=8A=B5=EB=8B=88=EB=8B=A4.
+
+
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to limo-support--general-test-external+unsubscribe@google.com.
+ref:!00D1U0118G1.!500Ki0Awp5a:ref
+------=_Part_1092_1988285513.1762180647353
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+=09<title></title>
+</head>
+<body>Hi Su,&nbsp;<br />
+<br />
+&nbsp;
+<p data-pm-slice=3D"1 1 []"><br />
+Thanks for reaching out and for the details about your project.</p>
+&nbsp;
+
+<p>After carefully reviewing your application, we&#39;ve found that we&#39;=
+re unable to approve it at this time because there isn&#39;t enough public =
+information about your product.</p>
+
+<p>For eligibility, our program requires a globally available website that =
+clearly showcases a digital-native business model, identifying your company=
+ solely as a tech startup offering its own app, tool, or platform. You can =
+find all our application requirements in our FAQs here:<a href=3D"https://c=
+loud.google.com/startup/faq"> Google for Startups Cloud Program FAQ</a></p>
+
+<p>This means we need to see clear details about your:</p>
+
+<ul>
+=09<li aria-level=3D"1">Business Description: What you do, problems you sol=
+ve, and target audience.</li>
+=09<li aria-level=3D"1">Team Information: Key members and relevant experien=
+ce.</li>
+=09<li aria-level=3D"1">Products: What you&#39;re building/offering and its=
+ current development stage, with images/videos/demos/link to app etc.&nbsp;=
+</li>
+</ul>
+
+<p>All of this information must be visible and easily accessible on your pu=
+blic website for us to determine eligibility and approve your application.<=
+/p>
+
+<p>Once your website is updated with these details, please feel free to rep=
+ly to this email, and we&#39;ll be happy to re-evaluate your application!</=
+p>
+
+<p data-pm-slice=3D"1 1 []">If you have any other questions, please let me =
+know</p>
+<br />
+<br />
+<br />
+<br />
+<br />
+Best regards,<br />
+<br />
+<br />
+Sa&scaron;o P. (He-him)<br />
+Startup Support Operations<br />
+Google Cloud (Powered by Concentrix)<br clear=3D"none" />
+<br clear=3D"none" />
+<br clear=3D"none" />
+--------------- Original Message ---------------<br clear=3D"none" />
+<b>From:</b> =ED=95=A8=EC=88=98=EC=9B=90 [su@fallingo.app]<br clear=3D"none=
+" />
+<b>Sent:</b> 10/31/2025 3:11 AM<br clear=3D"none" />
+<b>To:</b> cloudstartupsupport@google.com<br clear=3D"none" />
+<b>Subject:</b> Re: [=EC=A1=B0=EC=B9=98 =ED=95=84=EC=9A=94] Sutory: Google =
+for Startups Cloud Program =EC=97=85=EB=8D=B0=EC=9D=B4=ED=8A=B8<br clear=3D=
+"none" />
+&nbsp;
+<div dir=3D"ltr">
+<div dir=3D"ltr">
+<h1 id=3D"email-response-to-google-for-startups-cloud-program" style=3D"col=
+or:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;"><span style=3D"font-siz=
+e:medium;font-weight:400">Re: Additional Information for Google for Startup=
+s Cloud Program Application - Fallingo</span></h1>
+
+<hr style=3D"font-family:&quot;Noto Sans KR&quot;;font-size:medium" />
+<h2 id=3D"english-version" style=3D"color:rgb(0,0,0);font-family:&quot;Noto=
+ Sans KR&quot;"><span style=3D"font-size:medium;font-weight:normal">Dear Go=
+ogle for Startups Cloud Program Team,</span></h2>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium">Thank you for reviewing our application and providing guidance on =
+the additional information needed.</p>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium">I understand that our website requires more detailed information a=
+bout our product.&nbsp;<strong>Fallingo is currently in active development<=
+/strong>&nbsp;as a location-based food social platform, and while our consu=
+mer-facing web/mobile app is still being finalized (60% complete),&nbsp;<st=
+rong>our backend infrastructure is fully operational and deployed on Google=
+ Cloud Platform</strong>.</p>
+
+<h3 id=3D"gmail--current-development-status" style=3D"color:rgb(0,0,0);font=
+-family:&quot;Noto Sans KR&quot;">=F0=9F=93=8A Current Development Status</=
+h3>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium"><strong>Backend (100% Complete)</strong>:</p>
+
+<ul style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-siz=
+e:medium">
+=09<li><strong>145 API endpoints</strong>&nbsp;fully implemented across 17 =
+modules (Authentication, Feeds, Restaurants, AI Services, Search, Maps, etc=
+.)</li>
+=09<li><strong>107 database tables</strong>&nbsp;on Cloud SQL PostgreSQL 16=
+ + PostGIS 3.5</li>
+=09<li>Production deployment on&nbsp;<strong>GCP Cloud Run</strong>&nbsp;(u=
+s-central1)</li>
+=09<li><strong>API Test Results</strong>: 142/143 endpoints passing (99.3% =
+success rate)</li>
+</ul>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium"><strong>Frontend (60% Complete)</strong>:</p>
+
+<ul style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-siz=
+e:medium">
+=09<li>Flutter app (iOS/Android/Web) with core screens implemented</li>
+=09<li>Splash, authentication, feed, profile, search screens completed</li>
+=09<li>Camera and map screens in active development</li>
+=09<li><strong>Expected completion</strong>: February 2025</li>
+</ul>
+
+<h3 id=3D"gmail--technical-documentation" style=3D"color:rgb(0,0,0);font-fa=
+mily:&quot;Noto Sans KR&quot;">=F0=9F=94=97 Technical Documentation</h3>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium">Our backend API is fully operational and documented:</p>
+
+<ol style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-siz=
+e:medium">
+=09<li><strong>API Documentation (Swagger UI)</strong>:&nbsp;<code><a href=
+=3D"https://fallingo.app/api/docs" shape=3D"rect" target=3D"_blank">https:/=
+/fallingo.app/api/docs</a></code></li>
+=09<li><strong>API Documentation (ReDoc)</strong>:&nbsp;<code><a href=3D"ht=
+tps://fallingo.app/api/redoc" shape=3D"rect" target=3D"_blank">https://fall=
+ingo.app/api/redoc</a></code></li>
+=09<li><strong>Detailed Project Overview</strong>: Attached PDF</li>
+</ol>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium"><em>(Note: I can provide temporary API access credentials for your=
+ team to explore our endpoints if needed)</em></p>
+
+<h3 id=3D"gmail--google-cloud-services-we-use" style=3D"color:rgb(0,0,0);fo=
+nt-family:&quot;Noto Sans KR&quot;">=E2=98=81=EF=B8=8F Google Cloud Service=
+s We Use</h3>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium">We are heavily invested in the Google Cloud ecosystem:</p>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium"><strong>Core Infrastructure</strong>:</p>
+
+<ul style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-siz=
+e:medium">
+=09<li>=E2=9C=85&nbsp;<strong>Cloud Run</strong>: FastAPI backend hosting (=
+145 endpoints)</li>
+=09<li>=E2=9C=85&nbsp;<strong>Cloud SQL</strong>: PostgreSQL 16 + PostGIS 3=
+.5 (107 tables, 30 performance indexes)</li>
+=09<li>=E2=9C=85&nbsp;<strong>Cloud Storage</strong>: Image/video storage w=
+ith signed URLs</li>
+=09<li>=E2=9C=85&nbsp;<strong>Identity Platform</strong>: Multi-provider au=
+thentication (Google, Apple, Email)</li>
+=09<li>=E2=9C=85&nbsp;<strong>Secret Manager</strong>: Secure credential ma=
+nagement</li>
+</ul>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium"><strong>AI/ML Services</strong>&nbsp;(Core to our product):</p>
+
+<ul style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-siz=
+e:medium">
+=09<li>=E2=9C=85&nbsp;<strong>Cloud Vision API</strong>: Food recognition f=
+or feed verification (0.8+ confidence threshold)</li>
+=09<li>=E2=9C=85&nbsp;<strong>Gemini 2.5 Flash API</strong>: Automated revi=
+ew generation, menu descriptions, recommendations</li>
+=09<li>=E2=9C=85&nbsp;<strong>Document AI</strong>: Receipt OCR for 24-hour=
+ visit verification</li>
+=09<li>=E2=9C=85&nbsp;<strong>Google Translate API</strong>: Automatic tran=
+slation to 14 languages</li>
+</ul>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium"><strong>Observability</strong>:</p>
+
+<ul style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-siz=
+e:medium">
+=09<li>=E2=9C=85&nbsp;<strong>Cloud Monitoring</strong>: Prometheus metrics=
+, structured logging</li>
+=09<li>=E2=9C=85&nbsp;<strong>Cloud Logging</strong>: Request/response trac=
+king, error monitoring</li>
+</ul>
+
+<h3 id=3D"gmail--our-product-why-it-s-different" style=3D"color:rgb(0,0,0);=
+font-family:&quot;Noto Sans KR&quot;">=F0=9F=92=A1 Our Product: Why It&#39;=
+s Different</h3>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium"><strong>The Problem</strong>: Traditional restaurant review platfo=
+rms suffer from fake reviews, lack of proof of visit, and limited authentic=
+ discovery.</p>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium"><strong>Our Solution</strong>: 3-tier verification system</p>
+
+<ol style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-siz=
+e:medium">
+=09<li><strong>GPS Verification</strong>: PostGIS spatial queries (50-meter=
+ radius)</li>
+=09<li><strong>AI Food Recognition</strong>: Cloud Vision API (real-time ca=
+mera preview)</li>
+=09<li><strong>OCR Receipt Verification</strong>: Document AI (24-hour wind=
+ow)</li>
+</ol>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium"><strong>Key Features</strong>:</p>
+
+<ul style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-siz=
+e:medium">
+=09<li>11-tier gamification system (Tier 1 &quot;Nurungji&quot; &rarr; Tier=
+ 11 &quot;Daejanggeum=E2=AD=90=E2=AD=90=E2=AD=90&quot;)</li>
+=09<li>No rating system - quality signals via likes, OCR badges, user tier =
+credibility</li>
+=09<li>Smart feed curation with Menu-Aware Round Robin algorithm</li>
+=09<li>AI-powered content generation (Gemini AI)</li>
+=09<li>Multi-language support (14 languages via Google Translate API)</li>
+</ul>
+
+<h3 id=3D"gmail--attached-documents" style=3D"color:rgb(0,0,0);font-family:=
+&quot;Noto Sans KR&quot;">=F0=9F=93=8E Attached Documents</h3>
+
+<ol style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-siz=
+e:medium">
+=09<li><strong>Fallingo_Project_Overview.pdf</strong>
+
+=09<ul>
+=09=09<li>Executive summary</li>
+=09=09<li>Technical architecture</li>
+=09=09<li>Google Cloud integration details</li>
+=09=09<li>API documentation screenshots</li>
+=09=09<li>Development roadmap</li>
+=09</ul>
+=09</li>
+</ol>
+
+<h3 id=3D"gmail--request-for-reconsideration" style=3D"color:rgb(0,0,0);fon=
+t-family:&quot;Noto Sans KR&quot;">=F0=9F=99=8F Request for Reconsideration=
+</h3>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium">We believe Fallingo is a strong fit for the Google for Startups Cl=
+oud Program because:</p>
+
+<ol style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-siz=
+e:medium">
+=09<li><strong>AI-First Architecture</strong>: We are not just &quot;using&=
+quot; Google Cloud - we are building our entire product around Vision API, =
+Gemini AI, and Document AI</li>
+=09<li><strong>Technical Maturity</strong>: 100% backend completion demonst=
+rates serious development progress</li>
+=09<li><strong>Clear Launch Plan</strong>: Q2 2025 public launch with multi=
+-region expansion</li>
+=09<li><strong>Scalability</strong>: Our architecture is designed for milli=
+ons of users on GCP infrastructure</li>
+</ol>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium"><strong>Would you be able to reconsider our application with this =
+additional context?</strong></p>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium">I am happy to provide:</p>
+
+<ul style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-siz=
+e:medium">
+=09<li>Live API demo walkthrough</li>
+=09<li>Temporary API access for your technical review</li>
+=09<li>Additional documentation or architecture diagrams</li>
+=09<li>Schedule a call to discuss our GCP usage in detail</li>
+</ul>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium">Thank you for your time and consideration. We are excited about th=
+e opportunity to build the future of food social platforms on Google Cloud&=
+#39;s world-class services.</p>
+
+<hr style=3D"font-family:&quot;Noto Sans KR&quot;;font-size:medium" />
+<h2 id=3D"gmail-korean-version-" style=3D"color:rgb(0,0,0);font-family:&quo=
+t;Noto Sans KR&quot;">Korean Version (=EC=B0=B8=EA=B3=A0=EC=9A=A9)</h2>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium">Google for Startups Cloud Program =ED=8C=80 =EA=B7=80=EC=A4=91,</p=
+>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium">=EC=8B=A0=EC=B2=AD=EC=84=9C=EB=A5=BC =EA=B2=80=ED=86=A0=ED=95=B4 =
+=EC=A3=BC=EC=8B=9C=EA=B3=A0 =EC=B6=94=EA=B0=80 =EC=A0=95=EB=B3=B4=EC=97=90 =
+=EB=8C=80=ED=95=9C =EC=95=88=EB=82=B4=EB=A5=BC =EC=A3=BC=EC=85=94=EC=84=9C =
+=EA=B0=90=EC=82=AC=ED=95=A9=EB=8B=88=EB=8B=A4.</p>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium">=EC=9B=B9=EC=82=AC=EC=9D=B4=ED=8A=B8=EC=97=90 =EC=A0=9C=ED=92=88 =
+=EC=A0=95=EB=B3=B4=EA=B0=80 =EB=8D=94 =ED=95=84=EC=9A=94=ED=95=98=EB=8B=A4=
+=EB=8A=94 =EC=A0=90=EC=9D=84 =EC=9D=B4=ED=95=B4=ED=96=88=EC=8A=B5=EB=8B=88=
+=EB=8B=A4.&nbsp;<strong>Fallingo=EB=8A=94 =ED=98=84=EC=9E=AC =ED=99=9C=EB=
+=B0=9C=ED=9E=88 =EA=B0=9C=EB=B0=9C =EC=A4=91=EC=9D=B8 =EC=9C=84=EC=B9=98 =
+=EA=B8=B0=EB=B0=98 =EC=9D=8C=EC=8B=9D =EC=86=8C=EC=85=9C =ED=94=8C=EB=9E=AB=
+=ED=8F=BC</strong>=EC=9D=B4=EB=A9=B0, =EC=82=AC=EC=9A=A9=EC=9E=90 =EB=8C=80=
+=EB=A9=B4 =EC=9B=B9/=EB=AA=A8=EB=B0=94=EC=9D=BC =EC=95=B1=EC=9D=80 =EC=95=
+=84=EC=A7=81 =EC=99=84=EC=84=B1 =EB=8B=A8=EA=B3=84(60%)=EC=97=90 =EC=9E=88=
+=EC=A7=80=EB=A7=8C,&nbsp;<strong>=EB=B0=B1=EC=97=94=EB=93=9C =EC=9D=B8=ED=
+=94=84=EB=9D=BC=EB=8A=94 Google Cloud Platform=EC=97=90 =EC=99=84=EC=A0=84=
+=ED=9E=88 =EA=B5=AC=EC=B6=95=EB=90=98=EC=96=B4 =EC=9A=B4=EC=98=81 =EC=A4=91=
+</strong>=EC=9E=85=EB=8B=88=EB=8B=A4.</p>
+
+<h3 id=3D"gmail--" style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR=
+&quot;">=F0=9F=93=8A =ED=98=84=EC=9E=AC =EA=B0=9C=EB=B0=9C =EC=83=81=ED=83=
+=9C</h3>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium"><strong>=EB=B0=B1=EC=97=94=EB=93=9C (100% =EC=99=84=EB=A3=8C)</str=
+ong>:</p>
+
+<ul style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-siz=
+e:medium">
+=09<li>17=EA=B0=9C =EB=AA=A8=EB=93=88=EC=97=90 =EA=B1=B8=EC=B3=90&nbsp;<str=
+ong>145=EA=B0=9C API =EC=97=94=EB=93=9C=ED=8F=AC=EC=9D=B8=ED=8A=B8</strong>=
+&nbsp;=EC=99=84=EC=A0=84 =EA=B5=AC=ED=98=84</li>
+=09<li>Cloud SQL PostgreSQL 16 + PostGIS 3.5=EC=97=90&nbsp;<strong>107=EA=
+=B0=9C =EB=8D=B0=EC=9D=B4=ED=84=B0=EB=B2=A0=EC=9D=B4=EC=8A=A4 =ED=85=8C=EC=
+=9D=B4=EB=B8=94</strong></li>
+=09<li><strong>GCP Cloud Run</strong>=EC=97=90 =ED=94=84=EB=A1=9C=EB=8D=95=
+=EC=85=98 =EB=B0=B0=ED=8F=AC =EC=99=84=EB=A3=8C (us-central1)</li>
+=09<li><strong>API =ED=85=8C=EC=8A=A4=ED=8A=B8 =EA=B2=B0=EA=B3=BC</strong>:=
+ 143=EA=B0=9C =EC=A4=91 142=EA=B0=9C =EC=84=B1=EA=B3=B5 (99.3%)</li>
+</ul>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium"><strong>=ED=94=84=EB=A1=A0=ED=8A=B8=EC=97=94=EB=93=9C (60% =EC=99=
+=84=EB=A3=8C)</strong>:</p>
+
+<ul style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-siz=
+e:medium">
+=09<li>Flutter =EC=95=B1 (iOS/Android/Web) =ED=95=B5=EC=8B=AC =ED=99=94=EB=
+=A9=B4 =EA=B5=AC=ED=98=84 =EC=99=84=EB=A3=8C</li>
+=09<li>=EC=9D=B8=EC=A6=9D, =ED=94=BC=EB=93=9C, =ED=94=84=EB=A1=9C=ED=95=84,=
+ =EA=B2=80=EC=83=89 =ED=99=94=EB=A9=B4 =EC=99=84=EB=A3=8C</li>
+=09<li>=EC=B9=B4=EB=A9=94=EB=9D=BC, =EC=A7=80=EB=8F=84 =ED=99=94=EB=A9=B4 =
+=EA=B0=9C=EB=B0=9C =EC=A4=91</li>
+=09<li><strong>=EC=98=88=EC=83=81 =EC=99=84=EB=A3=8C</strong>: 2025=EB=85=
+=84 2=EC=9B=94</li>
+</ul>
+
+<h3 id=3D"gmail--" style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR=
+&quot;">=F0=9F=94=97 =EA=B8=B0=EC=88=A0 =EB=AC=B8=EC=84=9C</h3>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium">=EB=B0=B1=EC=97=94=EB=93=9C API=EA=B0=80 =EC=99=84=EC=A0=84=ED=9E=
+=88 =EC=9E=91=EB=8F=99=ED=95=98=EB=A9=B0 =EB=AC=B8=EC=84=9C=ED=99=94=EB=90=
+=98=EC=96=B4 =EC=9E=88=EC=8A=B5=EB=8B=88=EB=8B=A4:</p>
+
+<ol style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-siz=
+e:medium">
+=09<li><strong>API =EB=AC=B8=EC=84=9C (Swagger UI)</strong>:&nbsp;<code><a =
+href=3D"https://fallingo.app/api/docs" shape=3D"rect" target=3D"_blank">htt=
+ps://fallingo.app/api/docs</a></code></li>
+=09<li><strong>API =EB=AC=B8=EC=84=9C (ReDoc)</strong>:&nbsp;<code><a href=
+=3D"https://fallingo.app/api/redoc" shape=3D"rect" target=3D"_blank">https:=
+//fallingo.app/api/redoc</a></code></li>
+=09<li><strong>=EC=83=81=EC=84=B8 =ED=94=84=EB=A1=9C=EC=A0=9D=ED=8A=B8 =EA=
+=B0=9C=EC=9A=94</strong>: PDF =EC=B2=A8=EB=B6=80</li>
+</ol>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium"><em>(=EC=B0=B8=EA=B3=A0: =ED=95=84=EC=9A=94=ED=95=98=EC=8B=9C=EB=
+=A9=B4 =EA=B7=80=EC=82=AC =ED=8C=80=EC=9D=B4 =EC=97=94=EB=93=9C=ED=8F=AC=EC=
+=9D=B8=ED=8A=B8=EB=A5=BC =ED=83=90=EC=83=89=ED=95=A0 =EC=88=98 =EC=9E=88=EB=
+=8F=84=EB=A1=9D =EC=9E=84=EC=8B=9C API =EC=95=A1=EC=84=B8=EC=8A=A4 =EA=B6=
+=8C=ED=95=9C=EC=9D=84 =EC=A0=9C=EA=B3=B5=ED=95=A0 =EC=88=98 =EC=9E=88=EC=8A=
+=B5=EB=8B=88=EB=8B=A4)</em></p>
+
+<h3 id=3D"gmail--google-cloud-" style=3D"color:rgb(0,0,0);font-family:&quot=
+;Noto Sans KR&quot;">=E2=98=81=EF=B8=8F =EC=82=AC=EC=9A=A9 =EC=A4=91=EC=9D=
+=B8 Google Cloud =EC=84=9C=EB=B9=84=EC=8A=A4</h3>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium">Google Cloud =EC=83=9D=ED=83=9C=EA=B3=84=EC=97=90 =EA=B9=8A=EC=9D=
+=B4 =ED=88=AC=EC=9E=90=ED=95=98=EA=B3=A0 =EC=9E=88=EC=8A=B5=EB=8B=88=EB=8B=
+=A4:</p>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium"><strong>=ED=95=B5=EC=8B=AC =EC=9D=B8=ED=94=84=EB=9D=BC</strong>:</=
+p>
+
+<ul style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-siz=
+e:medium">
+=09<li>=E2=9C=85&nbsp;<strong>Cloud Run</strong>: FastAPI =EB=B0=B1=EC=97=
+=94=EB=93=9C =ED=98=B8=EC=8A=A4=ED=8C=85 (145=EA=B0=9C =EC=97=94=EB=93=9C=
+=ED=8F=AC=EC=9D=B8=ED=8A=B8)</li>
+=09<li>=E2=9C=85&nbsp;<strong>Cloud SQL</strong>: PostgreSQL 16 + PostGIS 3=
+.5 (107=EA=B0=9C =ED=85=8C=EC=9D=B4=EB=B8=94, 30=EA=B0=9C =EC=84=B1=EB=8A=
+=A5 =EC=9D=B8=EB=8D=B1=EC=8A=A4)</li>
+=09<li>=E2=9C=85&nbsp;<strong>Cloud Storage</strong>: =EC=9D=B4=EB=AF=B8=EC=
+=A7=80/=EB=B9=84=EB=94=94=EC=98=A4 =EC=A0=80=EC=9E=A5 (Signed URLs)</li>
+=09<li>=E2=9C=85&nbsp;<strong>Identity Platform</strong>: =EB=8B=A4=EC=A4=
+=91 =EC=A0=9C=EA=B3=B5=EC=97=85=EC=B2=B4 =EC=9D=B8=EC=A6=9D (Google, Apple,=
+ =EC=9D=B4=EB=A9=94=EC=9D=BC)</li>
+=09<li>=E2=9C=85&nbsp;<strong>Secret Manager</strong>: =EB=B3=B4=EC=95=88 =
+=EC=9E=90=EA=B2=A9 =EC=A6=9D=EB=AA=85 =EA=B4=80=EB=A6=AC</li>
+</ul>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium"><strong>AI/ML =EC=84=9C=EB=B9=84=EC=8A=A4</strong>&nbsp;(=EC=A0=9C=
+=ED=92=88 =ED=95=B5=EC=8B=AC):</p>
+
+<ul style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-siz=
+e:medium">
+=09<li>=E2=9C=85&nbsp;<strong>Cloud Vision API</strong>: =ED=94=BC=EB=93=9C=
+ =EA=B2=80=EC=A6=9D=EC=9A=A9 =EC=9D=8C=EC=8B=9D =EC=9D=B8=EC=8B=9D (=EC=8B=
+=A0=EB=A2=B0=EB=8F=84 0.8+ =EC=9E=84=EA=B3=84=EA=B0=92)</li>
+=09<li>=E2=9C=85&nbsp;<strong>Gemini 2.5 Flash API</strong>: =EB=A6=AC=EB=
+=B7=B0 =EC=9E=90=EB=8F=99 =EC=83=9D=EC=84=B1, =EB=A9=94=EB=89=B4 =EC=84=A4=
+=EB=AA=85, =EC=B6=94=EC=B2=9C</li>
+=09<li>=E2=9C=85&nbsp;<strong>Document AI</strong>: 24=EC=8B=9C=EA=B0=84 =
+=EB=B0=A9=EB=AC=B8 =EC=9D=B8=EC=A6=9D=EC=9A=A9 =EC=98=81=EC=88=98=EC=A6=9D =
+OCR</li>
+=09<li>=E2=9C=85&nbsp;<strong>Google Translate API</strong>: 14=EA=B0=9C =
+=EC=96=B8=EC=96=B4 =EC=9E=90=EB=8F=99 =EB=B2=88=EC=97=AD</li>
+</ul>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium"><strong>=EA=B4=80=EC=B0=B0=EC=84=B1</strong>:</p>
+
+<ul style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-siz=
+e:medium">
+=09<li>=E2=9C=85&nbsp;<strong>Cloud Monitoring</strong>: Prometheus =EB=A9=
+=94=ED=8A=B8=EB=A6=AD, =EA=B5=AC=EC=A1=B0=ED=99=94=EB=90=9C =EB=A1=9C=EA=B9=
+=85</li>
+=09<li>=E2=9C=85&nbsp;<strong>Cloud Logging</strong>: =EC=9A=94=EC=B2=AD/=
+=EC=9D=91=EB=8B=B5 =EC=B6=94=EC=A0=81, =EC=98=A4=EB=A5=98 =EB=AA=A8=EB=8B=
+=88=ED=84=B0=EB=A7=81</li>
+</ul>
+
+<h3 id=3D"gmail--" style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR=
+&quot;">=F0=9F=92=A1 =EC=9A=B0=EB=A6=AC =EC=A0=9C=ED=92=88=EC=9D=98 =EC=B0=
+=A8=EB=B3=84=EC=84=B1</h3>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium"><strong>=EB=AC=B8=EC=A0=9C=EC=A0=90</strong>: =EA=B8=B0=EC=A1=B4 =
+=EB=A0=88=EC=8A=A4=ED=86=A0=EB=9E=91 =EB=A6=AC=EB=B7=B0 =ED=94=8C=EB=9E=AB=
+=ED=8F=BC=EC=9D=80 =EA=B0=80=EC=A7=9C =EB=A6=AC=EB=B7=B0, =EB=B0=A9=EB=AC=
+=B8 =EC=A6=9D=EB=AA=85 =EB=B6=80=EC=A1=B1, =EC=A0=9C=ED=95=9C=EC=A0=81=EC=
+=9D=B8 =EC=A7=84=EC=A0=95=ED=95=9C =EB=B0=9C=EA=B2=AC =EA=B2=BD=ED=97=98=EC=
+=9C=BC=EB=A1=9C =EC=96=B4=EB=A0=A4=EC=9B=80=EC=9D=84 =EA=B2=AA=EA=B3=A0 =EC=
+=9E=88=EC=8A=B5=EB=8B=88=EB=8B=A4.</p>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium"><strong>=EC=9A=B0=EB=A6=AC=EC=9D=98 =EC=86=94=EB=A3=A8=EC=85=98</s=
+trong>: 3=EB=8B=A8=EA=B3=84 =EC=9D=B8=EC=A6=9D =EC=8B=9C=EC=8A=A4=ED=85=9C<=
+/p>
+
+<ol style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-siz=
+e:medium">
+=09<li><strong>GPS =EC=9D=B8=EC=A6=9D</strong>: PostGIS =EA=B3=B5=EA=B0=84 =
+=EC=BF=BC=EB=A6=AC (50m =EB=B0=98=EA=B2=BD)</li>
+=09<li><strong>AI =EC=9D=8C=EC=8B=9D =EC=9D=B8=EC=8B=9D</strong>: Cloud Vis=
+ion API (=EC=8B=A4=EC=8B=9C=EA=B0=84 =EC=B9=B4=EB=A9=94=EB=9D=BC =ED=94=84=
+=EB=A6=AC=EB=B7=B0)</li>
+=09<li><strong>OCR =EC=98=81=EC=88=98=EC=A6=9D =EC=9D=B8=EC=A6=9D</strong>:=
+ Document AI (24=EC=8B=9C=EA=B0=84 =EC=9C=88=EB=8F=84=EC=9A=B0)</li>
+</ol>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium"><strong>=EC=A3=BC=EC=9A=94 =EA=B8=B0=EB=8A=A5</strong>:</p>
+
+<ul style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-siz=
+e:medium">
+=09<li>11=EB=8B=A8=EA=B3=84 =EA=B2=8C=EC=9D=B4=EB=AF=B8=ED=94=BC=EC=BC=80=
+=EC=9D=B4=EC=85=98 =EC=8B=9C=EC=8A=A4=ED=85=9C (1=EB=8B=A8=EA=B3=84 &quot;=
+=EB=88=84=EB=A3=BD=EC=A7=80&quot; &rarr; 11=EB=8B=A8=EA=B3=84 &quot;=EB=8C=
+=80=EC=9E=A5=EA=B8=88=E2=AD=90=E2=AD=90=E2=AD=90&quot;)</li>
+=09<li>=ED=8F=89=EC=A0=90 =EC=8B=9C=EC=8A=A4=ED=85=9C =EC=97=86=EC=9D=8C - =
+=EC=A2=8B=EC=95=84=EC=9A=94, OCR =EB=B1=83=EC=A7=80, =EC=82=AC=EC=9A=A9=EC=
+=9E=90 =ED=8B=B0=EC=96=B4 =EC=8B=A0=EB=A2=B0=EB=8F=84=EB=A1=9C =ED=92=88=EC=
+=A7=88 =ED=8F=89=EA=B0=80</li>
+=09<li>Menu-Aware Round Robin =EC=95=8C=EA=B3=A0=EB=A6=AC=EC=A6=98=EC=9D=84=
+ =EC=82=AC=EC=9A=A9=ED=95=9C =EC=8A=A4=EB=A7=88=ED=8A=B8 =ED=94=BC=EB=93=9C=
+ =ED=81=90=EB=A0=88=EC=9D=B4=EC=85=98</li>
+=09<li>AI =EA=B8=B0=EB=B0=98 =EC=BD=98=ED=85=90=EC=B8=A0 =EC=83=9D=EC=84=B1=
+ (Gemini AI)</li>
+=09<li>=EB=8B=A4=EA=B5=AD=EC=96=B4 =EC=A7=80=EC=9B=90 (Google Translate API=
+=EB=A1=9C 14=EA=B0=9C =EC=96=B8=EC=96=B4)</li>
+</ul>
+
+<h3 id=3D"gmail--" style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR=
+&quot;">=F0=9F=93=8E =EC=B2=A8=EB=B6=80 =EB=AC=B8=EC=84=9C</h3>
+
+<ol style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-siz=
+e:medium">
+=09<li><strong>Fallingo_Project_Overview.pdf</strong>
+
+=09<ul>
+=09=09<li>=EC=9A=94=EC=95=BD =EC=A0=95=EB=B3=B4</li>
+=09=09<li>=EA=B8=B0=EC=88=A0 =EC=95=84=ED=82=A4=ED=85=8D=EC=B2=98</li>
+=09=09<li>Google Cloud =ED=86=B5=ED=95=A9 =EC=84=B8=EB=B6=80 =EC=A0=95=EB=
+=B3=B4</li>
+=09=09<li>API =EB=AC=B8=EC=84=9C =EC=8A=A4=ED=81=AC=EB=A6=B0=EC=83=B7</li>
+=09=09<li>=EA=B0=9C=EB=B0=9C =EB=A1=9C=EB=93=9C=EB=A7=B5</li>
+=09</ul>
+=09</li>
+</ol>
+
+<h3 id=3D"gmail--" style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR=
+&quot;">=F0=9F=99=8F =EC=9E=AC=EA=B2=80=ED=86=A0 =EC=9A=94=EC=B2=AD</h3>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium">Fallingo=EA=B0=80 Google for Startups Cloud Program=EC=97=90 =EC=
+=A0=81=ED=95=A9=ED=95=98=EB=8B=A4=EA=B3=A0 =EB=AF=BF=EB=8A=94 =EC=9D=B4=EC=
+=9C=A0:</p>
+
+<ol style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-siz=
+e:medium">
+=09<li><strong>AI =EC=9A=B0=EC=84=A0 =EC=95=84=ED=82=A4=ED=85=8D=EC=B2=98</=
+strong>: =EB=8B=A8=EC=88=9C=ED=9E=88 Google Cloud=EB=A5=BC &quot;=EC=82=AC=
+=EC=9A=A9&quot;=ED=95=98=EB=8A=94 =EA=B2=83=EC=9D=B4 =EC=95=84=EB=8B=88=EB=
+=9D=BC, Vision API, Gemini AI, Document AI=EB=A5=BC =EC=A4=91=EC=8B=AC=EC=
+=9C=BC=EB=A1=9C =EC=A0=84=EC=B2=B4 =EC=A0=9C=ED=92=88=EC=9D=84 =EA=B5=AC=EC=
+=B6=95=ED=95=98=EA=B3=A0 =EC=9E=88=EC=8A=B5=EB=8B=88=EB=8B=A4</li>
+=09<li><strong>=EA=B8=B0=EC=88=A0=EC=A0=81 =EC=84=B1=EC=88=99=EB=8F=84</str=
+ong>: 100% =EB=B0=B1=EC=97=94=EB=93=9C =EC=99=84=EC=84=B1=EC=9D=80 =EC=A7=
+=84=EC=A7=80=ED=95=9C =EA=B0=9C=EB=B0=9C =EC=A7=84=ED=96=89=EC=9D=84 =EC=A6=
+=9D=EB=AA=85=ED=95=A9=EB=8B=88=EB=8B=A4</li>
+=09<li><strong>=EB=AA=85=ED=99=95=ED=95=9C =EC=B6=9C=EC=8B=9C =EA=B3=84=ED=
+=9A=8D</strong>: 2025=EB=85=84 Q2 =EA=B3=B5=EA=B0=9C =EC=B6=9C=EC=8B=9C =EB=
+=B0=8F =EB=8B=A4=EC=A4=91 =EC=A7=80=EC=97=AD =ED=99=95=EC=9E=A5</li>
+=09<li><strong>=ED=99=95=EC=9E=A5=EC=84=B1</strong>: GCP =EC=9D=B8=ED=94=84=
+=EB=9D=BC=EC=97=90=EC=84=9C =EC=88=98=EB=B0=B1=EB=A7=8C =EC=82=AC=EC=9A=A9=
+=EC=9E=90=EB=A5=BC =EC=9C=84=ED=95=9C =EC=95=84=ED=82=A4=ED=85=8D=EC=B2=98 =
+=EC=84=A4=EA=B3=84</li>
+</ol>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium"><strong>=EC=9D=B4 =EC=B6=94=EA=B0=80 =EC=BB=A8=ED=85=8D=EC=8A=A4=
+=ED=8A=B8=EB=A1=9C =EC=8B=A0=EC=B2=AD=EC=9D=84 =EC=9E=AC=EA=B2=80=ED=86=A0=
+=ED=95=B4 =EC=A3=BC=EC=8B=A4 =EC=88=98 =EC=9E=88=EC=9D=84=EA=B9=8C=EC=9A=94=
+?</strong></p>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium">=EB=8B=A4=EC=9D=8C=EC=9D=84 =EC=A0=9C=EA=B3=B5=ED=95=A0 =EC=88=98 =
+=EC=9E=88=EC=8A=B5=EB=8B=88=EB=8B=A4:</p>
+
+<ul style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-siz=
+e:medium">
+=09<li>=EB=9D=BC=EC=9D=B4=EB=B8=8C API =EB=8D=B0=EB=AA=A8 =EC=9B=8C=ED=81=
+=AC=EC=8A=A4=EB=A3=A8</li>
+=09<li>=EA=B8=B0=EC=88=A0 =EA=B2=80=ED=86=A0=EB=A5=BC =EC=9C=84=ED=95=9C =
+=EC=9E=84=EC=8B=9C API =EC=95=A1=EC=84=B8=EC=8A=A4</li>
+=09<li>=EC=B6=94=EA=B0=80 =EB=AC=B8=EC=84=9C =EB=98=90=EB=8A=94 =EC=95=84=
+=ED=82=A4=ED=85=8D=EC=B2=98 =EB=8B=A4=EC=9D=B4=EC=96=B4=EA=B7=B8=EB=9E=A8</=
+li>
+=09<li>GCP =EC=82=AC=EC=9A=A9=EC=97=90 =EB=8C=80=ED=95=B4 =EC=9E=90=EC=84=
+=B8=ED=9E=88 =EB=85=BC=EC=9D=98=ED=95=98=EA=B8=B0 =EC=9C=84=ED=95=9C =ED=86=
+=B5=ED=99=94 =EC=9D=BC=EC=A0=95</li>
+</ul>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium">=EC=8B=9C=EA=B0=84=EC=9D=84 =EB=82=B4=EC=96=B4 =EA=B2=80=ED=86=A0=
+=ED=95=B4 =EC=A3=BC=EC=85=94=EC=84=9C =EA=B0=90=EC=82=AC=ED=95=A9=EB=8B=88=
+=EB=8B=A4. Google Cloud=EC=9D=98 =EC=84=B8=EA=B3=84=EC=A0=81 =EC=88=98=EC=
+=A4=80=EC=9D=98 =EC=84=9C=EB=B9=84=EC=8A=A4=EB=A1=9C =EC=9D=8C=EC=8B=9D =EC=
+=86=8C=EC=85=9C =ED=94=8C=EB=9E=AB=ED=8F=BC=EC=9D=98 =EB=AF=B8=EB=9E=98=EB=
+=A5=BC =EA=B5=AC=EC=B6=95=ED=95=A0 =EC=88=98 =EC=9E=88=EB=8A=94 =EA=B8=B0=
+=ED=9A=8C=EC=97=90 =EB=8C=80=ED=95=B4 =EA=B8=B0=EB=8C=80=ED=95=98=EA=B3=A0 =
+=EC=9E=88=EC=8A=B5=EB=8B=88=EB=8B=A4.</p>
+
+<p style=3D"color:rgb(0,0,0);font-family:&quot;Noto Sans KR&quot;;font-size=
+:medium">=EA=B0=90=EC=82=AC=ED=95=A9=EB=8B=88=EB=8B=A4,</p>
+</div>
+&nbsp;
+
+<div class=3D"gmail_quote gmail_quote_container">
+<div class=3D"gmail_attr" dir=3D"ltr">2025=EB=85=84 10=EC=9B=94 30=EC=9D=BC=
+ (=EB=AA=A9) =EC=98=A4=ED=9B=84 5:58, Google for Startups Cloud Program Tea=
+m &lt;<a href=3D"mailto:cloudstartupsupport-noreply@google.com" shape=3D"re=
+ct" target=3D"_blank">cloudstartupsupport-noreply@google.com</a>&gt;=EB=8B=
+=98=EC=9D=B4 =EC=9E=91=EC=84=B1:</div>
+
+<blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-=
+left:1px solid rgb(204,204,204);padding-left:1ex">
+<div class=3D"msg513630226231230981">
+<div bgcolor=3D"#fafafa" height=3D"100%" style=3D"height:100%;padding:0px">
+<div style=3D"font-size:0px;display:none;opacity:0;color:transparent;max-he=
+ight:0px;height:0px;width:0px">&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&n=
+bsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&n=
+bsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&n=
+bsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&n=
+bsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+
+<table bgcolor=3D"#fafafa" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ id=3D"m_513630226231230981table-parent" style=3D"background-color:rgb(250,=
+250,250);border:0px none" width=3D"100%">
+=09<tbody>
+=09=09<tr>
+=09=09=09<td align=3D"center" bgcolor=3D"#fafafa" colspan=3D"1" id=3D"m_513=
+630226231230981td-parent" rowspan=3D"1" style=3D"padding:0px">
+=09=09=09<div bgcolor=3D"#fafafa" id=3D"m_513630226231230981email" style=3D=
+"margin:0px auto;padding:20px 10px;background-color:rgb(250,250,250)">
+=09=09=09<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"margin:0px;padding:0px;max-width:600px;border:0px none" wid=
+th=3D"100%">
+=09=09=09=09<tbody>
+=09=09=09=09=09<tr>
+=09=09=09=09=09=09<td align=3D"left" colspan=3D"1" rowspan=3D"1" valign=3D"=
+top" width=3D"100%"><img alt=3D"" src=3D"https://services.google.com/fh/fil=
+es/emails/googleforstartups_horizontal.png" style=3D"display: inline-block;=
+ max-width: 220px;" width=3D"220" /></td>
+=09=09=09=09=09</tr>
+=09=09=09=09=09<tr>
+=09=09=09=09=09=09<td colspan=3D"1" rowspan=3D"1" style=3D"padding:35px 0px=
+ 0px;font-size:0px;line-height:0">&nbsp;</td>
+=09=09=09=09=09</tr>
+=09=09=09=09=09<tr>
+=09=09=09=09=09=09<td colspan=3D"1" rowspan=3D"1" style=3D"padding:0px;bord=
+er:1px solid rgb(221,221,221)">
+=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" s=
+tyle=3D"border:0px none" width=3D"100%">
+=09=09=09=09=09=09=09<tbody>
+=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td align=3D"left" bgcolor=3D"#ffffff" class=3D"=
+m_513630226231230981body-content" colspan=3D"1" rowspan=3D"1" style=3D"padd=
+ing:0px 40px" valign=3D"top" width=3D"100%">
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"border:0px none" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09<tbody>
+=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09<td colspan=3D"1" rowspan=3D"1" style=
+=3D"padding:30px 0px 0px;line-height:1">&nbsp;</td>
+=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09<td colspan=3D"1" rowspan=3D"1" style=
+=3D"padding:0px;font-family:Roboto,sans-serif;font-size:14px;line-height:24=
+px;color:rgb(93,121,135)" valign=3D"top" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09<p>Google for Startups Cloud Program =
+=EC=9D=84 =EC=8B=A0=EC=B2=AD=ED=95=B4 =EC=A3=BC=EC=85=94=EC=84=9C =EA=B0=90=
+=EC=82=AC=ED=95=A9=EB=8B=88=EB=8B=A4. =EC=8B=A0=EC=B2=AD=EC=84=9C =EC=B2=98=
+=EB=A6=AC=EB=A5=BC =EB=A7=88=EB=AC=B4=EB=A6=AC=ED=95=98=EA=B8=B0 =EC=9C=84=
+=ED=95=B4=EC=84=9C=EB=8A=94 =EC=95=84=EB=9E=98=EC=99=80 =EA=B0=99=EC=9D=80 =
+=EC=A1=B0=EC=B9=98=EA=B0=80 =ED=95=84=EC=9A=94=ED=95=A9=EB=8B=88=EB=8B=A4.<=
+/p>
+
+=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"line-height:14px">&zwnj;</p=
+>
+
+=09=09=09=09=09=09=09=09=09=09=09=09<p><strong>=EC=8B=A0=EC=B2=AD =EC=8B=9C=
+ =EA=B8=B0=EC=9E=AC=ED=95=98=EC=8B=A0 =ED=9A=8C=EC=82=AC =EC=9B=B9=EC=82=AC=
+=EC=9D=B4=ED=8A=B8=EA=B0=80 =ED=99=95=EC=9D=B8=EB=90=98=EC=A7=80 =EC=95=8A=
+=EC=8A=B5=EB=8B=88=EB=8B=A4.</strong> =EC=A6=89, =EB=A7=81=ED=81=AC=EA=B0=
+=80 =EB=A1=9C=EB=93=9C=EB=90=98=EC=A7=80 =EC=95=8A=EA=B1=B0=EB=82=98, =EA=
+=B7=80=EC=82=AC=EC=9D=98 =EB=8F=84=EB=A9=94=EC=9D=B8=EA=B3=BC =EC=9D=BC=EC=
+=B9=98=ED=95=98=EC=A7=80 =EC=95=8A=EB=8A=94 =EB=8B=A4=EB=A5=B8 =ED=8E=98=EC=
+=9D=B4=EC=A7=80=EB=A1=9C =EC=97=B0=EA=B2=B0=EB=90=98=EA=B1=B0=EB=82=98, =EC=
+=9B=B9=EC=82=AC=EC=9D=B4=ED=8A=B8=EC=97=90 =EA=B7=80=EC=82=AC=EC=9D=98 =EC=
+=A0=9C=ED=92=88=EC=97=90 =EA=B4=80=ED=95=9C =EC=A0=95=EB=B3=B4=EA=B0=80 =EC=
+=B6=A9=EB=B6=84=ED=95=98=EC=A7=80 =EC=95=8A=EC=8A=B5=EB=8B=88=EB=8B=A4.</p>
+
+=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"line-height:14px">&zwnj;</p=
+>
+
+=09=09=09=09=09=09=09=09=09=09=09=09<p>=EA=B7=80=ED=95=98=EC=9D=98 <strong>=
+=EC=8A=A4=ED=83=80=ED=8A=B8=EC=97=85=EC=9D=B4 =EC=8A=A4=ED=85=94=EC=8A=A4 =
+=EB=AA=A8=EB=93=9C(stealth mode)</strong>=EC=9D=B8 =EA=B2=BD=EC=9A=B0, =ED=
+=88=AC=EC=9E=90=EC=9E=90=EC=9D=98 =ED=98=91=EC=A1=B0=EB=A5=BC =EA=B5=AC=ED=
+=95=B4 Google Cloud =EB=8B=B4=EB=8B=B9=EC=9E=90=EC=97=90=EA=B2=8C =ED=88=AC=
+=EC=9E=90 =EC=82=AC=EC=8B=A4=EC=9D=84 =EC=A6=9D=EB=AA=85=ED=95=98=EA=B1=B0=
+=EB=82=98 =EC=9D=B4 =EC=9D=B4=EB=A9=94=EC=9D=BC=EC=97=90 =EC=A7=81=EC=A0=91=
+ =ED=9A=8C=EC=8B=A0=ED=95=B4 =ED=88=AC=EC=9E=90 =EC=82=AC=EC=8B=A4=EC=9D=84=
+ =ED=99=95=EC=9D=B8=ED=95=A0 =EC=88=98 =EC=9E=88=EB=8A=94 =EB=B0=A9=EB=B2=
+=95=EC=9D=84 Google Cloud=EC=9D=98 =EC=A7=80=EC=9B=90=ED=8C=80=EA=B3=BC =EB=
+=85=BC=EC=9D=98=ED=95=98=EC=8B=9C=EA=B8=B0 =EB=B0=94=EB=9E=8D=EB=8B=88=EB=
+=8B=A4.</p>
+
+=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"line-height:14px">&zwnj;</p=
+>
+
+=09=09=09=09=09=09=09=09=09=09=09=09<p><strong>=EC=8A=A4=ED=85=94=EC=8A=A4 =
+=EB=AA=A8=EB=93=9C=EA=B0=80 =EC=95=84=EB=8B=88=EB=9D=BC=EB=A9=B4</strong> G=
+oogle Cloud=ED=8C=80=EC=97=90=EC=84=9C =EA=B2=80=ED=86=A0=ED=95=A0 =EC=88=
+=98 =EC=9E=88=EB=8A=94 =EC=98=A8=EB=9D=BC=EC=9D=B8 =EC=9E=90=EB=A3=8C=EA=B0=
+=80 =EC=B6=94=EA=B0=80=EB=A1=9C =EC=9E=88=EC=9D=84 =EB=95=8C =EB=8B=A4=EC=
+=8B=9C =EC=8B=A0=EC=B2=AD=ED=95=98=EA=B1=B0=EB=82=98 =EC=9D=B4 =EC=9D=B4=EB=
+=A9=94=EC=9D=BC=EC=97=90 =ED=9A=8C=EC=8B=A0=ED=95=B4 =EC=95=8C=EB=A0=A4=EC=
+=A3=BC=EC=8B=9C=EB=A9=B4 =EC=8B=A0=EC=B2=AD=EC=84=9C=EB=A5=BC =EB=8B=A4=EC=
+=8B=9C =EC=B2=98=EB=A6=AC=ED=95=B4 =EB=93=9C=EB=A6=AC=EA=B2=A0=EC=8A=B5=EB=
+=8B=88=EB=8B=A4.</p>
+
+=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"line-height:14px">&zwnj;</p=
+>
+
+=09=09=09=09=09=09=09=09=09=09=09=09<p>=EA=B7=B8=EC=A0=84=EA=B9=8C=EC=A7=80=
+=EB=8A=94 <a href=3D"https://c.gle/APy2Ad0zqIdQyZ2-rvJU_Q1MUHGy3mMeHz5Bsxca=
+qcFOszRLugks2J30FV4f2tMm2KHYDahiCVTCsKeC4vu_TYdDgYdQ153Z7Tzt3Wr6ZgGB-77cHjT=
+HRkh2li5F3y7V_lTzRJz4OERTQJocCwjqBysNUOtR0-sxZUaLjfQa3tSkm2d8Hs9_w1fBTTey8m=
+5TqbMdyZAczEO8OUMc5OM0mh9HIg-k7O3fu2P1pCw" shape=3D"rect" style=3D"color:rg=
+b(26,115,232);text-decoration:none" target=3D"_blank">=EC=97=AC=EA=B8=B0</a=
+>=EC=97=90=EC=84=9C Google for Startups Cloud Program =EA=B3=BC =EA=B4=80=
+=EB=A0=A8=EB=90=9C =EC=A4=91=EC=9A=94=ED=95=9C =EC=97=85=EB=8D=B0=EC=9D=B4=
+=ED=8A=B8=EB=A5=BC =EB=B0=9B=EC=95=84=EB=B3=B4=EC=8B=A4 =EC=88=98 =EC=9E=88=
+=EC=8A=B5=EB=8B=88=EB=8B=A4.</p>
+
+=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"line-height:14px">&zwnj;</p=
+>
+
+=09=09=09=09=09=09=09=09=09=09=09=09<p>=EA=B0=90=EC=82=AC=ED=95=A9=EB=8B=88=
+=EB=8B=A4</p>
+
+=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"line-height:14px">&zwnj;</p=
+>
+
+=09=09=09=09=09=09=09=09=09=09=09=09<p>Google for Startups Cloud Program =
+=ED=8C=80</p>
+=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09</tbody>
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td align=3D"center" bgcolor=3D"#ffffff" class=
+=3D"m_513630226231230981footer-content" colspan=3D"1" rowspan=3D"1" style=
+=3D"padding:0px 40px" valign=3D"top" width=3D"100%">
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"border:0px none" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09<tbody>
+=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09<td colspan=3D"1" rowspan=3D"1" style=
+=3D"padding:50px 0px 0px;line-height:1">&nbsp;</td>
+=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" colspan=3D"1" rows=
+pan=3D"1" width=3D"100%"><img alt=3D"" src=3D"https://services.google.com/f=
+h/files/emails/gcp_newsletter_email_cloud_footer_logo_new.png" style=3D"dis=
+play: inline-block; max-width: 77px;" width=3D"77" /></td>
+=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" colspan=3D"1" rows=
+pan=3D"1" style=3D"padding:14px 0px 20px;font-family:Roboto,sans-serif;font=
+-size:12px;line-height:17px;color:rgb(113,113,113)" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09<p>&copy; Google LLC 1600, Amphitheatre=
+ Parkway, Mountain View, CA 94043</p>
+
+=09=09=09=09=09=09=09=09=09=09=09=09<p>=EB=B3=B8 =EC=9D=B4=EB=A9=94=EC=9D=
+=BC=EC=9D=80 =EA=B7=80=ED=95=98=EC=9D=98 Google for Startups =ED=81=B4=EB=
+=9D=BC=EC=9A=B0=EB=93=9C =ED=94=84=EB=A1=9C=EA=B7=B8=EB=9E=A8 =EC=8B=A0=EC=
+=B2=AD=EC=97=90 =EB=8C=80=ED=95=9C =EC=A4=91=EC=9A=94=ED=95=9C =EC=A0=95=EB=
+=B3=B4=EA=B0=80 =ED=8F=AC=ED=95=A8=EB=90=98=EC=96=B4 =EC=9E=88=EA=B8=B0 =EB=
+=95=8C=EB=AC=B8=EC=97=90 =EB=B0=9C=EC=86=A1=EB=90=98=EC=97=88=EC=8A=B5=EB=
+=8B=88=EB=8B=A4.</p>
+=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09</tbody>
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09</tbody>
+=09=09=09=09=09=09</table>
+=09=09=09=09=09=09</td>
+=09=09=09=09=09</tr>
+=09=09=09=09</tbody>
+=09=09=09</table>
+=09=09=09</div>
+=09=09=09</td>
+=09=09</tr>
+=09</tbody>
+</table>
+</div>
+</div>
+</blockquote>
+</div>
+</div>
+
+<p>&nbsp;</p>
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to <a href=3D"mailto:limo-support--general-test-external+unsubscribe@g=
+oogle.com" shape=3D"rect" target=3D"_blank">limo-support--general-test-exte=
+rnal+unsubscribe@google.com</a>.<img alt=3D"" src=3D"https://limo.my.salesf=
+orce.com/servlet/servlet.ImageServer?oid=3D00D1U00000118G1&esid=3D018Ki0000=
+06SgBU&from=3Dext"><br><br>ref:!00D1U0118G1.!500Ki0Awp5a:ref</body>
+</html>
+------=_Part_1092_1988285513.1762180647353--
