@@ -13,28 +13,28 @@ lang: "ko"
 ## 📝 이번 기간 작업 내용
 
 ### Cloud Run 배포 안정화 (6개 커밋)
-- **Use DATABASE_URL from Secret Manager with password**: DB URL 시크릿 사용
-- **Add PORT environment variable to Dockerfile**: PORT 환경변수 추가
-- **claude dev**: 개발 업데이트
-- **Improve health check endpoint with real status checks**: 헬스체크 개선
-- **Allow all hosts for Cloud Run deployment**: 모든 호스트 허용
-- **API prefix를 /api/v1에서 /api로 변경**: API prefix 단순화
+- **Use DATABASE_URL from Secret Manager with password**: DB URL 시크릿 사용<br />
+- **Add PORT environment variable to Dockerfile**: PORT 환경변수 추가<br />
+- **claude dev**: 개발 업데이트<br />
+- **Improve health check endpoint with real status checks**: 헬스체크 개선<br />
+- **Allow all hosts for Cloud Run deployment**: 모든 호스트 허용<br />
+- **API prefix를 /api/v1에서 /api로 변경**: API prefix 단순화<br />
 - **API_V1_PREFIX를 API_PREFIX로 변수명 변경**: 변수명 수정
 
 ### 테스트 파일 정리 (6개 커밋)
-- **테스트 파일 및 문서 제거**: 테스트 파일 삭제
-- **Revert "chore: 테스트 파일 및 문서 제거"**: Revert 1
-- **테스트 파일만 제거**: 다시 삭제
-- **API 테스트 스크립트 제거**: API 스크립트 삭제
-- **추가 테스트 스크립트 제거**: 추가 스크립트 삭제
-- **Revert "chore: 테스트 파일만 제거"**: Revert 2
+- **테스트 파일 및 문서 제거**: 테스트 파일 삭제<br />
+- **Revert "chore: 테스트 파일 및 문서 제거"**: Revert 1<br />
+- **테스트 파일만 제거**: 다시 삭제<br />
+- **API 테스트 스크립트 제거**: API 스크립트 삭제<br />
+- **추가 테스트 스크립트 제거**: 추가 스크립트 삭제<br />
+- **Revert "chore: 테스트 파일만 제거"**: Revert 2<br />
 - **개발/테스트 스크립트 제거**: 최종 삭제
 
 ### Spec-kit 도입 및 리팩토링 (7개 커밋)
-- **Add spec-kit for code quality management**: Spec-kit 도입
-- **Convert follow_service to Facade pattern (999 → 208 lines)**: 대규모 리팩토링
-- **Generate all 17 domain specifications**: 17개 도메인 스펙 생성
-- **Fill domain specs with detailed information**: 스펙 상세 작성
+- **Add spec-kit for code quality management**: Spec-kit 도입<br />
+- **Convert follow_service to Facade pattern (999 → 208 lines)**: 대규모 리팩토링<br />
+- **Generate all 17 domain specifications**: 17개 도메인 스펙 생성<br />
+- **Fill domain specs with detailed information**: 스펙 상세 작성<br />
 - **Add complete spec generator for restaurants domain (NO TODOs)**: restaurants 스펙 완성
 
 ### 프론트엔드 개발 (1개 커밋)
@@ -60,8 +60,8 @@ lang: "ko"
 
 ## 📊 개발 현황
 
-- **배포**: Secret Manager, PORT, 헬스체크, API prefix 단순화
-- **코드 품질**: Spec-kit 도입, Facade 패턴 (999 → 208줄)
-- **스펙**: 17개 도메인 스펙 생성, restaurants 완성
+- **배포**: Secret Manager, PORT, 헬스체크, API prefix 단순화<br />
+- **코드 품질**: Spec-kit 도입, Facade 패턴 (999 → 208줄)<br />
+- **스펙**: 17개 도메인 스펙 생성, restaurants 완성<br />
 - **프론트엔드**: Stage 2 완료 (피드 생성)
 

@@ -13,25 +13,25 @@ lang: "ko"
 ## 📝 이번 기간 작업 내용
 
 ### Phase 기반 개발 (6개 커밋)
-- **Phase 0**: 기본 설정 완료
-- **Phase 1, 2**: 통합 개발
-- **Complete Phase 3 development**: Phase 3 완료
-- **문서 업데이트**: 개발 문서 정리
-- **Complete Phase 4 development**: Phase 4 완료
+- **Phase 0**: 기본 설정 완료<br />
+- **Phase 1, 2**: 통합 개발<br />
+- **Complete Phase 3 development**: Phase 3 완료<br />
+- **문서 업데이트**: 개발 문서 정리<br />
+- **Complete Phase 4 development**: Phase 4 완료<br />
 - **개발 문서 업데이트**: Phase 4 완료 문서화
 
 ### 연속된 리셋 (4개 커밋)
-- **[RESET]** (6/20): 첫 번째 리셋
-- **Complete Phase 1 development**: Phase 1 재개발
-- **[RESET]** (6/20): 두 번째 리셋
+- **[RESET]** (6/20): 첫 번째 리셋<br />
+- **Complete Phase 1 development**: Phase 1 재개발<br />
+- **[RESET]** (6/20): 두 번째 리셋<br />
 - **[RESET]** (6/21): 세 번째 리셋
 
 ### Step 기반 재구축 (9개 커밋)
-- **개발 문서 업로드**: 2회 연속 문서 정리
-- **Complete Step 2~4 development**: Step 2, 3, 4 완료
-- **project_id = "fallingo"**: 프로젝트 ID 설정
-- **legal**: 법률 문서 작성
-- **docs update**: 문서 업데이트
+- **개발 문서 업로드**: 2회 연속 문서 정리<br />
+- **Complete Step 2~4 development**: Step 2, 3, 4 완료<br />
+- **project_id = "fallingo"**: 프로젝트 ID 설정<br />
+- **legal**: 법률 문서 작성<br />
+- **docs update**: 문서 업데이트<br />
 - **first setup**: 첫 번째 셋업 완료
 
 ### 최종 리셋 (1개 커밋)
@@ -49,8 +49,8 @@ lang: "ko"
 
 ## 📊 개발 현황
 
-- **두 번째 시도**: Phase 0~4 완료 → 리셋
-- **세 번째 시도**: Phase 1 완료 → 리셋
-- **네 번째 시도**: Step 2~4 완료, 법률 문서 작성 → 리셋
+- **두 번째 시도**: Phase 0~4 완료 → 리셋<br />
+- **세 번째 시도**: Phase 1 완료 → 리셋<br />
+- **네 번째 시도**: Step 2~4 완료, 법률 문서 작성 → 리셋<br />
 - **다섯 번째 시도**: 7/14 새로운 시작 예정
 

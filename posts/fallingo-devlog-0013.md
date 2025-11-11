@@ -13,29 +13,29 @@ lang: "ko"
 ## 📝 이번 기간 작업 내용
 
 ### Python 버전 시행착오 (7개 커밋)
-- **Update to Python 3.13.6 (latest stable)**: 3.13.6 업그레이드
-- **Regenerate requirements.txt for Python 3.13 compatibility**: 의존성 재생성
-- **Update GitHub Actions to properly install dependencies for Python 3.13.6**: CI/CD 수정
-- **Downgrade to Python 3.12 for better compatibility**: 3.12로 다운그레이드
-- **Use requirements.txt directly in Dockerfile instead of Poetry**: Poetry → requirements.txt
-- **Add email-validator dependency for Pydantic email validation**: 의존성 추가
-- **Update to Python 3.13.6 with Poetry support**: 다시 3.13.6 + Poetry
+- **Update to Python 3.13.6 (latest stable)**: 3.13.6 업그레이드<br />
+- **Regenerate requirements.txt for Python 3.13 compatibility**: 의존성 재생성<br />
+- **Update GitHub Actions to properly install dependencies for Python 3.13.6**: CI/CD 수정<br />
+- **Downgrade to Python 3.12 for better compatibility**: 3.12로 다운그레이드<br />
+- **Use requirements.txt directly in Dockerfile instead of Poetry**: Poetry → requirements.txt<br />
+- **Add email-validator dependency for Pydantic email validation**: 의존성 추가<br />
+- **Update to Python 3.13.6 with Poetry support**: 다시 3.13.6 + Poetry<br />
 - **Remove --with dev flag from Poetry install**: Poetry 설정 수정
 
 ### Cloud Run 배포 개선 (9개 커밋)
-- **Update Dockerfile to use PORT environment variable for Cloud Run**: PORT 환경변수 추가
-- **Update Dockerfile to properly handle PORT environment variable**: PORT 처리 개선
-- **Simplify Dockerfile and add dedicated startup script for Cloud Run**: 시작 스크립트 추가
-- **Use PORT environment variable for Cloud Run deployment**: PORT 사용
-- **Simplify backend for Cloud Run deployment**: 백엔드 단순화
-- **Update logging to use simplified config**: 로깅 설정 단순화
-- **모든 모듈을 config_simple 사용하도록 변경**: 전체 모듈 config 변경
-- **Cloud Run URL을 TrustedHostMiddleware에 추가**: 신뢰 호스트 추가
+- **Update Dockerfile to use PORT environment variable for Cloud Run**: PORT 환경변수 추가<br />
+- **Update Dockerfile to properly handle PORT environment variable**: PORT 처리 개선<br />
+- **Simplify Dockerfile and add dedicated startup script for Cloud Run**: 시작 스크립트 추가<br />
+- **Use PORT environment variable for Cloud Run deployment**: PORT 사용<br />
+- **Simplify backend for Cloud Run deployment**: 백엔드 단순화<br />
+- **Update logging to use simplified config**: 로깅 설정 단순화<br />
+- **모든 모듈을 config_simple 사용하도록 변경**: 전체 모듈 config 변경<br />
+- **Cloud Run URL을 TrustedHostMiddleware에 추가**: 신뢰 호스트 추가<br />
 - **원래 config.py 사용하도록 복구 및 환경 변수 수정**: config 복구
 
 ### 보안 및 설정 개선 (4개 커밋)
-- **SECRET_KEY를 JWT_SECRET_KEY로 수정**: 환경변수명 명확화
-- **secret_key를 jwt_secret_key로 명확하게 변경**: 코드 명확화
+- **SECRET_KEY를 JWT_SECRET_KEY로 수정**: 환경변수명 명확화<br />
+- **secret_key를 jwt_secret_key로 명확하게 변경**: 코드 명확화<br />
 - **psycopg2-binary 패키지 추가**: PostgreSQL 드라이버 추가
 
 ## 💡 작업 하이라이트
@@ -50,8 +50,8 @@ Cloud Run 배포를 위해 **PORT 환경변수** 처리를 개선하고, Dockerf
 
 ## 📊 개발 현황
 
-- **Python**: 3.13.6 (최종 선택)
-- **배포**: Cloud Run PORT 환경변수 처리 완료
-- **보안**: JWT_SECRET_KEY 명확화, TrustedHost 설정
+- **Python**: 3.13.6 (최종 선택)<br />
+- **배포**: Cloud Run PORT 환경변수 처리 완료<br />
+- **보안**: JWT_SECRET_KEY 명확화, TrustedHost 설정<br />
 - **DB**: psycopg2-binary 추가
 

@@ -13,30 +13,30 @@ lang: "ko"
 ## 📝 이번 기간 작업 내용
 
 ### 문서 및 설정 정리 (6개 커밋)
-- **기술 스택 문서 업데이트 - Identity Platform 통합 완료**: 문서화
-- **Remove duplicate python field and google-cloud-identity-platform**: pyproject.toml 정리
-- **update --**: 일반 업데이트
-- **Correct PytestDeprecationWarning path**: pytest 설정 수정
-- **Add required environment variables for test configuration**: 테스트 환경 개선
+- **기술 스택 문서 업데이트 - Identity Platform 통합 완료**: 문서화<br />
+- **Remove duplicate python field and google-cloud-identity-platform**: pyproject.toml 정리<br />
+- **update --**: 일반 업데이트<br />
+- **Correct PytestDeprecationWarning path**: pytest 설정 수정<br />
+- **Add required environment variables for test configuration**: 테스트 환경 개선<br />
 - **Correct database session import name**: import 수정
 
 ### 버그 수정 (3개 커밋)
-- **Correct exception class names in auth.py**: 인증 예외 처리 수정
-- **Resolve import errors and test failures**: import 에러 해결
+- **Correct exception class names in auth.py**: 인증 예외 처리 수정<br />
+- **Resolve import errors and test failures**: import 에러 해결<br />
 - **Add aiosqlite to dependencies for test environment**: 테스트 DB 의존성 추가
 
 ### 프로젝트 구조 개선 (5개 커밋)
-- **Consolidate .gitignore files into root**: .gitignore 통합
-- **Add Cloud SQL Proxy setup guide**: Cloud SQL 가이드 추가
-- **Organize Cloud SQL Proxy setup in backend directory**: 디렉토리 정리
-- **Organize scripts folder**: 스크립트 정리
+- **Consolidate .gitignore files into root**: .gitignore 통합<br />
+- **Add Cloud SQL Proxy setup guide**: Cloud SQL 가이드 추가<br />
+- **Organize Cloud SQL Proxy setup in backend directory**: 디렉토리 정리<br />
+- **Organize scripts folder**: 스크립트 정리<br />
 - **Fix docs/README.md with actual existing files only**: 문서 수정
 
 ### 레거시 코드 정리 (6개 커밋)
-- **Remove unused migrations folder**: 사용하지 않는 마이그레이션 삭제
-- **Remove archived legacy scripts**: 아카이브 스크립트 삭제
-- **Remove unnecessary database initialization scripts**: 불필요한 DB 스크립트 삭제
-- **Remove unused GCP infrastructure folders**: 사용하지 않는 GCP 폴더 삭제
+- **Remove unused migrations folder**: 사용하지 않는 마이그레이션 삭제<br />
+- **Remove archived legacy scripts**: 아카이브 스크립트 삭제<br />
+- **Remove unnecessary database initialization scripts**: 불필요한 DB 스크립트 삭제<br />
+- **Remove unused GCP infrastructure folders**: 사용하지 않는 GCP 폴더 삭제<br />
 - **Remove temporary test files and credentials**: 임시 파일 정리
 
 ### Python 버전 업그레이드 (1개 커밋)
@@ -54,8 +54,8 @@ lang: "ko"
 
 ## 📊 개발 현황
 
-- **코드 정리**: 레거시 코드 6개 카테고리 삭제
-- **Python**: 3.13 업그레이드
-- **문서**: Cloud SQL Proxy 가이드, Identity Platform 통합 문서
+- **코드 정리**: 레거시 코드 6개 카테고리 삭제<br />
+- **Python**: 3.13 업그레이드<br />
+- **문서**: Cloud SQL Proxy 가이드, Identity Platform 통합 문서<br />
 - **테스트**: aiosqlite 추가, pytest 설정 개선
 

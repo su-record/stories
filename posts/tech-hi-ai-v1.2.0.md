@@ -16,10 +16,10 @@ hi-ai MCP v1.2.0은 2024년 10월 17일에 배포된 메이저 업데이트입�
 
 ### 주요 특징
 
-- **6가지 레이아웃 타입**: Header-Content-Footer, Sidebar, Grid, Split, Dashboard, Mobile
-- **ASCII 아트 시각화**: 터미널에서 즉시 확인 가능한 레이아웃 프리뷰
-- **반응형 시뮬레이션**: 다양한 화면 크기에 대한 미리보기
-- **컴포넌트 계층 표시**: 중첩된 컴포넌트 구조 시각화
+- **6가지 레이아웃 타입**: Header-Content-Footer, Sidebar, Grid, Split, Dashboard, Mobile<br />
+- **ASCII 아트 시각화**: 터미널에서 즉시 확인 가능한 레이아웃 프리뷰<br />
+- **반응형 시뮬레이션**: 다양한 화면 크기에 대한 미리보기<br />
+- **컴포넌트 계층 표시**: 중첩된 컴포넌트 구조 시각화<br />
 - **도구 개수 확장**: 33개 → 34개 (1개 추가)
 
 ## 주요 변경사항
@@ -1126,15 +1126,15 @@ console.log(preview.ascii);
 
 ## 다음 버전 계획
 
-**v1.3.0 (예정)**
-- 컬러 ASCII 아트 지원
-- 더 많은 레이아웃 타입
+**v1.3.0 (예정)**<br />
+- 컬러 ASCII 아트 지원<br />
+- 더 많은 레이아웃 타입<br />
 - 3D 시각화
 
 ## 참고 자료
 
-- [ASCII Art Wikipedia](https://en.wikipedia.org/wiki/ASCII_art)
-- [Box Drawing Characters](https://en.wikipedia.org/wiki/Box-drawing_character)
+- [ASCII Art Wikipedia](https://en.wikipedia.org/wiki/ASCII_art)<br />
+- [Box Drawing Characters](https://en.wikipedia.org/wiki/Box-drawing_character)<br />
 - [hi-ai GitHub](https://github.com/su-record/hi-ai)
 
 ---

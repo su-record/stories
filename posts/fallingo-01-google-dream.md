@@ -32,28 +32,28 @@ lang: "ko"
 
 그래서 정했다. **모든 기술을 구글로.**
 
-**백엔드:**
-- FastAPI + Python 3.11+
-- PostgreSQL 15 + PostGIS
+**백엔드:**<br />
+- FastAPI + Python 3.11+<br />
+- PostgreSQL 15 + PostGIS<br />
 - Cloud Run 배포
 
-**프론트엔드:**
-- Flutter 3.24+
+**프론트엔드:**<br />
+- Flutter 3.24+<br />
 - Firebase Auth
 
-**AI 서비스:**
-- Vision API (이미지 분석)
-- Gemini (AI 대화)
-- Document AI (문서 처리)
+**AI 서비스:**<br />
+- Vision API (이미지 분석)<br />
+- Gemini (AI 대화)<br />
+- Document AI (문서 처리)<br />
 - Translate API (번역)
 
-**인프라:**
-- Cloud Run (서버리스 컨테이너)
-- Cloud Storage (파일 저장)
-- Cloud SQL (데이터베이스)
+**인프라:**<br />
+- Cloud Run (서버리스 컨테이너)<br />
+- Cloud Storage (파일 저장)<br />
+- Cloud SQL (데이터베이스)<br />
 - Memorystore Redis (캐싱)
 
-**지도:**
+**지도:**<br />
 - Google Maps Platform
 
 백엔드도 모르고, Flutter도 처음이고, 구글 클라우드는 더더욱 몰랐다.

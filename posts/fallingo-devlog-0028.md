@@ -13,29 +13,29 @@ lang: "ko"
 ## 📝 이번 기간 작업 내용
 
 ### Trailing slash 문제 (8개 커밋)
-- **Add null-safe parsing for createdAt field**: null-safe 파싱
-- **Add trailing slash to feeds API endpoint**: trailing slash 추가
-- **Remove trailing slash from all 1depth API endpoints**: 전체 제거
-- **Remove automatic trailing slash appending in Dio interceptor**: Dio 제거
-- **Remove trailing slash from feeds API endpoint**: feeds 제거
-- **Revert empty string routes to slash routes**: slash 복원
+- **Add null-safe parsing for createdAt field**: null-safe 파싱<br />
+- **Add trailing slash to feeds API endpoint**: trailing slash 추가<br />
+- **Remove trailing slash from all 1depth API endpoints**: 전체 제거<br />
+- **Remove automatic trailing slash appending in Dio interceptor**: Dio 제거<br />
+- **Remove trailing slash from feeds API endpoint**: feeds 제거<br />
+- **Revert empty string routes to slash routes**: slash 복원<br />
 - **Remove trailing slashes from all 1-depth API endpoints**: 1-depth 제거
 
 ### 관리자 및 데이터 모델 수정 (6개 커밋)
-- **Add admin API endpoint for test data seeding**: 관리자 API
-- **Exclude admin seed endpoint from CSRF protection**: CSRF 제외
-- **Make restaurant address optional and fix verification score field**: 필드 수정
-- **Simplify Advertisement model to match API response**: Advertisement 단순화
-- **Remove Advertisement.content references from feed_screen**: content 제거
+- **Add admin API endpoint for test data seeding**: 관리자 API<br />
+- **Exclude admin seed endpoint from CSRF protection**: CSRF 제외<br />
+- **Make restaurant address optional and fix verification score field**: 필드 수정<br />
+- **Simplify Advertisement model to match API response**: Advertisement 단순화<br />
+- **Remove Advertisement.content references from feed_screen**: content 제거<br />
 - **Add missing fields to feed API response (user_interactions, location, profile_image_url)**: 필드 추가
 
 ### 신규 기능 구현 (6개 커밋)
-- **dev**: 일반 개발
-- **Add realistic seed data script with Google Places API**: Google Places 시딩
-- **Add SEO optimization (robots.txt, sitemap.xml, meta tags)**: SEO 최적화
-- **Add ad system for feed (web + mobile ready)**: 광고 시스템
-- **피드 이미지 1:1 크롭 및 테스트 데이터 개선**: 이미지 크롭
-- **Update Flutter dependencies**: Flutter 업데이트
+- **dev**: 일반 개발<br />
+- **Add realistic seed data script with Google Places API**: Google Places 시딩<br />
+- **Add SEO optimization (robots.txt, sitemap.xml, meta tags)**: SEO 최적화<br />
+- **Add ad system for feed (web + mobile ready)**: 광고 시스템<br />
+- **피드 이미지 1:1 크롭 및 테스트 데이터 개선**: 이미지 크롭<br />
+- **Update Flutter dependencies**: Flutter 업데이트<br />
 - **피드 이미지 1:1 크롭 강화 및 스플래시 피드 프리로드**: 크롭 강화
 
 ## 💡 작업 하이라이트
@@ -70,9 +70,9 @@ lang: "ko"
 
 ## 📊 개발 현황
 
-- **API**: trailing slash 표준화, 관리자 엔드포인트
-- **광고**: 웹+모바일 광고 시스템 구현
-- **SEO**: robots.txt, sitemap.xml, meta tags
-- **데이터**: Google Places API 시딩
+- **API**: trailing slash 표준화, 관리자 엔드포인트<br />
+- **광고**: 웹+모바일 광고 시스템 구현<br />
+- **SEO**: robots.txt, sitemap.xml, meta tags<br />
+- **데이터**: Google Places API 시딩<br />
 - **UI**: 1:1 이미지 크롭, 피드 프리로드
 

@@ -15,9 +15,9 @@ lang: "ko"
 지난주 fallingo 백엔드에 Redis 캐싱을 적용하면서 **API 응답속도를 76%나 개선**했습니다.
 
 이번 글에서는 단순히 "Redis를 적용했다"는 이야기가 아니라:
-- 왜 Redis를 선택했는지
-- 어떻게 구현했는지
-- 실제 성능이 얼마나 나왔는지
+- 왜 Redis를 선택했는지<br />
+- 어떻게 구현했는지<br />
+- 실제 성능이 얼마나 나왔는지<br />
 - 어떤 문제를 겪고 해결했는지
 
 **실전 경험**을 상세히 공유해보려고 합니다.
@@ -117,9 +117,9 @@ return data
 **결론: Redis 캐싱을 선택했습니다!**
 
 이유는:
-- Google for Startups Cloud Program으로 GCP Memorystore Redis 무료 사용이 가능했습니다
-- 실시간성이 중요한 피드 서비스에 적합했습니다
-- TTL로 자동 만료가 가능합니다
+- Google for Startups Cloud Program으로 GCP Memorystore Redis 무료 사용이 가능했습니다<br />
+- 실시간성이 중요한 피드 서비스에 적합했습니다<br />
+- TTL로 자동 만료가 가능합니다<br />
 - 필요시 즉시 무효화가 가능합니다
 
 ## Redis 캐싱 시스템 구축
@@ -218,9 +218,9 @@ class RedisClient:
 redis_client = RedisClient()
 ```
 
-**핵심 포인트**:
-- **타임아웃 설정**: Cloud Run에서 startup timeout 방지
-- **연결 실패 처리**: Redis 없이도 서비스 정상 동작 (Fallback)
+**핵심 포인트**:<br />
+- **타임아웃 설정**: Cloud Run에서 startup timeout 방지<br />
+- **연결 실패 처리**: Redis 없이도 서비스 정상 동작 (Fallback)<br />
 - **JSON 직렬화**: Python 객체를 문자열로 변환
 
 ### 3. 서비스별 캐싱 전략
@@ -261,9 +261,9 @@ async def get_feeds(skip: int = 0, limit: int = 20) -> list:
     return feeds
 ```
 
-**왜 300초?**
-- 피드는 자주 업데이트되지만, 실시간이 아니어도 괜찮습니다
-- 5분 정도는 허용 가능한 지연입니다
+**왜 300초?**<br />
+- 피드는 자주 업데이트되지만, 실시간이 아니어도 괜찮습니다<br />
+- 5분 정도는 허용 가능한 지연입니다<br />
 - 너무 짧으면 캐시 효과 감소, 너무 길면 오래된 데이터가 됩니다
 
 #### 3.2 사용자 프로필 캐싱 (TTL: 600초)
@@ -298,9 +298,9 @@ async def get_user_profile(user_id: int) -> dict:
     return profile
 ```
 
-**왜 600초?**
-- 프로필은 자주 변경되지 않습니다
-- 팔로워 수 등은 약간의 지연을 허용할 수 있습니다
+**왜 600초?**<br />
+- 프로필은 자주 변경되지 않습니다<br />
+- 팔로워 수 등은 약간의 지연을 허용할 수 있습니다<br />
 - 더 긴 TTL로 캐시 효율을 극대화했습니다
 
 #### 3.3 팔로우 관계 캐싱 (TTL: 300초)
@@ -355,9 +355,9 @@ async def get_feed_stats(feed_id: int) -> dict:
     return stats
 ```
 
-**왜 180초?**
-- 통계는 실시간성이 더 중요합니다
-- 좋아요/댓글이 빠르게 변하기 때문입니다
+**왜 180초?**<br />
+- 통계는 실시간성이 더 중요합니다<br />
+- 좋아요/댓글이 빠르게 변하기 때문입니다<br />
 - 짧은 TTL로 최신성을 유지합니다
 
 ### 4. 캐시 무효화 전략
@@ -519,7 +519,7 @@ ERROR: Container failed to start.
 Failed to start and then listen on the port defined by the PORT environment variable.
 ```
 
-**원인**:
+**원인**:<br />
 Redis 연결 시 타임아웃 설정이 없어서, 연결이 안 되면 무한정 기다렸습니다.
 
 **해결**:
@@ -539,7 +539,7 @@ redis.Redis(
 ModuleNotFoundError: No module named 'redis'
 ```
 
-**원인**:
+**원인**:<br />
 `requirements.txt`에 `redis` 패키지 추가를 깜빡했습니다.
 
 **해결**:
@@ -554,7 +554,7 @@ redis==5.0.1
 TypeError: Object of type datetime is not JSON serializable
 ```
 
-**원인**:
+**원인**:<br />
 Python `datetime` 객체를 JSON으로 변환할 수 없었습니다.
 
 **해결**:
@@ -564,10 +564,10 @@ json.dumps(value, default=str)  # datetime을 문자열로 변환
 
 ### 문제 4: 캐시 키 충돌
 
-**증상**:
+**증상**:<br />
 다른 사용자가 같은 캐시를 공유하는 버그.
 
-**원인**:
+**원인**:<br />
 캐시 키에 사용자 ID를 포함하지 않았습니다.
 
 **해결**:
@@ -585,24 +585,24 @@ cache_key = f"user:{user_id}:feeds:list:0:20"  # 사용자별 캐시
 
 캐싱이 항상 좋은 것은 아닙니다:
 
-**캐싱이 좋은 경우**:
-- 자주 읽히는 데이터 (피드 목록, 프로필)
-- 변경이 드문 데이터 (설정, 카테고리)
+**캐싱이 좋은 경우**:<br />
+- 자주 읽히는 데이터 (피드 목록, 프로필)<br />
+- 변경이 드문 데이터 (설정, 카테고리)<br />
 - 계산 비용이 높은 데이터 (통계, 집계)
 
-**캐싱이 안 좋은 경우**:
-- 실시간성이 중요한 데이터 (채팅 메시지)
-- 항상 다른 데이터 (검색 결과)
+**캐싱이 안 좋은 경우**:<br />
+- 실시간성이 중요한 데이터 (채팅 메시지)<br />
+- 항상 다른 데이터 (검색 결과)<br />
 - 한 번만 읽히는 데이터
 
 ### 2. TTL 설정이 중요합니다
 
 TTL을 너무 짧게 하면:
-- 캐시 효과 감소
+- 캐시 효과 감소<br />
 - Redis 트래픽 증가
 
 TTL을 너무 길게 하면:
-- 오래된 데이터 제공
+- 오래된 데이터 제공<br />
 - 사용자 경험 저하
 
 **적절한 균형**을 찾는 게 핵심입니다!
@@ -647,9 +647,9 @@ print(f"Keyspace misses: {info['keyspace_misses']}")
 Redis 캐싱으로 **평균 응답속도 76% 개선**을 달성했습니다.
 
 성공의 요인:
-- **적절한 TTL 설정**: 데이터 특성별로 180초~600초 차등 적용
-- **즉각적인 무효화**: BackgroundTasks로 데이터 변경 시 실시간 캐시 삭제
-- **Fallback 메커니즘**: Redis 장애 시에도 서비스 정상 작동
+- **적절한 TTL 설정**: 데이터 특성별로 180초~600초 차등 적용<br />
+- **즉각적인 무효화**: BackgroundTasks로 데이터 변경 시 실시간 캐시 삭제<br />
+- **Fallback 메커니즘**: Redis 장애 시에도 서비스 정상 작동<br />
 - **캐시 히트율 82%**: 데이터베이스 부하 82% 감소
 
 단순히 Redis를 붙인 게 아니라, 서비스 특성에 맞는 캐싱 전략을 설계했기에 가능했습니다.
@@ -658,7 +658,7 @@ Redis 캐싱으로 **평균 응답속도 76% 개선**을 달성했습니다.
 
 ---
 
-**레퍼런스**
-- [Redis 공식 문서](https://redis.io/docs/)
-- [FastAPI BackgroundTasks](https://fastapi.tiangolo.com/tutorial/background-tasks/)
+**레퍼런스**<br />
+- [Redis 공식 문서](https://redis.io/docs/)<br />
+- [FastAPI BackgroundTasks](https://fastapi.tiangolo.com/tutorial/background-tasks/)<br />
 - [GCP Memorystore for Redis](https://cloud.google.com/memorystore/docs/redis)

@@ -13,31 +13,31 @@ lang: "ko"
 ## 📝 이번 기간 작업 내용
 
 ### 낙관적 업데이트 (3개 커밋)
-- **낙관적 업데이트 피드 등록 시스템 구현**: 낙관적 업데이트 구현
-- **낙관적 업데이트 문서 포맷팅 개선**: 문서 개선
+- **낙관적 업데이트 피드 등록 시스템 구현**: 낙관적 업데이트 구현<br />
+- **낙관적 업데이트 문서 포맷팅 개선**: 문서 개선<br />
 - **Merge pull request #4**: PR 병합
 
 ### 백엔드 코드 품질 개선 (9개 커밋)
-- **백엔드 코드 품질 개선 - 심각한 에러 4개 수정**: 에러 수정
-- **Merge branch 'fix/code-quality-improvements'**: 품질 개선 병합
-- **follow_action_service.py를 follow_service.py로 이름 변경**: 파일명 변경
-- **Merge branch 'refactor/follow-service-rename'**: 리네임 병합
-- **소스코드 품질 분석 리포트 추가**: 분석 리포트
-- **Phase 1 코드 품질 개선 - 높은 우선순위 이슈 해결**: Phase 1
-- **Merge branch 'refactor/code-quality-phase1'**: Phase 1 병합
-- **Phase 2 코드 품질 개선 - Black 포맷팅 + 인코딩 수정**: Phase 2
+- **백엔드 코드 품질 개선 - 심각한 에러 4개 수정**: 에러 수정<br />
+- **Merge branch 'fix/code-quality-improvements'**: 품질 개선 병합<br />
+- **follow_action_service.py를 follow_service.py로 이름 변경**: 파일명 변경<br />
+- **Merge branch 'refactor/follow-service-rename'**: 리네임 병합<br />
+- **소스코드 품질 분석 리포트 추가**: 분석 리포트<br />
+- **Phase 1 코드 품질 개선 - 높은 우선순위 이슈 해결**: Phase 1<br />
+- **Merge branch 'refactor/code-quality-phase1'**: Phase 1 병합<br />
+- **Phase 2 코드 품질 개선 - Black 포맷팅 + 인코딩 수정**: Phase 2<br />
 - **Merge branch 'refactor/code-quality-phase2'**: Phase 2 병합
 
 ### 프론트엔드 코드 품질 (5개 커밋)
-- **Frontend 코드 품질 개선 - Warning 해결**: Warning 수정
-- **Merge branch 'refactor/frontend-code-quality'**: 프론트 품질 병합
-- **search_screen.dart 빌드 에러 수정**: 빌드 에러
+- **Frontend 코드 품질 개선 - Warning 해결**: Warning 수정<br />
+- **Merge branch 'refactor/frontend-code-quality'**: 프론트 품질 병합<br />
+- **search_screen.dart 빌드 에러 수정**: 빌드 에러<br />
 - **Merge branch 'fix/search-screen-build-error'**: 빌드 수정 병합
 
 ### 문서 및 자동화 (3개 커밋)
-- **no-commit-to-branch 훅 제거**: 훅 제거
-- **Frontend 남은 작업 명세서 작성**: 작업 명세
-- **레스토랑 상세 페이지 제거 및 Markdownlint 오류 수정 완료**: Markdown 수정
+- **no-commit-to-branch 훅 제거**: 훅 제거<br />
+- **Frontend 남은 작업 명세서 작성**: 작업 명세<br />
+- **레스토랑 상세 페이지 제거 및 Markdownlint 오류 수정 완료**: Markdown 수정<br />
 - **주간 블로그 자동 생성 시스템 추가**: 블로그 자동화
 
 ## 💡 작업 하이라이트
@@ -50,15 +50,15 @@ lang: "ko"
 
 11월 9일 하루 동안 **체계적인 코드 품질 개선**을 진행했습니다:
 
-**백엔드 Phase 1~2**:
-- 심각한 에러 4개 수정
-- follow_action_service.py → follow_service.py 리네임
-- 소스코드 품질 분석 리포트 추가
-- Phase 1: 높은 우선순위 이슈 해결
+**백엔드 Phase 1~2**:<br />
+- 심각한 에러 4개 수정<br />
+- follow_action_service.py → follow_service.py 리네임<br />
+- 소스코드 품질 분석 리포트 추가<br />
+- Phase 1: 높은 우선순위 이슈 해결<br />
 - Phase 2: **Black 포맷팅 + 인코딩 수정**
 
-**프론트엔드**:
-- Warning 전체 해결
+**프론트엔드**:<br />
+- Warning 전체 해결<br />
 - search_screen.dart 빌드 에러 수정
 
 모든 작업이 **별도 브랜치에서 진행 후 병합**되어 안정적인 개발 프로세스를 보여줍니다.
@@ -69,9 +69,9 @@ lang: "ko"
 
 ## 📊 개발 현황
 
-- **UX**: 낙관적 업데이트 시스템 구현
-- **백엔드 품질**: 에러 4개 수정, Phase 1~2 완료
-- **프론트엔드 품질**: Warning 0개, 빌드 에러 수정
-- **자동화**: 주간 블로그 자동 생성
+- **UX**: 낙관적 업데이트 시스템 구현<br />
+- **백엔드 품질**: 에러 4개 수정, Phase 1~2 완료<br />
+- **프론트엔드 품질**: Warning 0개, 빌드 에러 수정<br />
+- **자동화**: 주간 블로그 자동 생성<br />
 - **문서**: 품질 분석 리포트, 작업 명세서
 

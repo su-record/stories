@@ -13,31 +13,31 @@ lang: "ko"
 ## 📝 이번 기간 작업 내용
 
 ### Dockerfile 및 Poetry 설정 (4개 커밋)
-- **FastAPI 백엔드용 프로덕션 Dockerfile 추가**: 프로덕션 Dockerfile 작성
-- **poetry.lock을 Git 추적에 추가**: lock 파일 추가
-- **Dockerfile에서 poetry.lock 자동 생성하도록 수정**: 자동 생성
+- **FastAPI 백엔드용 프로덕션 Dockerfile 추가**: 프로덕션 Dockerfile 작성<br />
+- **poetry.lock을 Git 추적에 추가**: lock 파일 추가<br />
+- **Dockerfile에서 poetry.lock 자동 생성하도록 수정**: 자동 생성<br />
 - **Poetry 명령어 업데이트 (--no-dev → --only main)**: 최신 명령어
 
 ### Cloud Build 배포 시도 (4개 커밋)
-- **Trigger deployment**: 배포 트리거
-- **Cloud Build를 사용하도록 배포 워크플로우 개선**: Cloud Build 전환
-- **Retry deployment with Cloud Build permissions**: 권한 재시도
+- **Trigger deployment**: 배포 트리거<br />
+- **Cloud Build를 사용하도록 배포 워크플로우 개선**: Cloud Build 전환<br />
+- **Retry deployment with Cloud Build permissions**: 권한 재시도<br />
 - **dev check**: 개발 체크
 
 ### Docker 직접 빌드 전환 (5개 커밋)
-- **Cloud Build 대신 Docker 직접 빌드로 변경**: Docker 직접 빌드
-- **Retry deployment with iam.serviceAccountUser permission**: IAM 권한 추가
-- **Remove --service-account option to use default Compute Engine SA**: 기본 SA 사용
-- **Add DATABASE_URL and DATABASE_PASSWORD for Cloud SQL connection**: DB 환경변수
+- **Cloud Build 대신 Docker 직접 빌드로 변경**: Docker 직접 빌드<br />
+- **Retry deployment with iam.serviceAccountUser permission**: IAM 권한 추가<br />
+- **Remove --service-account option to use default Compute Engine SA**: 기본 SA 사용<br />
+- **Add DATABASE_URL and DATABASE_PASSWORD for Cloud SQL connection**: DB 환경변수<br />
 - **Cloud Run 배포 문제 해결**: 배포 문제 해결
 
 ### 의존성 및 버그 수정 (7개 커밋)
-- **Update poetry.lock for google-generativeai**: poetry.lock 업데이트
-- **Fix function parameter order in feed_curation_service**: 파라미터 순서 수정
-- **Add missing aiohttp dependency**: aiohttp 추가
-- **Add missing google-cloud-documentai dependency**: documentai 추가
-- **Disable Redis cache manager (not currently used)**: Redis 비활성화
-- **Re-enable in-memory cache manager (not Redis)**: 인메모리 캐시 활성화
+- **Update poetry.lock for google-generativeai**: poetry.lock 업데이트<br />
+- **Fix function parameter order in feed_curation_service**: 파라미터 순서 수정<br />
+- **Add missing aiohttp dependency**: aiohttp 추가<br />
+- **Add missing google-cloud-documentai dependency**: documentai 추가<br />
+- **Disable Redis cache manager (not currently used)**: Redis 비활성화<br />
+- **Re-enable in-memory cache manager (not Redis)**: 인메모리 캐시 활성화<br />
 - **Skip init_db() during startup for faster cold start**: DB 초기화 스킵
 
 ## 💡 작업 하이라이트
@@ -53,8 +53,8 @@ lang: "ko"
 **의존성 및 성능 최적화**
 
 배포 중 누락된 의존성을 발견했습니다:
-- **google-generativeai**: poetry.lock 업데이트
-- **aiohttp**: 누락 의존성 추가
+- **google-generativeai**: poetry.lock 업데이트<br />
+- **aiohttp**: 누락 의존성 추가<br />
 - **google-cloud-documentai**: 누락 의존성 추가
 
 **Redis 제거 및 Cold Start 최적화**
@@ -65,8 +65,8 @@ feed_curation_service의 함수 파라미터 순서 오류도 수정했습니다
 
 ## 📊 개발 현황
 
-- **배포**: Docker 직접 빌드, Cloud SQL 연결
-- **의존성**: aiohttp, documentai 추가
-- **성능**: Redis → 인메모리 캐시, init_db 스킵
+- **배포**: Docker 직접 빌드, Cloud SQL 연결<br />
+- **의존성**: aiohttp, documentai 추가<br />
+- **성능**: Redis → 인메모리 캐시, init_db 스킵<br />
 - **Poetry**: 최신 명령어, lock 파일 관리
 

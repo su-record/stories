@@ -16,10 +16,10 @@ hi-ai MCP v1.1.0은 2024년 8월 13일에 배포된 메이저 업데이트입니
 
 ### 주요 특징
 
-- **시맨틱 심볼 탐색**: `find_symbol` 도구로 정의, 참조, 타입 정보 추적
-- **참조 분석**: `find_references` 도구로 심볼 사용처 전체 검색
-- **브라우저 유틸리티 개선**: 웹 페이지 분석 성능 30% 향상
-- **도구 개수 확장**: 31개 → 33개 (2개 추가)
+- **시맨틱 심볼 탐색**: `find_symbol` 도구로 정의, 참조, 타입 정보 추적<br />
+- **참조 분석**: `find_references` 도구로 심볼 사용처 전체 검색<br />
+- **브라우저 유틸리티 개선**: 웹 페이지 분석 성능 30% 향상<br />
+- **도구 개수 확장**: 31개 → 33개 (2개 추가)<br />
 - **코드 이해도 향상**: 리팩토링 및 영향도 분석 지원
 
 ## 주요 변경사항
@@ -947,7 +947,7 @@ const refs = await tools.execute("find_references", { name: "myFunction" });
 
 ### 새로 추가된 도구
 
-- `find_symbol`: 심볼 정의 및 정보 검색
+- `find_symbol`: 심볼 정의 및 정보 검색<br />
 - `find_references`: 심볼 참조 위치 검색
 
 ## 성능 벤치마크
@@ -1009,16 +1009,16 @@ function getUser(id: number): User | undefined {
 
 ## 다음 버전 계획
 
-**v1.2.0 (예정: 2024-10-17)**
-- UI 미리보기 시스템 추가
-- 6가지 레이아웃 타입 지원
+**v1.2.0 (예정: 2024-10-17)**<br />
+- UI 미리보기 시스템 추가<br />
+- 6가지 레이아웃 타입 지원<br />
 - ASCII 아트 기반 시각화
 
 ## 참고 자료
 
-- [TypeScript Compiler API](https://github.com/microsoft/TypeScript/wiki/Using-the-Compiler-API)
-- [시맨틱 분석 이론](https://en.wikipedia.org/wiki/Semantic_analysis_(compilers))
-- [코드 탐색 패턴](https://refactoring.guru/design-patterns/catalog)
+- [TypeScript Compiler API](https://github.com/microsoft/TypeScript/wiki/Using-the-Compiler-API)<br />
+- [시맨틱 분석 이론](https://en.wikipedia.org/wiki/Semantic_analysis_(compilers))<br />
+- [코드 탐색 패턴](https://refactoring.guru/design-patterns/catalog)<br />
 - [hi-ai GitHub](https://github.com/su-record/hi-ai)
 
 ---

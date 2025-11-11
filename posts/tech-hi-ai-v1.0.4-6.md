@@ -16,19 +16,19 @@ hi-ai MCP v1.0.4-6 릴리즈는 2024년 7월 8일부터 10일까지 3일간 연�
 
 ### 주요 변경사항
 
-**v1.0.4 (2024-07-08)**
-- `ts-morph` 라이브러리 의존성 추가
-- AST 기반 코드 분석 엔진 구현
+**v1.0.4 (2024-07-08)**<br />
+- `ts-morph` 라이브러리 의존성 추가<br />
+- AST 기반 코드 분석 엔진 구현<br />
 - `analyze_complexity` 도구 추가
 
-**v1.0.5 (2024-07-09)**
-- 프롬프트 최적화 도구 세트 구현
-- 도구 실행 성능 개선 (평균 응답시간 150ms → 100ms)
+**v1.0.5 (2024-07-09)**<br />
+- 프롬프트 최적화 도구 세트 구현<br />
+- 도구 실행 성능 개선 (평균 응답시간 150ms → 100ms)<br />
 - 메모리 사용량 최적화 (65MB → 50MB)
 
-**v1.0.6 (2024-07-10)**
-- 자연어 실행 시스템 완성
-- 다국어(한국어/영어) 키워드 지원
+**v1.0.6 (2024-07-10)**<br />
+- 자연어 실행 시스템 완성<br />
+- 다국어(한국어/영어) 키워드 지원<br />
 - 총 31개 도구로 확장
 
 ## 주요 변경사항
@@ -756,19 +756,19 @@ const enhanced = await tools.execute("enhance_prompt", { prompt });
 
 **Deprecated: 없음**
 
-**새로 추가된 도구:**
-- `analyze_complexity`: 코드 복잡도 분석
-- `enhance_prompt`: 프롬프트 최적화
-- `generate_test_prompt`: 테스트 프롬프트 생성
+**새로 추가된 도구:**<br />
+- `analyze_complexity`: 코드 복잡도 분석<br />
+- `enhance_prompt`: 프롬프트 최적화<br />
+- `generate_test_prompt`: 테스트 프롬프트 생성<br />
 - Natural Language Execution: 자연어 실행 시스템
 
 ### 마이그레이션 체크리스트
 
-- [ ] npm 패키지 업데이트
-- [ ] ts-morph 의존성 확인
-- [ ] 설정 파일 업데이트
-- [ ] 새 도구 테스트
-- [ ] 자연어 실행 테스트
+- [ ] npm 패키지 업데이트<br />
+- [ ] ts-morph 의존성 확인<br />
+- [ ] 설정 파일 업데이트<br />
+- [ ] 새 도구 테스트<br />
+- [ ] 자연어 실행 테스트<br />
 - [ ] 성능 모니터링 (메모리 사용량 확인)
 
 ## 성능 벤치마크
@@ -831,16 +831,16 @@ async function analyzelargeFile(code: string) {
 
 ## 다음 버전 계획
 
-**v1.1.0 (예정: 2024-08-13)**
-- Semantic Code Analysis 도구 추가
-- `find_symbol`, `find_references` 구현
+**v1.1.0 (예정: 2024-08-13)**<br />
+- Semantic Code Analysis 도구 추가<br />
+- `find_symbol`, `find_references` 구현<br />
 - Browser utility 개선
 
 ## 참고 자료
 
-- [ts-morph 공식 문서](https://ts-morph.com/)
-- [순환 복잡도 이론](https://en.wikipedia.org/wiki/Cyclomatic_complexity)
-- [프롬프트 엔지니어링 가이드](https://www.promptingguide.ai/)
+- [ts-morph 공식 문서](https://ts-morph.com/)<br />
+- [순환 복잡도 이론](https://en.wikipedia.org/wiki/Cyclomatic_complexity)<br />
+- [프롬프트 엔지니어링 가이드](https://www.promptingguide.ai/)<br />
 - [hi-ai GitHub 저장소](https://github.com/su-record/hi-ai)
 
 ---

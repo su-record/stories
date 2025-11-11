@@ -13,31 +13,31 @@ lang: "ko"
 ## 📝 이번 기간 작업 내용
 
 ### 백엔드 환경 설정 (5개 커밋)
-- **BASE_URL 환경변수 변경**: 하드코딩 제거
-- **import 문 정리**: 린트 에러 수정
-- **lint**: 코드 스타일 정리
-- **테스트 conftest.py import 에러 수정**: 테스트 환경 안정화
+- **BASE_URL 환경변수 변경**: 하드코딩 제거<br />
+- **import 문 정리**: 린트 에러 수정<br />
+- **lint**: 코드 스타일 정리<br />
+- **테스트 conftest.py import 에러 수정**: 테스트 환경 안정화<br />
 - **GCP 라이브러리 import 문제 해결**: 테스트 환경 GCP 통합
 
 ### 배포 및 인프라 (5개 커밋)
-- **Cloud Run 호스트 헤더 검증 문제 해결**: Cloud Run 배포 이슈
-- **프론트엔드 배포 버킷 fallingo.app으로 변경**: 도메인 설정
-- **백엔드 CORS 및 API 경로 문제 해결**: CORS 정책 수정
-- **Load Balancer 경로 기반 라우팅 설정**: 로드 밸런서 구성
+- **Cloud Run 호스트 헤더 검증 문제 해결**: Cloud Run 배포 이슈<br />
+- **프론트엔드 배포 버킷 fallingo.app으로 변경**: 도메인 설정<br />
+- **백엔드 CORS 및 API 경로 문제 해결**: CORS 정책 수정<br />
+- **Load Balancer 경로 기반 라우팅 설정**: 로드 밸런서 구성<br />
 - **Cloud Run 배포 오류 수정**: 배포 안정화
 
 ### API 개선 (7개 커밋)
-- **OpenWeatherMap을 Open-Meteo로 변경**: 날씨 API 교체
-- **API 엔드포인트 404 오류 해결**: 라우팅 문제 해결
-- **피드 목록 조회 API 인증 제거**: 퍼블릭 API로 변경
-- **FastAPI 인증 의존성 오류 수정**: 인증 시스템 안정화
-- **API 파라미터 정합성 수정**: 파라미터 검증 개선
+- **OpenWeatherMap을 Open-Meteo로 변경**: 날씨 API 교체<br />
+- **API 엔드포인트 404 오류 해결**: 라우팅 문제 해결<br />
+- **피드 목록 조회 API 인증 제거**: 퍼블릭 API로 변경<br />
+- **FastAPI 인증 의존성 오류 수정**: 인증 시스템 안정화<br />
+- **API 파라미터 정합성 수정**: 파라미터 검증 개선<br />
 - **피드 목록 API 500 오류 수정**: 서버 에러 해결
 
 ### 프론트엔드 개선 (3개 커밋)
-- **main.dart 파일 정리 및 코드 분리**: 코드 구조 개선
-- **Weather 모델 타입 캐스팅 오류 수정**: 타입 안정성 향상
-- **test_root_redirect 테스트 수정**: 테스트 안정화
+- **main.dart 파일 정리 및 코드 분리**: 코드 구조 개선<br />
+- **Weather 모델 타입 캐스팅 오류 수정**: 타입 안정성 향상<br />
+- **test_root_redirect 테스트 수정**: 테스트 안정화<br />
 - **파비콘 추가 및 웹 메타데이터 개선**: UX 개선
 
 ## 💡 작업 하이라이트
@@ -52,8 +52,8 @@ lang: "ko"
 
 ## 📊 개발 현황
 
-- **배포**: Cloud Run + Load Balancer 안정화
-- **도메인**: fallingo.app 설정 완료
-- **API**: 날씨 API 교체, 인증 시스템 안정화
+- **배포**: Cloud Run + Load Balancer 안정화<br />
+- **도메인**: fallingo.app 설정 완료<br />
+- **API**: 날씨 API 교체, 인증 시스템 안정화<br />
 - **테스트**: 테스트 환경 안정화
 
