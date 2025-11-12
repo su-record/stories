@@ -519,6 +519,23 @@ Secret: xxxx...
 └── (나머지 프로젝트 파일)
 ```
 
+### 6️⃣ GitHub Pages 설정
+
+개발 일지 저장소에서 GitHub Pages를 활성화해야 합니다.
+
+1. **개발 일지 저장소** → **Settings** → **Pages**
+2. **Source** 선택:
+   - Branch: `main` (또는 `gh-pages`)
+   - Folder: `/` (root) 또는 `/docs`
+3. **Save** 클릭
+
+자동 배포를 위해 GitHub Actions를 사용할 수도 있습니다.
+
+**GitHub Pages 공식 문서:**
+- [GitHub Pages 시작하기](https://pages.github.com/)
+- [GitHub Pages 상세 문서](https://docs.github.com/en/pages)
+- [Quickstart 가이드](https://docs.github.com/en/pages/quickstart)
+
 ## 실행 흐름
 
 ```mermaid
