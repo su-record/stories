@@ -78,9 +78,8 @@ function PostView() {
 
   // Update meta tags for SEO
   function updateMetaTags(post) {
-    const siteUrl = 'https://fallingo.app'
-    const baseUrl = `${siteUrl}/blog`
-    const postUrl = `${baseUrl}/posts/${post.slug}`
+    const siteUrl = 'https://su-record.github.io/stories'
+    const postUrl = `${siteUrl}/posts/${post.slug}`
 
     // Description
     setMetaTag('name', 'description', post.description)
