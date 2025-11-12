@@ -13,21 +13,21 @@ lang: "ko"
 ## 📝 이번 기간 작업 내용
 
 ### 문서 및 프롬프트 정리 (10개 커밋)
-- **문서 업데이트**: 4회 반복 업데이트<br />
-- **프롬프트 업데이트**: 4회 연속 프롬프트 개선<br />
-- **프로젝트 지식 업데이트**: 프로젝트 컨텍스트 정리<br />
+- **문서 업데이트**: 4회 반복 업데이트
+- **프롬프트 업데이트**: 4회 연속 프롬프트 개선
+- **프로젝트 지식 업데이트**: 프로젝트 컨텍스트 정리
 - **개발_진행_로드맵.md**: 로드맵 문서 업데이트
 
 ### Phase 0~4 개발 완료 (7개 커밋)
-- **Complete Phase 0 development**: Phase 0 완료<br />
-- **Merge**: 원격 저장소 동기화<br />
-- **Complete Phase 1 development**: Phase 1 완료<br />
-- **Complete Phase 2 development**: Phase 2 완료<br />
-- **Complete Phase 3 development**: Phase 3 완료<br />
+- **Complete Phase 0 development**: Phase 0 완료
+- **Merge**: 원격 저장소 동기화
+- **Complete Phase 1 development**: Phase 1 완료
+- **Complete Phase 2 development**: Phase 2 완료
+- **Complete Phase 3 development**: Phase 3 완료
 - **Complete Phase 4 development**: 3회 연속 커밋으로 Phase 4 완료
 
 ### 프로젝트 전면 재시작 (2개 커밋)
-- **RESET!!**: 프로젝트 전면 리셋<br />
+- **RESET!!**: 프로젝트 전면 리셋
 - **Phase 0**: 새로운 Phase 0 시작
 
 ## 💡 작업 하이라이트
@@ -40,7 +40,7 @@ Phase 4를 3회나 커밋하며 완성했음에도 불구하고 리셋을 결정
 
 ## 📊 개발 현황
 
-- **첫 번째 시도**: Phase 0~4 완료 → 리셋<br />
-- **두 번째 시도**: Phase 0 시작<br />
+- **첫 번째 시도**: Phase 0~4 완료 → 리셋
+- **두 번째 시도**: Phase 0 시작
 - **의사결정**: 초기 단계에서 과감한 리셋 결정
 

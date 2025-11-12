@@ -13,33 +13,33 @@ lang: "ko"
 ## 📝 이번 기간 작업 내용
 
 ### 버그 수정 및 정리 (4개 커밋)
-- **seed_realistic_data 버그 수정 (미사용 파일, 보관용)**: 시딩 수정<br />
-- **Remove unnecessary ad files**: 광고 파일 제거<br />
-- **Update feed card badge layout**: 배지 레이아웃 수정<br />
+- **seed_realistic_data 버그 수정 (미사용 파일, 보관용)**: 시딩 수정
+- **Remove unnecessary ad files**: 광고 파일 제거
+- **Update feed card badge layout**: 배지 레이아웃 수정
 - **DEL** (10/31): 파일 삭제
 
 ### 성능 최적화 (3개 커밋)
-- **Add API performance optimization (DB indexes + in-memory caching)** (10/30): 성능 최적화<br />
-- **Add guide for applying performance indexes to GCP Cloud SQL**: Cloud SQL 인덱스 가이드<br />
+- **Add API performance optimization (DB indexes + in-memory caching)** (10/30): 성능 최적화
+- **Add guide for applying performance indexes to GCP Cloud SQL**: Cloud SQL 인덱스 가이드
 - **Update performance index migration parent and add apply script**: 마이그레이션 스크립트
 
 ### 인증 및 상태 관리 (2개 커밋)
-- **Add email whitelist for authentication** (11/1): 이메일 화이트리스트<br />
+- **Add email whitelist for authentication** (11/1): 이메일 화이트리스트
 - **Implement global FeedProvider for state management** (11/4): 전역 상태 관리
 
 ### Google for Startups (4개 커밋)
-- **Add HTML landing page for Google for Startups review** (11/4): 랜딩 페이지<br />
-- **Clean up unused imports and add CORS localhost regex**: CORS 개선<br />
-- **Update Claude Code settings and simplify web index.html**: 웹 페이지 단순화<br />
-- **내용 수정** (11/5): 내용 수정<br />
+- **Add HTML landing page for Google for Startups review** (11/4): 랜딩 페이지
+- **Clean up unused imports and add CORS localhost regex**: CORS 개선
+- **Update Claude Code settings and simplify web index.html**: 웹 페이지 단순화
+- **내용 수정** (11/5): 내용 수정
 - **구글 시너지 섹션** (11/5): 시너지 섹션 추가
 
 ### 핵심 기능 구현 (7개 커밋)
-- **Implement point multiplier-based Daejanggeum selection scoring system** (11/5): 대장금 선정 시스템<br />
-- **Enable Google Maps API integration for feed card map view** (11/6): Google Maps 통합<br />
-- **Merge pull request #1**: PR 병합<br />
-- **Remove gallery option and connect camera/OCR screens to feed creation** (11/6): 카메라/OCR 연결<br />
-- **Connect camera/feed creation flow and OCR verification** (11/6): OCR 검증 연결<br />
+- **Implement point multiplier-based Daejanggeum selection scoring system** (11/5): 대장금 선정 시스템
+- **Enable Google Maps API integration for feed card map view** (11/6): Google Maps 통합
+- **Merge pull request #1**: PR 병합
+- **Remove gallery option and connect camera/OCR screens to feed creation** (11/6): 카메라/OCR 연결
+- **Connect camera/feed creation flow and OCR verification** (11/6): OCR 검증 연결
 - **Add My Foodmap screen (Tier 6+ premium feature)** (11/6): 프리미엄 푸드맵
 
 ## 💡 작업 하이라이트
@@ -59,16 +59,16 @@ lang: "ko"
 **카메라/OCR 연결 및 프리미엄 기능**
 
 11월 6일, 핵심 기능들을 집중적으로 구현했습니다:
-- **Google Maps API 통합**: 피드 카드 지도 뷰<br />
-- **갤러리 옵션 제거**: 카메라/OCR 화면만 사용<br />
-- **카메라/피드 생성 플로우 연결**: OCR 검증 통합<br />
+- **Google Maps API 통합**: 피드 카드 지도 뷰
+- **갤러리 옵션 제거**: 카메라/OCR 화면만 사용
+- **카메라/피드 생성 플로우 연결**: OCR 검증 통합
 - **My Foodmap 화면**: **Tier 6+ 프리미엄 기능**
 
 ## 📊 개발 현황
 
-- **성능**: DB 인덱스 + 인메모리 캐싱<br />
-- **인증**: 이메일 화이트리스트, 전역 FeedProvider<br />
-- **Google**: Startups 랜딩 페이지, Maps API 통합<br />
-- **게이미피케이션**: 대장금 선정 시스템<br />
+- **성능**: DB 인덱스 + 인메모리 캐싱
+- **인증**: 이메일 화이트리스트, 전역 FeedProvider
+- **Google**: Startups 랜딩 페이지, Maps API 통합
+- **게이미피케이션**: 대장금 선정 시스템
 - **프리미엄**: Tier 6+ My Foodmap 화면
 

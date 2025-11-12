@@ -13,29 +13,29 @@ lang: "ko"
 ## 📝 이번 기간 작업 내용
 
 ### 백엔드 완성 및 프로덕션 준비 (4개 커밋)
-- **SQLAlchemy 관계 설정 오류 완전 수정 및 회원가입 API 추가**: DB 관계 수정<br />
-- **Cloud Run 배포를 위한 포트 설정 수정**: 배포 설정<br />
-- **백엔드 완성도 최적화 및 프로덕션 준비 완료**: 프로덕션 준비<br />
-- **commit used backend changes; remove test files and pytest cache**: 테스트 파일 정리<br />
+- **SQLAlchemy 관계 설정 오류 완전 수정 및 회원가입 API 추가**: DB 관계 수정
+- **Cloud Run 배포를 위한 포트 설정 수정**: 배포 설정
+- **백엔드 완성도 최적화 및 프로덕션 준비 완료**: 프로덕션 준비
+- **commit used backend changes; remove test files and pytest cache**: 테스트 파일 정리
 - **prompt**: 일반 업데이트
 
 ### Cloud Run 배포 문제 해결 (5개 커밋)
-- **Cloud Run 배포 실패 문제 완전 해결**: 배포 수정<br />
-- **Cloud Run PORT 환경변수 충돌 문제 해결**: PORT 충돌 해결<br />
-- **Cloud Run 컨테이너 시작 최적화 및 배포 안정성 개선**: 시작 최적화<br />
+- **Cloud Run 배포 실패 문제 완전 해결**: 배포 수정
+- **Cloud Run PORT 환경변수 충돌 문제 해결**: PORT 충돌 해결
+- **Cloud Run 컨테이너 시작 최적화 및 배포 안정성 개선**: 시작 최적화
 - **간단한 FastAPI 앱으로 Cloud Run 배포 테스트**: 최소 앱 테스트
 
 ### 단계별 배포 테스트 (11개 커밋)
-- **step1: 기본 FastAPI 구조 복원 테스트**: 1단계 테스트<br />
-- **step2: 데이터베이스 연결 추가 테스트**: 2단계 테스트<br />
-- **step3: 미들웨어 단계별 추가 테스트**: 3단계 테스트<br />
-- **단계별 배포 테스트**: 일반 테스트<br />
-- **TrustedHost 미들웨어에 Cloud Run 도메인 패턴 추가**: TrustedHost 수정<br />
-- **TrustedHost 미들웨어 '*' 호스트 패턴 제거**: 패턴 제거<br />
-- **claude**: 일반 업데이트<br />
-- **step4: Secret Manager 통합 테스트**: 4단계 테스트<br />
-- **Claude 설정 파일 동기화**: 설정 동기화<br />
-- **5단계 Startup Application 통합 완료**: 5단계 완료<br />
+- **step1: 기본 FastAPI 구조 복원 테스트**: 1단계 테스트
+- **step2: 데이터베이스 연결 추가 테스트**: 2단계 테스트
+- **step3: 미들웨어 단계별 추가 테스트**: 3단계 테스트
+- **단계별 배포 테스트**: 일반 테스트
+- **TrustedHost 미들웨어에 Cloud Run 도메인 패턴 추가**: TrustedHost 수정
+- **TrustedHost 미들웨어 '*' 호스트 패턴 제거**: 패턴 제거
+- **claude**: 일반 업데이트
+- **step4: Secret Manager 통합 테스트**: 4단계 테스트
+- **Claude 설정 파일 동기화**: 설정 동기화
+- **5단계 Startup Application 통합 완료**: 5단계 완료
 - **6단계 기본 API 라우터 통합 완료**: 6단계 완료
 
 ## 💡 작업 하이라이트
@@ -57,8 +57,8 @@ lang: "ko"
 
 ## 📊 개발 현황
 
-- **배포**: Cloud Run 단계별 통합 테스트 6단계 완료<br />
-- **인프라**: PORT 충돌, TrustedHost, Secret Manager 이슈 해결<br />
-- **API**: 회원가입 API 추가<br />
+- **배포**: Cloud Run 단계별 통합 테스트 6단계 완료
+- **인프라**: PORT 충돌, TrustedHost, Secret Manager 이슈 해결
+- **API**: 회원가입 API 추가
 - **전략**: 단계별 통합 테스트 방법론 확립
 

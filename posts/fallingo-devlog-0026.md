@@ -13,31 +13,31 @@ lang: "ko"
 ## 📝 이번 기간 작업 내용
 
 ### 배포 및 경로 수정 (3개 커밋)
-- **GitHub Actions 테스트 워크플로우를 Poetry로 변경**: Poetry 전환<br />
-- **Load Balancer와 경로 충돌 해결 - /api prefix 제거**: 경로 충돌 해결<br />
+- **GitHub Actions 테스트 워크플로우를 Poetry로 변경**: Poetry 전환
+- **Load Balancer와 경로 충돌 해결 - /api prefix 제거**: 경로 충돌 해결
 - **API 문서 경로를 /api prefix 안으로 이동**: 문서 경로 수정
 
 ### 테스트 데이터 시딩 (4개 커밋)
-- **테스트 데이터 시딩 스크립트 추가**: 시딩 스크립트 작성<br />
-- **Add Cloud Shell one-click seeding guide**: Cloud Shell 가이드<br />
-- **Update seed_test_data.py to match production DB schema**: DB 스키마 매칭<br />
+- **테스트 데이터 시딩 스크립트 추가**: 시딩 스크립트 작성
+- **Add Cloud Shell one-click seeding guide**: Cloud Shell 가이드
+- **Update seed_test_data.py to match production DB schema**: DB 스키마 매칭
 - **Add Windows env vars and fix like_count field name**: Windows 지원
 
 ### API 게스트 접근 및 버그 수정 (7개 커밋)
-- **Allow guest access to feed list/detail APIs**: 게스트 접근 허용<br />
-- **Add missing VisionService and DocumentAIService dependencies**: 의존성 추가<br />
-- **Add VisionService and DocumentAIService to FeedService facade**: Facade 수정<br />
-- **Map AI_SERVICES_API_KEY to GOOGLE_GEMINI_API_KEY**: API 키 매핑<br />
-- **Replace GOOGLE_GEMINI_API_KEY with AI_SERVICES_API_KEY**: API 키 교체<br />
-- **Add detailed error messages to feed API for troubleshooting**: 에러 메시지 추가<br />
+- **Allow guest access to feed list/detail APIs**: 게스트 접근 허용
+- **Add missing VisionService and DocumentAIService dependencies**: 의존성 추가
+- **Add VisionService and DocumentAIService to FeedService facade**: Facade 수정
+- **Map AI_SERVICES_API_KEY to GOOGLE_GEMINI_API_KEY**: API 키 매핑
+- **Replace GOOGLE_GEMINI_API_KEY with AI_SERVICES_API_KEY**: API 키 교체
+- **Add detailed error messages to feed API for troubleshooting**: 에러 메시지 추가
 - **Add 'pending' to verification_status enum**: enum 수정
 
 ### Flutter 프론트엔드 배포 (6개 커밋)
-- **Deploy real Flutter UI to Cloud Run** (10/27): Flutter UI 배포<br />
-- **Add README** (10/27): README 추가<br />
-- **Use GitHub Actions Docker build instead of Cloud Build**: Docker 빌드 전환<br />
-- **Remove Docker Buildx and simplify GCR auth**: GCR 인증 단순화<br />
-- **Use Artifact Registry instead of GCR**: Artifact Registry 전환<br />
+- **Deploy real Flutter UI to Cloud Run** (10/27): Flutter UI 배포
+- **Add README** (10/27): README 추가
+- **Use GitHub Actions Docker build instead of Cloud Build**: Docker 빌드 전환
+- **Remove Docker Buildx and simplify GCR auth**: GCR 인증 단순화
+- **Use Artifact Registry instead of GCR**: Artifact Registry 전환
 - **Update API URL to production domain (fallingo.app/api)**: 프로덕션 URL 설정
 
 ## 💡 작업 하이라이트
@@ -60,8 +60,8 @@ FeedService Facade에 **VisionService와 DocumentAIService 의존성**을 추가
 
 ## 📊 개발 현황
 
-- **테스트**: 시딩 스크립트, Cloud Shell 가이드<br />
-- **API**: 게스트 접근, AI 서비스 통합, API 키 표준화<br />
-- **프론트엔드**: Flutter UI Cloud Run 배포, Artifact Registry<br />
+- **테스트**: 시딩 스크립트, Cloud Shell 가이드
+- **API**: 게스트 접근, AI 서비스 통합, API 키 표준화
+- **프론트엔드**: Flutter UI Cloud Run 배포, Artifact Registry
 - **인프라**: fallingo.app/api 프로덕션 URL
 
