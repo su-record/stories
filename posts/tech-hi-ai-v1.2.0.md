@@ -1124,13 +1124,6 @@ console.log(preview.ascii);
 2. 복잡한 CSS 애니메이션은 표현 불가
 3. 터미널 너비에 따라 표시가 깨질 수 있음
 
-## 다음 버전 계획
-
-**v1.3.0 (예정)**
-- 컬러 ASCII 아트 지원
-- 더 많은 레이아웃 타입
-- 3D 시각화
-
 ## 참고 자료
 
 - [ASCII Art Wikipedia](https://en.wikipedia.org/wiki/ASCII_art)

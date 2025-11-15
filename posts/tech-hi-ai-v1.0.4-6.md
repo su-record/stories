@@ -829,13 +829,6 @@ async function analyzelargeFile(code: string) {
 
 현재는 TypeScript만 완전히 지원됩니다. JavaScript는 부분 지원입니다.
 
-## 다음 버전 계획
-
-**v1.1.0 (예정: 2024-08-13)**
-- Semantic Code Analysis 도구 추가
-- `find_symbol`, `find_references` 구현
-- Browser utility 개선
-
 ## 참고 자료
 
 - [ts-morph 공식 문서](https://ts-morph.com/)

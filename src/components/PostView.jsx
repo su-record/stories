@@ -6,7 +6,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import mermaid from 'mermaid'
 import Giscus from '@giscus/react'
-import { loadPost } from '../utils/postLoader'
+import { loadPost, getSeriesNavigation } from '../utils/postLoader'
 import './PostView.css'
 
 // Mermaid component for diagrams
@@ -46,6 +46,7 @@ function PostView() {
   const [post, setPost] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [seriesNav, setSeriesNav] = useState({ next: null, previous: null })
 
   useEffect(() => {
     async function fetchPost() {
@@ -59,6 +60,10 @@ function PostView() {
 
         // Set meta tags for SEO (React 19 native support)
         updateMetaTags(postData)
+
+        // Load series navigation
+        const navigation = await getSeriesNavigation(slug)
+        setSeriesNav(navigation)
       } catch (err) {
         setError(err.message)
         document.title = 'Post Not Found | Fallingo Blog'
@@ -252,6 +257,25 @@ function PostView() {
             Written by <strong>{post.author}</strong>
           </p>
         )}
+
+        {/* Series Navigation */}
+        {(seriesNav.previous || seriesNav.next) && (
+          <div className="series-navigation">
+            {seriesNav.previous && (
+              <Link to={`/posts/${seriesNav.previous.slug}`} className="series-nav-link prev">
+                <span className="nav-label">← 이전 글</span>
+                <span className="nav-title">{seriesNav.previous.title}</span>
+              </Link>
+            )}
+            {seriesNav.next && (
+              <Link to={`/posts/${seriesNav.next.slug}`} className="series-nav-link next">
+                <span className="nav-label">다음 글 →</span>
+                <span className="nav-title">{seriesNav.next.title}</span>
+              </Link>
+            )}
+          </div>
+        )}
+
         <Link to="/" className="back-link">
           ← Back to Posts
         </Link>
@@ -261,11 +285,11 @@ function PostView() {
       <div className="comments-section">
         <Giscus
           repo="su-record/stories"
-          repoId="R_kgDONWfbCw"
+          repoId="R_kgDOHtOifw"
           category="General"
-          categoryId="DIC_kwDONWfbC84ClL8g"
+          categoryId="DIC_kwDOHtOif84CxzpX"
           mapping="pathname"
-          strict="0"
+          strict="1"
           reactionsEnabled="1"
           emitMetadata="0"
           inputPosition="top"

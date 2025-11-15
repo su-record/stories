@@ -1007,13 +1007,6 @@ function getUser(id: number): User | undefined {
 }
 ```
 
-## 다음 버전 계획
-
-**v1.2.0 (예정: 2024-10-17)**
-- UI 미리보기 시스템 추가
-- 6가지 레이아웃 타입 지원
-- ASCII 아트 기반 시각화
-
 ## 참고 자료
 
 - [TypeScript Compiler API](https://github.com/microsoft/TypeScript/wiki/Using-the-Compiler-API)

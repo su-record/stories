@@ -131,3 +131,94 @@ export function searchPosts(posts, query) {
     post.title.toLowerCase().includes(lowerQuery)
   )
 }
+
+/**
+ * Detect series info from slug
+ * @param {string} slug - Post slug
+ * @returns {object|null} Series info {name, order} or null
+ */
+function detectSeries(slug) {
+  // AI methodology series: 01-ai-*, 02-ai-*, etc.
+  const aiMethodMatch = slug.match(/^(\d+)-ai-/)
+  if (aiMethodMatch) {
+    return {
+      name: 'ai-methodology',
+      order: parseInt(aiMethodMatch[1], 10)
+    }
+  }
+
+  // Fallingo devlog series: fallingo-devlog-0001, fallingo-devlog-0002, etc.
+  const devlogMatch = slug.match(/^fallingo-devlog-(\d+)/)
+  if (devlogMatch) {
+    return {
+      name: 'fallingo-devlog',
+      order: parseInt(devlogMatch[1], 10)
+    }
+  }
+
+  // Hi-AI series: tech-hi-ai-* or tech-01-hi-ai-*
+  if (slug.includes('hi-ai')) {
+    // Extract version or order
+    const versionMatch = slug.match(/v(\d+)\.(\d+)\.(\d+)/)
+    if (versionMatch) {
+      // Convert version to order: v1.0.4 -> 1, v1.1.0 -> 2, v1.2.0 -> 3
+      const major = parseInt(versionMatch[1], 10)
+      const minor = parseInt(versionMatch[2], 10)
+      const patch = parseInt(versionMatch[3], 10)
+      return {
+        name: 'hi-ai',
+        order: minor > 0 ? minor + 1 : 1 // v1.0.x -> 1, v1.1.0 -> 2, v1.2.0 -> 3
+      }
+    }
+    // tech-01-hi-ai-mcp
+    const numberMatch = slug.match(/tech-(\d+)-hi-ai/)
+    if (numberMatch) {
+      return {
+        name: 'hi-ai',
+        order: parseInt(numberMatch[1], 10)
+      }
+    }
+  }
+
+  return null
+}
+
+/**
+ * Get next and previous posts in a series
+ * @param {string} currentSlug - Current post slug
+ * @param {Array<object>} allPosts - All posts from index
+ * @returns {object} {next: Post|null, previous: Post|null}
+ */
+export async function getSeriesNavigation(currentSlug) {
+  const seriesInfo = detectSeries(currentSlug)
+  if (!seriesInfo) {
+    return { next: null, previous: null }
+  }
+
+  // Load all posts
+  const buildTime = typeof __BUILD_TIME__ !== 'undefined' ? __BUILD_TIME__ : Date.now()
+  const response = await fetch(`/stories/posts-index.json?v=${buildTime}`)
+  if (!response.ok) {
+    return { next: null, previous: null }
+  }
+  const data = await response.json()
+
+  // Find all posts in the same series
+  const seriesPosts = data.fullPosts
+    .map(post => ({
+      ...post,
+      seriesInfo: detectSeries(post.slug)
+    }))
+    .filter(post => post.seriesInfo?.name === seriesInfo.name)
+    .sort((a, b) => a.seriesInfo.order - b.seriesInfo.order)
+
+  const currentIndex = seriesPosts.findIndex(p => p.slug === currentSlug)
+  if (currentIndex === -1) {
+    return { next: null, previous: null }
+  }
+
+  return {
+    previous: currentIndex > 0 ? seriesPosts[currentIndex - 1] : null,
+    next: currentIndex < seriesPosts.length - 1 ? seriesPosts[currentIndex + 1] : null
+  }
+}
