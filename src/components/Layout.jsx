@@ -7,7 +7,7 @@ function Layout({ children }) {
       <header className="header">
         <div className="container">
           <Link to="/" className="logo">
-            <h1>Fallingo Blog</h1>
+            <h1>Sutory</h1>
           </Link>
           <nav className="nav">
             <Link to="/">Home</Link>
@@ -27,7 +27,7 @@ function Layout({ children }) {
 
       <footer className="footer">
         <div className="container">
-          <p>&copy; 2025 Fallingo Blog. Built with React 19 & Vite.</p>
+          <p>&copy; 2025 Sutory. Built with React 19 & Vite.</p>
           <p>
             <a href="https://github.com/su-record" target="_blank" rel="noopener noreferrer">
               GitHub

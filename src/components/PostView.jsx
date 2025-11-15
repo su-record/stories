@@ -56,7 +56,7 @@ function PostView() {
         setPost(postData)
 
         // Set document title
-        document.title = `${postData.title} | Fallingo Blog`
+        document.title = `${postData.title} | Sutory`
 
         // Set meta tags for SEO (React 19 native support)
         updateMetaTags(postData)
@@ -66,7 +66,7 @@ function PostView() {
         setSeriesNav(navigation)
       } catch (err) {
         setError(err.message)
-        document.title = 'Post Not Found | Fallingo Blog'
+        document.title = 'Post Not Found | Sutory'
         clearMetaTags()
       } finally {
         setLoading(false)
