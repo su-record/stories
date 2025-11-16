@@ -1,7 +1,7 @@
 ---
-title: "9년 전 포기했던 꿈, AI와 함께 다시 꺼내다"
+title: "AI 개발 방법론 0 - 9년 전 포기했던 꿈, AI와 함께 다시 꺼내다"
 date: "2025-11-10"
-category: "story"
+category: "methodology"
 description: "2016년부터 꿈꿔왔지만 기술 부족으로 포기했던 앱. 2025년, AI와 함께 다시 시작한 10년차 프론트엔드 개발자의 여정"
 tags: ["ai-first", "vibe-coding", "cursor", "claude", "fallingo"]
 author: "Su"
