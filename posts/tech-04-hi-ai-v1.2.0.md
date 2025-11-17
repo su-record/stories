@@ -12,7 +12,7 @@ lang: "ko"
 
 ## Smithery Popularity Badge 추가
 
-v1.2.0 출시 2일 후, Smithery에서 자동으로 PR을 생성해 **popularity badge를 README에 추가**했습니다. hi-ai MCP 서버의 품질과 활용도가 검증되었다는 의미입니다.
+2025년 11월 15일, Smithery에서 자동으로 PR을 생성해 **popularity badge를 README에 추가**했습니다.
 
 ## 릴리즈 개요
 
