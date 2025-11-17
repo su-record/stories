@@ -1,5 +1,5 @@
 ---
-title: "AI 개발 방법론 3 - 돌파구, 순차적 문서 작성"
+title: "AI 개발 방법론 4 - 돌파구, 순차적 문서 작성"
 date: "2025-11-17"
 category: "methodology"
 description: "5단계 순차적 문서 작성과 교차 검증. 수십 번의 실패 끝에 찾은 AI와 협업하는 방법"
@@ -10,7 +10,7 @@ lang: "ko"
 
 # 돌파구, 순차적 문서 작성
 
-> 이전 편: [AI 개발 방법론 2 - 두 번째 벽, 일관성](02-ai-second-wall-consistency.md)
+> 이전 편: [AI 개발 방법론 3 - 두 번째 벽, 일관성](03-ai-second-wall-consistency.md)
 
 ## 5단계 문서 작성 프로세스
 
@@ -126,4 +126,4 @@ fallingo보다 훨씬 작은 프로젝트였지만 동일한 방법을 적용했
 
 ---
 
-> 다음 편: [AI 개발 방법론 4 - 완성, SpecKit과 그 너머](04-ai-completion-speckit.md)
+> 다음 편: [AI 개발 방법론 5 - 완성, SpecKit과 그 너머](05-ai-completion-speckit.md)

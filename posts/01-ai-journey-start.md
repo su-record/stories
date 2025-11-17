@@ -1,5 +1,5 @@
 ---
-title: "AI 개발 방법론 0 - AI와의 첫 만남, 그리고 시작"
+title: "AI 개발 방법론 1 - AI와의 첫 만남, 그리고 시작"
 date: "2025-11-17"
 category: "methodology"
 description: "2023년 ChatGPT 해커톤 1등부터 2025년 Cursor까지. AI 개발 도구와 함께한 여정의 시작"
@@ -140,4 +140,4 @@ Claude를 처음 사용해본 날... 새로운 세계를 마주하는 것 같았
 
 ---
 
-> 다음 편: [AI 개발 방법론 1 - 첫 번째 벽, 복잡성](01-ai-first-wall-complexity.md)
+> 다음 편: [AI 개발 방법론 2 - 첫 번째 벽, 복잡성](02-ai-first-wall-complexity.md)

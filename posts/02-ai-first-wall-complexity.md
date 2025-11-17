@@ -1,5 +1,5 @@
 ---
-title: "AI 개발 방법론 1 - 첫 번째 벽, 복잡성"
+title: "AI 개발 방법론 2 - 첫 번째 벽, 복잡성"
 date: "2025-11-17"
 category: "methodology"
 description: "업무에서는 완벽했던 AI가 내 프로젝트에서는 왜 이상한 코드를 만들어낼까? 복잡성이라는 첫 번째 벽을 마주하다"
@@ -10,7 +10,7 @@ lang: "ko"
 
 # 첫 번째 벽, 복잡성
 
-> 이전 편: [AI 개발 방법론 0 - 9년 전 포기했던 꿈, AI와 함께 다시 꺼내다](00-ai-journey-start.md)
+> 이전 편: [AI 개발 방법론 1 - AI와의 첫 만남, 그리고 시작](01-ai-journey-start.md)
 
 ## 업무에서 확인한 AI의 능력
 
@@ -104,4 +104,4 @@ AI는 세션이 종료되면 이전에 하던 작업을 모릅니다. 문서가 
 
 ---
 
-> 다음 편: [AI 개발 방법론 2 - 두 번째 벽, 일관성](02-ai-second-wall-consistency.md)
+> 다음 편: [AI 개발 방법론 3 - 두 번째 벽, 일관성](03-ai-second-wall-consistency.md)

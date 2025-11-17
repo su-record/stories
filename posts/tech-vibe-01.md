@@ -395,4 +395,4 @@ vibe run "Task 1-1"
 ---
 
 **GitHub**: https://github.com/su-record/vibe
-**관련 포스트**: [AI 개발 방법론 4 - 완성, SpecKit과 그 너머](04-ai-completion-speckit.md)
+**관련 포스트**: [AI 개발 방법론 5 - 완성, SpecKit과 그 너머](05-ai-completion-speckit.md)

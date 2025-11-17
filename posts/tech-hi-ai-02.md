@@ -844,5 +844,5 @@ async function analyzelargeFile(code: string) {
 
 ---
 
-> 이전 편: [hi-ai MCP: 개발자를 위한 34개 도구의 똑똑한 AI 비서](tech-01-hi-ai-mcp.md)
-> 다음 편: [hi-ai MCP v1.1.0: 시맨틱 코드 분석으로 코드 이해도 향상](tech-03-hi-ai-v1.1.0.md)
+> 이전 편: [hi-ai MCP: 개발자를 위한 34개 도구의 똑똑한 AI 비서](tech-hi-ai-01.md)
+> 다음 편: [hi-ai MCP v1.1.0: 시맨틱 코드 분석으로 코드 이해도 향상](tech-hi-ai-03.md)

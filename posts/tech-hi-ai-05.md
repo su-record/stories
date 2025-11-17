@@ -243,7 +243,7 @@ v1.3.0은 품질과 성능의 기반을 다졌습니다.
 
 ---
 
-> 이전 편: [hi-ai MCP v1.2.0: UI 미리보기 시스템으로 개발 워크플로우 혁신](tech-04-hi-ai-v1.2.0.md)
+> 이전 편: [hi-ai MCP v1.2.0: UI 미리보기 시스템으로 개발 워크플로우 혁신](tech-hi-ai-04.md)
 
 **GitHub**: https://github.com/su-record/hi-ai
 **Release**: https://github.com/su-record/hi-ai/releases/tag/v1.3.0

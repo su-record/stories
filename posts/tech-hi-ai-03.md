@@ -1022,5 +1022,5 @@ function getUser(id: number): User | undefined {
 
 ---
 
-> 이전 편: [hi-ai MCP v1.0.4-6: AST 기반 코드 분석과 자연어 실행 시스템 도입](tech-02-hi-ai-v1.0.4-6.md)
-> 다음 편: [hi-ai MCP v1.2.0: UI 미리보기 시스템으로 개발 워크플로우 혁신](tech-04-hi-ai-v1.2.0.md)
+> 이전 편: [hi-ai MCP v1.0.4-6: AST 기반 코드 분석과 자연어 실행 시스템 도입](tech-hi-ai-02.md)
+> 다음 편: [hi-ai MCP v1.2.0: UI 미리보기 시스템으로 개발 워크플로우 혁신](tech-hi-ai-04.md)
