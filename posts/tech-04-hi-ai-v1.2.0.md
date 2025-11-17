@@ -12,7 +12,7 @@ lang: "ko"
 
 ## Smithery Popularity Badge 추가
 
-2025년 11월 15일, Smithery에서 자동으로 PR을 생성해 **popularity badge를 README에 추가**했습니다.
+2025년 11월 15일, **다운로드 1,000회를 돌파**하면서 Smithery에서 자동으로 PR을 생성해 popularity badge를 README에 추가했습니다.
 
 ## 릴리즈 개요
 
