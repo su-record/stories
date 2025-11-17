@@ -10,9 +10,9 @@ lang: "ko"
 
 # hi-ai MCP v1.2.0: UI 미리보기 시스템으로 개발 워크플로우 혁신
 
-## Smithery Popular PR
+## Smithery Popularity Badge 추가
 
-v1.2.0에서는 **Smithery Popular PR**을 받았습니다. 품질 개선 노력이 인정받아 커뮤니티에서 주목받게 되었습니다.
+v1.2.0 출시 2일 후, Smithery에서 자동으로 PR을 생성해 **popularity badge를 README에 추가**했습니다. hi-ai MCP 서버의 품질과 활용도가 검증되었다는 의미입니다.
 
 ## 릴리즈 개요
 
