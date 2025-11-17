@@ -21,7 +21,11 @@
       "Bash(git log:*)",
       "Bash(git -C /Users/su/workspace/stories add posts/fallingo-tech-01-redis-optimization.md)",
       "Bash(git -C /Users/su/workspace/stories commit --amend --no-edit)",
-      "Bash(git -C /Users/su/workspace/stories status)"
+      "Bash(git -C /Users/su/workspace/stories status)",
+      "Bash(git mv:*)",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)",
+      "Bash(grep:*)"
     ],
     "deny": [],
     "ask": []
