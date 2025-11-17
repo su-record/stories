@@ -1019,3 +1019,8 @@ function getUser(id: number): User | undefined {
 **릴리즈 날짜:** 2024-08-13
 **도구 개수:** 33개
 **주요 기능:** 시맨틱 코드 분석, find_symbol, find_references
+
+---
+
+> 이전 편: [hi-ai MCP v1.0.4-6: AST 기반 코드 분석과 자연어 실행 시스템 도입](tech-02-hi-ai-v1.0.4-6.md)
+> 다음 편: [hi-ai MCP v1.2.0: UI 미리보기 시스템으로 개발 워크플로우 혁신](tech-04-hi-ai-v1.2.0.md)

@@ -401,3 +401,7 @@ hi-ai MCP의 가치:
 - GitHub: https://github.com/su-record/hi-ai
 - Smithery: https://smithery.ai/server/@su-record/hi-ai
 - MCP Specification: https://modelcontextprotocol.io
+
+---
+
+> 다음 편: [hi-ai MCP v1.0.4-6: AST 기반 코드 분석과 자연어 실행 시스템 도입](tech-02-hi-ai-v1.0.4-6.md)

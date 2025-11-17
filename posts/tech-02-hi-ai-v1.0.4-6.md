@@ -841,3 +841,8 @@ async function analyzelargeFile(code: string) {
 **릴리즈 노트 작성:** Su Ham
 **릴리즈 날짜:** 2024-07-08 ~ 2024-07-10
 **도구 개수:** 31개
+
+---
+
+> 이전 편: [hi-ai MCP: 개발자를 위한 34개 도구의 똑똑한 AI 비서](tech-01-hi-ai-mcp.md)
+> 다음 편: [hi-ai MCP v1.1.0: 시맨틱 코드 분석으로 코드 이해도 향상](tech-03-hi-ai-v1.1.0.md)
