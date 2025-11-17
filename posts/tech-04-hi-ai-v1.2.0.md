@@ -1139,3 +1139,4 @@ console.log(preview.ascii);
 ---
 
 > 이전 편: [hi-ai MCP v1.1.0: 시맨틱 코드 분석으로 코드 이해도 향상](tech-03-hi-ai-v1.1.0.md)
+> 다음 편: [hi-ai MCP v1.3.0: Smithery 품질 점수 48% 향상과 4개 핵심 라이브러리](tech-05-hi-ai-v1.3.0.md)
