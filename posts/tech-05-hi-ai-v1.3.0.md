@@ -1,18 +1,22 @@
 ---
-title: "hi-ai MCP v1.3.0: Smithery 품질 점수 48% 향상과 4개 핵심 라이브러리"
+title: "hi-ai MCP v1.3.0: Smithery 품질 점수 17% 향상과 4개 핵심 라이브러리"
 date: "2025-11-16"
 category: "tech"
-description: "도구 메타데이터 추가, 패키지 정보 개선, 아이콘 제작으로 품질 점수 54→73-80점 달성. 4개 핵심 라이브러리로 성능 최적화"
+description: "도구 메타데이터 추가, 패키지 정보 개선, 아이콘 제작으로 품질 점수 54→63점 달성. 4개 핵심 라이브러리로 성능 최적화"
 tags: ["hi-ai", "mcp", "smithery", "performance", "typescript", "release"]
 author: "Su"
 lang: "ko"
 ---
 
-# hi-ai MCP v1.3.0: Smithery 품질 점수 48% 향상과 4개 핵심 라이브러리
+# hi-ai MCP v1.3.0: Smithery 품질 점수 17% 향상과 4개 핵심 라이브러리
 
-## Smithery 품질 점수 개선
+## Smithery Popular에 등재되다
 
-v1.3.0의 가장 큰 성과는 **Smithery 품질 점수를 54점에서 73-80점으로 끌어올린 것**입니다. 48%의 전체 점수 향상을 달성했습니다.
+v1.3.0의 가장 큰 성과는 **Smithery Popular PR을 받은 것**입니다. Smithery에서 공식적으로 인정받아 Popular 섹션에 등재되었습니다.
+
+### 품질 점수 향상
+
+**Smithery 품질 점수를 54점에서 63점으로 끌어올렸습니다.** 17%의 점수 향상을 달성했고, 이것이 Popular 등재의 기반이 되었습니다.
 
 ### 점수 향상 항목
 
