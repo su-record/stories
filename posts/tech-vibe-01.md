@@ -95,18 +95,12 @@ hi-ai MCP의 38개 도구가 통합되어 있습니다:
 
 ## 핵심 워크플로우
 
-### 1. 프로젝트 초기화
+### 1. 명세 작성
 
-```bash
-vibe init
+Claude Code에서 슬래시 커맨드로 실행합니다:
+
 ```
-
-프로젝트 설정을 생성합니다.
-
-### 2. 명세 작성
-
-```bash
-vibe spec "사용자 로그인 기능"
+/vibe.spec
 ```
 
 EARS 기반으로 기능 명세를 자동 생성합니다.
@@ -118,10 +112,10 @@ EARS 기반으로 기능 명세를 자동 생성합니다.
 - 예외 처리
 - 검증 기준
 
-### 3. 계획 수립
+### 2. 계획 수립
 
-```bash
-vibe plan "사용자 로그인 기능"
+```
+/vibe.plan
 ```
 
 기술 구현 계획을 자동 생성합니다.
@@ -134,10 +128,10 @@ vibe plan "사용자 로그인 기능"
 - 보안 고려사항
 - 비용 추정
 
-### 4. 작업 분해
+### 3. 작업 분해
 
-```bash
-vibe tasks "사용자 로그인 기능"
+```
+/vibe.tasks
 ```
 
 구현 작업을 단계별로 분해합니다.
@@ -149,21 +143,21 @@ vibe tasks "사용자 로그인 기능"
 - 예상 소요 시간
 - 검증 기준
 
-### 5. 작업 실행
+### 4. 작업 실행
 
-```bash
-vibe run "Task 1-1"
+```
+/vibe.run
 ```
 
 특정 작업을 실행합니다.
 
-### 6. 검증
+### 5. 검증
 
-```bash
-vibe verify "사용자 로그인 기능"
+```
+/vibe.verify
 ```
 
-구현 결과를 검증합니다.
+구현 결과를 명세 대비 검증합니다.
 
 ---
 
@@ -173,9 +167,11 @@ vibe verify "사용자 로그인 기능"
 
 **1단계: 명세 작성**
 
-```bash
-vibe spec "할 일 목록 관리"
 ```
+/vibe.spec
+```
+
+Claude Code에서 "할 일 목록 관리" 기능에 대한 명세를 작성합니다.
 
 **생성된 명세 (일부):**
 
@@ -192,8 +188,8 @@ The system shall 로컬에 저장 후 동기화한다
 
 **2단계: 계획 수립**
 
-```bash
-vibe plan "할 일 목록 관리"
+```
+/vibe.plan
 ```
 
 **생성된 계획 (일부):**
@@ -215,8 +211,8 @@ vibe plan "할 일 목록 관리"
 
 **3단계: 작업 분해**
 
-```bash
-vibe tasks "할 일 목록 관리"
+```
+/vibe.tasks
 ```
 
 **생성된 작업 (일부):**
@@ -237,11 +233,11 @@ Phase 3: 프론트엔드
 
 **4단계: 실행**
 
-```bash
-vibe run "Task 1-1"
+```
+/vibe.run
 ```
 
-AI가 스키마를 설계하고 코드를 생성합니다.
+AI가 Task 1-1을 실행하여 스키마를 설계하고 코드를 생성합니다.
 
 ---
 
@@ -275,15 +271,15 @@ AI가 스키마를 설계하고 코드를 생성합니다.
 ### Vibe 방식
 
 ```
-1. vibe spec "기능명"
+1. /vibe.spec
    ↓
-2. vibe plan "기능명"
+2. /vibe.plan
    ↓
-3. vibe tasks "기능명"
+3. /vibe.tasks
    ↓
-4. vibe run "Task X-Y"
+4. /vibe.run
    ↓
-5. vibe verify "기능명"
+5. /vibe.verify
 ```
 
 **장점:**
@@ -328,18 +324,7 @@ hi-ai MCP의 38개 도구가 모두 통합되어 있습니다:
 npm install -g @su-record/vibe
 ```
 
----
-
-## 프로젝트 구조
-
-```
-.vibe/
-├── specs/          # 기능 명세
-├── plans/          # 기술 계획
-├── tasks/          # 작업 목록
-├── agents/         # AI 에이전트 설정
-└── tools/          # MCP 도구
-```
+Claude Code에서 슬래시 커맨드로 바로 사용할 수 있습니다.
 
 ---
 
@@ -362,15 +347,12 @@ Vibe는 fallingo 개발 과정에서 얻은 교훈의 결정체입니다:
 
 ---
 
-## 다음은?
+## 업데이트 (v0.2.0)
 
-Vibe는 계속 발전합니다:
-
-**v1.1 계획:**
-- 더 많은 언어 지원 (Go, Rust, Java)
-- 팀 협업 기능
-- 클라우드 동기화
-- 프로젝트 템플릿
+**주요 변경사항:**
+- Claude Code 슬래시 커맨드 지원: `/vibe.spec`, `/vibe.plan`, `/vibe.tasks`, `/vibe.run`, `/vibe.verify`
+- 워크플로우 단순화: 프로젝트 초기화 단계 제거, 바로 명세 작성부터 시작
+- 더 나은 통합: Claude Code 네이티브 환경에서 직접 실행
 
 ---
 
@@ -379,15 +361,16 @@ Vibe는 계속 발전합니다:
 ```bash
 # 설치
 npm install -g @su-record/vibe
+```
 
-# 초기화
-vibe init
+Claude Code에서 바로 시작:
 
-# 첫 기능 개발
-vibe spec "사용자 인증"
-vibe plan "사용자 인증"
-vibe tasks "사용자 인증"
-vibe run "Task 1-1"
+```
+/vibe.spec    # 명세 작성
+/vibe.plan    # 계획 수립
+/vibe.tasks   # 작업 분해
+/vibe.run     # 작업 실행
+/vibe.verify  # 검증
 ```
 
 **바이브 코딩, 이제 Vibe와 함께.**
