@@ -43,9 +43,10 @@ Opus가 지시하고, Sonnet이 구현하고, Haiku가 탐색과 테스트를 �
 
 ```
 .claude/agents/
-├── explorer.md      # Haiku 4.5 - 빠른 탐색
-├── implementer.md   # Sonnet 4 - 구현 품질
+├── explorer.md      # Haiku 4.5 - 코드베이스 탐색
+├── implementer.md   # Sonnet 4 - 코드 구현
 ├── tester.md        # Haiku 4.5 - 테스트 생성
+├── searcher.md      # 웹 검색 (GPT 또는 Haiku)
 └── simplifier.md    # 품질 검증 (Hooks 연동)
 ```
 
@@ -256,6 +257,35 @@ npm install
 ```
 
 설정 파일이 git에 포함되어 있어서 별도 설정 없이 바로 시작합니다.
+
+---
+
+## MCP 통합
+
+vibe init 시 자동으로 설치되는 MCP 서버들입니다.
+
+### 기본 MCP
+
+| MCP 서버 | 설명 |
+|----------|------|
+| `vibe` (hi-ai) | 코드 분석, 품질 검증, 세션 메모리, 추론 |
+| `context7` | 라이브러리 공식 문서 실시간 검색 |
+
+### 선택적 연동 (외부 LLM)
+
+| MCP 서버 | 명령어 | 설명 |
+|----------|--------|------|
+| GPT | `vibe gpt <key>` | 아키텍처/디버깅, 웹 검색 |
+| Gemini | `vibe gemini <key>` | UI/UX 설계 |
+
+GPT를 연동하면 Searcher 에이전트가 GPT로 웹 검색을 수행합니다.
+
+### 웹 검색
+
+- **GPT 연동 시**: GPT가 웹 검색 담당
+- **기본**: Claude의 WebSearch + Haiku 에이전트
+
+별도 API 키 없이도 Claude 내장 WebSearch로 웹 검색이 가능합니다.
 
 ---
 

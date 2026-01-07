@@ -25,7 +25,9 @@
       "Bash(git mv:*)",
       "Bash(git pull:*)",
       "Bash(git stash:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(cat:*)",
+      "Bash(git show:*)"
     ],
     "deny": [],
     "ask": []
