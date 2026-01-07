@@ -18,32 +18,86 @@ v0.4에서 2-Step 워크플로우로 단순화했습니다. v1.0에서는 한 �
 
 ---
 
-## Claude Code Hooks 기반 자동 오케스트레이션
+## 멀티 모델 오케스트레이션
 
-v1.0의 핵심은 **Hooks**입니다.
+v1.0의 핵심은 **모델 분업**입니다.
+
+### 모델별 역할
+
+```
+┌─────────────────────────────────────────────────────┐
+│  Opus 4.5 (메인 오케스트레이터)                      │
+│  └ 의사결정, 복잡한 추론, 전체 조율                  │
+├─────────────────────────────────────────────────────┤
+│  Sonnet 4 (Implementer)                             │
+│  └ 코드 구현, 리팩토링, 버그 수정                    │
+├─────────────────────────────────────────────────────┤
+│  Haiku 4.5 (Explorer, Tester)                       │
+│  └ 코드베이스 탐색, 테스트 작성                      │
+└─────────────────────────────────────────────────────┘
+```
+
+Opus가 지시하고, Sonnet이 구현하고, Haiku가 탐색과 테스트를 담당합니다.
+
+### 서브에이전트 구성
+
+```
+.claude/agents/
+├── explorer.md      # Haiku 4.5 - 빠른 탐색
+├── implementer.md   # Sonnet 4 - 구현 품질
+├── tester.md        # Haiku 4.5 - 테스트 생성
+└── simplifier.md    # 품질 검증 (Hooks 연동)
+```
+
+### 실제 동작 예시
+
+```
+/vibe.run "로그인 기능"
+
+[Opus 4.5] SPEC 분석, 구현 계획 수립
+    ↓
+[Haiku 4.5 - Explorer] 기존 코드베이스 탐색
+    "인증 관련 파일 검색, 패턴 파악"
+    ↓
+[Sonnet 4 - Implementer] 코드 구현
+    "LoginForm.tsx, useAuth.ts 작성"
+    ↓
+[Haiku 4.5 - Tester] 테스트 작성
+    "LoginForm.test.tsx 생성"
+    ↓
+[Opus 4.5] 결과 검토, 다음 단계 결정
+```
+
+비용과 속도를 최적화하면서 품질은 유지합니다.
+
+---
+
+## Claude Code Hooks 기반 자동화
+
+Hooks로 이 모든 과정이 자동으로 동작합니다.
 
 ### 자동으로 일어나는 일들
 
 ```
 코드 작성 → 자동 품질 검사
   ├ PostToolUse: Write|Edit
-  └ ".vibe/rules/quality/checklist.md 기준으로 검토하세요"
+  └ Simplifier 에이전트가 .vibe/rules/ 기준으로 검토
 
 컨텍스트 85% → 자동 상태 저장
   ├ Notification: context_window_85
-  └ "mcp__vibe__auto_save_context로 현재 상태 저장"
+  └ mcp__vibe__auto_save_context로 현재 상태 저장
 
 컨텍스트 95% → 세션 전환 준비
   ├ Notification: context_window_95
-  └ "TodoWrite로 진행 상황 기록, 핵심 컨텍스트만 유지"
+  └ TodoWrite로 진행 상황 기록, 핵심 컨텍스트만 유지
 
 세션 종료 → 미완료 작업 기록
   ├ Stop: .*
-  └ "TodoWrite로 미완료 작업 기록, 다음 세션 복원 안내"
+  └ TodoWrite로 미완료 작업 기록, 다음 세션 복원 안내
 
 새 세션 시작 → 이전 상태 복원
   ├ UserPromptSubmit: .*
-  └ "mcp__vibe__start_session으로 이전 컨텍스트 복원"
+  └ mcp__vibe__start_session으로 이전 컨텍스트 복원
 ```
 
 개발자는 `/vibe.spec`과 `/vibe.run`만 실행합니다. 나머지는 AI가 알아서 합니다.
@@ -58,7 +112,7 @@ v1.0의 핵심은 **Hooks**입니다.
         "matcher": "Write|Edit",
         "hooks": [{
           "type": "prompt",
-          "prompt": ".vibe/rules/quality/checklist.md 기준으로 검토하세요"
+          "prompt": ".vibe/rules/quality/checklist.md 기준으로 검토"
         }]
       }
     ],
@@ -79,40 +133,57 @@ v1.0의 핵심은 **Hooks**입니다.
 
 ## 멀티 LLM 협업
 
-Claude만 쓰지 않습니다. GPT와 Gemini도 함께 씁니다.
+Claude 모델들만 쓰지 않습니다. GPT와 Gemini도 서브에이전트처럼 활용합니다.
 
-### 설정
+### API 키 등록
 
 ```bash
 vibe gpt <api-key>      # GPT 연동
 vibe gemini <api-key>   # Gemini 연동
 ```
 
-### 활용 시나리오
+키를 등록하면 MCP 도구를 통해 다른 LLM을 호출할 수 있습니다.
 
-**GPT 5.2로 아키텍처 리뷰**
+### 역할 분담
+
+```
+┌─────────────────────────────────────────────────────┐
+│  Claude Opus 4.5 (메인)                             │
+│  └ 전체 조율, 최종 의사결정                          │
+├─────────────────────────────────────────────────────┤
+│  GPT 5.2 (서브)                                     │
+│  └ 아키텍처 리뷰, 다른 관점 제시                     │
+├─────────────────────────────────────────────────────┤
+│  Gemini 3 (서브)                                    │
+│  └ UI/UX 조언, 디자인 개선 제안                     │
+└─────────────────────────────────────────────────────┘
+```
+
+### 실제 동작 예시
+
+**아키텍처 설계 리뷰**
 
 ```
 [Claude Code에서]
 이 설계에 대해 GPT 관점에서 검토해줘
 
-→ MCP 도구로 GPT API 호출
-→ 다른 관점의 피드백 수집
-→ Claude가 종합하여 결정
+[Opus] → mcp__vibe__ask_gpt 호출
+[GPT 5.2] "마이크로서비스 분리 시 이런 점을 고려하세요..."
+[Opus] → GPT 피드백 반영하여 최종 설계 확정
 ```
 
-**Gemini 3로 UI/UX 조언**
+**UI 컴포넌트 개선**
 
 ```
 [Claude Code에서]
 이 UI 컴포넌트에 대해 Gemini 관점에서 개선점 알려줘
 
-→ Gemini API 호출
-→ 디자인 개선 제안 수집
-→ Claude가 구현에 반영
+[Opus] → mcp__vibe__ask_gemini 호출
+[Gemini 3] "접근성을 고려하면 이런 변경이 좋겠습니다..."
+[Opus] → Gemini 제안을 Sonnet에게 구현 지시
 ```
 
-Claude Code가 메인이지만, 다른 LLM의 강점을 활용합니다.
+Claude가 오케스트레이터 역할을 하면서 GPT와 Gemini의 강점을 활용합니다.
 
 ---
 
@@ -192,7 +263,8 @@ npm install
 
 | 항목 | v0.4.x | v1.0.x |
 |------|--------|--------|
-| 품질 관리 | 수동 검토 | Hooks 자동 |
+| 오케스트레이션 | 단일 모델 | Opus + Sonnet + Haiku 분업 |
+| 품질 관리 | 수동 검토 | Hooks 자동 (Simplifier) |
 | 컨텍스트 관리 | 수동 저장 | 자동 저장/복원 |
 | LLM | Claude만 | Claude + GPT + Gemini |
 | 팀 협업 | 각자 설정 | git clone으로 동기화 |
