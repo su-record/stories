@@ -240,23 +240,29 @@ mcp__vibe__start_session 호출
 ```bash
 git clone <repo>
 npm install
-# → .vibe/rules/, .claude/commands/ 자동 설치
-# → hooks 자동 설정
-# → 동일한 환경에서 바로 시작
+
+# vibe 설치 (전역)
+npm install -g @su-record/vibe
+vibe update
+
+# 또는 setup 스크립트 실행
+./.vibe/setup.sh
 ```
 
-팀 전체가 동일한 코딩 규칙, 동일한 품질 기준, 동일한 워크플로우로 작업합니다.
+`vibe init/update` 실행 시 README.md에 협업자 설치 안내가 자동 추가됩니다.
 
-### 공유되는 것들
+### 공유되는 것들 (git 포함)
 
 ```
 .vibe/rules/        # 코딩 규칙
+.vibe/setup.sh      # 협업자 설치 스크립트
 .claude/commands/   # 슬래시 커맨드
 .claude/agents/     # 서브에이전트
 .claude/settings.local.json  # Hooks 설정
+README.md           # 협업자 안내 (자동 추가)
 ```
 
-설정 파일이 git에 포함되어 있어서 별도 설정 없이 바로 시작합니다.
+팀원이 저장소를 clone하면 README의 안내대로 vibe를 설치하고 바로 시작할 수 있습니다.
 
 ---
 
