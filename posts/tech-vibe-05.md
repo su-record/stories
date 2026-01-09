@@ -1,14 +1,14 @@
 ---
-title: "Vibe v1.2.2: MCP 로드 실패부터 팀 협업까지, 삽질의 기록"
+title: "Vibe v1.2: Hook의 함정과 ULTRAWORK 모드"
 date: "2026-01-09"
 category: "tech"
-description: "v1.0 배포 후 MCP 로드 실패로 Claude가 멈추는 치명적 버그를 수정하고, ULTRAWORK 모드 도입, 팀 협업을 위한 .claude/ 폴더 공유까지의 여정"
-tags: ["vibe", "ai-coding", "claude-code", "ultrawork", "parallel-agents", "release", "v1.2", "bugfix", "team-collaboration"]
+description: "v1.0 배포 후 Hook의 prompt 타입이 Claude를 멈추게 하는 문제를 발견하고, command 타입으로 전환하여 해결. ULTRAWORK 모드와 팀 협업까지의 여정"
+tags: ["vibe", "ai-coding", "claude-code", "ultrawork", "parallel-agents", "release", "v1.2", "hooks", "team-collaboration"]
 author: "Su"
 lang: "ko"
 ---
 
-# Vibe v1.2.2: MCP 로드 실패부터 팀 협업까지, 삽질의 기록
+# Vibe v1.2: Hook의 함정과 ULTRAWORK 모드
 
 ## v1.0 배포 후 벌어진 일
 
@@ -39,51 +39,67 @@ hi-ai MCP가 프로젝트 루트의 node_modules에 설치되면서 충돌이 �
 
 ```
 d90ed3f fix: disable hooks temporarily - causing Claude to freeze
-b4db7ff fix: remove UserPromptSubmit hook (matcher not supported for this event type)
+a0b056c fix: remove SessionStart hook - causing stalls
+925f408 fix: remove PostToolUse hook - causing workflow stalls
 ```
 
 가장 심각했던 문제입니다.
 
-UserPromptSubmit Hook에 matcher를 설정했는데, **이 이벤트 타입은 matcher를 지원하지 않았습니다**. Claude Code가 Hook을 처리하다가 그대로 멈춰버렸습니다.
+처음엔 matcher가 문제인 줄 알았습니다. 하지만 진짜 원인은 **Hook의 `prompt` 타입**이었습니다.
 
 ```json
 // 이게 문제였습니다
 {
-  "UserPromptSubmit": [
+  "hooks": [
     {
-      "matcher": ".*",  // ← 이 이벤트는 matcher 미지원
-      "hooks": [...]
+      "type": "prompt",  // ← 이게 Haiku 모델을 호출함
+      "prompt": "Call mcp__vibe__start_session..."
     }
   ]
 }
 ```
 
-**해결**: UserPromptSubmit Hook을 일시적으로 비활성화하고, 이후 matcher 없이 재구현했습니다.
+`prompt` 타입은 내부적으로 Haiku 모델을 호출해서 결정을 내립니다. 이 과정이 불안정해서 Claude가 멈춰버렸습니다.
 
-### 5차 위기: PostToolUse Hook이 작업을 끊는다
-
-v1.2 배포 후에도 문제가 있었습니다. Write/Edit 후 품질 체크를 하도록 PostToolUse Hook을 설정했는데:
+**해결**: `prompt` 타입 대신 `command` 타입을 사용했습니다. `command`는 단순히 bash 명령을 실행하고 stdout을 Claude에게 전달합니다.
 
 ```json
+// 이렇게 바꿨습니다
+{
+  "hooks": [
+    {
+      "type": "command",  // ← bash echo 실행
+      "command": "echo '[SESSION START] Call mcp__vibe__start_session...'"
+    }
+  ]
+}
+```
+
+### 5차 위기: PostToolUse Hook도 같은 문제
+
+PostToolUse Hook도 `prompt` 타입을 사용했기 때문에 같은 문제가 발생했습니다.
+
+```json
+// 문제의 코드
 {
   "PostToolUse": [
     {
       "matcher": "Write|Edit",
       "hooks": [{
-        "prompt": "Review the code... Briefly report any issues found."
+        "type": "prompt",  // ← 여기도 Haiku 호출
+        "prompt": "Review the code..."
       }]
     }
   ]
 }
 ```
 
-"report any issues"라는 지시 때문에 Claude가 **매번 멈춰서 보고**하려 했습니다. 린트 경고 하나에도 작업이 중단됐습니다.
-
-**해결**: 프롬프트를 수정해서 **멈추지 않고 계속 진행**하도록 변경했습니다.
+**해결**: 마찬가지로 `command` 타입으로 변경했습니다.
 
 ```json
 {
-  "prompt": "Silently check... Do NOT stop or report - continue your current task. Only fix critical issues inline."
+  "type": "command",
+  "command": "echo '[CODE CHECK] Quick inline check: no syntax errors, no any types, no security issues.'"
 }
 ```
 
@@ -191,7 +207,7 @@ Phase 1 → Phase 2 → Phase 3 → ... → Phase N
 **Phase가 끝나면?** 확인 없이 다음 Phase로 넘어갑니다.
 **모든 Phase가 끝나면?** 그제야 멈춥니다.
 
-### 구현: UserPromptSubmit Hook (이번엔 제대로)
+### 구현: command 타입 Hook
 
 ```json
 {
@@ -201,8 +217,8 @@ Phase 1 → Phase 2 → Phase 3 → ... → Phase N
         "matcher": "ultrawork|ulw|울트라워크",
         "hooks": [
           {
-            "type": "prompt",
-            "prompt": "🚀 ULTRAWORK MODE DETECTED. You MUST: (1) Use PARALLEL Task calls..."
+            "type": "command",
+            "command": "echo '[ULTRAWORK MODE] Use PARALLEL Task calls. Auto-continue through ALL phases. Auto-retry on errors up to 3 times.'"
           }
         ]
       }
@@ -211,7 +227,9 @@ Phase 1 → Phase 2 → Phase 3 → ... → Phase N
 }
 ```
 
-1차 위기 때 문제가 됐던 UserPromptSubmit Hook. 이번엔 matcher를 제대로 지원하는 방식으로 구현했습니다.
+핵심은 `prompt` 타입이 아니라 `command` 타입을 사용하는 것입니다. `command`는 bash echo를 실행하고 그 출력이 Claude에게 전달됩니다. Haiku 모델을 호출하지 않으므로 안정적입니다.
+
+> **참고**: Hook의 `prompt` 타입이 Haiku를 호출하는 것과, 서브에이전트에서 Haiku를 사용하는 것은 별개입니다. 서브에이전트의 멀티 모델 전략(탐색=Haiku, 구현=Sonnet, 아키텍처=Opus)은 그대로 유효합니다. Task 도구로 명시적으로 Haiku를 호출하는 것은 안정적이고, Hook의 `prompt` 타입이 암묵적으로 Haiku를 호출하는 것이 불안정했던 겁니다.
 
 ---
 
@@ -325,10 +343,10 @@ Claude:
 ## 배운 것들
 
 1. **직접 써봐야 안다** - 로컬 테스트로는 MCP 로드 실패 문제를 발견할 수 없었습니다
-2. **Hook 이벤트마다 지원하는 기능이 다르다** - Claude Code 문서를 더 꼼꼼히 읽어야 했습니다
+2. **Hook의 `prompt` 타입은 불안정하다** - Haiku 모델을 호출하는데, 이 과정에서 행이 걸립니다. `command` 타입을 사용하세요
 3. **자동화는 양날의 검** - postinstall 자동 업데이트가 CI를 망가뜨렸습니다
 4. **작은 실수가 전체를 멈춘다** - `$ARGUMENTS` 하나 빠졌다고 슬래시 커맨드가 무용지물이 됩니다
-5. **Hook 프롬프트 문구가 중요하다** - "report issues"라고 쓰면 Claude가 멈춰서 보고합니다. "Do NOT stop"을 명시해야 합니다
+5. **문제의 원인을 정확히 파악해야 한다** - matcher가 문제인 줄 알았는데 실제론 hook type이 문제였습니다
 6. **Claude에게 명시적으로 알려줘야 한다** - `.claude/` 폴더를 커밋해야 한다고 문서에 명시하지 않으면 Claude가 제외합니다
 
 ---
