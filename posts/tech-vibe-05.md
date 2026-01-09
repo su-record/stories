@@ -1,14 +1,14 @@
 ---
-title: "Vibe v1.2: MCP 로드 실패로 Claude가 멈추던 문제, 그리고 ULTRAWORK"
+title: "Vibe v1.2.2: MCP 로드 실패부터 팀 협업까지, 삽질의 기록"
 date: "2026-01-09"
 category: "tech"
-description: "v1.0 배포 후 MCP 로드 실패로 Claude가 멈추는 치명적 버그를 수정하고, ULTRAWORK 모드를 도입하기까지의 여정"
-tags: ["vibe", "ai-coding", "claude-code", "ultrawork", "parallel-agents", "release", "v1.2", "bugfix"]
+description: "v1.0 배포 후 MCP 로드 실패로 Claude가 멈추는 치명적 버그를 수정하고, ULTRAWORK 모드 도입, 팀 협업을 위한 .claude/ 폴더 공유까지의 여정"
+tags: ["vibe", "ai-coding", "claude-code", "ultrawork", "parallel-agents", "release", "v1.2", "bugfix", "team-collaboration"]
 author: "Su"
 lang: "ko"
 ---
 
-# Vibe v1.2: MCP 로드 실패로 Claude가 멈추던 문제, 그리고 ULTRAWORK
+# Vibe v1.2.2: MCP 로드 실패부터 팀 협업까지, 삽질의 기록
 
 ## v1.0 배포 후 벌어진 일
 
@@ -59,6 +59,33 @@ UserPromptSubmit Hook에 matcher를 설정했는데, **이 이벤트 타입은 m
 ```
 
 **해결**: UserPromptSubmit Hook을 일시적으로 비활성화하고, 이후 matcher 없이 재구현했습니다.
+
+### 5차 위기: PostToolUse Hook이 작업을 끊는다
+
+v1.2 배포 후에도 문제가 있었습니다. Write/Edit 후 품질 체크를 하도록 PostToolUse Hook을 설정했는데:
+
+```json
+{
+  "PostToolUse": [
+    {
+      "matcher": "Write|Edit",
+      "hooks": [{
+        "prompt": "Review the code... Briefly report any issues found."
+      }]
+    }
+  ]
+}
+```
+
+"report any issues"라는 지시 때문에 Claude가 **매번 멈춰서 보고**하려 했습니다. 린트 경고 하나에도 작업이 중단됐습니다.
+
+**해결**: 프롬프트를 수정해서 **멈추지 않고 계속 진행**하도록 변경했습니다.
+
+```json
+{
+  "prompt": "Silently check... Do NOT stop or report - continue your current task. Only fix critical issues inline."
+}
+```
 
 ### 3차 위기: 자동 업데이트의 역습
 
@@ -301,6 +328,30 @@ Claude:
 2. **Hook 이벤트마다 지원하는 기능이 다르다** - Claude Code 문서를 더 꼼꼼히 읽어야 했습니다
 3. **자동화는 양날의 검** - postinstall 자동 업데이트가 CI를 망가뜨렸습니다
 4. **작은 실수가 전체를 멈춘다** - `$ARGUMENTS` 하나 빠졌다고 슬래시 커맨드가 무용지물이 됩니다
+5. **Hook 프롬프트 문구가 중요하다** - "report issues"라고 쓰면 Claude가 멈춰서 보고합니다. "Do NOT stop"을 명시해야 합니다
+6. **Claude에게 명시적으로 알려줘야 한다** - `.claude/` 폴더를 커밋해야 한다고 문서에 명시하지 않으면 Claude가 제외합니다
+
+---
+
+## 팀 협업: .claude/ 폴더 공유
+
+v1.2.2에서 추가된 중요 사항입니다.
+
+`.claude/` 폴더는 **팀과 공유해야 합니다**. 슬래시 커맨드, 서브에이전트, Hooks 설정이 들어있기 때문입니다.
+
+```
+# 반드시 git에 포함
+.claude/
+├── commands/       # 슬래시 커맨드
+├── agents/         # 서브에이전트
+└── settings.json   # Hooks 설정
+
+# 자동 제외
+.claude/settings.local.json  # 개인 설정
+.vibe/mcp/                    # node_modules
+```
+
+Claude에게 커밋을 위임할 때 `.claude/` 폴더가 제외되는 문제가 있었습니다. CLAUDE.md에 명시적인 Git Commit 규칙을 추가해서 해결했습니다
 
 ---
 
@@ -341,9 +392,9 @@ v1.0 배포 후 2일 동안 30개의 커밋을 찍었습니다. 절반이 버그
 
 MCP가 멈추는 문제는 직접 써봐야 알 수 있었습니다. Claude Code의 Hook 시스템도 문서만 봐서는 알 수 없는 제약이 있었습니다.
 
-이제 안정화됐습니다. ULTRAWORK로 한 번 시작하면 끝까지 굴러갑니다.
+이제 안정화됐습니다. ULTRAWORK로 한 번 시작하면 끝까지 굴러갑니다. 팀과 함께 쓸 수 있도록 `.claude/` 폴더 공유도 명확히 했습니다.
 
-`ultrawork` 한 단어. 그게 전부입니다.
+`ultrawork` 한 단어. `.claude/` 폴더 커밋. 그게 전부입니다.
 
 ---
 
@@ -351,4 +402,4 @@ MCP가 멈추는 문제는 직접 써봐야 알 수 있었습니다. Claude Code
 
 **GitHub**: https://github.com/su-record/vibe
 **NPM**: https://www.npmjs.com/package/@su-record/vibe
-**Release**: https://github.com/su-record/vibe/releases/tag/v1.2.0
+**Release**: https://github.com/su-record/vibe/releases/tag/v1.2.2
