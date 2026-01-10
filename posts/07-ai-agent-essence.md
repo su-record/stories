@@ -1,6 +1,6 @@
 ---
 title: "AI 개발 방법론 7 - 에이전트의 본질"
-date: "2026-01-10"
+date: "2026-01-09"
 category: "methodology"
 description: "패턴 매칭의 함정에서 벗어나 진짜 에이전트를 이해하기까지. 폴링고 리뉴얼과 회사 프로젝트에서 얻은 깨달음"
 tags: ["ai-first", "methodology", "agent", "vibe-coding", "tool-use"]
