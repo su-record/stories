@@ -1,4 +1,3 @@
-```yaml
 ---
 title: "fallingo 개발일지 - 87b9c75..15eb9a2 (11개 커밋)"
 date: "2026-02-01"
