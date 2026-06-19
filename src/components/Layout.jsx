@@ -15,6 +15,7 @@ function Layout({ children }) {
             <Link to="/category/dev-log">Dev Log</Link>
             <Link to="/category/tech">Tech</Link>
             <Link to="/category/story">Story</Link>
+            <Link to="/about">About</Link>
           </nav>
         </div>
       </header>

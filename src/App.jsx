@@ -5,6 +5,7 @@ import Layout from './components/Layout'
 // Lazy load route components for code-splitting
 const PostList = lazy(() => import('./components/PostList'))
 const PostView = lazy(() => import('./components/PostView'))
+const About = lazy(() => import('./components/About'))
 const NotFound = lazy(() => import('./components/NotFound'))
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <Route path="/" element={<PostList />} />
             <Route path="/category/:category" element={<PostList />} />
             <Route path="/posts/:slug" element={<PostView />} />
+            <Route path="/about" element={<About />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
