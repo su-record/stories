@@ -115,7 +115,7 @@ Hermes Agent는 Nous Research의 에이전트 프레임워크다. 핵심 특징 
 
 작업 중에 발견한 게 있다. OpenAI Codex CLI에는 웹 검색 기능이 있고, ChatGPT Pro 구독으로 인증하면 별도 API 키나 콜당 과금 없이 쓸 수 있다.
 
-이 노하우를 Hermes Agent에 기여했다. `codex exec -c tools.web_search=true`로 무료 웹 리서치를 하는 검색 스킬을 만들어 Pull Request를 보냈다. (NousResearch/hermes-agent #50526)
+이걸 토대로 검색 스킬 하나를 Hermes Agent에 기여했다. 핵심은 결과를 "검색 순서"가 아니라 "중요도"로 정렬하는 것이다 — 뉴스는 여러 매체가 다룬 정도(coverage)로, X는 영향력 있는 계정 기준으로, 유튜브는 조회 속도로 순위를 매긴다. 무료 Codex 웹검색 위에서 돌아 운영비가 거의 0이다. (NousResearch/hermes-agent #50526)
 
 맨바닥에서 시작한 프로젝트가, 그 프레임워크 자체에 한 줄을 보태는 데까지 왔다.
 
