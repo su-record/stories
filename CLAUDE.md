@@ -37,6 +37,8 @@ stories/
 │   ├── 01-ai-development-start.md
 │   ├── fallingo-week-2025-*.md    # Weekly dev logs
 │   └── tech-*.md                  # Technical posts
+├── templates/
+│   └── card-news-insight.md       # Insight/Card Brief template
 ├── src/
 │   ├── components/
 │   │   ├── Layout.jsx             # Main layout with header/sidebar
@@ -82,8 +84,13 @@ npm run build:all        # prebuild + build
 ---
 title: "Post Title"
 date: "YYYY-MM-DD"
-category: "methodology | dev-log | tech | story"
+category: "methodology | dev-log | tech | story | insight"
 description: "SEO description (150-160 characters)"
+draft: false
+approved: false
+image: "/images/blog/example.jpg"
+imageAlt: "이미지 대체 텍스트"
+sourceLinkedIn: "https://www.linkedin.com/posts/..."
 tags: ["tag1", "tag2"]
 author: "Su Ham"
 lang: "ko"
@@ -96,6 +103,15 @@ lang: "ko"
 - **dev-log**: Fallingo 주간 개발일지 (제목 형식: `Fallingo 개발일지 - YYYY년 M월 N주차 (MM.DD ~ MM.DD)`)
 - **tech**: 기술 심화 포스트
 - **story**: 스토리/에세이
+- **insight**: LinkedIn 출처 기반 카드뉴스/카드 브리프 (내부 category는 `insight`, UI 표기는 `Insights`)
+
+### insight 카드 브리프 작성 규칙
+
+1. **발행 게이트**: `approved: true`, `draft: false`, `tags`에 `"#배포-승인"`이 모두 있는 글만 빌드 인덱스에 포함됩니다. #배포-승인 전에는 `approved: false`, `draft: true`로 둡니다.
+2. **형식**: 카드 이미지/대체 텍스트 → 600~900자 해설 → 핵심 요약 표 → LinkedIn 원문 링크/CTA 순서로 작성합니다.
+3. **재가공 원칙**: LinkedIn 원문을 복붙하지 않습니다. 원문 맥락, 확인된 근거, 적용 포인트를 분리해 씁니다.
+4. **파일명**: `insight-{topic}.md` 또는 파일럿은 `insight-card-brief-{card-id}-{number}.md`를 사용합니다.
+5. **검증**: 승인 전 수치, 인용, 이미지 문구, 댓글 맥락은 TODO로 남깁니다.
 
 ### 주간 개발일지 작성 규칙
 
@@ -311,6 +327,16 @@ git -C ../stories push
 ```
 자유 형식, 개인적 경험 중심
 ```
+
+**insight** (카드뉴스/카드 브리프):
+```
+이미지와 대체 텍스트 → 600-900자 한국어 해설 → 요약 표 → LinkedIn 출처/CTA → #배포-승인 게이트
+```
+- 내부 category: `insight`; UI 표기: `Insights`
+- 템플릿: `templates/card-news-insight.md`
+- 파일럿 초안: `/posts/insight-card-brief-{card-id}-{number}.md`에 `draft: true`, `approved: false`로 보관 가능
+- 승인 후에만 `draft: false`, `approved: true`, `tags`에 `"#배포-승인"` 추가
+- Gutenberg는 `#배포-승인` 전 발행 금지
 
 ## Troubleshooting
 

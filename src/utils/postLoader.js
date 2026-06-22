@@ -1,5 +1,15 @@
 import { createPostEntity, createPostMetadata } from './markdown.js'
 
+const INSIGHT_APPROVAL_TAG = '#배포-승인'
+
+function isPublishablePost(post) {
+  if (post.category !== 'insight') {
+    return true
+  }
+
+  return !post.draft && post.approved && post.tags.includes(INSIGHT_APPROVAL_TAG)
+}
+
 /**
  * Load all posts from markdown files (build-time only)
  * This function is used by the build script to generate posts-index.json
@@ -20,7 +30,9 @@ export function loadAllPosts(markdownFiles) {
       }
       slugs.add(post.slug)
 
-      posts.push(post)
+      if (isPublishablePost(post)) {
+        posts.push(post)
+      }
     } catch (error) {
       console.error(`Error loading post from ${file.path}:`, error.message)
       throw error // Fail build on invalid posts
@@ -162,9 +174,7 @@ function detectSeries(slug) {
     const versionMatch = slug.match(/v(\d+)\.(\d+)\.(\d+)/)
     if (versionMatch) {
       // Convert version to order: v1.0.4 -> 1, v1.1.0 -> 2, v1.2.0 -> 3
-      const major = parseInt(versionMatch[1], 10)
       const minor = parseInt(versionMatch[2], 10)
-      const patch = parseInt(versionMatch[3], 10)
       return {
         name: 'hi-ai',
         order: minor > 0 ? minor + 1 : 1 // v1.0.x -> 1, v1.1.0 -> 2, v1.2.0 -> 3

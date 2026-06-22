@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { getCategoryLabel } from '../utils/categories'
 import './Layout.css'
 
 function Layout({ children }) {
@@ -15,6 +16,7 @@ function Layout({ children }) {
             <Link to="/category/dev-log">Dev Log</Link>
             <Link to="/category/tech">Tech</Link>
             <Link to="/category/story">Story</Link>
+            <Link to="/category/insight">{getCategoryLabel('insight')}</Link>
             <Link to="/about">About</Link>
           </nav>
         </div>

@@ -79,6 +79,7 @@ function PostView() {
     return () => {
       clearMetaTags()
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slug])
 
   // Update meta tags for SEO
@@ -214,7 +215,7 @@ function PostView() {
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           components={{
-            code({ node, inline, className, children, ...props }) {
+            code({ inline, className, children, ...props }) {
               const match = /language-(\w+)/.exec(className || '')
               const language = match ? match[1] : ''
 

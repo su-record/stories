@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { loadPostIndex, filterByCategory } from '../utils/postLoader'
+import { getCategoryLabel } from '../utils/categories'
 import './PostList.css'
 
 const POSTS_PER_PAGE = 10
@@ -91,7 +92,7 @@ function PostList() {
 
   return (
     <div className="post-list">
-      {category && <h2>Category: {category}</h2>}
+      {category && <h2>Category: {getCategoryLabel(category)}</h2>}
       {allPosts.length === 0 ? (
         <p>No posts found.</p>
       ) : (
@@ -129,7 +130,7 @@ function PostList() {
           {/* End of list indicator */}
           {!hasMore && allPosts.length > POSTS_PER_PAGE && (
             <div className="end-message">
-              You've reached the end of the list ({allPosts.length} posts)
+              You&apos;ve reached the end of the list ({allPosts.length} posts)
             </div>
           )}
         </>

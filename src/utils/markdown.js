@@ -1,4 +1,5 @@
 import matter from 'gray-matter'
+import { VALID_CATEGORIES } from './categories.js'
 
 /**
  * Parse markdown file content and extract frontmatter + content
@@ -31,10 +32,9 @@ export function validateFrontmatter(frontmatter, filePath) {
   }
 
   // Validate category
-  const validCategories = ['methodology', 'dev-log', 'tech', 'story']
-  if (!validCategories.includes(frontmatter.category)) {
+  if (!VALID_CATEGORIES.includes(frontmatter.category)) {
     throw new Error(
-      `Invalid post at ${filePath}: category must be one of [${validCategories.join(', ')}]`
+      `Invalid post at ${filePath}: category must be one of [${VALID_CATEGORIES.join(', ')}]`
     )
   }
 
@@ -85,6 +85,10 @@ export function createPostEntity(fileContent, filePath) {
     description: frontmatter.description || content.substring(0, 160),
     tags: frontmatter.tags || [],
     image: frontmatter.image || null,
+    imageAlt: frontmatter.imageAlt || null,
+    draft: frontmatter.draft === true,
+    approved: frontmatter.approved === true,
+    sourceLinkedIn: frontmatter.sourceLinkedIn || null,
     author: frontmatter.author || null,
     lang: frontmatter.lang || 'ko',
     filePath,
@@ -105,6 +109,9 @@ export function createPostMetadata(post) {
     description: post.description,
     tags: post.tags,
     image: post.image,
+    imageAlt: post.imageAlt,
+    approved: post.approved,
+    sourceLinkedIn: post.sourceLinkedIn,
     lang: post.lang,
   }
 }

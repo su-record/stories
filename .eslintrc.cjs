@@ -1,6 +1,7 @@
 module.exports = {
   root: true,
-  env: { browser: true, es2020: true },
+  env: { browser: true, es2020: true, node: true },
+  globals: { __BUILD_TIME__: 'readonly' },
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
@@ -17,5 +18,6 @@ module.exports = {
       { allowConstantExport: true },
     ],
     'react/prop-types': 'off',
+    'react/jsx-no-comment-textnodes': 'off',
   },
 }
