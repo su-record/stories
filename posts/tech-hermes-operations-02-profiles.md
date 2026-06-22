@@ -3,8 +3,8 @@ title: "Hermes Agent 운영 노트 2: 프로필로 AI 직원을 나누는 법"
 date: "2026-06-22"
 category: "tech"
 description: "Hermes profiles로 AI 직원의 역할, 기억, 세션, 스킬, 게이트웨이 상태를 분리하는 방법과 Sutory식 멀티에이전트 운영 기준을 정리했다. 직원 한 명을 프로필 하나로 나누고, 권한과 금지선을 분명히 세우는 실무 기준과 시작 순서를 함께 구체적으로 담았다."
-draft: true
-approved: false
+draft: false
+approved: true
 series: "Hermes 운영 노트"
 seriesOrder: 2
 tags: ["Hermes Agent", "Profiles", "AI 직원", "멀티에이전트"]

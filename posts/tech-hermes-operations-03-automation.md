@@ -3,8 +3,8 @@ title: "Hermes Agent 운영 노트 3: 칸반과 크론으로 자동화를 끊기
 date: "2026-06-22"
 category: "tech"
 description: "Hermes Kanban과 Cron을 함께 써서 멀티에이전트 작업 상태, 반복 실행, 승인 게이트를 분리하고 콘텐츠 자동화를 안전하게 운영하는 법을 정리했다. 자동 발행이 아니라 수집, 초안, 검수, 승인, 배포를 나누는 통제된 자동화 기준과 실무 로그 원칙을 담았다."
-draft: true
-approved: false
+draft: false
+approved: true
 series: "Hermes 운영 노트"
 seriesOrder: 3
 tags: ["Hermes Agent", "Kanban", "Cron", "Automation", "Content Ops"]

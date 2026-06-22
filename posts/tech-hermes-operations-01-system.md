@@ -3,8 +3,8 @@ title: "Hermes Agent 운영 노트 1: 채팅봇이 아니라 작업 시스템으
 date: "2026-06-22"
 category: "tech"
 description: "Hermes Agent를 단순 채팅봇이 아니라 프로필, 도구, 스킬, 메모리, 게이트웨이, 칸반, 크론이 연결된 작업 시스템으로 보는 관점을 정리했다. 대화가 아닌 상태와 권한으로 운영하는 첫 기준이며, 서버 한 대에서 AI 팀을 굴릴 때 필요한 전체 지도를 함께 담았다."
-draft: true
-approved: false
+draft: false
+approved: true
 series: "Hermes 운영 노트"
 seriesOrder: 1
 tags: ["Hermes Agent", "AI Agent", "AI 운영", "멀티에이전트"]
