@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # Build artifacts (generated during build in GitHub Actions)
 public/posts-index.json
+
+# Claude/vibe local state
+.claude/
