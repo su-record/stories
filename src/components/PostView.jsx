@@ -7,6 +7,7 @@ import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import mermaid from 'mermaid'
 import Giscus from '@giscus/react'
 import { loadPost, getSeriesNavigation } from '../utils/postLoader'
+import { normalizePostHref } from '../utils/postLinks'
 import './PostView.css'
 
 // Mermaid component for diagrams
@@ -215,6 +216,14 @@ function PostView() {
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           components={{
+            a({ href, children, ...props }) {
+              const postHref = normalizePostHref(href)
+              if (postHref) {
+                return <Link to={postHref} {...props}>{children}</Link>
+              }
+
+              return <a href={href} {...props}>{children}</a>
+            },
             code({ inline, className, children, ...props }) {
               const match = /language-(\w+)/.exec(className || '')
               const language = match ? match[1] : ''
