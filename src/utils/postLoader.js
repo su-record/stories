@@ -32,10 +32,17 @@ export function loadAllPosts(markdownFiles) {
       slugs.add(post.slug)
 
       if (isPublishablePost(post)) {
-        posts.push({
+        const seriesInfo = getSeriesInfo(post)
+        const postWithSeries = {
           ...post,
-          series: getSeriesInfo(post.slug)?.name || null,
-        })
+          series: seriesInfo?.name || null,
+        }
+
+        if (seriesInfo?.order !== null && seriesInfo?.order !== undefined) {
+          postWithSeries.seriesOrder = seriesInfo.order
+        }
+
+        posts.push(postWithSeries)
       }
     } catch (error) {
       console.error(`Error loading post from ${file.path}:`, error.message)
@@ -167,11 +174,21 @@ export function searchPosts(posts, query) {
 }
 
 /**
- * Detect series info from slug
- * @param {string} slug - Post slug
+ * Detect series info from post metadata or slug
+ * @param {object|string} postOrSlug - Post metadata or post slug
  * @returns {object|null} Series info {name, order} or null
  */
-export function getSeriesInfo(slug) {
+export function getSeriesInfo(postOrSlug) {
+  const explicitSeries = getExplicitSeriesInfo(postOrSlug)
+  if (explicitSeries) {
+    return explicitSeries
+  }
+
+  const slug = typeof postOrSlug === 'string' ? postOrSlug : postOrSlug?.slug
+  if (!slug) {
+    return null
+  }
+
   const vibeCodingMatch = slug.match(/^(?:vibe-devlog|tech-vibe)-(\d+)/)
   if (vibeCodingMatch) {
     return {
@@ -223,6 +240,22 @@ export function getSeriesInfo(slug) {
   return null
 }
 
+function getExplicitSeriesInfo(post) {
+  if (!post || typeof post !== 'object' || !post.series) {
+    return null
+  }
+
+  return {
+    name: post.series,
+    order: getSeriesOrder(post.seriesOrder),
+  }
+}
+
+function getSeriesOrder(seriesOrder) {
+  const order = Number(seriesOrder)
+  return Number.isFinite(order) ? order : null
+}
+
 function isVibeCodingSeriesSlug(slug) {
   return getSeriesInfo(slug)?.name === VIBE_CODING_TOPIC
 }
@@ -234,11 +267,6 @@ function isVibeCodingSeriesSlug(slug) {
  * @returns {object} {next: Post|null, previous: Post|null}
  */
 export async function getSeriesNavigation(currentSlug) {
-  const seriesInfo = getSeriesInfo(currentSlug)
-  if (!seriesInfo) {
-    return { next: null, previous: null }
-  }
-
   // Load all posts
   const buildTime = typeof __BUILD_TIME__ !== 'undefined' ? __BUILD_TIME__ : Date.now()
   const response = await fetch(`/stories/posts-index.json?v=${buildTime}`)
@@ -246,15 +274,20 @@ export async function getSeriesNavigation(currentSlug) {
     return { next: null, previous: null }
   }
   const data = await response.json()
+  const currentPost = data.fullPosts.find((post) => post.slug === currentSlug)
+  const seriesInfo = getSeriesInfo(currentPost || currentSlug)
+  if (!seriesInfo) {
+    return { next: null, previous: null }
+  }
 
   // Find all posts in the same series
   const seriesPosts = data.fullPosts
     .map(post => ({
       ...post,
-      seriesInfo: getSeriesInfo(post.slug)
+      seriesInfo: getSeriesInfo(post)
     }))
     .filter(post => post.seriesInfo?.name === seriesInfo.name)
-    .sort((a, b) => a.seriesInfo.order - b.seriesInfo.order)
+    .sort((a, b) => (a.seriesInfo.order ?? 0) - (b.seriesInfo.order ?? 0))
 
   const currentIndex = seriesPosts.findIndex(p => p.slug === currentSlug)
   if (currentIndex === -1) {

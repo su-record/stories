@@ -79,3 +79,25 @@ approved: false`
 
   assert.equal(result.status, 0, result.stderr)
 })
+
+test('post validator accepts optional tech series fields', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'post-validation-series-'))
+
+  writePost(
+    dir,
+    'tech-hermes.md',
+    `title: "Hermes 운영 노트"
+date: "2026-06-01"
+category: "tech"
+description: "Hermes operations note with explicit series metadata."
+tags: ["hermes", "operations"]
+draft: true
+approved: false
+series: "Hermes 운영 노트"
+seriesOrder: 1`
+  )
+
+  const result = runValidator(dir)
+
+  assert.equal(result.status, 0, result.stderr)
+})

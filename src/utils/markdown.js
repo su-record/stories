@@ -76,7 +76,7 @@ export function createPostEntity(fileContent, filePath) {
   const filename = filePath.split('/').pop()
   const slug = generateSlug(filename, frontmatter)
 
-  return {
+  const post = {
     slug,
     title: frontmatter.title,
     date: new Date(frontmatter.date),
@@ -88,11 +88,18 @@ export function createPostEntity(fileContent, filePath) {
     imageAlt: frontmatter.imageAlt || null,
     draft: frontmatter.draft === true,
     approved: frontmatter.approved === true,
+    series: frontmatter.series || null,
     sourceLinkedIn: frontmatter.sourceLinkedIn || null,
     author: frontmatter.author || null,
     lang: frontmatter.lang || 'ko',
     filePath,
   }
+
+  if (frontmatter.seriesOrder !== undefined) {
+    post.seriesOrder = frontmatter.seriesOrder
+  }
+
+  return post
 }
 
 /**
@@ -111,6 +118,7 @@ export function createPostMetadata(post) {
     image: post.image,
     imageAlt: post.imageAlt,
     series: post.series,
+    seriesOrder: post.seriesOrder,
     approved: post.approved,
     sourceLinkedIn: post.sourceLinkedIn,
     lang: post.lang,

@@ -92,10 +92,14 @@ image: "/images/blog/example.jpg"
 imageAlt: "이미지 대체 텍스트"
 sourceLinkedIn: "https://www.linkedin.com/posts/..."
 tags: ["tag1", "tag2"]
+series: "Optional Series Name"
+seriesOrder: 1
 author: "Su Ham"
 lang: "ko"
 ---
 ```
+
+`series`와 `seriesOrder`는 선택 필드입니다. 명시하면 기술 글도 파일명 패턴보다 frontmatter 값을 우선해 시리즈 메타데이터와 이전/다음 글 탐색에 사용합니다.
 
 ### Categories
 
@@ -315,6 +319,7 @@ git -C ../stories push
 ```
 - 파일명: `tech-{프로젝트}-XX.md` 또는 `tech-{프로젝트}-{버전}.md`
 - GitHub/NPM/Release 링크 포함
+- Hermes 운영 노트 초안은 `templates/hermes-operations-note.md`를 사용하고, `category: "tech"`, `series: "Hermes 운영 노트"`, `seriesOrder`를 지정합니다.
 
 **dev-log** (주간 개발일지):
 ```
