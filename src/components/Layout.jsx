@@ -13,6 +13,7 @@ function Layout({ children }) {
           <nav className="nav">
             <Link to="/">Home</Link>
             <Link to="/category/methodology">Methodology</Link>
+            <Link to="/topic/vibe-coding">Vibe Coding</Link>
             <Link to="/category/dev-log">Dev Log</Link>
             <Link to="/category/tech">Tech</Link>
             <Link to="/category/story">Story</Link>

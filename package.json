@@ -5,8 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/generate-posts-index.js && vite build",
-    "prebuild": "node scripts/generate-posts-index.js",
+    "build": "vite build",
+    "prebuild": "npm run validate:posts && npm run generate:posts-index",
+    "generate:posts-index": "node scripts/generate-posts-index.js",
+    "create:card-brief": "node scripts/create-card-brief.js",
+    "validate:posts": "node scripts/validate-posts.js",
+    "test": "node --test tests/*.test.js",
     "preview": "vite preview",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0"
   },

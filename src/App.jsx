@@ -16,6 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<PostList />} />
             <Route path="/category/:category" element={<PostList />} />
+            <Route path="/topic/:topic" element={<PostList />} />
             <Route path="/posts/:slug" element={<PostView />} />
             <Route path="/about" element={<About />} />
             <Route path="*" element={<NotFound />} />

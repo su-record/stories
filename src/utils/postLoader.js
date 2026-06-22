@@ -1,6 +1,7 @@
 import { createPostEntity, createPostMetadata } from './markdown.js'
 
 const INSIGHT_APPROVAL_TAG = '#배포-승인'
+const VIBE_CODING_TOPIC = 'vibe-coding'
 
 function isPublishablePost(post) {
   if (post.category !== 'insight') {
@@ -31,7 +32,10 @@ export function loadAllPosts(markdownFiles) {
       slugs.add(post.slug)
 
       if (isPublishablePost(post)) {
-        posts.push(post)
+        posts.push({
+          ...post,
+          series: getSeriesInfo(post.slug)?.name || null,
+        })
       }
     } catch (error) {
       console.error(`Error loading post from ${file.path}:`, error.message)
@@ -132,6 +136,24 @@ export function filterByTag(posts, tag) {
 }
 
 /**
+ * Filter posts by topic
+ * @param {Array<object>} posts - Array of PostMetadata
+ * @param {string} topic - Topic to filter by
+ * @returns {Array<object>} Filtered posts
+ */
+export function filterByTopic(posts, topic) {
+  return posts.filter((post) => isTopicMatch(post, topic))
+}
+
+function isTopicMatch(post, topic) {
+  if (post.tags.includes(topic)) {
+    return true
+  }
+
+  return topic === VIBE_CODING_TOPIC && isVibeCodingSeriesSlug(post.slug)
+}
+
+/**
  * Search posts by title
  * @param {Array<object>} posts - Array of PostMetadata
  * @param {string} query - Search query
@@ -149,7 +171,15 @@ export function searchPosts(posts, query) {
  * @param {string} slug - Post slug
  * @returns {object|null} Series info {name, order} or null
  */
-function detectSeries(slug) {
+export function getSeriesInfo(slug) {
+  const vibeCodingMatch = slug.match(/^(?:vibe-devlog|tech-vibe)-(\d+)/)
+  if (vibeCodingMatch) {
+    return {
+      name: VIBE_CODING_TOPIC,
+      order: parseInt(vibeCodingMatch[1], 10),
+    }
+  }
+
   // AI methodology series: 01-ai-*, 02-ai-*, etc.
   const aiMethodMatch = slug.match(/^(\d+)-ai-/)
   if (aiMethodMatch) {
@@ -193,6 +223,10 @@ function detectSeries(slug) {
   return null
 }
 
+function isVibeCodingSeriesSlug(slug) {
+  return getSeriesInfo(slug)?.name === VIBE_CODING_TOPIC
+}
+
 /**
  * Get next and previous posts in a series
  * @param {string} currentSlug - Current post slug
@@ -200,7 +234,7 @@ function detectSeries(slug) {
  * @returns {object} {next: Post|null, previous: Post|null}
  */
 export async function getSeriesNavigation(currentSlug) {
-  const seriesInfo = detectSeries(currentSlug)
+  const seriesInfo = getSeriesInfo(currentSlug)
   if (!seriesInfo) {
     return { next: null, previous: null }
   }
@@ -217,7 +251,7 @@ export async function getSeriesNavigation(currentSlug) {
   const seriesPosts = data.fullPosts
     .map(post => ({
       ...post,
-      seriesInfo: detectSeries(post.slug)
+      seriesInfo: getSeriesInfo(post.slug)
     }))
     .filter(post => post.seriesInfo?.name === seriesInfo.name)
     .sort((a, b) => a.seriesInfo.order - b.seriesInfo.order)

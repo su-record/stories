@@ -1,13 +1,13 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { loadPostIndex, filterByCategory } from '../utils/postLoader'
+import { loadPostIndex, filterByCategory, filterByTopic } from '../utils/postLoader'
 import { getCategoryLabel } from '../utils/categories'
 import './PostList.css'
 
 const POSTS_PER_PAGE = 10
 
 function PostList() {
-  const { category } = useParams()
+  const { category, topic } = useParams()
   const [allPosts, setAllPosts] = useState([])
   const [displayedPosts, setDisplayedPosts] = useState([])
   const [loading, setLoading] = useState(true)
@@ -24,9 +24,7 @@ function PostList() {
       try {
         setLoading(true)
         const postIndex = await loadPostIndex()
-        const filteredPosts = category
-          ? filterByCategory(postIndex.posts, category)
-          : postIndex.posts
+        const filteredPosts = getFilteredPosts(postIndex.posts, category, topic)
         setAllPosts(filteredPosts)
         setDisplayedPosts(filteredPosts.slice(0, POSTS_PER_PAGE))
         setHasMore(filteredPosts.length > POSTS_PER_PAGE)
@@ -39,7 +37,7 @@ function PostList() {
     }
 
     fetchPosts()
-  }, [category])
+  }, [category, topic])
 
   // Load more posts
   const loadMore = useCallback(() => {
@@ -93,6 +91,7 @@ function PostList() {
   return (
     <div className="post-list">
       {category && <h2>Category: {getCategoryLabel(category)}</h2>}
+      {topic && <h2>Topic: {getTopicLabel(topic)}</h2>}
       {allPosts.length === 0 ? (
         <p>No posts found.</p>
       ) : (
@@ -137,6 +136,23 @@ function PostList() {
       )}
     </div>
   )
+}
+
+function getFilteredPosts(posts, category, topic) {
+  if (category) {
+    return filterByCategory(posts, category)
+  }
+  if (topic) {
+    return filterByTopic(posts, topic)
+  }
+  return posts
+}
+
+function getTopicLabel(topic) {
+  if (topic === 'vibe-coding') {
+    return 'Vibe Coding'
+  }
+  return topic
 }
 
 export default PostList

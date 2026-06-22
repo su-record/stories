@@ -110,6 +110,7 @@ export function createPostMetadata(post) {
     tags: post.tags,
     image: post.image,
     imageAlt: post.imageAlt,
+    series: post.series,
     approved: post.approved,
     sourceLinkedIn: post.sourceLinkedIn,
     lang: post.lang,
