@@ -1,6 +1,57 @@
 {
   "posts": [
     {
+      "slug": "ai는-마법이-아니다-강아지-간식으로-보는-llm-원리",
+      "title": "AI는 마법이 아니다. 강아지 간식으로 보는 LLM 원리",
+      "date": "2026-06-27T00:00:00.000Z",
+      "category": "tech",
+      "description": "처음에는 저도 마법처럼 봤습니다 챗봇이 질문에 답했습니다. 코드도 짰고, 사과문도 써냈습니다.   처음 보면 정말 사람이 읽고 생각해서 말하는 것처럼 보입니다. 하지만 그렇지는 않습니다. LLM은 사람이 글을 읽는 방식으로 문장을 이해하지 않습니다.   동작 방식은 훨씬 건조합",
+      "tags": [],
+      "image": null,
+      "imageAlt": null,
+      "series": null,
+      "approved": false,
+      "sourceLinkedIn": null,
+      "lang": "ko"
+    },
+    {
+      "slug": "vibe-devlog-0048",
+      "title": "vibe 개발일지 #48 - 루프 네이티브 엔진과 YAGNI 가드레일 도입 (11개 커밋)",
+      "date": "2026-06-26T00:00:00.000Z",
+      "category": "dev-log",
+      "description": "루프 네이티브 자동화 도입과 조기 코드 생성 방지 스킬 추가",
+      "tags": [
+        "vibe",
+        "개발일지"
+      ],
+      "image": null,
+      "imageAlt": null,
+      "series": "vibe-coding",
+      "seriesOrder": 48,
+      "approved": false,
+      "sourceLinkedIn": null,
+      "lang": "ko"
+    },
+    {
+      "slug": "tory-character-consistency",
+      "title": "강아지 한 마리가 시바견으로 바뀌는 순간, 콘텐츠 공장은 멈춥니다",
+      "date": "2026-06-23T00:00:00.000Z",
+      "category": "dev-log",
+      "description": "tory-studio 제작 중 마스코트 강아지 토리의 이미지 일관성을 맞추며 겪은 콘텐츠 자동화 병목과 해결 과정을 기록합니다.",
+      "tags": [
+        "콘텐츠자동화",
+        "AI이미지",
+        "브랜드일관성",
+        "HermesAgent"
+      ],
+      "image": null,
+      "imageAlt": null,
+      "series": null,
+      "approved": false,
+      "sourceLinkedIn": null,
+      "lang": "ko"
+    },
+    {
       "slug": "tech-hermes-operations-01-system",
       "title": "Hermes Agent 운영 노트 1: 채팅봇이 아니라 작업 시스템으로 보기",
       "date": "2026-06-22T00:00:00.000Z",
@@ -1804,6 +1855,30 @@
       "lang": "ko"
     },
     {
+      "slug": "tech-vibe-14",
+      "title": "Vibe v2.6.27: Session RAG와 Smart Hook Dispatcher",
+      "date": "2026-02-03T00:00:00.000Z",
+      "category": "tech",
+      "description": "SQLite FTS5 기반 Session RAG로 세션 컨텍스트 구조화, Smart Hook Dispatcher로 훅 지능화, E2E 테스트 자동 생성, LLM 호출 통합",
+      "tags": [
+        "vibe",
+        "ai-coding",
+        "claude-code",
+        "session-rag",
+        "smart-hook",
+        "e2e",
+        "release",
+        "v2.6.27"
+      ],
+      "image": null,
+      "imageAlt": null,
+      "series": "vibe-coding",
+      "seriesOrder": 14,
+      "approved": false,
+      "sourceLinkedIn": null,
+      "lang": "ko"
+    },
+    {
       "slug": "fallingo-devlog-0063",
       "title": "fallingo 개발일지 - 4df677c..82f6954 (12개 커밋)",
       "date": "2026-02-02T00:00:00.000Z",
@@ -2000,6 +2075,30 @@
       "lang": "ko"
     },
     {
+      "slug": "tech-vibe-13",
+      "title": "Vibe v2.6.17: Swarm Orchestrator와 23개 언어 감지",
+      "date": "2026-01-28T00:00:00.000Z",
+      "category": "tech",
+      "description": "에이전트 자가 복제 Swarm 패턴 실험, 23개 프레임워크 전체 감지, Cursor 규칙 동적 변환, CLAUDE.md 마커 기반 중복 방지",
+      "tags": [
+        "vibe",
+        "ai-coding",
+        "claude-code",
+        "swarm",
+        "language-detection",
+        "cursor",
+        "release",
+        "v2.6.17"
+      ],
+      "image": null,
+      "imageAlt": null,
+      "series": "vibe-coding",
+      "seriesOrder": 13,
+      "approved": false,
+      "sourceLinkedIn": null,
+      "lang": "ko"
+    },
+    {
       "slug": "fallingo-devlog-0054",
       "title": "fallingo 개발일지 - e27f063..63d1917 (10개 커밋)",
       "date": "2026-01-27T00:00:00.000Z",
@@ -2081,6 +2180,30 @@
       "imageAlt": null,
       "series": "fallingo-devlog",
       "seriesOrder": 53,
+      "approved": false,
+      "sourceLinkedIn": null,
+      "lang": "ko"
+    },
+    {
+      "slug": "tech-vibe-12",
+      "title": "Vibe v2.6: Fire-and-Forget, Cursor IDE, Race Review",
+      "date": "2026-01-26T00:00:00.000Z",
+      "category": "tech",
+      "description": "Fire-and-Forget 비동기 SPEC, Cursor IDE 지원, Multi-LLM Race Review, UI 디자인 도구, E2E 테스트 생성기",
+      "tags": [
+        "vibe",
+        "ai-coding",
+        "claude-code",
+        "cursor",
+        "race-review",
+        "fire-and-forget",
+        "release",
+        "v2.6"
+      ],
+      "image": null,
+      "imageAlt": null,
+      "series": "vibe-coding",
+      "seriesOrder": 12,
       "approved": false,
       "sourceLinkedIn": null,
       "lang": "ko"
@@ -2187,6 +2310,30 @@
       "imageAlt": null,
       "series": "fallingo-devlog",
       "seriesOrder": 48,
+      "approved": false,
+      "sourceLinkedIn": null,
+      "lang": "ko"
+    },
+    {
+      "slug": "tech-vibe-11",
+      "title": "Vibe v2.5: Multi-LLM Research와 품질 보증 자동화",
+      "date": "2026-01-20T00:00:00.000Z",
+      "category": "tech",
+      "description": "GPT+Gemini 병렬 리서치로 SPEC 품질 향상, SkillRepository 도입, Rule Build System으로 프레임워크 감지 고도화",
+      "tags": [
+        "vibe",
+        "ai-coding",
+        "claude-code",
+        "multi-llm",
+        "research",
+        "skill-repository",
+        "release",
+        "v2.5"
+      ],
+      "image": null,
+      "imageAlt": null,
+      "series": "vibe-coding",
+      "seriesOrder": 11,
       "approved": false,
       "sourceLinkedIn": null,
       "lang": "ko"
@@ -4099,8 +4246,8 @@
       "lang": "ko"
     }
   ],
-  "totalCount": 199,
-  "lastUpdated": "2026-06-22T09:08:49.469Z",
+  "totalCount": 206,
+  "lastUpdated": "2026-06-27T09:18:40.040Z",
   "fullPosts": [
     {
       "slug": "01-ai-journey-start",
@@ -4301,6 +4448,24 @@
       "lang": "ko",
       "filePath": "/posts/08-ai-freedom-responsibility.md",
       "seriesOrder": 8
+    },
+    {
+      "slug": "ai는-마법이-아니다-강아지-간식으로-보는-llm-원리",
+      "title": "AI는 마법이 아니다. 강아지 간식으로 보는 LLM 원리",
+      "date": "2026-06-27T00:00:00.000Z",
+      "category": "tech",
+      "content": "## 처음에는 저도 마법처럼 봤습니다\n\n챗봇이 질문에 답했습니다. 코드도 짰고, 사과문도 써냈습니다.  \n처음 보면 정말 사람이 읽고 생각해서 말하는 것처럼 보입니다.\n\n하지만 그렇지는 않습니다. LLM은 사람이 글을 읽는 방식으로 문장을 이해하지 않습니다.  \n동작 방식은 훨씬 건조합니다. 텍스트를 숫자로 바꾸고, 다음에 올 가능성이 높은 토큰을 하나씩 고릅니다.\n\n## 강아지 간식으로 보면 쉽습니다\n\n강아지에게 “앉아”라고 말합니다. 앉으면 간식을 줍니다.  \n이 과정을 100번쯤 반복하면 강아지는 패턴 하나를 익힙니다.\n\n“앉아” 다음에는 엉덩이를 바닥에 붙일 가능성이 높습니다.  \n“손” 다음에는 앞발을 올릴 가능성이 높습니다.\n\nLLM도 비슷합니다. 다만 간식 대신 정답에 가까운 문장이 있습니다.  \n“비가 오면 우산을” 다음에는 “쓴다”가 올 확률이 큽니다.  \n“뜨거운 냄비는 손으로” 다음에는 “만지지”가 자주 따라옵니다.\n\n## 단어가 아니라 토큰을 맞힙니다\n\n여기서 단어라고 말하는 것도 정확하진 않습니다.  \nLLM은 문장을 토큰으로 나눠 봅니다. 토큰은 단어일 수도 있고, 단어의 일부일 수도 있습니다.\n\n입력된 문장은 숫자 벡터가 됩니다.  \n모델은 그 숫자들 사이의 관계를 계산합니다.  \n그리고 다음 자리에 올 토큰 후보들을 확률로 늘어놓습니다.\n\n그중 확률이 높은 토큰을 고르면 문장이 이어집니다.  \n이 과정을 계속 반복하면 한 문단이 됩니다. 긴 답변도 결국 같은 방식으로 만들어집니다.\n\n## 그래서 아무 말이나 그럴듯하게 할 수 있습니다\n\n문제는 여기서 생깁니다.  \n확률이 높다는 말이 곧 사실이라는 뜻은 아닙니다.\n\n강아지가 “앉아”를 배웠다고 해서 의자의 역사까지 이해한 건 아닙니다.  \nLLM도 “서울은 대한민국의” 다음에 “수도”를 자주 고릅니다.  \n그렇다고 그 문장을 사람처럼 경험해서 아는 것은 아닙니다.\n\n그래서 틀린 답을 자신 있게 말할 수 있습니다.  \n문장 모양은 자연스러운데, 사실 관계가 어긋나는 일이 생깁니다.\n\n## 그래도 단순한 자동완성은 아닙니다\n\n여기서 멈추면 설명이 반만 맞습니다.  \n다음 단어를 예측하는 과정만으로도 모델은 꽤 많은 구조를 배웁니다.\n\n2026년 1월 15일에는 이런 주장도 나왔습니다.  \n다음 단어를 잘 맞히려면 생성 규칙, 인과 구조, 세계가 작동하는 방식을 내부적으로 학습해야 한다는 주장입니다.\n\n얀 르쿤 교수도 이 논쟁에서 자주 언급됩니다.  \nLLM이 학습한 텍스트 데이터 양은 약 10의 14승 바이트로 설명됩니다.  \n그만큼 많은 문장을 보며 패턴을 압축한 결과가 지금의 답변입니다.\n\n## 마법이 아니라 통계와 압축입니다\n\nLLM은 생각하는 척을 꽤 잘합니다.  \n정확히 말하면, 생각처럼 보이는 문장 흐름을 확률로 만들어냅니다.\n\n강아지는 간식을 통해 행동 확률을 바꿉니다.  \nLLM은 거대한 텍스트를 통해 토큰 확률을 바꿉니다.  \n둘 다 반복에서 배웁니다. 규모가 다를 뿐입니다.",
+      "description": "처음에는 저도 마법처럼 봤습니다 챗봇이 질문에 답했습니다. 코드도 짰고, 사과문도 써냈습니다.   처음 보면 정말 사람이 읽고 생각해서 말하는 것처럼 보입니다. 하지만 그렇지는 않습니다. LLM은 사람이 글을 읽는 방식으로 문장을 이해하지 않습니다.   동작 방식은 훨씬 건조합",
+      "tags": [],
+      "image": null,
+      "imageAlt": null,
+      "draft": false,
+      "approved": false,
+      "series": null,
+      "sourceLinkedIn": null,
+      "author": "Su Ham",
+      "lang": "ko",
+      "filePath": "/posts/ai는-마법이-아니다-강아지-간식으로-보는-llm-원리.md"
     },
     {
       "slug": "fallingo-01-google-dream",
@@ -6898,6 +7063,141 @@
       "seriesOrder": 10
     },
     {
+      "slug": "tech-vibe-11",
+      "title": "Vibe v2.5: Multi-LLM Research와 품질 보증 자동화",
+      "date": "2026-01-20T00:00:00.000Z",
+      "category": "tech",
+      "content": "# Vibe v2.5: Multi-LLM Research와 품질 보증 자동화\n\n## 리서치의 깊이를 높이다\n\nv2.4에서 Agent Orchestrator로 에이전트를 프로그래밍 방식으로 제어할 수 있게 됐습니다.\n\n그런데 SPEC 작성 시 리서치 결과가 Claude의 지식에 의존하고 있었습니다. Claude만의 관점입니다. **GPT와 Gemini의 관점도 필요합니다.**\n\nv2.5에서 Multi-LLM Research를 도입했습니다.\n\n---\n\n## Multi-LLM Research\n\nSPEC 리서치 단계에서 Claude 에이전트 4개에 GPT와 Gemini를 추가합니다.\n\n```\n/vibe.spec \"passkey authentication\"\n    ↓\n요구사항 확정\n    ↓\n┌─────────────────────────────────────────┐\n│ Claude 에이전트 (4개 병렬)              │\n│  - best-practices-agent                 │\n│  - framework-docs-agent                 │\n│  - codebase-patterns-agent              │\n│  - security-advisory-agent              │\n│                                         │\n│ GPT (병렬)                              │\n│  - 아키텍처 관점 리서치                 │\n│                                         │\n│ Gemini (병렬)                           │\n│  - 최신 동향 및 대안 기술 리서치        │\n└─────────────────────────────────────────┘\n    ↓\n6개 관점 통합 → SPEC 초안\n```\n\n### 왜 3개 LLM인가\n\n| LLM | 강점 | 리서치 역할 |\n|-----|------|------------|\n| Claude | 코드 이해, 정밀한 분석 | 코드베이스 패턴, 보안 |\n| GPT | 넓은 지식, 아키텍처 | 설계 패턴, 베스트 프랙티스 |\n| Gemini | 최신 정보, 빠른 처리 | 최신 동향, 대안 기술 |\n\n각 모델의 강점을 살려서 리서치의 깊이와 넓이를 모두 확보합니다.\n\n### parallelResearch.ts\n\n```typescript\n// 6개 리서치를 병렬로 실행\nconst results = await Promise.allSettled([\n  runClaudeAgents(feature, techStack),  // 4개 에이전트\n  runGPTResearch(feature),              // GPT 리서치\n  runGeminiResearch(feature),           // Gemini 리서치\n]);\n```\n\n---\n\n## SkillRepository\n\n`~/.claude/vibe/skills/`에서 스킬을 관리하는 시스템을 도입했습니다.\n\n```\n~/.claude/vibe/skills/\n├── vibe-capabilities.md       # vibe 기능 가이드\n├── multi-llm-orchestration.md # GPT/Gemini 사용법\n├── tool-fallback.md           # 에러 복구 전략\n├── context7-usage.md          # 라이브러리 문서 검색\n├── parallel-research.md       # 병렬 리서치 전략\n└── priority-todos.md          # 작업 관리 전략\n```\n\n스킬은 Claude가 특정 상황에서 참조하는 지식 파일입니다. Hook이 자동으로 필요한 스킬을 활성화합니다.\n\n```json\n{\n  \"UserPromptSubmit\": [{\n    \"matcher\": \".*\",\n    \"hooks\": [{\n      \"type\": \"command\",\n      \"command\": \"node hooks/scripts/skill-activator.js\"\n    }]\n  }]\n}\n```\n\n---\n\n## Rule Build System\n\n프레임워크 감지와 규칙 생성을 독립적인 빌드 시스템으로 분리했습니다.\n\n```\n프로젝트 스캔\n    ↓\nFramework Detector\n    ↓\n감지 결과: [Next.js, TypeScript, Tailwind]\n    ↓\nRule Builder\n    ↓\n.claude/vibe/rules/languages/\n├── typescript-nextjs.md\n└── ...\n```\n\n기존에는 감지와 규칙 설치가 하나의 함수에 섞여 있었습니다. 분리하면서 테스트 가능성과 유지보수성이 향상됐습니다.\n\n---\n\n## SPEC 리뷰 커맨드 분리\n\n기존에는 `/vibe.spec`에 리뷰가 포함되어 있었습니다. v2.5에서 분리했습니다.\n\n```bash\n# 기존: SPEC 작성 + 리뷰가 같은 세션\n/vibe.spec \"feature\"\n\n# v2.5: SPEC 작성과 리뷰를 별도 세션에서\n/vibe.spec \"feature\"         # 1. SPEC 작성\n/new                          # 2. 새 세션\n/vibe.spec.review \"feature\"  # 3. 리뷰 (깨끗한 컨텍스트)\n```\n\n**왜 분리했나?** 같은 세션에서 작성하고 리뷰하면, 작성 시의 맥락이 리뷰를 편향시킵니다. 새 세션에서 리뷰하면 SPEC 문서만 보고 객관적으로 판단합니다.\n\n---\n\n## Ralph Loop 완료 검증\n\nRalph Loop는 \"100% 완료까지 반복\"하는 패턴입니다. v2.5에서 실제 100%인지 검증하는 로직을 추가했습니다.\n\n```\nPhase 완료 체크\n    ↓\n모든 Acceptance Criteria 통과?\n    ↓ Yes                    ↓ No\n다음 Phase              수정 후 재검증\n    ↓\n모든 Phase 완료?\n    ↓ Yes                    ↓ No\n완료                    다음 Phase\n```\n\n---\n\n## God Object 리팩토링\n\n기능을 빠르게 추가하다 보니 일부 모듈이 비대해졌습니다.\n\n```\nBefore: installer.ts (500+ lines, 15+ functions)\nAfter:\n├── installer.ts (100 lines, 핵심 로직)\n├── framework-detector.ts (감지)\n├── rule-builder.ts (규칙 생성)\n└── hook-installer.ts (훅 설치)\n```\n\n---\n\n## 변경 요약\n\n### v2.4 → v2.5\n\n| 항목 | v2.4 | v2.5 |\n|------|------|------|\n| 리서치 | Claude 에이전트만 | Claude + GPT + Gemini |\n| 스킬 관리 | 없음 | SkillRepository |\n| 프레임워크 감지 | 설치 시 감지 | Rule Build System |\n| SPEC 리뷰 | /vibe.spec 내장 | /vibe.spec.review 분리 |\n| Ralph Loop | 검증 없음 | 완료 검증 추가 |\n| 코드 구조 | God Object | 모듈 분해 |\n\n---\n\n## 마무리\n\nv2.0에서 MCP 오버헤드를 제거했습니다.\nv2.1에서 병렬 코드 리뷰를 추가했습니다.\nv2.2에서 ULTRAWORK 파이프라인을 완성했습니다.\nv2.3에서 프레임워크별 맞춤 규칙을 적용했습니다.\nv2.4에서 에이전트를 프로그래밍 가능하게 만들었습니다.\nv2.5에서 **리서치에 3개 LLM의 관점을 통합**했습니다.\n\n하나의 LLM만으로는 놓치는 관점이 있습니다. 3개 LLM이 동시에 리서치하면 더 넓고 깊은 SPEC이 만들어집니다.\n\n---\n\n> 이전 편: [Vibe v2.4.76: 18K 다운로드와 베타의 끝이 보인다](tech-vibe-10.md)\n\n**GitHub**: https://github.com/su-record/vibe\n**NPM**: https://www.npmjs.com/package/@su-record/vibe",
+      "description": "GPT+Gemini 병렬 리서치로 SPEC 품질 향상, SkillRepository 도입, Rule Build System으로 프레임워크 감지 고도화",
+      "tags": [
+        "vibe",
+        "ai-coding",
+        "claude-code",
+        "multi-llm",
+        "research",
+        "skill-repository",
+        "release",
+        "v2.5"
+      ],
+      "image": null,
+      "imageAlt": null,
+      "draft": false,
+      "approved": false,
+      "series": "vibe-coding",
+      "sourceLinkedIn": null,
+      "author": "Su",
+      "lang": "ko",
+      "filePath": "/posts/tech-vibe-11.md",
+      "seriesOrder": 11
+    },
+    {
+      "slug": "tech-vibe-12",
+      "title": "Vibe v2.6: Fire-and-Forget, Cursor IDE, Race Review",
+      "date": "2026-01-26T00:00:00.000Z",
+      "category": "tech",
+      "content": "# Vibe v2.6: Fire-and-Forget, Cursor IDE, Race Review\n\n## Claude Code를 넘어서\n\nv2.5까지 vibe는 Claude Code 전용이었습니다.\n\nv2.6에서 두 가지 큰 변화가 있습니다. **Cursor IDE 지원**으로 사용자 저변을 넓히고, **Fire-and-Forget 패턴**으로 워크플로우 속도를 높였습니다.\n\n---\n\n## Fire-and-Forget\n\nSPEC 작성 후 리뷰를 기다리지 않고 즉시 구현을 시작할 수 있습니다.\n\n```\n기존:\n/vibe.spec → (리뷰 완료 대기) → /vibe.run\n\nv2.6:\n/vibe.spec → /vibe.run (즉시 시작)\n                ↑\n          리뷰는 백그라운드에서 진행\n          결과가 나오면 자동 반영\n```\n\nSPEC 리뷰에서 P1(Critical) 이슈가 발견되면 구현을 중단하고 SPEC을 수정합니다. P2 이하는 구현 후 반영합니다.\n\n### Phase Pipelining\n\nPhase 단위로도 같은 원칙이 적용됩니다.\n\n```\nPhase 1 [구현 중] ──────────────────────>\n        Phase 2 [분석 중] ───────>\n                Phase 2 [구현 시작] ──────>\n                        Phase 3 [분석 중] ──>\n```\n\nPhase 1을 구현하는 동안 Phase 2의 분석이 백그라운드에서 시작됩니다. 순차 실행 대비 상당한 시간을 절약합니다.\n\n### PRD-to-SPEC 변환\n\n기존 PRD(Product Requirements Document)가 있으면 vibe SPEC 형식으로 자동 변환합니다.\n\n```bash\n/vibe.spec \"feature\" --prd ./docs/prd.md\n# → PRD를 분석해서 PTCF 구조의 SPEC으로 변환\n```\n\n---\n\n## Cursor IDE 지원\n\nvibe의 코딩 규칙과 프레임워크별 룰을 Cursor에서도 사용할 수 있습니다.\n\n```bash\nvibe init --cursor\n# → .cursor/rules/ 에 프로젝트에 맞는 규칙 설치\n```\n\n### Claude Code vs Cursor\n\n| 항목 | Claude Code | Cursor |\n|------|-------------|--------|\n| 규칙 형식 | `.md` | `.mdc` |\n| 규칙 위치 | `.claude/vibe/rules/` | `.cursor/rules/` |\n| 커맨드 | `/vibe.spec` | 자연어 |\n| Hook | 지원 | 미지원 |\n\nCursor는 `.mdc` 형식의 룰 파일을 사용합니다. vibe는 동일한 규칙 소스에서 두 가지 형식을 동적으로 생성합니다.\n\n```\nvibe 규칙 소스 (.md)\n    ↓\n┌──────────────────┬──────────────────┐\n│ Claude Code용    │ Cursor용         │\n│ .claude/vibe/    │ .cursor/rules/   │\n│ rules/*.md       │ *.mdc            │\n└──────────────────┴──────────────────┘\n```\n\n### 23개 언어 타입 전체 감지\n\nCursor 지원과 함께 감지 가능한 프레임워크를 23개로 확장했습니다.\n\n기존 14개에 추가:\n- Svelte, Angular, Remix, Astro\n- Express, NestJS, Deno\n- Electron, Tauri\n\n---\n\n## Multi-LLM Race Review\n\n코드 리뷰 시 GPT와 Gemini를 동시에 실행해서 결과를 비교합니다.\n\n```\n코드 변경\n    ↓\n┌──────────────┬──────────────┐\n│ GPT 리뷰     │ Gemini 리뷰  │\n│ (병렬 실행)  │ (병렬 실행)  │\n└──────────────┴──────────────┘\n    ↓\n결과 비교\n    ↓\n┌──────────────────────────────┐\n│ 공통 이슈 → P1 (높은 신뢰)  │\n│ 단독 이슈 → P2 (검토 필요)  │\n└──────────────────────────────┘\n```\n\n**Race의 의미**: 두 모델이 독립적으로 같은 코드를 리뷰합니다. 결과를 \"경주\"시켜서 교차 검증합니다.\n\n---\n\n## UI 디자인 도구\n\nGemini를 활용한 UI 디자인 생성 도구를 추가했습니다.\n\n```bash\n/vibe.utils --ui \"login form with social auth\"\n# → Gemini가 UI 디자인 생성\n# → HTML/CSS 코드 변환\n```\n\n디자인 폴더가 있으면 기존 디자인 시스템과 일관되게 생성합니다.\n\n---\n\n## E2E 테스트 스켈레톤 생성기\n\nPlaywright 기반 E2E 테스트의 기본 구조를 자동 생성합니다.\n\n```bash\n/vibe.utils --e2e \"login flow\"\n# → tests/e2e/login-flow.spec.ts 생성\n# → Page Object 패턴 적용\n# → Visual regression 설정 포함\n```\n\n---\n\n## Session RAG\n\n세션 중 발생하는 의사결정, 제약조건, 목표를 구조화해서 저장하고 검색합니다.\n\n```typescript\n// 결정 저장\nawait saveSessionItem({\n  itemType: 'decision',\n  title: 'Use Vitest',\n  rationale: 'Fast and modern'\n});\n\n// 컨텍스트 검색\nawait retrieveSessionContext({ query: 'testing' });\n```\n\nSQLite + FTS5 BM25 하이브리드 검색으로 관련 컨텍스트를 빠르게 찾습니다.\n\n---\n\n## Smart Hook Dispatcher\n\n기존 Hook은 단순 패턴 매칭이었습니다. Smart Hook Dispatcher는 컨텍스트를 분석해서 필요한 훅만 실행합니다.\n\n```\n기존: 모든 매칭 훅 실행 (불필요한 실행 포함)\nv2.6: 컨텍스트 분석 → 필요한 훅만 선택 실행\n```\n\nprogress tracking과 auto-retrospective도 추가했습니다.\n\n---\n\n## GPT/Gemini 호출 통합\n\n여러 커맨드에 분산되어 있던 GPT/Gemini 호출 로직을 `llm-orchestrate.js` 하나로 통합했습니다.\n\n```\n모든 커맨드 → llm-orchestrate.js → GPT/Gemini API\n```\n\nWindows에서 CLI 인자 길이 제한(8191자)을 우회하기 위해 stdin pipe 방식을 도입했습니다.\n\n---\n\n## 변경 요약\n\n### v2.5 → v2.6\n\n| 항목 | v2.5 | v2.6 |\n|------|------|------|\n| 워크플로우 | 순차 실행 | Fire-and-Forget |\n| IDE 지원 | Claude Code만 | Claude Code + Cursor |\n| 코드 리뷰 | 개별 LLM | Race Review (교차 검증) |\n| 언어 감지 | 14개 | 23개 |\n| UI 도구 | ASCII 미리보기 | Gemini UI 생성 |\n| E2E 테스트 | 수동 | 스켈레톤 자동 생성 |\n| 세션 관리 | 메모리 기반 | Session RAG (구조화) |\n| Hook | 패턴 매칭 | Smart Dispatcher |\n\n---\n\n## 마무리\n\nv2.0에서 MCP를 내장으로 전환했습니다.\nv2.1에서 병렬 코드 리뷰를 추가했습니다.\nv2.2에서 ULTRAWORK 파이프라인을 완성했습니다.\nv2.3에서 프레임워크별 맞춤 규칙을 적용했습니다.\nv2.4에서 에이전트를 프로그래밍 가능하게 만들었습니다.\nv2.5에서 3개 LLM 리서치를 통합했습니다.\nv2.6에서 **Claude Code를 넘어 Cursor까지, 순차에서 비동기까지** 확장했습니다.\n\n```bash\n# Claude Code\n/vibe.spec \"feature\"\n/vibe.run \"feature\" ultrawork\n\n# Cursor\nvibe init --cursor\n# → .cursor/rules/ 자동 설치\n```\n\n---\n\n> 이전 편: [Vibe v2.5: Multi-LLM Research와 품질 보증 자동화](tech-vibe-11.md)\n\n**GitHub**: https://github.com/su-record/vibe\n**NPM**: https://www.npmjs.com/package/@su-record/vibe",
+      "description": "Fire-and-Forget 비동기 SPEC, Cursor IDE 지원, Multi-LLM Race Review, UI 디자인 도구, E2E 테스트 생성기",
+      "tags": [
+        "vibe",
+        "ai-coding",
+        "claude-code",
+        "cursor",
+        "race-review",
+        "fire-and-forget",
+        "release",
+        "v2.6"
+      ],
+      "image": null,
+      "imageAlt": null,
+      "draft": false,
+      "approved": false,
+      "series": "vibe-coding",
+      "sourceLinkedIn": null,
+      "author": "Su",
+      "lang": "ko",
+      "filePath": "/posts/tech-vibe-12.md",
+      "seriesOrder": 12
+    },
+    {
+      "slug": "tech-vibe-13",
+      "title": "Vibe v2.6.17: Swarm Orchestrator와 23개 언어 감지",
+      "date": "2026-01-28T00:00:00.000Z",
+      "category": "tech",
+      "content": "# Vibe v2.6.17: Swarm Orchestrator와 23개 언어 감지\n\n## 에이전트가 에이전트를 만든다\n\nv2.4에서 Agent Orchestrator로 에이전트를 프로그래밍 방식으로 제어할 수 있게 됐습니다. v2.6.9에서 Race Review로 GPT와 Gemini를 경쟁시켰습니다.\n\n그런데 에이전트 수가 고정되어 있다는 한계가 있었습니다. 리뷰 에이전트 12개, 리서치 에이전트 4개. 작업이 크든 작든 같은 수의 에이전트가 투입됩니다.\n\n**작업 규모에 따라 에이전트 수를 동적으로 결정할 수 없을까?**\n\n---\n\n## Swarm Orchestrator\n\nSwarm 패턴은 에이전트가 필요에 따라 서브 에이전트를 스스로 생성하는 오케스트레이션 방식입니다.\n\n```\n작업 접수\n    ↓\n메인 에이전트가 작업 분석\n    ↓\n\"이 작업은 5개 서브태스크로 나뉜다\"\n    ↓\n5개 서브 에이전트 동적 생성\n    ↓\n각 서브 에이전트가 독립 작업\n    ↓\n결과 수집 → 통합\n```\n\n### 기존 오케스트레이터와의 차이\n\n| 항목 | Agent Orchestrator (v2.4) | Swarm Orchestrator |\n|------|--------------------------|-------------------|\n| 에이전트 수 | 고정 (12 리뷰 + 4 리서치) | 동적 (작업 규모에 따라) |\n| 에이전트 생성 | 사전 정의 | 런타임 자가 복제 |\n| 작업 분배 | 역할 기반 | 태스크 기반 |\n| 적합한 상황 | 정형화된 리뷰/리서치 | 비정형 탐색/분석 |\n\n### 실제 동작 예시\n\n```\n/vibe.analyze \"전체 프로젝트 보안 점검\"\n    ↓\nSwarm Orchestrator:\n  \"프로젝트에 42개 파일. 7개 모듈로 그룹화\"\n    ↓\n7개 서브 에이전트 생성:\n  - Agent 1: auth/ 모듈 보안 점검\n  - Agent 2: api/ 모듈 보안 점검\n  - Agent 3: database/ 모듈 보안 점검\n  - Agent 4: payment/ 모듈 보안 점검\n  - Agent 5: file-upload/ 모듈 보안 점검\n  - Agent 6: session/ 모듈 보안 점검\n  - Agent 7: config/ 모듈 보안 점검\n    ↓\n7개 결과 통합 → 보안 리포트\n```\n\n작은 프로젝트면 2~3개, 큰 프로젝트면 10개 이상. 작업 규모에 맞게 에이전트가 스케일링됩니다.\n\n### 현재 상태\n\nSwarm Orchestrator는 **실험 단계**입니다. README에 기록은 했지만, 안정화가 더 필요합니다. 프로덕션 사용은 기존 Agent Orchestrator를 권장합니다.\n\n---\n\n## 23개 프레임워크 전체 감지\n\nv2.3에서 14개 프레임워크를 지원했습니다. v2.6.17에서 **23개**로 확장했습니다.\n\n### 추가된 프레임워크\n\n| 프레임워크 | 감지 기준 | 룰 파일 |\n|-----------|----------|---------|\n| Svelte | `svelte` in deps | `typescript-svelte.md` |\n| Angular | `@angular/core` in deps | `typescript-angular.md` |\n| Remix | `@remix-run/react` in deps | `typescript-remix.md` |\n| Astro | `astro` in deps | `typescript-astro.md` |\n| Express | `express` in deps | `typescript-express.md` |\n| NestJS | `@nestjs/core` in deps | `typescript-nestjs.md` |\n| Deno | `deno.json` 존재 | `typescript-deno.md` |\n| Electron | `electron` in deps | `typescript-electron.md` |\n| Tauri | `@tauri-apps/api` in deps | `rust-tauri.md` |\n\n### 감지 우선순위\n\n프레임워크 감지에는 우선순위가 있습니다.\n\n```\nNuxt > Vue (Nuxt는 Vue를 포함)\nNestJS > Express (NestJS는 Express를 포함)\nNext.js > React (Next.js는 React를 포함)\nRemix > React\nTauri > Rust\n```\n\n상위 프레임워크가 감지되면 하위는 건너뜁니다.\n\n---\n\n## Cursor 규칙 동적 변환\n\nv2.6.9에서 Cursor IDE 지원을 추가했고, v2.6.17에서 규칙 변환을 고도화했습니다.\n\n### .md → .mdc 자동 변환\n\nvibe의 마크다운 규칙 파일을 Cursor의 `.mdc` 형식으로 동적 변환합니다.\n\n```markdown\n<!-- vibe 원본 (.md) -->\n### useFetch / useAsyncData\n// ✅ useFetch - 기본 데이터 페칭\nconst { data } = await useFetch<User>('/api/users');\n```\n\n```\n<!-- Cursor 변환 (.mdc) -->\n---\ndescription: Nuxt.js 코딩 규칙\nglobs: [\"**/*.vue\", \"**/*.ts\"]\n---\n### useFetch / useAsyncData\n// ✅ useFetch - 기본 데이터 페칭\nconst { data } = await useFetch<User>('/api/users');\n```\n\n`.mdc` 형식은 frontmatter에 `globs` 패턴이 추가됩니다. Cursor가 파일 타입에 맞는 규칙만 적용할 수 있게 합니다.\n\n### 프로젝트 스택 필터링\n\n전체 23개 규칙을 설치하지 않고, 프로젝트에 실제로 사용되는 스택의 규칙만 설치합니다.\n\n```bash\nvibe init --cursor\n# Next.js + TypeScript 프로젝트인 경우:\n# .cursor/rules/typescript-nextjs.mdc ← 설치됨\n# .cursor/rules/typescript-react.mdc  ← 건너뜀 (Next.js가 우선)\n# .cursor/rules/python-fastapi.mdc   ← 건너뜀 (Python 미사용)\n```\n\n---\n\n## CLAUDE.md 마커 기반 중복 방지\n\n`vibe update`를 여러 번 실행해도 CLAUDE.md에 내용이 중복 추가되지 않습니다.\n\n```markdown\n<!-- VIBE:START -->\n## Response Language\n**IMPORTANT: Always respond in Korean...**\n<!-- VIBE:END -->\n```\n\n마커 사이의 내용만 교체합니다. 사용자가 마커 밖에 추가한 커스텀 내용은 보존됩니다.\n\n---\n\n## README 영문 번역\n\nnpm 다운로드가 늘어나면서 글로벌 사용자를 위해 README를 영어로 번역했습니다.\n\n---\n\n## 변경 요약\n\n### v2.6.9 → v2.6.17\n\n| 항목 | v2.6.9 | v2.6.17 |\n|------|--------|---------|\n| 오케스트레이션 | 고정 에이전트 | Swarm (동적 생성) |\n| 언어 감지 | 14개 | **23개** |\n| Cursor 규칙 | 기본 변환 | 동적 .mdc + 스택 필터링 |\n| CLAUDE.md | 중복 가능 | 마커 기반 교체 |\n| README | 한국어 | **영문 번역** |\n\n---\n\n## 마무리\n\nv2.6.0에서 Fire-and-Forget과 Cursor IDE를 추가했습니다.\nv2.6.9에서 Race Review로 LLM을 경쟁시켰습니다.\nv2.6.17에서 **에이전트가 에이전트를 만드는** Swarm 패턴을 실험했습니다.\n\n23개 프레임워크 감지, Cursor .mdc 동적 변환, CLAUDE.md 중복 방지.\n\n작은 개선들이 모여서 프레임워크의 완성도를 높입니다.\n\n---\n\n> 이전 편: [Vibe v2.6: Fire-and-Forget, Cursor IDE, Race Review](tech-vibe-12.md)\n\n**GitHub**: https://github.com/su-record/vibe\n**NPM**: https://www.npmjs.com/package/@su-record/vibe",
+      "description": "에이전트 자가 복제 Swarm 패턴 실험, 23개 프레임워크 전체 감지, Cursor 규칙 동적 변환, CLAUDE.md 마커 기반 중복 방지",
+      "tags": [
+        "vibe",
+        "ai-coding",
+        "claude-code",
+        "swarm",
+        "language-detection",
+        "cursor",
+        "release",
+        "v2.6.17"
+      ],
+      "image": null,
+      "imageAlt": null,
+      "draft": false,
+      "approved": false,
+      "series": "vibe-coding",
+      "sourceLinkedIn": null,
+      "author": "Su",
+      "lang": "ko",
+      "filePath": "/posts/tech-vibe-13.md",
+      "seriesOrder": 13
+    },
+    {
+      "slug": "tech-vibe-14",
+      "title": "Vibe v2.6.27: Session RAG와 Smart Hook Dispatcher",
+      "date": "2026-02-03T00:00:00.000Z",
+      "category": "tech",
+      "content": "# Vibe v2.6.27: Session RAG와 Smart Hook Dispatcher\n\n## 세션을 기억하게 만들다\n\nvibe의 세션 관리는 v1.0부터 있었습니다. `vibe_save_memory`로 결정사항을 저장하고, `vibe_start_session`으로 복원했습니다.\n\n문제는 **구조가 없었다**는 점입니다. 메모리에 텍스트를 저장하면, 나중에 관련 정보를 찾기 어렵습니다. \"이전에 Vitest를 쓰기로 결정했는데, 왜 결정했더라?\" 같은 질문에 답하려면 전체 메모리를 뒤져야 합니다.\n\nv2.6.27에서 **Session RAG**를 도입했습니다. 구조화된 데이터로 저장하고, 하이브리드 검색으로 찾습니다.\n\n---\n\n## Session RAG\n\n### 4가지 엔티티\n\n세션에서 발생하는 정보를 4가지 유형으로 구조화합니다.\n\n| 엔티티 | 설명 | 예시 |\n|--------|------|------|\n| **Decision** | 사용자 확인 결정사항 | \"Vitest를 사용하기로 결정\" |\n| **Constraint** | 명시적 제약조건 | \"벡터 DB 사용 금지\" |\n| **Goal** | 현재 목표 스택 | \"Session RAG 구현\" |\n| **Evidence** | 검증/테스트 결과 | \"빌드 성공, 테스트 42개 통과\" |\n\n### 저장\n\n```typescript\n// 결정 저장\nawait saveSessionItem({\n  itemType: 'decision',\n  title: 'Use Vitest',\n  rationale: 'Fast and modern, better DX than Jest',\n  alternatives: ['Jest', 'Mocha'],\n  impact: 'high',\n  priority: 1\n});\n\n// 제약 저장\nawait saveSessionItem({\n  itemType: 'constraint',\n  title: 'No vector DB',\n  type: 'technical',\n  severity: 'high'\n});\n\n// 목표 저장\nawait saveSessionItem({\n  itemType: 'goal',\n  title: 'Implement Session RAG',\n  priority: 2,\n  successCriteria: ['CRUD 동작', 'BM25 검색 동작', '세션 자동 주입']\n});\n```\n\n### 검색\n\nSQLite FTS5의 BM25 알고리즘과 recency, priority를 결합한 하이브리드 검색입니다.\n\n```typescript\nconst results = await retrieveSessionContext({\n  query: 'testing framework decision'\n});\n\n// 결과: Decision \"Use Vitest\" (relevance: 0.92)\n```\n\n**하이브리드 스코어링:**\n```\nscore = BM25_relevance * 0.5\n      + recency_score * 0.3\n      + priority_score * 0.2\n```\n\n최근에 저장된, 우선순위 높은, 키워드가 일치하는 항목이 상위에 노출됩니다.\n\n### 자동 주입\n\n`start_session` 호출 시 활성 Goals, 중요 Constraints, 최근 Decisions가 자동으로 세션 컨텍스트에 포함됩니다.\n\n```\n새 세션 시작\n    ↓\nstart_session 호출\n    ↓\n자동 주입:\n  - 활성 Goals (status: active)\n  - severity: high 이상 Constraints\n  - 최근 7일 내 Decisions\n    ↓\nClaude가 이전 맥락을 이해한 상태로 시작\n```\n\n### 목표 관리\n\nGoal은 생명주기를 가집니다.\n\n```typescript\n// 목표 목록\nawait manageGoals({ action: 'list' });\n\n// 진행률 업데이트\nawait manageGoals({\n  action: 'update',\n  goalId: 1,\n  progressPercent: 80\n});\n\n// 완료\nawait manageGoals({\n  action: 'complete',\n  goalId: 1\n});\n```\n\n---\n\n## Smart Hook Dispatcher\n\n기존 Hook은 단순 패턴 매칭이었습니다. 매칭되면 무조건 실행했습니다.\n\n```\n기존: \"ultrawork\" 매칭 → ULTRAWORK 훅 실행 (항상)\n```\n\nSmart Hook Dispatcher는 컨텍스트를 분석해서 필요한 훅만 실행합니다.\n\n```\nv2.6.27:\n  사용자 메시지 분석\n      ↓\n  필요한 훅 판단\n      ↓\n  선택적 실행\n```\n\n### 추가 기능\n\n**Progress Tracking**: 작업 진행 상황을 자동 추적합니다.\n\n**Auto-Retrospective**: Phase 완료 시 자동으로 회고를 생성합니다. 무엇이 잘 됐고, 무엇이 개선 가능한지.\n\n**SPEC Summary**: SPEC 문서의 핵심 내용을 요약해서 훅 메시지에 포함합니다.\n\n---\n\n## E2E 테스트 스켈레톤 생성기\n\nPlaywright 기반 E2E 테스트의 기본 구조를 자동 생성합니다.\n\n```bash\n/vibe.utils --e2e \"login flow\"\n```\n\n생성되는 파일:\n\n```typescript\n// tests/e2e/login-flow.spec.ts\nimport { test, expect } from '@playwright/test';\nimport { LoginPage } from './pages/login.page';\n\ntest.describe('Login Flow', () => {\n  let loginPage: LoginPage;\n\n  test.beforeEach(async ({ page }) => {\n    loginPage = new LoginPage(page);\n    await loginPage.goto();\n  });\n\n  test('should login with valid credentials', async () => {\n    await loginPage.login('user@example.com', 'password');\n    await expect(loginPage.successMessage).toBeVisible();\n  });\n\n  test('should show error with invalid credentials', async () => {\n    await loginPage.login('user@example.com', 'wrong');\n    await expect(loginPage.errorMessage).toBeVisible();\n  });\n});\n```\n\nPage Object 패턴을 적용하고, Visual regression 설정도 포함합니다.\n\n### 추가 에이전트\n\nE2E 테스트와 함께 3개의 전문 에이전트를 추가했습니다.\n\n| 에이전트 | 역할 |\n|---------|------|\n| `planning-agent` | 구현 계획 수립 |\n| `qa-agent` | 품질 검증 |\n| `docs-agent` | 문서 생성 |\n\n---\n\n## LLM 호출 통합\n\n여러 커맨드에 분산되어 있던 GPT/Gemini 호출 로직을 통합했습니다.\n\n```\nBefore:\n  vibe.spec → 자체 GPT/Gemini 호출 스크립트\n  vibe.run → 자체 GPT/Gemini 호출 스크립트\n  vibe.review → 자체 GPT/Gemini 호출 스크립트\n  vibe.spec.review → 자체 GPT/Gemini 호출 스크립트\n\nAfter:\n  모든 커맨드 → llm-orchestrate.js → GPT/Gemini API\n```\n\n### Windows 호환성\n\nWindows에서 CLI 인자 길이 제한(8191자)이 문제였습니다. 긴 프롬프트를 전달할 때 잘리는 현상이 있었습니다.\n\n**해결**: stdin pipe로 전달.\n\n```javascript\n// Before: CLI 인자로 전달 (길이 제한)\nchild_process.exec(`node llm.js --prompt \"${longPrompt}\"`);\n\n// After: stdin pipe로 전달 (길이 무제한)\nconst child = child_process.spawn('node', ['llm.js']);\nchild.stdin.write(longPrompt);\nchild.stdin.end();\n```\n\n---\n\n## 변경 요약\n\n### v2.6.17 → v2.6.27\n\n| 항목 | v2.6.17 | v2.6.27 |\n|------|---------|---------|\n| 세션 관리 | 비구조화 메모리 | **Session RAG** (SQLite + FTS5) |\n| Hook | 패턴 매칭 | **Smart Dispatcher** |\n| E2E 테스트 | 수동 | **자동 스켈레톤 생성** |\n| LLM 호출 | 커맨드별 분산 | **llm-orchestrate.js 통합** |\n| Windows | 인자 길이 제한 | **stdin pipe** |\n\n---\n\n## 마무리\n\nv2.6.0에서 Fire-and-Forget과 Cursor IDE를 추가했습니다.\nv2.6.9에서 Race Review를 도입했습니다.\nv2.6.17에서 Swarm Orchestrator를 실험했습니다.\nv2.6.27에서 **세션에 구조와 검색을 부여**했습니다.\n\nSession RAG는 단순한 메모리 저장이 아닙니다. 의사결정의 맥락, 제약조건의 이유, 목표의 진행률. 이 모든 것이 구조화되어 다음 세션에 자동으로 전달됩니다.\n\nAI가 \"왜 이렇게 결정했는지\"를 기억합니다.\n\n---\n\n> 이전 편: [Vibe v2.6.17: Swarm Orchestrator와 23개 언어 감지](tech-vibe-13.md)\n\n**GitHub**: https://github.com/su-record/vibe\n**NPM**: https://www.npmjs.com/package/@su-record/vibe",
+      "description": "SQLite FTS5 기반 Session RAG로 세션 컨텍스트 구조화, Smart Hook Dispatcher로 훅 지능화, E2E 테스트 자동 생성, LLM 호출 통합",
+      "tags": [
+        "vibe",
+        "ai-coding",
+        "claude-code",
+        "session-rag",
+        "smart-hook",
+        "e2e",
+        "release",
+        "v2.6.27"
+      ],
+      "image": null,
+      "imageAlt": null,
+      "draft": false,
+      "approved": false,
+      "series": "vibe-coding",
+      "sourceLinkedIn": null,
+      "author": "Su",
+      "lang": "ko",
+      "filePath": "/posts/tech-vibe-14.md",
+      "seriesOrder": 14
+    },
+    {
+      "slug": "tory-character-consistency",
+      "title": "강아지 한 마리가 시바견으로 바뀌는 순간, 콘텐츠 공장은 멈춥니다",
+      "date": "2026-06-23T00:00:00.000Z",
+      "category": "dev-log",
+      "content": "# 강아지 한 마리가 시바견으로 바뀌는 순간, 콘텐츠 공장은 멈춥니다\n\n토리는 하루 만에 세 번 바뀌었습니다.\n\n오전에는 둥근 얼굴의 강아지였습니다.  \n점심에는 주둥이가 길어졌습니다.  \n저녁에는 털 색이 밝아져서 시바견처럼 보였습니다.\n\n이름은 모두 토리였습니다.  \n하지만 같은 강아지는 아니었습니다.\n\ntory-studio를 만들면서 가장 오래 붙잡은 문제는 에이전트도, 디스코드 봇도, 자동 발행도 아니었습니다.\n\n마스코트 강아지 ‘토리’를 매번 같은 얼굴로 그리는 일이었습니다.\n\n콘텐츠 자동화 시스템은 생각보다 빨리 붙었습니다. Hermes Agent에 멀티프로필을 만들고 역할을 나눴습니다. 한 에이전트는 아이디어를 냅니다. 다른 에이전트는 초안을 씁니다. 이미지 에이전트는 장면 프롬프트를 만듭니다. 결과물은 디스코드 채널에 쌓입니다.\n\n글은 어느 정도 제어됐습니다.  \n톤을 정하고, 예시를 넣고, 길이를 제한하면 편차가 줄었습니다.\n\n이미지는 달랐습니다.\n\n강아지 한 마리가 계속 다른 강아지로 태어났습니다.\n\n## 자동화의 병목은 속도가 아니었습니다\n\ntory-studio의 기본 구조는 작은 콘텐츠 팀에 가깝습니다.\n\nHermes Agent에 여러 프로필을 만들었습니다. 각 프로필에는 다른 역할을 줬습니다.\n\n- 기획 에이전트: 콘텐츠 주제와 각도를 제안합니다.\n- 편집 에이전트: 초안의 톤과 구조를 다듬습니다.\n- 이미지 에이전트: 장면 설명과 이미지 프롬프트를 만듭니다.\n- 검수 에이전트: 브랜드 톤, 금칙어, 누락 요소를 확인합니다.\n- 발행 에이전트: 디스코드 채널에 결과물을 정리합니다.\n\n디스코드에는 채널을 나눴습니다.\n\n기획 채널에는 아이디어가 올라옵니다.  \n초안 채널에는 글이 쌓입니다.  \n이미지 채널에는 프롬프트와 시안이 올라옵니다.  \n승인 채널에는 사람이 봐야 할 항목만 남습니다.\n\n여기까지는 매끄러웠습니다.\n\n버튼을 누르면 후보가 생겼습니다.  \n초안도 나왔습니다.  \n이미지 요청도 정리됐습니다.\n\n그런데 마지막에 매번 같은 문제가 생겼습니다.\n\n“이 강아지, 토리 아닌데요.”\n\n이 한마디가 나오면 그 콘텐츠는 멈춥니다. 글이 좋아도 못 씁니다. 장면이 귀여워도 못 씁니다. 마스코트가 바뀌면 채널의 기억점이 깨집니다.\n\n콘텐츠 자동화에서 병목은 생성 속도가 아니었습니다.  \n같은 것을 같은 모습으로 유지하는 일이었습니다.\n\n## 텍스트로 토리를 설명해도 토리가 나오지 않았습니다\n\n처음에는 gpt-image에 텍스트 프롬프트를 길게 넣었습니다.\n\n토리의 특징을 문장으로 적었습니다.\n\n- 작은 체형\n- 둥근 얼굴\n- 접힌 귀\n- 크고 어두운 눈\n- 크림색과 밝은 갈색이 섞인 털\n- 짧은 주둥이\n- 부드러운 표정\n- 같은 캐릭터 유지\n\n프롬프트 끝에는 “same character”도 넣었습니다.  \n“keep the same dog”도 넣었습니다.  \n“do not change breed”도 넣었습니다.\n\n그래도 흔들렸습니다.\n\n초기 테스트에서 텍스트 프롬프트만으로 30장을 만들었습니다. 내부 기준으로 “토리처럼 보인다”고 통과한 이미지는 6장이었습니다.\n\n통과 기준은 네 가지였습니다.\n\n1. 얼굴형이 유지되는가\n2. 귀 모양이 유지되는가\n3. 털 색과 무늬가 유지되는가\n4. 체형과 눈매가 유지되는가\n\n실패한 이미지는 이유가 분명했습니다.\n\n카페에 앉은 토리는 말티즈처럼 보였습니다.  \n노트북 앞의 토리는 포메라니안처럼 나왔습니다.  \n회의실 화이트보드 앞의 토리는 털 색이 완전히 바뀌었습니다.  \n디스코드 알림을 보는 토리는 귀가 서 있었습니다.\n\n프롬프트는 길어졌지만 결과는 안정되지 않았습니다.\n\n문장을 더 붙이는 방식으로는 한계가 있었습니다.  \nAI는 “강아지 설명”을 이해했지만 “우리 토리”를 기억하지 못했습니다.\n\n## 기준 이미지 한 장이 긴 프롬프트보다 강했습니다\n\n방식을 바꿨습니다.\n\n토리를 설명하지 않고, 토리 사진을 기준으로 넣었습니다.  \nnano-banana에서 기준 이미지를 고정하고 장면만 바꿨습니다.\n\n프롬프트의 역할도 바꿨습니다.\n\n이전 프롬프트는 강아지를 설명하는 데 대부분을 썼습니다.\n\n바꾼 뒤에는 장면만 지시했습니다.\n\n예시는 이렇습니다.\n\n- 기준 이미지: 토리 원본 사진 1장\n- 요청 장면: 디스코드 화면이 켜진 노트북 앞에 앉아 있는 토리\n- 유지 조건: 얼굴형, 귀 모양, 털 색, 눈매, 체형\n- 변경 조건: 배경, 소품, 자세, 조명\n\n이후 같은 기준으로 20장을 만들었습니다.  \n1차 검수를 통과한 이미지는 15장이었습니다.\n\n완벽하진 않았습니다.  \n가끔 눈이 커졌습니다.  \n가끔 털이 너무 정돈됐습니다.  \n가끔 실제 토리보다 인형처럼 보였습니다.\n\n하지만 이전과 차이는 컸습니다.\n\n텍스트만 썼을 때는 30장 중 6장이었습니다.  \n기준 이미지를 넣은 뒤에는 20장 중 15장이었습니다.\n\n다시 뽑아야 하는 횟수가 줄었습니다.  \n검수 시간도 줄었습니다.  \n무엇보다 “이건 토리가 아닌데요”라는 말이 훨씬 덜 나왔습니다.\n\n## 프롬프트는 정체성이 아니라 상황을 맡아야 했습니다\n\n이 실험 뒤에 프롬프트를 쓰는 방식이 바뀌었습니다.\n\n처음에는 프롬프트 하나에 모든 것을 넣으려 했습니다.\n\n“토리는 어떤 강아지인가”  \n“어떤 표정을 해야 하는가”  \n“어떤 장면에 있어야 하는가”  \n“어떤 스타일이어야 하는가”\n\n이렇게 쓰면 문장이 길어집니다.  \n길어진 문장은 중요한 조건끼리 충돌합니다.  \n모델은 어느 조건을 더 세게 반영해야 할지 흔들립니다.\n\n기준 이미지를 넣은 뒤에는 역할을 나눴습니다.\n\n정체성은 이미지가 맡습니다.  \n상황은 프롬프트가 맡습니다.\n\n토리가 누구인지는 기준 이미지가 정합니다.  \n토리가 어디에 있는지는 프롬프트가 정합니다.\n\n이 차이가 컸습니다.\n\n“크림색 털의 귀여운 작은 강아지”라고 쓰면 비슷한 강아지가 나옵니다.  \n토리 사진을 넣고 “노트북 앞에 앉아 있다”고 쓰면 토리가 나옵니다.\n\n비슷한 강아지와 같은 강아지는 다릅니다.\n\n브랜드에서는 이 차이가 전부였습니다.\n\n## 자동 발행을 켰다면 시바견 토리가 올라갔을 겁니다\n\n초기 설계에는 완전 자동 발행 흐름도 있었습니다.\n\n에이전트가 기획합니다.  \n글을 씁니다.  \n이미지를 만듭니다.  \n디스코드에 바로 발행합니다.\n\n데모로는 좋습니다.  \n한 번에 결과가 나오기 때문입니다.\n\n하지만 실제 운영에서는 위험했습니다.\n\n자동 발행을 켰다면, 시바견처럼 변한 토리가 그대로 채널 배너에 올라갔을 겁니다. 글은 멀쩡했을 수 있습니다. 문법도 맞았을 수 있습니다. 하지만 사람은 이미지를 먼저 봅니다.\n\n“토리가 왜 바뀌었지?”\n\n이 질문이 나오면 콘텐츠 하나의 문제가 아닙니다.  \n채널 전체의 기준이 흔들립니다.\n\n그래서 tory-studio에는 2단계 게이트를 넣었습니다.\n\n1. 에이전트가 콘텐츠 후보를 만듭니다.\n2. 사람이 “만들 가치가 있는지” 먼저 봅니다.\n3. 승인된 항목만 제작 단계로 넘어갑니다.\n4. 에이전트가 글과 이미지를 만듭니다.\n5. 사람이 “내보내도 되는지” 최종 확인합니다.\n6. 승인된 콘텐츠만 발행됩니다.\n\n사람이 모든 문장을 쓰지는 않습니다.  \n모든 이미지를 직접 만들지도 않습니다.\n\n대신 두 번만 봅니다.\n\n만들기 전에 봅니다.  \n내보내기 전에 봅니다.\n\n이 두 번이 없으면 자동화는 빠르게 잘못된 결과를 쌓습니다.\n\n## 마스코트는 장식이 아니었습니다\n\n처음에는 토리를 귀여운 요소로 생각했습니다.\n\n콘텐츠에 강아지 한 마리가 있으면 더 친근해 보입니다.  \n채널 배너에도 쓸 수 있습니다.  \n디스코드 안내 이미지에도 넣을 수 있습니다.\n\n그 정도로 봤습니다.\n\n운영해보니 달랐습니다.\n\n마스코트는 반복되는 기준이었습니다.\n\n카페에 있어도 토리여야 합니다.  \n책상 앞에 있어도 토리여야 합니다.  \n회의실에 있어도 토리여야 합니다.  \n작은 프로필 이미지로 줄여도 토리여야 합니다.\n\n같은 얼굴이 반복될 때 채널에 기억점이 생깁니다.  \n매번 다른 강아지가 나오면 그건 브랜드가 아니라 이미지 묶음입니다.\n\n콘텐츠 자동화에서 글의 톤만 맞추면 된다고 생각하기 쉽습니다. 하지만 시각 요소는 더 빨리 들킵니다. 문장 톤은 조금 흔들려도 넘어갈 수 있습니다. 얼굴이 바뀌면 바로 보입니다.\n\n토리는 그 사실을 매번 알려줬습니다.\n\n## tory-studio에서 가장 중요한 화면은 결과물이 아니라 검수 채널입니다\n\n지금 tory-studio에서 가장 자주 보는 화면은 완성 이미지가 아닙니다.  \n디스코드의 검수 채널입니다.\n\n아이디어가 올라옵니다.  \n사람이 평가합니다.  \n승인된 항목이 제작으로 넘어갑니다.  \n이미지가 붙습니다.  \n토리 일관성을 확인합니다.  \n발행 대기 상태로 정리됩니다.\n\n사람은 흐름 전체에 붙어 있지 않습니다.  \n병목에만 들어갑니다.\n\n이 구조 덕분에 에이전트는 속도를 맡고, 사람은 기준을 맡습니다.\n\ntory-studio를 만들며 가장 선명하게 배운 것은 토리 한 마리에서 나왔습니다.\n\nAI는 이미지를 빨리 만듭니다.  \n하지만 같은 강아지를 계속 같은 강아지로 유지하려면 별도의 기준이 필요합니다.\n\n우리 경우 그 기준은 긴 프롬프트가 아니었습니다.  \n토리 사진 한 장과, 발행 전에 멈춰 서는 검수 단계였습니다.",
+      "description": "tory-studio 제작 중 마스코트 강아지 토리의 이미지 일관성을 맞추며 겪은 콘텐츠 자동화 병목과 해결 과정을 기록합니다.",
+      "tags": [
+        "콘텐츠자동화",
+        "AI이미지",
+        "브랜드일관성",
+        "HermesAgent"
+      ],
+      "image": null,
+      "imageAlt": null,
+      "draft": false,
+      "approved": false,
+      "series": null,
+      "sourceLinkedIn": null,
+      "author": "Su Ham",
+      "lang": "ko",
+      "filePath": "/posts/tory-character-consistency.md"
+    },
+    {
       "slug": "tory-devlog-0001",
       "title": "tory 개발일지 #1 - 프로젝트 탄생, Visee에서 Tory로 (10개 커밋)",
       "date": "2026-02-25T00:00:00.000Z",
@@ -8995,6 +9295,28 @@
       "lang": "ko",
       "filePath": "/posts/vibe-devlog-0047.md",
       "seriesOrder": 47
+    },
+    {
+      "slug": "vibe-devlog-0048",
+      "title": "vibe 개발일지 #48 - 루프 네이티브 엔진과 YAGNI 가드레일 도입 (11개 커밋)",
+      "date": "2026-06-26T00:00:00.000Z",
+      "category": "dev-log",
+      "content": "# vibe 개발일지 #48 - 루프 네이티브 엔진과 YAGNI 가드레일 도입 (11개 커밋)\n\n**작업 기간**: 2026-06-11 ~ 2026-06-26\n\n안녕하세요, `vibe` 패키지를 개발하고 있는 10년 차 프론트엔드 개발자 Su입니다. \n\n\"Agent = Model + Harness\"라는 철학 아래, 어떻게 하면 AI가 작성하는 코드의 품질을 자동으로 보장하고 개발자가 'Vibe Coding(편안하게 직관으로 개발하는 것)'에만 집중하게 만들 수 있을지 매일 고민하고 있습니다.\n\n지난 2주 동안 `vibe` 프로젝트에는 무려 3번의 마이너/패치 버전 릴리즈가 있었고, AI 코딩 하네스로서의 완성도를 한 단계 끌어올린 중요한 아키텍처적 변화들이 있었습니다. 11개의 커밋을 중심으로 그 치열했던 여정을 공유합니다.\n\n---\n\n## 📝 이번 기간 작업 내용\n\n이번 작업은 크게 **루프 엔진 고도화**, **하네스 스킬 추가**, 그리고 **안정성 강화(Remediation)** 세 가지 영역으로 나누어 진행되었습니다.\n\n### 1. 루프 엔지니어링 & 자동화 레이어 구축 (v2.14.0)\n*   **`feat(loop): vibe.loop — loop engineering layer`**: AI가 한 번에 완벽한 코드를 짜지 못할 때, 스스로 피드백을 받아 코드를 수정하고 검증을 통과할 때까지 반복 수행하는 루프 자동화 레이어를 설계했습니다.\n*   **`feat(loop): loop-native default`**: 이제 `/vibe` 명령어는 단 한 번의 SPEC 승인만 떨어지면, 하네스의 품질 게이트(테스트, 린트 등)를 모두 통과할 때까지 스스로 내부 루프를 돕니다. 개발자가 중간에 개입할 필요가 없어졌습니다.\n\n### 2. 가드레일 및 스킬 시스템 확장 (v2.15.0 ~ v2.16.0)\n*   **`feat(skills): add yagni-ladder core skill`**: AI가 성급하게 미래를 예측해 불필요한 보일러플레이트나 오버엔지니어링 코드를 짜는 것을 차단하는 `YAGNI(You Aren't Gonna Need It)` 가드레일 스킬을 추가했습니다.\n*   **`feat(skills): add presentation builder skill`**: 작업 결과를 시각적으로 깔끔하게 정리하여 보고하거나 공유할 수 있는 발표 자료 빌더 스킬을 탑재했습니다.\n\n### 3. 노이즈 제거 및 자가 치유(Remediation) (v2.14.1)\n*   **`chore: untrack .vibe/scope.json`**: 매 세션마다 SPECs로부터 자동 도출되는 컨텍스트 스코프 파일이 Git 이력에 지저분하게 남는 현상을 해결했습니다. (생성 시간 기준 변경으로 인한 무의미한 Git Churn 방지)\n*   **`fix: 분석 리포트 P1·P2 일괄 보완`**: 6월 11일 자체 분석 리포트에서 발견된 우선순위 P1, P2 결함 5건을 일괄 해결하고 관련 평가 리포트(Evaluation Reports)를 리포지토리에 기록했습니다.\n\n> **숫자로 보는 이번 스프린트 📊**\n> - **3개의 마이너/패치 버전 배포** (v2.14.0 ➔ v2.14.1 ➔ v2.15.0 ➔ v2.16.0)\n> - **2개의 강력한 신규 핵심 스킬** 추가\n> - **5건의 우선순위 결함(P1·P2) 완벽 해결** 및 테스트 통과\n\n---\n\n## 💡 작업 하이라이트\n\n### 1. 루프 네이티브(Loop-Native) 워크플로우: \"승인은 한 번만, 게이트 통과는 끝까지\"\n이전의 `vibe`는 `/vibe.spec`으로 명세서를 만들고, `/vibe.run`으로 코드를 실행한 뒤 에러가 나면 개발자가 다시 피드백을 주어야 했습니다. \n\n하지만 진정한 '하네스'라면 스스로 문제를 진단하고 고쳐야 합니다. 이번에 도입한 **`loop-native`** 기능은 이를 완벽히 자동화합니다.\n\n```\n[개발자 SPEC 승인] ➔ [/vibe 루프 시작] ➔ [코드 생성] ➔ [품질 게이트 검증]\n                                 ▲                          │ (Fail)\n                                 └───── [자가 진단 및 수정] ◄┘\n                                                            │ (Pass)\n                                                       [최종 완료 (Done)]\n```\n\n이제 개발자가 `/vibe`를 실행하고 SPEC을 승인하면, 하네스가 코드를 빌드하고 테스트를 돌려 실패할 경우 스스로 프롬프트를 재구성하여 에러를 수정합니다. 이 과정을 게이트가 완전히 열릴 때까지 무한히(혹은 지정된 임계값까지) 반복합니다. 진정한 \"Easy vibe coding + Minimum quality guaranteed\"의 실현입니다.\n\n### 2. YAGNI-Ladder 스킬: AI의 오버엔지니어링 제어하기\nAI 모델(Claude, Gemini 등)에게 코딩을 시켜보면 가끔 너무 열정이 넘쳐서 탈입니다. \"나중에 필요할지도 모른다\"며 요구사항에도 없는 추상 클래스, 복잡한 제네릭, 미래용 헬퍼 함수들을 마구 만들어내곤 하죠. 이는 고스란히 기술 부채가 됩니다.\n\n이번에 추가된 **`yagni-ladder core skill`**은 AI가 성급하게 코드를 생성하는 것을 물리적으로 차단합니다. \n*   현재 SPEC에 명시된 요구사항만을 충족하는지 검증합니다.\n*   \"미래를 대비한 예측성 코드\"가 발견되면 하네스가 스스로 \"이 코드는 지금 필요하지 않습니다(YAGNI)\"라며 거부(Reject) 피드백을 줍니다.\n\n이를 통해 코드베이스는 더 가볍고 명확하게 유지될 수 있게 되었습니다.\n\n---\n\n## 🤕 아픔과 배움: 무의미한 Git 커밋 지옥(`scope.json`) 탈출기\n\n중간에 꽤 번거로운 문제가 있었습니다. `.vibe/scope.json` 파일은 세션마다 현재 작업 범위를 추적하기 위해 자동으로 생성되는 유틸리티성 메타데이터입니다. \n\n그런데 이 파일 안에 `generatedAt` 같은 타임스탬프 값이 들어있다 보니, 코드는 전혀 변하지 않았는데도 `/vibe`를 실행할 때마다 Git 변경사항(Churn)이 발생해 Pull Request가 지저분해지는 치명적인 DX(Developer Experience) 문제가 있었습니다.\n\n**\"자동 생성 파일은 자동 생성 파일답게 관리하자.\"**\n\n과감히 이 파일을 `.gitignore`에 추가하고 Git 추적을 중단(`untrack`)했습니다. 대신 각 세션 실행 시 SPECs로부터 완전히 멱등(Idempotent)하게 온메모리 기반으로 유도(Auto-derived)되도록 흐름을 바꿨습니다. 덕분에 Git 커밋 이력이 아주 쾌청해졌습니다. 역시 귀찮은 수작업이나 불필요한 노이즈는 도구 수준에서 제거해 주는 것이 맞습니다.\n\n---\n\n## 📊 개발 현황 및 마무리\n\n*   **현재 버전**: `v2.16.0` (2026-06-26 기준)\n*   **다음 스텝**: \n    *   현재 루프 엔진이 장시간 돌 때 토큰 소모가 급증하는 현상이 있습니다. 비용 최적화를 위한 루프 캐싱 레이어를 준비 중입니다.\n    *   `presentation builder` 스킬을 Next.js 기반의 대시보드와 더 매끄럽게 연동할 예정입니다.\n\n이번 스프린트를 통해 `vibe`는 단순히 \"AI 코딩을 편하게 도와주는 도구\"를 넘어, **\"AI가 선을 넘지 않도록 통제하고 완벽할 때까지 스스로 구동하는 에이전트 환경\"**으로 한 단계 진화했습니다.\n\nAI와 함께하는 여정이 더욱 유쾌하고 안전할 수 있도록, `vibe`는 계속해서 하네스 레이어를 단단히 다져나가겠습니다. \n\n비가 오나 눈이 오나, 모두 즐거운 바이브 코딩 하세요! 🚀",
+      "description": "루프 네이티브 자동화 도입과 조기 코드 생성 방지 스킬 추가",
+      "tags": [
+        "vibe",
+        "개발일지"
+      ],
+      "image": null,
+      "imageAlt": null,
+      "draft": false,
+      "approved": false,
+      "series": "vibe-coding",
+      "sourceLinkedIn": null,
+      "author": "Su",
+      "lang": "ko",
+      "filePath": "/posts/vibe-devlog-0048.md",
+      "seriesOrder": 48
     }
   ]
 }
