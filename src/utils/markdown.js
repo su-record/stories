@@ -38,9 +38,12 @@ export function validateFrontmatter(frontmatter, filePath) {
     )
   }
 
-  // Validate date format
+  // Validate date format — 따옴표 있는 "YYYY-MM-DD" 문자열과 따옴표 없는 YAML 날짜(Date 객체) 모두 허용
   const dateRegex = /^\d{4}-\d{2}-\d{2}$/
-  if (!dateRegex.test(frontmatter.date)) {
+  const dateStr = frontmatter.date instanceof Date
+    ? frontmatter.date.toISOString().slice(0, 10)
+    : frontmatter.date
+  if (typeof dateStr !== 'string' || !dateRegex.test(dateStr)) {
     throw new Error(
       `Invalid post at ${filePath}: date must be in YYYY-MM-DD format`
     )
