@@ -224,6 +224,13 @@ function PostView() {
 
               return <a href={href} {...props}>{children}</a>
             },
+            img({ src, alt, ...props }) {
+              // GitHub Pages project path(base=/stories/)에서 md의 루트 절대경로(/images/..)가 404 나던 문제
+              const resolved = src && src.startsWith('/') && !src.startsWith('//')
+                ? import.meta.env.BASE_URL.replace(/\/$/, '') + src
+                : src
+              return <img src={resolved} alt={alt} loading="lazy" {...props} />
+            },
             code({ inline, className, children, ...props }) {
               const match = /language-(\w+)/.exec(className || '')
               const language = match ? match[1] : ''
