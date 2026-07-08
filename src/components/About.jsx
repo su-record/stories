@@ -152,7 +152,8 @@ function About() {
           </div>
           <ul>
             <li><b>신뢰도 검증</b> · 50m 지오펜스(PostGIS) + Azure AI Vision 음식 인식 + Document Intelligence OCR 영수증의 3단계 인증</li>
-            <li><b>검색</b> · BM25 + pgvector + 음식 온톨로지 그래프를 RRF로 병합한 하이브리드 검색, 입력 언어를 한국어로 정규화해 글로벌 일관성 확보</li>
+            <li><b>검색·정규화</b> · BM25 + pgvector + 음식 온톨로지 그래프를 RRF로 병합한 하이브리드 검색. 쿼리뿐 아니라 피드·메뉴·OCR 데이터도 한국어로 번역 저장(원문→한국어→온톨로지 매핑 2단계, alias 우선 + AI 음차 번역)해 글로벌 검색·온톨로지 매칭률 확보</li>
+            <li><b>온톨로지 자동 진화</b> · 검색 실패·저신뢰 링킹을 일간 수집 → 월간 분석해 별칭·관계를 자동 제안·적용하고, 3·6개월 미사용 엔티티는 stale 판정으로 정리하는 5단계 파이프라인</li>
             <li><b>인프라 마이그레이션</b> · 운영 중인 서비스를 GCP → Azure로 전면 이관(Container Apps·PostgreSQL·Blob·Key Vault·CI/CD 재구성)</li>
             <li><b>운영·재미</b> · Container Apps 19개 스케줄 잡으로 무인 운영, 12단계 티어와 인증 기반 포인트로 별점 없이 메뉴 인기를 가늠</li>
           </ul>
