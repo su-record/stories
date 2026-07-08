@@ -95,7 +95,7 @@ function About() {
           </div>
           <p>
             자연어 회의실 예약, 사내 규정 RAG(pgvector + 온톨로지 필터), 조직도·인물 온톨로지(10종 관계), 사용자 확인(Human-in-the-loop),
-            Claude/OpenAI 장애 대비(Fallback)까지 포함한 AI 에이전트 시스템을 <b>기획·설계·검수 100%</b>로 혼자 구축했습니다.
+            Claude/OpenAI 장애 대비(Fallback), PWA 웹 푸시(iOS 대응 포함)까지 포함한 AI 에이전트 시스템을 <b>기획·설계·검수 100%</b>로 혼자 구축했습니다.
             LangGraph로 <b>5개 서브그래프·36개 AI 도구</b>를 설계하고 PostgreSQL Checkpointer로 멀티턴 대화 상태를 영속화했으며,
             <b> 백엔드 225개 파일·54,000+ 라인</b> 규모의 프로덕션 시스템을 AI 협업으로 완성해 사내에서 활발히 사용 중입니다.
           </p>
