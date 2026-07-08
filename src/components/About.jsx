@@ -171,12 +171,12 @@ function About() {
           </div>
           <p className="desc">바이브코딩의 품질 문제를 “더 좋은 프롬프트”가 아니라 SPEC·시나리오·결정론적 게이트로 다루는 하네스 프레임워크. 완료 판정을 모델의 자기보고가 아니라 <b>코드(게이트)가 내리게</b> 만든 것이 핵심 철학입니다.</p>
           <div className="metrics">
-            <span>TypeScript <b>67K LOC</b></span><span>Skills <b>71</b> · Agents <b>42+</b></span><span>테스트 <b>218 파일</b></span><span>npm <b>50K+ 다운로드</b></span>
+            <span>TypeScript <b>58K LOC</b></span><span>Skills <b>60</b> · Agents <b>11</b></span><span>테스트 <b>54 파일</b></span><span>npm <b>53K+ 다운로드</b></span>
           </div>
           <ul>
             <li><b>루프 엔지니어링</b> · SPEC 1회 승인 → ANCHOR·ACT·JUDGE·RECORD 루프로 게이트 통과까지 자동 반복, 같은 결과가 반복되면(stuck) 사람에게 넘김</li>
             <li><b>3계층 품질 방어</b> · 편집 훅(any·console.log·50줄 함수 탐지) → 결정론 게이트(verify 전 커밋 거부) → 12개 병렬 리뷰어로 P1=0까지 수렴</li>
-            <li><b>확장성</b> · Claude Code·Codex를 한 코드베이스에서 동시 지원, 24개 스택 자동 감지 후 스택별 스킬만 로드, Figma ↔ 코드 양방향과 DESIGN.md(시각 SSOT)</li>
+            <li><b>확장성</b> · Claude Code·Codex를 한 코드베이스에서 동시 지원, 23개 스택 자동 감지 후 스택별 스킬만 로드, Figma ↔ 코드 양방향과 DESIGN.md(시각 SSOT)</li>
           </ul>
           <div className="tech">TypeScript(ESM) · better-sqlite3(FTS5) · ts-morph · zod · Claude Agent SDK · Multi-LLM Orchestration</div>
         </article>
