@@ -2,18 +2,9 @@
 title: "코드보다 SPEC 먼저: 명세를 먼저 쓰면 AI가 헤매지 않는다"
 date: "2026-07-05"
 category: "tech"
-description: "title: "코드보다 SPEC 먼저: 명세를 먼저 쓰면 AI가 헤매지 않는다" date: 2026 07 05 category: methodology description: AI 코딩 전에 SPEC을 먼저 쓰는 이유를 실제 작업 흐름으로 정리했다. 요구사항, 범위, 수용 기준,"
+description: "AI 코딩 전에 SPEC을 먼저 쓰는 이유를 실제 작업 흐름으로 정리했다. 요구사항, 범위, 수용 기준, 프로젝트 규칙을 한 장에 고정하면 Claude Code와 자동화 에이전트가 덜 헤매고 재작업 시간이 줄어든다."
 image: "/images/spec-before-code-ai-guidance/01.png"
 imageAlt: "SPEC은 긴 문서가 아니라 AI가 넘지 않을 구현 경계선이다"
-author: "Su Ham"
-lang: "ko"
----
-
----
-title: "코드보다 SPEC 먼저: 명세를 먼저 쓰면 AI가 헤매지 않는다"
-date: 2026-07-05
-category: methodology
-description: AI 코딩 전에 SPEC을 먼저 쓰는 이유를 실제 작업 흐름으로 정리했다. 요구사항, 범위, 수용 기준, 프로젝트 규칙을 한 장에 고정하면 Claude Code와 자동화 에이전트가 덜 헤매고 재작업 시간이 줄어든다.
 tags: [ai-coding, spec, claude-code, methodology]
 author: "Su Ham"
 lang: "ko"
