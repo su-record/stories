@@ -96,8 +96,8 @@ function About() {
           <p>
             자연어 회의실 예약, 사내 규정 RAG(pgvector + 온톨로지 필터), 조직도·인물 온톨로지(10종 관계), 사용자 확인(Human-in-the-loop),
             Claude/OpenAI 장애 대비(Fallback)까지 포함한 AI 에이전트 시스템을 <b>기획·설계·검수 100%</b>로 혼자 구축했습니다.
-            LangGraph로 <b>5개 서브그래프·34개 AI 도구</b>를 설계하고 PostgreSQL Checkpointer로 멀티턴 대화 상태를 영속화했으며,
-            <b> 백엔드 223개 파일·53,000+ 라인</b> 규모의 프로덕션 시스템을 AI 협업으로 완성해 사내에서 활발히 사용 중입니다.
+            LangGraph로 <b>5개 서브그래프·36개 AI 도구</b>를 설계하고 PostgreSQL Checkpointer로 멀티턴 대화 상태를 영속화했으며,
+            <b> 백엔드 225개 파일·54,000+ 라인</b> 규모의 프로덕션 시스템을 AI 협업으로 완성해 사내에서 활발히 사용 중입니다.
           </p>
         </div>
         <p className="ab-p">
@@ -189,9 +189,9 @@ function About() {
               <a href="https://gist.github.com/su-record/25b5f0506fe3bdb86674a26118571805" target="_blank" rel="noopener noreferrer">소개 gist</a>
             </span>
           </div>
-          <p className="desc">자연어(한/영) 키워드로 34개 전문 도구를 호출하는 Model Context Protocol 서버. Claude Desktop·Cursor·Windsurf에서 메모리·검색·코드 분석을 즉시 사용합니다.</p>
+          <p className="desc">자연어(한/영) 키워드로 35개 전문 도구를 호출하는 Model Context Protocol 서버. Claude Desktop·Cursor·Windsurf에서 메모리·검색·코드 분석을 즉시 사용합니다.</p>
           <div className="metrics">
-            <span>도구 <b>34개</b></span><span>테스트 <b>71 · 100% 커버리지</b></span><span><b>npm + Smithery + Glama</b></span>
+            <span>도구 <b>35개</b></span><span>테스트 <b>89케이스</b></span><span><b>npm + Smithery + Glama</b></span>
           </div>
           <ul>
             <li><b>지식 그래프 메모리</b> · SQLite 관계형 저장소에 BFS/DFS 탐색과 5가지 검색 전략(keyword·graph·temporal·priority·context)</li>
