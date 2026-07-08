@@ -148,7 +148,7 @@ function About() {
           </div>
           <p className="desc">평점·리뷰 없이 “사진 공유 자체가 추천”이 되는 음식 플랫폼. GPS·비전·OCR로 실제 방문을 검증해 추천 신뢰도를 만들고, 게임처럼 즐기도록 설계했습니다. 100% 바이브코딩으로 풀스택을 완성했고, API는 이미 운영 중입니다.</p>
           <div className="metrics">
-            <span>코드 <b>~161K LOC</b></span><span>REST API <b>189개</b></span><span>다국어 <b>14개</b></span><span><b>GCP→Azure</b> 마이그레이션</span>
+            <span>코드 <b>~162K LOC</b></span><span>REST API <b>200개</b></span><span>다국어 <b>14개</b></span><span><b>GCP→Azure</b> 마이그레이션</span>
           </div>
           <ul>
             <li><b>신뢰도 검증</b> · 50m 지오펜스(PostGIS) + Azure AI Vision 음식 인식 + Document Intelligence OCR 영수증의 3단계 인증</li>
