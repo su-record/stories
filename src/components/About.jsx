@@ -127,7 +127,7 @@ function About() {
           </div>
           <p className="desc">먼저 말 걸어 주는 AI 동반자가 운영하는 “그래프형 개인 위키”. 일상·일정·감정·아이디어를 하나의 그래프에 쌓아 두고, 시간·맥락·루틴에 맞춰 먼저 기억을 떠올려 줍니다. 모바일·웹·백엔드·DB·인프라까지 혼자 설계한 풀스택 모노레포입니다.</p>
           <div className="metrics">
-            <span>모노레포 <b>4 workspace</b></span><span>API <b>170개</b></span><span>DB 마이그레이션 <b>58개</b></span><span>70일 <b>1,068커밋</b></span><span><b>TestFlight</b> 배포 단계</span>
+            <span>모노레포 <b>4 workspace</b></span><span>API <b>170개</b></span><span>DB 마이그레이션 <b>58개</b></span><span>70일 <b>1,068커밋</b></span><span><b>앱스토어 출시 심사</b> 진행 중</span>
           </div>
           <ul>
             <li><b>아키텍처</b> · React Native(Expo) 모바일 + Next.js 15 웹 + Azure Functions 백엔드, OKLCH 디자인 토큰을 web·RN 양쪽으로 자동 생성</li>
