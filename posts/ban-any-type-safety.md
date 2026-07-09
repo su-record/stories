@@ -2,18 +2,9 @@
 title: "any 금지의 힘: 타입 안전이 버그를 미리 잡는다"
 date: "2026-07-09"
 category: "tech"
-description: "title: "any 금지의 힘: 타입 안전이 버그를 미리 잡는다" date: 2026 07 09 category: tech description: "TypeScript에서 any를 금지했을 때 런타임 버그가 컴파일 에러로 바뀌는 과정을 실제 코드, unknown, 타입 가드,"
+description: "TypeScript에서 any를 금지했을 때 런타임 버그가 컴파일 에러로 바뀌는 과정을 실제 코드, unknown, 타입 가드, 검증 함수로 정리했습니다."
 image: "/images/ban-any-type-safety/01.png"
 imageAlt: "any는 버그를 없애지 않고 검사 우회로를 만든다"
-author: "Su Ham"
-lang: "ko"
----
-
----
-title: "any 금지의 힘: 타입 안전이 버그를 미리 잡는다"
-date: 2026-07-09
-category: tech
-description: "TypeScript에서 any를 금지했을 때 런타임 버그가 컴파일 에러로 바뀌는 과정을 실제 코드, unknown, 타입 가드, 검증 함수로 정리했습니다."
 tags: ["typescript", "type-safety", "frontend", "bug"]
 author: "Su Ham"
 lang: "ko"
