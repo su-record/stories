@@ -2,18 +2,9 @@
 title: "버그는 재현 먼저 — 실패를 재현한 뒤에 고치는 디버깅 원칙"
 date: "2026-07-12"
 category: "tech"
-description: "title: "버그는 재현 먼저: 실패를 재현한 뒤에 고치는 디버깅 원칙" date: 2026 07 12 category: methodology description: "버그를 고치기 전에 먼저 실패를 재현해야 합니다. 추측으로 코드를 바꾸지 않고 MRE, 로그, 이진 탐색으로"
+description: "버그를 고치기 전에 먼저 실패를 재현해야 합니다. 추측으로 코드를 바꾸지 않고 MRE, 로그, 이진 탐색으로 원인을 좁히는 디버깅 원칙입니다."
 image: "/images/reproduce-bugs-before-fixing/01.png"
 imageAlt: "고치기 전에 실패를 먼저 재현한다"
-author: "Su Ham"
-lang: "ko"
----
-
----
-title: "버그는 재현 먼저: 실패를 재현한 뒤에 고치는 디버깅 원칙"
-date: 2026-07-12
-category: methodology
-description: "버그를 고치기 전에 먼저 실패를 재현해야 합니다. 추측으로 코드를 바꾸지 않고 MRE, 로그, 이진 탐색으로 원인을 좁히는 디버깅 원칙입니다."
 tags: [debugging, bug, mre, engineering, methodology]
 author: "Su Ham"
 lang: "ko"

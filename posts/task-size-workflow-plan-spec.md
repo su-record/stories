@@ -1,16 +1,5 @@
 ---
 title: "작업 크기별 워크플로우: 1-2파일은 플랜모드, 3+파일은 스펙"
-date: "2026-07-10"
-category: "tech"
-description: "title: "작업 크기별 워크플로우: 1 2파일은 플랜모드, 3+파일은 스펙" date: 2026 07 10 category: methodology description: "AI 코딩 작업을 파일 수 기준으로 나누는 방법을 정리했습니다. 1 2파일은 플랜모드로 읽고, 3파일 "
-image: "/images/task-size-workflow-plan-spec/01.png"
-imageAlt: "예상 수정 파일 수로 워크플로우를 나눈다"
-author: "Su Ham"
-lang: "ko"
----
-
----
-title: "작업 크기별 워크플로우: 1-2파일은 플랜모드, 3+파일은 스펙"
 date: 2026-07-10
 category: methodology
 description: "AI 코딩 작업을 파일 수 기준으로 나누는 방법을 정리했습니다. 1-2파일은 플랜모드로 읽고, 3파일 이상은 스펙으로 계약합니다. 수정 범위, 리뷰 비용, 되돌리기 기준을 미리 고정해 실패를 줄이는 운영법입니다."
