@@ -119,43 +119,44 @@ function About() {
 
         <article className="ab-card">
           <div className="card-head">
-            <h3><em>Tory</em> · 그래프 기반 개인 AI 동반자</h3>
+            <h3><em>토리야</em> · 그래프 기반 개인 AI 동반자</h3>
             <span className="links">
               <a href="https://tory.my/" target="_blank" rel="noopener noreferrer">tory.my</a>
               <a href="https://gist.github.com/su-record/0cc550f5d1434fd4a7c0c10fd9e4e77a" target="_blank" rel="noopener noreferrer">소개 gist</a>
             </span>
           </div>
-          <p className="desc">먼저 말 걸어 주는 AI 동반자가 운영하는 “그래프형 개인 위키”. 일상·일정·감정·아이디어를 하나의 그래프에 쌓아 두고, 시간·맥락·루틴에 맞춰 먼저 기억을 떠올려 줍니다. 모바일·웹·백엔드·DB·인프라까지 혼자 설계한 풀스택 모노레포입니다.</p>
+          <p className="desc">먼저 말 걸어 주는 AI 동반자가 운영하는 “그래프형 개인 위키”. 일상·일정·감정·아이디어를 하나의 그래프에 쌓아 두고, 시간·맥락·루틴에 맞춰 먼저 기억을 떠올려 줍니다. 모바일·웹·백엔드·DB·인프라까지 혼자 설계한 풀스택 모노레포이며, <b>iOS App Store에 출시</b>해 운영 중입니다.</p>
           <div className="metrics">
-            <span>모노레포 <b>4 workspace</b></span><span>API <b>170개</b></span><span>DB 마이그레이션 <b>58개</b></span><span>70일 <b>1,068커밋</b></span><span><b>앱스토어 출시 심사</b> 진행 중</span>
+            <span>TypeScript <b>~184K LOC</b></span><span>API <b>182개</b></span><span>DB 마이그레이션 <b>100개</b></span><span>95일 <b>1,400+ 커밋</b></span><span><b>App Store 출시</b> · Play 비공개 테스트</span>
           </div>
           <ul>
-            <li><b>아키텍처</b> · React Native(Expo) 모바일 + Next.js 15 웹 + Azure Functions 백엔드, OKLCH 디자인 토큰을 web·RN 양쪽으로 자동 생성</li>
-            <li><b>데이터·보안</b> · PostgreSQL + Apache AGE(그래프)+pgvector(임베딩), 행 단위 RLS 멀티테넌시, 모든 LLM 경로에 OWASP LLM G1–G7 게이트</li>
-            <li><b>지능·운영</b> · OpenAI·Claude·Gemini·xAI 자동 라우팅, 능동 알림(materializer→dispatcher→FCM/APNs), Azure Bicep 9개 모듈 + GitHub Actions 배포</li>
-            <li><b>생활 도메인 기능</b> · MyRealTrip API 연동 여행 플래너(대화로 실상품 일정 구성·제휴 수익 정산), 언어 학습(통역·5단계 번역 + 복습 큐), 점심 추천·일기·일정 등</li>
+            <li><b>아키텍처</b> · React Native(Expo SDK 56) 모바일 + Next.js 15 웹 + Azure Functions 백엔드(182개 HTTP 라우트)의 6-workspace 모노레포, OKLCH 디자인 토큰을 web·RN 양쪽으로 자동 생성</li>
+            <li><b>데이터·보안</b> · PostgreSQL + Apache AGE(그래프)+pgvector(임베딩) 단일 DB, 행 단위 RLS 멀티테넌시, 모든 LLM 경로에 OWASP LLM G1–G7 게이트</li>
+            <li><b>지능·운영</b> · OpenAI·Claude·Gemini·xAI 태스크별 자동 라우팅 + 폴백·예산 게이트, 능동 알림(materializer→dispatcher→FCM/APNs), Azure Bicep 11개 모듈 + GitHub Actions 10개 워크플로·EAS OTA 채널 운영</li>
+            <li><b>결제·출시</b> · Paddle(웹 MoR) + Apple IAP + Google Play Billing 3중 결제 경로를 서버 검증·웹훅까지 직접 구현, 8개 언어 UI와 법적 고지 로케일라이즈로 심사 통과</li>
+            <li><b>생활 도메인 기능</b> · MyRealTrip 파트너 API 여행 플래너(대화로 실상품 일정 구성·제휴 수익 정산), 통역·언어 학습, 회의록 STT(화자 분리), 익명 소셜 피드, 루틴·일정·점심 추천</li>
           </ul>
-          <div className="tech">TypeScript · React Native · Next.js · Azure Functions · PostgreSQL · Apache AGE · pgvector · Azure Bicep</div>
+          <div className="tech">TypeScript · React Native(Expo) · Next.js 15 · Azure Functions · PostgreSQL · Apache AGE · pgvector · Azure Bicep</div>
         </article>
 
         <article className="ab-card">
           <div className="card-head">
-            <h3><em>Fallingo</em> · 위치 기반 검증형 음식 소셜 플랫폼</h3>
+            <h3><em>fallingo</em> · 위치 기반 검증형 음식 소셜 플랫폼</h3>
             <span className="links">
-              <a href="https://fallingo.app" target="_blank" rel="noopener noreferrer">fallingo.app</a>
+              <a href={`${import.meta.env.BASE_URL}fallingo-api/`} target="_blank" rel="noopener noreferrer">REST API 문서</a>
               <a href="https://gist.github.com/su-record/269530f1fd2f7193e80424d084b51a91" target="_blank" rel="noopener noreferrer">소개 gist</a>
             </span>
           </div>
-          <p className="desc">평점·리뷰 없이 “사진 공유 자체가 추천”이 되는 음식 플랫폼. GPS·비전·OCR로 실제 방문을 검증해 추천 신뢰도를 만들고, 게임처럼 즐기도록 설계했습니다. 100% 바이브코딩으로 풀스택을 완성했고, API는 이미 운영 중입니다.</p>
+          <p className="desc">평점·리뷰 없이 “사진 공유 자체가 추천”이 되는 음식 플랫폼. GPS·비전·OCR로 실제 방문을 검증해 추천 신뢰도를 만들고, 게임처럼 즐기도록 설계했습니다. 100% 바이브코딩으로 풀스택(FastAPI 백엔드 + Flutter 앱)을 완성해 TestFlight 베타까지 올렸습니다. 현재 개발중이던 서버는 기획부터 다시 서비스 설계를 시작하기 위해 내렸고, 기존의 개발을 했었던 194개 REST 엔드포인트 스키마는 문서로 공개해 두었습니다.</p>
           <div className="metrics">
-            <span>코드 <b>~162K LOC</b></span><span>REST API <b>200개</b></span><span>다국어 <b>14개</b></span><span><b>GCP→Azure</b> 마이그레이션</span>
+            <span>코드 <b>~133K LOC</b></span><span>REST API <b>194개</b></span><span>다국어 <b>15 로케일</b></span><span><b>GCP→Azure</b> 마이그레이션</span><span><b>TestFlight</b> 베타</span>
           </div>
           <ul>
-            <li><b>신뢰도 검증</b> · 50m 지오펜스(PostGIS) + Azure AI Vision 음식 인식 + Document Intelligence OCR 영수증의 3단계 인증</li>
-            <li><b>검색·정규화</b> · BM25 + pgvector + 음식 온톨로지 그래프를 RRF로 병합한 하이브리드 검색. 쿼리뿐 아니라 피드·메뉴·OCR 데이터도 한국어로 번역 저장(원문→한국어→온톨로지 매핑 2단계, alias 우선 + AI 음차 번역)해 글로벌 검색·온톨로지 매칭률 확보</li>
+            <li><b>신뢰도 검증</b> · 50m 지오펜스(PostGIS) + Azure AI Vision 음식 인식(신뢰도 0.8+) + Document Intelligence OCR 영수증(24시간 이내)의 3단계 인증</li>
+            <li><b>검색·정규화</b> · BM25 + pgvector + 8개 데이터셋 음식 온톨로지 그래프를 RRF로 병합한 하이브리드 검색. 쿼리뿐 아니라 피드·메뉴·OCR 데이터도 한국어로 번역 저장(원문→한국어→온톨로지 매핑 2단계, alias 우선 + AI 음차 번역)해 글로벌 검색·온톨로지 매칭률 확보</li>
             <li><b>온톨로지 자동 진화</b> · 검색 실패·저신뢰 링킹을 일간 수집 → 월간 분석해 별칭·관계를 자동 제안·적용하고, 3·6개월 미사용 엔티티는 stale 판정으로 정리하는 5단계 파이프라인</li>
             <li><b>인프라 마이그레이션</b> · 운영 중인 서비스를 GCP → Azure로 전면 이관(Container Apps·PostgreSQL·Blob·Key Vault·CI/CD 재구성)</li>
-            <li><b>운영·재미</b> · Container Apps 19개 스케줄 잡으로 무인 운영, 12단계 티어와 인증 기반 포인트로 별점 없이 메뉴 인기를 가늠</li>
+            <li><b>운영·재미</b> · Container Apps 20개 스케줄 잡(월드이벤트·알림·게이미피케이션·검수·온톨로지 진화)으로 무인 운영, 12단계 티어와 인증 기반 포인트로 별점 없이 메뉴 인기를 가늠</li>
           </ul>
           <div className="tech">Flutter · FastAPI · PostgreSQL · PostGIS · pgvector · Redis · Azure AI Vision · Document Intelligence · Firebase</div>
         </article>
@@ -170,16 +171,17 @@ function About() {
               <a href="https://gist.github.com/su-record/acf53ba8d242c2dd422bf817f85d43bc" target="_blank" rel="noopener noreferrer">소개 gist</a>
             </span>
           </div>
-          <p className="desc">바이브코딩의 품질 문제를 “더 좋은 프롬프트”가 아니라 SPEC·시나리오·결정론적 게이트로 다루는 하네스 프레임워크. 완료 판정을 모델의 자기보고가 아니라 <b>코드(게이트)가 내리게</b> 만든 것이 핵심 철학입니다.</p>
+          <p className="desc">바이브코딩의 품질 문제를 “더 좋은 프롬프트”가 아니라 SPEC·시나리오·결정론적 게이트로 다루는 <b>검증 하네스</b>. 완료 판정을 모델의 자기보고가 아니라 <b>코드(게이트)가 내리게</b> 만들고, 실행마다 Evidence Bundle을 남기는 것이 핵심 철학입니다.</p>
           <div className="metrics">
-            <span>TypeScript <b>58K LOC</b></span><span>Skills <b>60</b> · Agents <b>11</b></span><span>테스트 <b>54 파일</b></span><span>npm <b>53K+ 다운로드</b></span>
+            <span>TypeScript <b>68K LOC</b></span><span>Skills <b>52</b> · Agents <b>11</b></span><span>테스트 <b>69 파일</b></span><span>npm <b>59K+ 다운로드</b></span><span>v<b>3.2</b></span>
           </div>
           <ul>
-            <li><b>루프 엔지니어링</b> · SPEC 1회 승인 → ANCHOR·ACT·JUDGE·RECORD 루프로 게이트 통과까지 자동 반복, 같은 결과가 반복되면(stuck) 사람에게 넘김</li>
-            <li><b>3계층 품질 방어</b> · 편집 훅(any·console.log·50줄 함수 탐지) → 결정론 게이트(verify 전 커밋 거부) → 12개 병렬 리뷰어로 P1=0까지 수렴</li>
-            <li><b>확장성</b> · Claude Code·Codex를 한 코드베이스에서 동시 지원, 23개 스택 자동 감지 후 스택별 스킬만 로드, Figma ↔ 코드 양방향과 DESIGN.md(시각 SSOT)</li>
+            <li><b>루프 엔지니어링</b> · 자연어 요구 → SPEC 1패스 → 승인 1회 → ANCHOR·ACT·JUDGE·RECORD 루프로 게이트 통과까지 자동 반복. 수렴은 discover-hash가 판정해 2라운드 findings가 같으면 stuck으로 확정하고 사람에게 넘김</li>
+            <li><b>3계층 품질 방어</b> · 편집 훅(<code>any</code>·<code>@ts-ignore</code>·<code>console.log</code> 즉시 주입) → 결정론 게이트(PR 전 테스트 스위트 직접 실행·verify 전 커밋 거부·파괴적 명령 차단) → 관점별 병렬 리뷰어로 P1=0까지 수렴</li>
+            <li><b>회귀 기억</b> · verify 실패를 회귀 테스트로 자동 등록하고 반복 패턴은 예방 테스트로 승격, 결정·제약은 SQLite + FTS5로 세션 간 유지</li>
+            <li><b>확장성</b> · Claude Code·Codex를 한 코드베이스에서 동시 지원(+Cursor·Antigravity), 23개 스택 자동 감지 후 스택별 스킬만 로드, Figma ↔ 코드 양방향과 DESIGN.md(시각 SSOT)</li>
           </ul>
-          <div className="tech">TypeScript(ESM) · better-sqlite3(FTS5) · ts-morph · zod · Claude Agent SDK · Multi-LLM Orchestration</div>
+          <div className="tech">TypeScript(ESM) · better-sqlite3(FTS5) · ts-morph · zod · Vitest · Claude Code · Codex 하네스</div>
         </article>
 
         <article className="ab-card">
@@ -190,7 +192,7 @@ function About() {
               <a href="https://gist.github.com/su-record/25b5f0506fe3bdb86674a26118571805" target="_blank" rel="noopener noreferrer">소개 gist</a>
             </span>
           </div>
-          <p className="desc">자연어(한/영) 키워드로 35개 전문 도구를 호출하는 Model Context Protocol 서버. Claude Desktop·Cursor·Windsurf에서 메모리·검색·코드 분석을 즉시 사용합니다.</p>
+          <p className="desc">자연어(한/영) 키워드로 35개 전문 도구를 호출하는 Model Context Protocol 서버. Claude Desktop·Cursor·Windsurf에서 메모리·검색·코드 분석을 즉시 사용합니다. vibe 개발 시점에 추가 업데이트 개발은 중단됐습니다.</p>
           <div className="metrics">
             <span>도구 <b>35개</b></span><span>테스트 <b>89케이스</b></span><span><b>npm + Smithery + Glama</b></span>
           </div>
@@ -203,33 +205,13 @@ function About() {
 
         <article className="ab-card">
           <div className="card-head">
-            <h3><em>coco</em> · 멀티 LLM 터미널 코딩 에이전트</h3>
-            <span className="links">
-              <a href="https://github.com/su-record/coco" target="_blank" rel="noopener noreferrer">repo</a>
-              <a href="https://gist.github.com/su-record/38df21692c50bcc52d61c1b9705ffd01" target="_blank" rel="noopener noreferrer">소개 gist</a>
-            </span>
-          </div>
-          <p className="desc">Claude·ChatGPT·OpenAI·Gemini 네 개 제공자를 하나의 인터페이스로 통합한 CLI 에이전트. skill·agent·tool·parallel을 엮는 다이나믹 워크플로우와 docx·xlsx·pptx·pdf 문서 작업까지 자동화합니다.</p>
-          <div className="metrics">
-            <span>TypeScript <b>~35K LOC</b></span><span>파일 <b>186개</b></span><span>테스트 <b>59개</b></span><span>제공자 <b>4종</b></span>
-          </div>
-          <ul>
-            <li><b>제공자 추상화</b> · 통일된 Provider 인터페이스로 한 줄 변경 없이 모델 전환, SSE 스트리밍·HTTP 재시도·도구 호출 인코딩 차이를 한곳에 공통화</li>
-            <li><b>다이나믹 워크플로우</b> · skill·agent·tool·parallel을 선언형으로 조합하고, 출력 실패 시 자동 재시도(Evaluator–Optimizer), <code>coco /workflow</code>로 런타임 즉석 조합</li>
-            <li><b>문서 자동화</b> · 외부 라이브러리 없이 docx·xlsx·pptx 직접 읽기/쓰기(+pdf), <code>.claude</code> 스킬·에이전트 호환으로 기존 생태계와 상호운용</li>
-          </ul>
-          <div className="tech">TypeScript(ESM) · Commander · Ink/React · Zod · node:test · 자체 OOXML 파서</div>
-        </article>
-
-        <article className="ab-card">
-          <div className="card-head">
-            <h3><em>Torya</em> · 브라우저 에러를 코딩 에이전트로 라우팅 <span className="trophy">🏆 해커톤 1위</span></h3>
+            <h3><em>Torya-ext</em> · 브라우저 에러를 코딩 에이전트로 라우팅 <span className="trophy">🏆 해커톤 1위</span></h3>
             <span className="links">
               <a href="https://youtu.be/ThCDOJLsPkg" target="_blank" rel="noopener noreferrer">시연 영상</a>
               <a href="https://gist.github.com/su-record/9e05e6b4fdbbfa4f8d94ff3465d216c1" target="_blank" rel="noopener noreferrer">소개 gist</a>
             </span>
           </div>
-          <p className="desc">브라우저 콘솔·네트워크·DOM 에러를 캡처해 “보는 곳(브라우저) → 고치는 곳(터미널/cmux)”로 직접 연결하는 개발자 도구. cmux × AIM Intelligence 해커톤 Developer Tooling 트랙 1위 수상작입니다.</p>
+          <p className="desc">크롬 브라우저 익스텐션으로 개발되었고, 브라우저 콘솔·네트워크·DOM 에러를 캡처해 “보는 곳(브라우저) → 고치는 곳(터미널/cmux)”로 직접 연결하는 개발자 도구. cmux × AIM Intelligence 해커톤 Developer Tooling 트랙 1위 수상작입니다.</p>
           <div className="metrics">
             <span><b>9시간</b> 만에 설계·개발·배포</span><span>TS <b>2.6K</b> + Go <b>1.6K</b></span><span><b>크로스 플랫폼</b> 바이너리</span>
           </div>
@@ -264,11 +246,11 @@ function About() {
 
       <div className="ab-links">
         <a href="https://github.com/su-record" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://tory.my/" target="_blank" rel="noopener noreferrer">Tory</a>
-        <a href="https://fallingo.app" target="_blank" rel="noopener noreferrer">Fallingo</a>
+        <a href="https://tory.my/" target="_blank" rel="noopener noreferrer">토리야</a>
+        <a href={`${import.meta.env.BASE_URL}fallingo-api/`} target="_blank" rel="noopener noreferrer">fallingo API</a>
         <a href="https://www.npmjs.com/package/@su-record/vibe" target="_blank" rel="noopener noreferrer">Vibe</a>
         <a href="https://smithery.ai/server/@su-record/hi-ai" target="_blank" rel="noopener noreferrer">hi-ai</a>
-        <a href="https://youtu.be/ThCDOJLsPkg" target="_blank" rel="noopener noreferrer">Torya</a>
+        <a href="https://youtu.be/ThCDOJLsPkg" target="_blank" rel="noopener noreferrer">Torya-ext</a>
         <a href={PDF} target="_blank" rel="noopener noreferrer">PDF 자기소개서</a>
       </div>
     </div>
