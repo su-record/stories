@@ -1,9 +1,9 @@
 import { useEffect } from 'react'
 import './About.css'
 
-const PDF = `${import.meta.env.BASE_URL}ham-suwon-cover-letter.pdf`
-
 function About() {
+  const printPage = () => window.print()
+
   useEffect(() => {
     document.title = '함수원 · About'
   }, [])
@@ -30,7 +30,7 @@ function About() {
             <li>010-4549-4662</li>
             <li><a href="https://github.com/su-record" target="_blank" rel="noopener noreferrer">github.com/su-record</a></li>
           </ul>
-          <a className="ab-pdf" href={PDF} target="_blank" rel="noopener noreferrer">↓ PDF 자기소개서</a>
+          <button type="button" className="ab-pdf" onClick={printPage}>↓ PDF로 저장</button>
         </div>
       </header>
 
@@ -270,7 +270,7 @@ function About() {
         <a href="https://www.npmjs.com/package/@su-record/vibe" target="_blank" rel="noopener noreferrer">Vibe</a>
         <a href="https://smithery.ai/server/@su-record/hi-ai" target="_blank" rel="noopener noreferrer">hi-ai</a>
         <a href="https://youtu.be/ThCDOJLsPkg" target="_blank" rel="noopener noreferrer">Torya-ext</a>
-        <a href={PDF} target="_blank" rel="noopener noreferrer">PDF 자기소개서</a>
+        <button type="button" className="ab-linkbtn" onClick={printPage}>PDF로 저장</button>
       </div>
     </div>
   )

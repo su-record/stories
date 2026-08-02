@@ -40,7 +40,7 @@
 .ab-pdf{
   display:inline-block;font-family:var(--font-mono);font-size:13px;font-weight:700;
   color:#fff !important;background:linear-gradient(100deg,var(--p),var(--g));
-  padding:9px 16px;border-radius:8px;text-decoration:none;white-space:nowrap;
+  padding:9px 16px;border:0;border-radius:8px;text-decoration:none;white-space:nowrap;cursor:pointer;
 }
 .ab-pdf:hover{opacity:.9}
 
@@ -154,6 +154,10 @@
   font-family:var(--font-mono);font-size:13px;
 }
 .ab-links a{color:var(--link);font-weight:600}
+.ab-linkbtn{
+  font-family:inherit;font-size:inherit;font-weight:600;color:var(--link);
+  background:none;border:0;padding:0;cursor:pointer;
+}
 
 /* ---------- responsive ---------- */
 @media (max-width:720px){
@@ -163,4 +167,25 @@
   .ab-grid3{grid-template-columns:1fr}
   .ab-stack{grid-template-columns:1fr}
   .ab-card .card-head{flex-direction:column;gap:6px}
+}
+
+/* ---------- print (= PDF 저장) ---------- */
+@page{margin:12mm 10mm}
+@media print{
+  /* About 페이지에서만 레이아웃 크롬을 걷어낸다 */
+  body:has(.about) .header,
+  body:has(.about) .footer{display:none}
+  body:has(.about) .main{padding:0}
+  body:has(.about) .container{max-width:none;padding:0}
+
+  .about{max-width:none;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .about .ab-pdf,
+  .about .ab-linkbtn{display:none}
+
+  /* 카드가 페이지 경계에서 잘리지 않게 */
+  .ab-card,.ab-highlight,.ab-closing,.ab-stat,.ab-ev,.ab-lead{break-inside:avoid}
+  .ab-sec{break-inside:auto}
+  .ab-h2,.ab-cathead{break-after:avoid}
+  .ab-sec{margin-top:26px}
+  .ab-links{border-top:1px solid var(--line)}
 }
