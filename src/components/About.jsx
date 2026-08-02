@@ -161,6 +161,25 @@ function About() {
           <div className="tech">Flutter · FastAPI · PostgreSQL · PostGIS · pgvector · Redis · Azure AI Vision · Document Intelligence · Firebase</div>
         </article>
 
+        <article className="ab-card">
+          <div className="card-head">
+            <h3><em>tory-tutor</em> · 바이브코딩을 가르치는 데스크탑 개인교사</h3>
+            <span className="pill">● 개발 중</span>
+          </div>
+          <p className="desc">비개발자가 Claude Code·Codex를 <b>실제 작업 환경에서</b> 쓰게 만드는 교육용 데스크탑앱. 웹 샌드박스 흉내는 전이가 안 된다는 판단으로, 학습자 머신에 개발 환경을 직접 구성해 주고 진짜 에이전트 세션으로 실습시킨 뒤 <b>산출물 파일과 게이트로만</b> 통과를 판정합니다. 완전 로컬 앱이며 오픈소스 공개를 목표로 개발 중입니다.</p>
+          <div className="metrics">
+            <span>TypeScript <b>~10.7K LOC</b></span><span>커리큘럼 <b>36챕터</b></span><span>결정론 게이트 <b>20개</b></span><span>테스트 <b>27파일</b> + Electron E2E</span><span><b>개발 중</b> v0.1</span>
+          </div>
+          <ul>
+            <li><b>환경 프로비저너</b> · 첫 실행에서 Git·Git Bash·Node LTS·GitHub CLI·Claude Code·Codex를 감지→설치→인증까지 LLM 호출 0회의 결정론 프로그램으로 처리(멱등 재실행). 비개발자의 최대 이탈 지점인 환경 구성을 앱이 통째로 흡수</li>
+            <li><b>엔진 어댑터</b> · <code>send(지시) → 이벤트 스트림</code> 계약 하나로 Claude Agent SDK와 Codex CLI를 갈아끼우고, 학습자 본인 구독(BYO)으로 실습해 운영 인퍼런스 비용 0</li>
+            <li><b>실습은 진짜 세션</b> · node-pty + xterm 임베디드 터미널로 인터랙티브 TUI를 열고 유닛이 바뀌어도 같은 세션을 유지. 연출 화면과 일회성 실행(<code>claude -p</code>) 금지를 제품 불변 규칙으로 고정</li>
+            <li><b>완료는 게이트가 판정</b> · 공통개념 1 + 데스크탑 11 + CLI 24챕터를 직렬 잠금으로 두고, 챕터별 gate 스크립트 20개와 산출물 파일 검사로만 다음 챕터를 연다. “AI가 끝났다고 말한 것”은 근거로 치지 않음</li>
+            <li><b>배포</b> · electron-builder로 macOS dmg(arm64/x64)·Windows nsis를 빌드하고, 태그 푸시 시 GitHub Actions가 OS별 인스톨러를 자동 빌드해 릴리스에 첨부</li>
+          </ul>
+          <div className="tech">TypeScript · Electron 43 · React 19 · electron-vite · Claude Agent SDK · node-pty · xterm.js · electron-builder</div>
+        </article>
+
         <div className="ab-cathead"><span className="tag">TOOLING</span> 개발자 도구 · 프레임워크 (오픈소스·공개 배포)</div>
 
         <article className="ab-card">
