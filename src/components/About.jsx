@@ -77,10 +77,10 @@ function About() {
         <div className="ab-stack">
           <div className="row"><span className="cat">Frontend</span><span className="items">React · Next.js · Vue · Nuxt.js · TypeScript · React Native · Flutter</span></div>
           <div className="row"><span className="cat">State / UI</span><span className="items">TanStack Query · Zustand · SWR · Redux · Tailwind · Storybook</span></div>
-          <div className="row"><span className="cat">Backend</span><span className="items">FastAPI · Azure Functions · Node.js · PostgreSQL · PostGIS · Redis</span></div>
+          <div className="row"><span className="cat">Backend</span><span className="items">FastAPI · Azure Functions · Node.js · PostgreSQL · PostGIS · Prisma · Redis · OpenSearch</span></div>
           <div className="row"><span className="cat">AI / Agent</span><span className="items">Claude · OpenAI · Gemini · LangGraph · LangChain · MCP · RAG · pgvector</span></div>
           <div className="row"><span className="cat">Infra</span><span className="items">Azure · AWS · GCP · Container Apps · Docker · GitHub Actions · Bicep · Vercel</span></div>
-          <div className="row"><span className="cat">Tools</span><span className="items">Git · GitLab · Vite/Webpack · Claude Code · Cursor</span></div>
+          <div className="row"><span className="cat">Tools</span><span className="items">Git · GitLab · Turborepo · Vite/Webpack · Playwright · Claude Code · Cursor</span></div>
         </div>
       </section>
 
@@ -98,6 +98,21 @@ function About() {
             Claude/OpenAI 장애 대비(Fallback), PWA 웹 푸시(iOS 대응 포함)까지 포함한 AI 에이전트 시스템을 <b>기획·설계·검수 100%</b>로 혼자 구축했습니다.
             LangGraph로 <b>5개 서브그래프·36개 AI 도구</b>를 설계하고 PostgreSQL Checkpointer로 멀티턴 대화 상태를 영속화했으며,
             <b> 백엔드 225개 파일·54,000+ 라인</b> 규모의 프로덕션 시스템을 AI 협업으로 완성해 사내에서 활발히 사용 중입니다.
+          </p>
+        </div>
+        <div className="ab-highlight">
+          <div className="hl-head">
+            <h3>LG디스플레이 글로벌 홈페이지 CMS (그로브소프트)</h3>
+            <span className="pill">● 개발 중</span>
+          </div>
+          <p>
+            운영 중인 LG디스플레이 글로벌 홈페이지를 <b>컴포넌트 기반 헤드리스·비주얼 하이브리드 CMS</b>로 재구축하는 프로젝트를
+            <b> 개발 단독 담당</b>으로 진행하고 있습니다. 관리자·공개 사이트·발행 워커와 컴포넌트·코어·DB 패키지를 나눈
+            Turborepo 모노레포(<b>6 워크스페이스 · TypeScript 42,000+ 라인 · 629 커밋</b>)에, 편집자가 드래그로 조립하는
+            <b> 컴포넌트 198개</b>와 <b>Prisma 모델 39개</b>를 설계했습니다.
+            버전·승인 워크플로우·예약 발행·번역 요청(<b>한/영/중/베트남 4개 언어</b>)·문의 메일 라우팅·OpenSearch 검색·
+            방문 분석까지 운영에 필요한 흐름을 스키마 단위로 정의했고, 라이브 사이트와의 텍스트·픽셀 대조와
+            Lighthouse·axe 접근성 검사를 검증 스크립트로 묶어 <b>이관 품질을 사람 눈이 아니라 기계가 판정</b>하게 만들었습니다.
           </p>
         </div>
         <p className="ab-p">
