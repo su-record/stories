@@ -1,8 +1,12 @@
 import { useEffect } from 'react'
+import metrics from '../data/about-metrics.json'
+import { k, kFloor, floorTo } from '../utils/aboutMetrics'
 import './About.css'
 
 function About() {
   const printPage = () => window.print()
+  const { tory, vibe, lgCms, fallingo } = metrics.repos
+  const vibeNpm = metrics.npm['@su-record/vibe']
 
   useEffect(() => {
     document.title = '함수원 · About'
@@ -20,7 +24,7 @@ function About() {
             제품과, 그 제품을 잘 만드는 도구까지 직접 만드는 풀스택 개발자
           </p>
           <p className="ab-prompt">
-            <span className="c">&gt;</span> exp <b>12년 10개월</b> &nbsp;·&nbsp; projects <b>6+</b>
+            <span className="c">&gt;</span> exp <b>12년 10개월</b> &nbsp;·&nbsp; projects <b>5</b>
             &nbsp;·&nbsp; 🏆 해커톤 <b>1위</b> &nbsp;·&nbsp; npm <b>×2</b>
           </p>
         </div>
@@ -37,7 +41,7 @@ function About() {
       {/* ---------- stats ---------- */}
       <div className="ab-stats">
         <div className="ab-stat"><div className="num">12년 10개월</div><div className="lab">프론트엔드 개발 경력</div></div>
-        <div className="ab-stat"><div className="num">6+</div><div className="lab">단독 설계·구현 개인 프로젝트</div></div>
+        <div className="ab-stat"><div className="num">5</div><div className="lab">단독 설계·구현 개인 프로젝트</div></div>
         <div className="ab-stat"><div className="num">npm ×2</div><div className="lab">공개 배포 (vibe · hi-ai)</div></div>
         <div className="ab-stat"><div className="num">1위</div><div className="lab">cmux × AIM 해커톤 (2026.04)</div></div>
       </div>
@@ -108,9 +112,9 @@ function About() {
           <p>
             운영 중인 LG디스플레이 글로벌 홈페이지를 <b>컴포넌트 기반 헤드리스·비주얼 하이브리드 CMS</b>로 재구축하는 프로젝트를
             <b> 개발 단독 담당</b>으로 진행하고 있습니다. 관리자·공개 사이트·발행 워커와 컴포넌트·코어·DB 패키지를 나눈
-            Turborepo 모노레포(<b>6 워크스페이스 · TypeScript 42,000+ 라인 · 629 커밋</b>)에, 편집자가 드래그로 조립하는
-            <b> 컴포넌트 198개</b>와 <b>Prisma 모델 39개</b>를 설계했습니다.
-            버전·승인 워크플로우·예약 발행·번역 요청(<b>한/영/중/베트남 4개 언어</b>)·문의 메일 라우팅·OpenSearch 검색·
+            Turborepo 모노레포(<b>{lgCms.workspaces} 워크스페이스 · TypeScript {floorTo(lgCms.loc, 1000)} 라인 · {lgCms.commits} 커밋</b>)에, 편집자가 드래그로 조립하는
+            <b> 컴포넌트 {lgCms.components}개</b>와 <b>Prisma 모델 {lgCms.prismaModels}개</b>를 설계했습니다.
+            버전·승인 워크플로우·예약 발행·번역 요청(<b>한/영/중/베트남 {lgCms.locales}개 언어</b>)·문의 메일 라우팅·OpenSearch 검색·
             방문 분석까지 운영에 필요한 흐름을 스키마 단위로 정의했고, 라이브 사이트와의 텍스트·픽셀 대조와
             Lighthouse·axe 접근성 검사를 검증 스크립트로 묶어 <b>이관 품질을 사람 눈이 아니라 기계가 판정</b>하게 만들었습니다.
           </p>
@@ -142,16 +146,17 @@ function About() {
           </div>
           <p className="desc">먼저 말 걸어 주는 AI 동반자가 운영하는 “그래프형 개인 위키”. 일상·일정·감정·아이디어를 하나의 그래프에 쌓아 두고, 시간·맥락·루틴에 맞춰 먼저 기억을 떠올려 줍니다. 모바일·웹·백엔드·DB·인프라까지 혼자 설계한 풀스택 모노레포이며, <b>iOS App Store에 출시</b>해 운영 중입니다.</p>
           <div className="metrics">
-            <span>TypeScript <b>~184K LOC</b></span><span>API <b>182개</b></span><span>DB 마이그레이션 <b>100개</b></span><span>95일 <b>1,400+ 커밋</b></span><span><b>App Store 출시</b> · Play 비공개 테스트</span>
+            <span>TypeScript <b>~{k(tory.loc)} LOC</b></span><span>HTTP 함수 <b>{tory.httpFunctions}개</b></span><span>도메인 모듈 <b>{tory.domainModules}개</b></span><span>{tory.activeDays}일 <b>{floorTo(tory.commits, 10)} 커밋</b></span><span><b>App Store 출시</b> · Play 비공개 테스트</span>
           </div>
           <ul>
-            <li><b>아키텍처</b> · React Native(Expo SDK 56) 모바일 + Next.js 15 웹 + Azure Functions 백엔드(182개 HTTP 라우트)의 6-workspace 모노레포, OKLCH 디자인 토큰을 web·RN 양쪽으로 자동 생성</li>
-            <li><b>데이터·보안</b> · PostgreSQL + Apache AGE(그래프)+pgvector(임베딩) 단일 DB, 행 단위 RLS 멀티테넌시, 모든 LLM 경로에 OWASP LLM G1–G7 게이트</li>
-            <li><b>지능·운영</b> · OpenAI·Claude·Gemini·xAI 태스크별 자동 라우팅 + 폴백·예산 게이트, 능동 알림(materializer→dispatcher→FCM/APNs), Azure Bicep 11개 모듈 + GitHub Actions 10개 워크플로·EAS OTA 채널 운영</li>
-            <li><b>결제·출시</b> · Paddle(웹 MoR) + Apple IAP + Google Play Billing 3중 결제 경로를 서버 검증·웹훅까지 직접 구현, 8개 언어 UI와 법적 고지 로케일라이즈로 심사 통과</li>
-            <li><b>생활 도메인 기능</b> · MyRealTrip 파트너 API 여행 플래너(대화로 실상품 일정 구성·제휴 수익 정산), 통역·언어 학습, 회의록 STT(화자 분리), 익명 소셜 피드, 루틴·일정·점심 추천</li>
+            <li><b>아키텍처</b> · React Native(Expo SDK 56) 모바일 + Next.js 15 웹 + Azure Functions 백엔드(HTTP 함수 {tory.httpFunctions}개 · 도메인 모듈 {tory.domainModules}개) + Container Apps 배치 워커의 {tory.workspaces}-workspace 모노레포, OKLCH 디자인 토큰을 web·RN 양쪽으로 자동 생성</li>
+            <li><b>데이터·보안</b> · PostgreSQL + Apache AGE(그래프)+pgvector(임베딩) 단일 DB에 마이그레이션 {tory.migrations}개, 행 단위 RLS 멀티테넌시. OpenAI·Claude·Gemini·xAI를 태스크별로 자동 라우팅하되 모든 LLM 경로를 OWASP LLM G1–G7 게이트(프롬프트 격리·출력 안전·툴 인가·소비 예산)와 폴백 기록으로 감쌈</li>
+            <li><b>능동 지능</b> · 아침 브리핑·점심 추천·저녁 회상을 materializer→dispatcher→FCM/APNs로 발송하고, 접속 상황(presence)·응답 빈도·조용 모드로 말 걸 시점을 조절. “언제 무엇을 말할지”의 판단권은 규칙이 아니라 모델에 두되, safety-guard와 slop 검사를 발송 직전 마지막 관문으로 둠</li>
+            <li><b>음성·통화</b> · 모드별 벤더 이원화 — 통화는 Gemini Live(페르소나 보이스를 ephemeral 토큰에 잠금), 실시간 통역은 OpenAI <code>gpt-realtime-translate</code>로 한국어·상대 언어 두 세션을 동시에 열어 양방향 처리. 요금제별 실시간 분(minute) 예산을 서버가 예약·정산</li>
+            <li><b>지식 수집</b> · 활성 사용자 관심사의 합집합으로 RSS 소스를 매일 04:30(KST) 수집→중복 제거→임베딩→매칭하는 뉴스 애그리게이터(KEDA cron Job, 벽시계 예산으로 자체 제한)와 주간 다이제스트. 위치 권한 없이 대화에서 “자주 가는 곳”을 수확하되, 세는 값이 방문 횟수가 아니라 <b>언급된 일수</b>임을 모델에 명시해 단정 오류를 막음</li>
+            <li><b>결제·출시</b> · Paddle(웹 MoR) + Apple IAP + Google Play Billing 3중 결제 경로를 서버 검증·웹훅까지 직접 구현, {tory.locales}개 언어 UI와 법적 고지 로케일라이즈로 심사 통과. Azure Bicep {tory.bicepModules}개 모듈 + GitHub Actions {tory.workflows}개 워크플로·EAS OTA 채널로 인프라와 릴리스를 코드로 운영</li>
           </ul>
-          <div className="tech">TypeScript · React Native(Expo) · Next.js 15 · Azure Functions · PostgreSQL · Apache AGE · pgvector · Azure Bicep</div>
+          <div className="tech">TypeScript · React Native(Expo) · Next.js 15 · Azure Functions · Container Apps · PostgreSQL · Apache AGE · pgvector · Gemini Live · Azure Bicep</div>
         </article>
 
         <article className="ab-card">
@@ -162,9 +167,9 @@ function About() {
               <a href="https://gist.github.com/su-record/269530f1fd2f7193e80424d084b51a91" target="_blank" rel="noopener noreferrer">소개 gist</a>
             </span>
           </div>
-          <p className="desc">평점·리뷰 없이 “사진 공유 자체가 추천”이 되는 음식 플랫폼. GPS·비전·OCR로 실제 방문을 검증해 추천 신뢰도를 만들고, 게임처럼 즐기도록 설계했습니다. 100% 바이브코딩으로 풀스택(FastAPI 백엔드 + Flutter 앱)을 완성해 TestFlight 베타까지 올렸습니다. 현재 개발중이던 서버는 기획부터 다시 서비스 설계를 시작하기 위해 내렸고, 기존의 개발을 했었던 194개 REST 엔드포인트 스키마는 문서로 공개해 두었습니다.</p>
+          <p className="desc">평점·리뷰 없이 “사진 공유 자체가 추천”이 되는 음식 플랫폼. GPS·비전·OCR로 실제 방문을 검증해 추천 신뢰도를 만들고, 게임처럼 즐기도록 설계했습니다. 100% 바이브코딩으로 풀스택(FastAPI 백엔드 + Flutter 앱)을 완성해 TestFlight 베타까지 올렸습니다. 현재 개발중이던 서버는 기획부터 다시 서비스 설계를 시작하기 위해 내렸고, 기존의 개발을 했었던 {fallingo.restOperations}개 REST 엔드포인트 스키마는 문서로 공개해 두었습니다.</p>
           <div className="metrics">
-            <span>코드 <b>~133K LOC</b></span><span>REST API <b>194개</b></span><span>다국어 <b>15 로케일</b></span><span><b>GCP→Azure</b> 마이그레이션</span><span><b>TestFlight</b> 베타</span>
+            <span>코드 <b>~{k(fallingo.loc)} LOC</b></span><span>REST API <b>{fallingo.restOperations}개</b></span><span>다국어 <b>15 로케일</b></span><span><b>GCP→Azure</b> 마이그레이션</span><span><b>TestFlight</b> 베타</span>
           </div>
           <ul>
             <li><b>신뢰도 검증</b> · 50m 지오펜스(PostGIS) + Azure AI Vision 음식 인식(신뢰도 0.8+) + Document Intelligence OCR 영수증(24시간 이내)의 3단계 인증</li>
@@ -174,25 +179,6 @@ function About() {
             <li><b>운영·재미</b> · Container Apps 20개 스케줄 잡(월드이벤트·알림·게이미피케이션·검수·온톨로지 진화)으로 무인 운영, 12단계 티어와 인증 기반 포인트로 별점 없이 메뉴 인기를 가늠</li>
           </ul>
           <div className="tech">Flutter · FastAPI · PostgreSQL · PostGIS · pgvector · Redis · Azure AI Vision · Document Intelligence · Firebase</div>
-        </article>
-
-        <article className="ab-card">
-          <div className="card-head">
-            <h3><em>tory-tutor</em> · 바이브코딩을 가르치는 데스크탑 개인교사</h3>
-            <span className="pill">● 개발 중</span>
-          </div>
-          <p className="desc">비개발자가 Claude Code·Codex를 <b>실제 작업 환경에서</b> 쓰게 만드는 교육용 데스크탑앱. 웹 샌드박스 흉내는 전이가 안 된다는 판단으로, 학습자 머신에 개발 환경을 직접 구성해 주고 진짜 에이전트 세션으로 실습시킨 뒤 <b>산출물 파일과 게이트로만</b> 통과를 판정합니다. 완전 로컬 앱이며 오픈소스 공개를 목표로 개발 중입니다.</p>
-          <div className="metrics">
-            <span>TypeScript <b>~10.7K LOC</b></span><span>커리큘럼 <b>36챕터</b></span><span>결정론 게이트 <b>20개</b></span><span>테스트 <b>27파일</b> + Electron E2E</span><span><b>개발 중</b> v0.1</span>
-          </div>
-          <ul>
-            <li><b>환경 프로비저너</b> · 첫 실행에서 Git·Git Bash·Node LTS·GitHub CLI·Claude Code·Codex를 감지→설치→인증까지 LLM 호출 0회의 결정론 프로그램으로 처리(멱등 재실행). 비개발자의 최대 이탈 지점인 환경 구성을 앱이 통째로 흡수</li>
-            <li><b>엔진 어댑터</b> · <code>send(지시) → 이벤트 스트림</code> 계약 하나로 Claude Agent SDK와 Codex CLI를 갈아끼우고, 학습자 본인 구독(BYO)으로 실습해 운영 인퍼런스 비용 0</li>
-            <li><b>실습은 진짜 세션</b> · node-pty + xterm 임베디드 터미널로 인터랙티브 TUI를 열고 유닛이 바뀌어도 같은 세션을 유지. 연출 화면과 일회성 실행(<code>claude -p</code>) 금지를 제품 불변 규칙으로 고정</li>
-            <li><b>완료는 게이트가 판정</b> · 공통개념 1 + 데스크탑 11 + CLI 24챕터를 직렬 잠금으로 두고, 챕터별 gate 스크립트 20개와 산출물 파일 검사로만 다음 챕터를 연다. “AI가 끝났다고 말한 것”은 근거로 치지 않음</li>
-            <li><b>배포</b> · electron-builder로 macOS dmg(arm64/x64)·Windows nsis를 빌드하고, 태그 푸시 시 GitHub Actions가 OS별 인스톨러를 자동 빌드해 릴리스에 첨부</li>
-          </ul>
-          <div className="tech">TypeScript · Electron 43 · React 19 · electron-vite · Claude Agent SDK · node-pty · xterm.js · electron-builder</div>
         </article>
 
         <div className="ab-cathead"><span className="tag">TOOLING</span> 개발자 도구 · 프레임워크 (오픈소스·공개 배포)</div>
@@ -207,12 +193,13 @@ function About() {
           </div>
           <p className="desc">바이브코딩의 품질 문제를 “더 좋은 프롬프트”가 아니라 SPEC·시나리오·결정론적 게이트로 다루는 <b>검증 하네스</b>. 완료 판정을 모델의 자기보고가 아니라 <b>코드(게이트)가 내리게</b> 만들고, 실행마다 Evidence Bundle을 남기는 것이 핵심 철학입니다.</p>
           <div className="metrics">
-            <span>TypeScript <b>68K LOC</b></span><span>Skills <b>52</b> · Agents <b>11</b></span><span>테스트 <b>69 파일</b></span><span>npm <b>59K+ 다운로드</b></span><span>v<b>3.2</b></span>
+            <span>TypeScript <b>{k(vibe.loc)} LOC</b></span><span>Skills <b>{vibe.skills}</b> · Agents <b>{vibe.agents}</b></span><span>테스트 <b>{vibe.tests} 파일</b></span><span>npm <b>{kFloor(vibeNpm.totalDownloads)} 다운로드</b></span><span>v<b>{vibe.version}</b></span>
           </div>
           <ul>
-            <li><b>루프 엔지니어링</b> · 자연어 요구 → SPEC 1패스 → 승인 1회 → ANCHOR·ACT·JUDGE·RECORD 루프로 게이트 통과까지 자동 반복. 수렴은 discover-hash가 판정해 2라운드 findings가 같으면 stuck으로 확정하고 사람에게 넘김</li>
+            <li><b>루프 엔지니어링</b> · 자연어 요구 → SPEC 1패스 → 승인 1회 → ANCHOR·ACT·JUDGE·RECORD 루프로 게이트 통과까지 자동 반복. 수렴은 discover-hash가 판정해 2라운드 findings가 같으면 stuck으로 확정하고 사람에게 넘김. 처음 거는 루프는 두 바퀴만 돌고 멈추는 시운전 게이트로 폭주를 막음</li>
             <li><b>3계층 품질 방어</b> · 편집 훅(<code>any</code>·<code>@ts-ignore</code>·<code>console.log</code> 즉시 주입) → 결정론 게이트(PR 전 테스트 스위트 직접 실행·verify 전 커밋 거부·파괴적 명령 차단) → 관점별 병렬 리뷰어로 P1=0까지 수렴</li>
-            <li><b>회귀 기억</b> · verify 실패를 회귀 테스트로 자동 등록하고 반복 패턴은 예방 테스트로 승격, 결정·제약은 SQLite + FTS5로 세션 간 유지</li>
+            <li><b>“봤다”도 게이트로</b> · 렌더 결과가 완료 기준인 작업은 <code>verify=visual</code>로 다이어그램·화면을 실제로 렌더해 exit code로 판정하고, 설치된 스킬이 배송본과 동일한지 무결성 검사로 확인. 판정의 근거를 사람의 눈에서 계속 떼어내는 방향</li>
+            <li><b>회귀 기억</b> · verify 실패를 회귀 테스트로 자동 등록하고 반복 패턴은 예방 테스트로 승격, 결정·제약은 SQLite + FTS5로 세션 간 유지. SPEC의 근거는 <b>확인 / 해석 / 모름</b> 3등급으로 표시해 추측이 사실로 굳는 것을 차단</li>
             <li><b>확장성</b> · Claude Code·Codex를 한 코드베이스에서 동시 지원(+Cursor·Antigravity), 23개 스택 자동 감지 후 스택별 스킬만 로드, Figma ↔ 코드 양방향과 DESIGN.md(시각 SSOT)</li>
           </ul>
           <div className="tech">TypeScript(ESM) · better-sqlite3(FTS5) · ts-morph · zod · Vitest · Claude Code · Codex 하네스</div>

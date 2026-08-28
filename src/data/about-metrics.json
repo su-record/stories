@@ -1,0 +1,63 @@
+{
+  "generatedAt": "2026-08-29",
+  "npm": {
+    "@su-record/vibe": {
+      "totalDownloads": 72137,
+      "lastMonth": 13469,
+      "since": "2025-11-17"
+    },
+    "@su-record/hi-ai": {
+      "totalDownloads": 3757,
+      "lastMonth": 309,
+      "since": "2025-07-05"
+    }
+  },
+  "repos": {
+    "tory": {
+      "commits": 1574,
+      "firstCommit": "2026-04-30",
+      "lastCommit": "2026-08-28",
+      "activeDays": 121,
+      "loc": 218604,
+      "httpFunctions": 184,
+      "domainModules": 47,
+      "migrations": 82,
+      "bicepModules": 10,
+      "workflows": 10,
+      "locales": 8,
+      "workspaces": 7
+    },
+    "vibe": {
+      "commits": 720,
+      "firstCommit": "2026-02-19",
+      "lastCommit": "2026-08-29",
+      "activeDays": 192,
+      "version": "3.2.59",
+      "loc": 63213,
+      "skills": 52,
+      "agents": 11,
+      "languages": 23,
+      "tests": 95
+    },
+    "lgCms": {
+      "commits": 629,
+      "firstCommit": "2026-07-01",
+      "lastCommit": "2026-08-26",
+      "activeDays": 57,
+      "loc": 42093,
+      "components": 200,
+      "prismaModels": 39,
+      "workspaces": 6,
+      "locales": 4
+    },
+    "fallingo": {
+      "commits": 1213,
+      "firstCommit": "2025-06-04",
+      "lastCommit": "2026-04-07",
+      "activeDays": 308,
+      "restOperations": 185,
+      "restPaths": 165,
+      "loc": 161894
+    }
+  }
+}

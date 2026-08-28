@@ -1,0 +1,41 @@
+name: Update About npm metrics
+
+# About 페이지의 npm 누적 다운로드만 주간 갱신한다.
+# LOC·커밋 수 같은 레포 기반 지표는 로컬 워크스페이스에서만 측정 가능하므로
+# 여기서는 절대 건드리지 않는다 (--npm-only).
+on:
+  schedule:
+    - cron: '0 20 * * 0'   # 매주 월요일 05:00 KST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: about-metrics
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Collect npm download counts
+        run: npm run about:metrics -- --npm-only
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- src/data/about-metrics.json; then
+            echo "변경 없음 — 커밋 생략"
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/about-metrics.json
+          git commit -m "chore: About npm 다운로드 지표 주간 갱신"
+          git push
