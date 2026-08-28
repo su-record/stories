@@ -72,7 +72,16 @@ npm run preview          # Preview production build
 
 # Combined
 npm run build:all        # prebuild + build
+
+# About 지표
+npm run about:metrics                # 로컬 워크스페이스 재측정 + npm 다운로드 갱신
+npm run about:metrics -- --npm-only  # npm 다운로드만 갱신 (주간 크론이 쓰는 경로)
 ```
+
+### 스크립트 규약
+
+`scripts/*.js` 는 CLI 도구이므로 진행 상황 출력에 `console.log` 를 씁니다 — 전역
+"console.log 금지" 규칙의 예외입니다. `src/` 애플리케이션 코드에는 그대로 적용됩니다.
 
 ## Blog Post Format
 
