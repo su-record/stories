@@ -127,9 +127,11 @@ function collectVibe(dir) {
     ...gitHistory(dir),
     version: JSON.parse(fs.readFileSync(path.join(dir, 'package.json'), 'utf8')).version,
     loc: countLines(codeRoots, byExt('.ts', '.tsx')),
-    skills: countDirs(path.join(dir, 'skills')),
-    agents: countFiles(path.join(dir, 'agents'), byExt('.md')),
-    languages: countFiles(path.join(dir, 'languages'), byExt('.md')),
+    // 4.0 부터 공개 스킬은 skills/vibe 하나뿐이고, 나머지 스킬·에이전트는
+    // 필요할 때만 읽는 internal/ 로 옮겨졌다. 3.x 의 skills/·agents/ 를 세면 1·0 이 나온다.
+    publicSkills: countDirs(path.join(dir, 'skills')),
+    skills: countDirs(path.join(dir, 'internal/skills')),
+    agents: countFiles(path.join(dir, 'internal/agents'), byExt('.md')),
     tests: countFiles(path.join(dir, 'src'), (f) => f.endsWith('.test.ts')) +
       countFiles(path.join(dir, 'tests'), (f) => f.endsWith('.test.ts'))
   }

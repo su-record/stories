@@ -1,12 +1,11 @@
 import { useEffect } from 'react'
 import metrics from '../data/about-metrics.json'
-import { k, kFloor, floorTo } from '../utils/aboutMetrics'
+import { k, floorTo } from '../utils/aboutMetrics'
 import './About.css'
 
 function About() {
   const printPage = () => window.print()
   const { tory, vibe, lgCms, fallingo } = metrics.repos
-  const vibeNpm = metrics.npm['@su-record/vibe']
 
   useEffect(() => {
     document.title = '함수원 · About'
@@ -144,9 +143,9 @@ function About() {
               <a href="https://gist.github.com/su-record/0cc550f5d1434fd4a7c0c10fd9e4e77a" target="_blank" rel="noopener noreferrer">소개 gist</a>
             </span>
           </div>
-          <p className="desc">먼저 말 걸어 주는 AI 동반자가 운영하는 “그래프형 개인 위키”. 일상·일정·감정·아이디어를 하나의 그래프에 쌓아 두고, 시간·맥락·루틴에 맞춰 먼저 기억을 떠올려 줍니다. 모바일·웹·백엔드·DB·인프라까지 혼자 설계한 풀스택 모노레포이며, <b>iOS App Store에 출시</b>해 운영 중입니다.</p>
+          <p className="desc">먼저 말 걸어 주는 AI 동반자가 운영하는 “그래프형 개인 위키”. 일상·일정·감정·아이디어를 하나의 그래프에 쌓아 두고, 시간·맥락·루틴에 맞춰 먼저 기억을 떠올려 줍니다. 모바일·웹·백엔드·DB·인프라까지 혼자 설계한 풀스택 모노레포이며, <b>iOS App Store(2026.07)·Google Play(2026.09)에 정식 출시</b>해 운영 중입니다.</p>
           <div className="metrics">
-            <span>TypeScript <b>~{k(tory.loc)} LOC</b></span><span>HTTP 함수 <b>{tory.httpFunctions}개</b></span><span>도메인 모듈 <b>{tory.domainModules}개</b></span><span>{tory.activeDays}일 <b>{floorTo(tory.commits, 10)} 커밋</b></span><span><b>App Store 출시</b> · Play 비공개 테스트</span>
+            <span>TypeScript <b>~{k(tory.loc)} LOC</b></span><span>HTTP 함수 <b>{tory.httpFunctions}개</b></span><span>도메인 모듈 <b>{tory.domainModules}개</b></span><span>{tory.activeDays}일 <b>{floorTo(tory.commits, 10)} 커밋</b></span><span><b>App Store · Google Play</b> 출시</span>
           </div>
           <ul>
             <li><b>아키텍처</b> · React Native(Expo SDK 56) 모바일 + Next.js 15 웹 + Azure Functions 백엔드(HTTP 함수 {tory.httpFunctions}개 · 도메인 모듈 {tory.domainModules}개) + Container Apps 배치 워커의 {tory.workspaces}-workspace 모노레포, OKLCH 디자인 토큰을 web·RN 양쪽으로 자동 생성</li>
@@ -154,6 +153,7 @@ function About() {
             <li><b>능동 지능</b> · 아침 브리핑·점심 추천·저녁 회상을 materializer→dispatcher→FCM/APNs로 발송하고, 접속 상황(presence)·응답 빈도·조용 모드로 말 걸 시점을 조절. “언제 무엇을 말할지”의 판단권은 규칙이 아니라 모델에 두되, safety-guard와 slop 검사를 발송 직전 마지막 관문으로 둠</li>
             <li><b>음성·통화</b> · 모드별 벤더 이원화 — 통화는 Gemini Live(페르소나 보이스를 ephemeral 토큰에 잠금), 실시간 통역은 OpenAI <code>gpt-realtime-translate</code>로 한국어·상대 언어 두 세션을 동시에 열어 양방향 처리. 요금제별 실시간 분(minute) 예산을 서버가 예약·정산</li>
             <li><b>지식 수집</b> · 활성 사용자 관심사의 합집합으로 RSS 소스를 매일 04:30(KST) 수집→중복 제거→임베딩→매칭하는 뉴스 애그리게이터(KEDA cron Job, 벽시계 예산으로 자체 제한)와 주간 다이제스트. 위치 권한 없이 대화에서 “자주 가는 곳”을 수확하되, 세는 값이 방문 횟수가 아니라 <b>언급된 일수</b>임을 모델에 명시해 단정 오류를 막음</li>
+            <li><b>TOMI·소셜 피드</b> · 공개 성격 문항(Mini-IPIP 20문항)을 토리가 대화로 다시 묻고, 점수에 따라 16가지 캐릭터 카드를 만드는 활동을 회원·비회원 모두에게 제공. 카드 공유 링크는 언제든 철회할 수 있고 대화 원문·개인 그래프는 드러내지 않음. Pro에는 사용자가 승인한 AI 초안만 게시되는 선택형 소셜 피드를 더함</li>
             <li><b>결제·출시</b> · Paddle(웹 MoR) + Apple IAP + Google Play Billing 3중 결제 경로를 서버 검증·웹훅까지 직접 구현, {tory.locales}개 언어 UI와 법적 고지 로케일라이즈로 심사 통과. Azure Bicep {tory.bicepModules}개 모듈 + GitHub Actions {tory.workflows}개 워크플로·EAS OTA 채널로 인프라와 릴리스를 코드로 운영</li>
           </ul>
           <div className="tech">TypeScript · React Native(Expo) · Next.js 15 · Azure Functions · Container Apps · PostgreSQL · Apache AGE · pgvector · Gemini Live · Azure Bicep</div>
@@ -185,24 +185,25 @@ function About() {
 
         <article className="ab-card">
           <div className="card-head">
-            <h3><em>Vibe</em> · SPEC 기반 AI 코딩 프레임워크</h3>
+            <h3><em>Vibe</em> · AI 에이전트를 위한 개인 FDE 하네스</h3>
             <span className="links">
               <a href="https://www.npmjs.com/package/@su-record/vibe" target="_blank" rel="noopener noreferrer">npm</a>
               <a href="https://gist.github.com/su-record/acf53ba8d242c2dd422bf817f85d43bc" target="_blank" rel="noopener noreferrer">소개 gist</a>
             </span>
           </div>
-          <p className="desc">바이브코딩의 품질 문제를 “더 좋은 프롬프트”가 아니라 SPEC·시나리오·결정론적 게이트로 다루는 <b>검증 하네스</b>. 완료 판정을 모델의 자기보고가 아니라 <b>코드(게이트)가 내리게</b> 만들고, 실행마다 Evidence Bundle을 남기는 것이 핵심 철학입니다.</p>
+          <p className="desc">Claude Code·Codex 안에서 AI가 <b>현장 배치 엔지니어(FDE)</b>처럼 일하게 만드는 하네스. 3.x에서 SPEC·결정론적 게이트로 완료 판정을 코드에 맡겼고, 4.0(2026.09)에서 이를 다시 설계했습니다. 사용자의 작업과 이전 결정을 먼저 읽고, 있는 도구로 실제 문제를 풀고, 실제 동작을 확인한 뒤 <b>무엇을 바꿨고 · 무엇을 확인했고 · 무엇을 아직 모르는지</b> 보고하게 하는 것이 핵심입니다.</p>
           <div className="metrics">
-            <span>TypeScript <b>{k(vibe.loc)} LOC</b></span><span>Skills <b>{vibe.skills}</b> · Agents <b>{vibe.agents}</b></span><span>테스트 <b>{vibe.tests} 파일</b></span><span>npm <b>{kFloor(vibeNpm.totalDownloads)} 다운로드</b></span><span>v<b>{vibe.version}</b></span>
+            <span>TypeScript <b>{k(vibe.loc)} LOC</b></span><span>공개 진입점 <b>/vibe {vibe.publicSkills}개</b></span><span>내부 스킬 <b>{vibe.skills}</b> · 에이전트 <b>{vibe.agents}</b></span><span>테스트 <b>{vibe.tests} 파일</b></span><span>v<b>{vibe.version}</b></span>
           </div>
           <ul>
-            <li><b>루프 엔지니어링</b> · 자연어 요구 → SPEC 1패스 → 승인 1회 → ANCHOR·ACT·JUDGE·RECORD 루프로 게이트 통과까지 자동 반복. 수렴은 discover-hash가 판정해 2라운드 findings가 같으면 stuck으로 확정하고 사람에게 넘김. 처음 거는 루프는 두 바퀴만 돌고 멈추는 시운전 게이트로 폭주를 막음</li>
-            <li><b>3계층 품질 방어</b> · 편집 훅(<code>any</code>·<code>@ts-ignore</code>·<code>console.log</code> 즉시 주입) → 결정론 게이트(PR 전 테스트 스위트 직접 실행·verify 전 커밋 거부·파괴적 명령 차단) → 관점별 병렬 리뷰어로 P1=0까지 수렴</li>
-            <li><b>“봤다”도 게이트로</b> · 렌더 결과가 완료 기준인 작업은 <code>verify=visual</code>로 다이어그램·화면을 실제로 렌더해 exit code로 판정하고, 설치된 스킬이 배송본과 동일한지 무결성 검사로 확인. 판정의 근거를 사람의 눈에서 계속 떼어내는 방향</li>
-            <li><b>회귀 기억</b> · verify 실패를 회귀 테스트로 자동 등록하고 반복 패턴은 예방 테스트로 승격, 결정·제약은 SQLite + FTS5로 세션 간 유지. SPEC의 근거는 <b>확인 / 해석 / 모름</b> 3등급으로 표시해 추측이 사실로 굳는 것을 차단</li>
-            <li><b>확장성</b> · Claude Code·Codex를 한 코드베이스에서 동시 지원(+Cursor·Antigravity), 23개 스택 자동 감지 후 스택별 스킬만 로드, Figma ↔ 코드 양방향과 DESIGN.md(시각 SSOT)</li>
+            <li><b>단일 진입점</b> · 스킬 52개·에이전트 11개로 흩어져 있던 3.x를 공개 스킬 하나(<code>/vibe</code>)로 통합. 코드·디자인·문체 가이드와 내부 스킬은 그 작업에 필요할 때만 읽어 컨텍스트를 아낌</li>
+            <li><b>맥락 유지</b> · 프로젝트 지식과 개인 결정을 따로 저장해 다음 작업에서 다시 묻지 않고 재사용. 저장된 기록은 참고 맥락일 뿐 발행·삭제 권한이 아님을 규칙으로 못 박음</li>
+            <li><b>검증과 성과의 구분</b> · 실제 동작을 확인하되 바뀌지 않은 실행 증거는 다시 돌리지 않음. 기계 검증 · 사용자 수락 · 측정된 비즈니스 가치를 서로 다른 기록으로 남겨, 테스트 통과가 곧 성과로 둔갑하지 않게 함</li>
+            <li><b>스킬 탐색</b> · 호스트에 없는 기능이 필요하면 GitHub·SkillsMP에서 스킬을 찾아 호환성과 대표 동작을 확인한 뒤 설치. 설치했다는 사실만으로 유용하다고 판단하지 않음</li>
+            <li><b>효과 측정</b> · 같은 과제를 하네스를 켠/끈 상태, Claude Code·Codex로 반복 실행하고 에이전트가 볼 수 없는 별도 채점으로 비교. 두 클라이언트가 세션을 이어받는 인수인계 과제까지 재고, 판단은 주장 대신 기록(ledger)으로</li>
+            <li><b>호스트</b> · Claude Code 플러그인 · Codex CLI/데스크톱 · Claude Desktop(MCPB) · Hermes를 한 패키지로 지원</li>
           </ul>
-          <div className="tech">TypeScript(ESM) · better-sqlite3(FTS5) · ts-morph · zod · Vitest · Claude Code · Codex 하네스</div>
+          <div className="tech">TypeScript(ESM) · Vitest · ajv · Claude Code 플러그인 · Codex 플러그인 · MCPB</div>
         </article>
 
         <article className="ab-card">

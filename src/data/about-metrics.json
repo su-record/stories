@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27",
+  "generatedAt": "2026-09-28",
   "npm": {
     "@su-record/vibe": {
       "totalDownloads": 85410,
@@ -14,30 +14,30 @@
   },
   "repos": {
     "tory": {
-      "commits": 1574,
+      "commits": 1955,
       "firstCommit": "2026-04-30",
-      "lastCommit": "2026-08-28",
-      "activeDays": 121,
-      "loc": 218604,
-      "httpFunctions": 184,
-      "domainModules": 47,
-      "migrations": 82,
+      "lastCommit": "2026-09-22",
+      "activeDays": 146,
+      "loc": 391469,
+      "httpFunctions": 227,
+      "domainModules": 49,
+      "migrations": 119,
       "bicepModules": 10,
       "workflows": 10,
       "locales": 8,
       "workspaces": 7
     },
     "vibe": {
-      "commits": 720,
+      "commits": 1030,
       "firstCommit": "2026-02-19",
-      "lastCommit": "2026-08-29",
-      "activeDays": 192,
-      "version": "3.2.59",
-      "loc": 63213,
-      "skills": 52,
-      "agents": 11,
-      "languages": 23,
-      "tests": 95
+      "lastCommit": "2026-09-22",
+      "activeDays": 216,
+      "version": "4.2.7",
+      "loc": 15750,
+      "publicSkills": 1,
+      "skills": 9,
+      "agents": 8,
+      "tests": 58
     },
     "lgCms": {
       "commits": 629,
