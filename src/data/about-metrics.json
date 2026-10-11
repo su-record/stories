@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-10-04",
+  "generatedAt": "2026-10-11",
   "npm": {
     "@su-record/vibe": {
-      "totalDownloads": 89464,
-      "lastMonth": 14540,
+      "totalDownloads": 91869,
+      "lastMonth": 12963,
       "since": "2025-11-17"
     },
     "@su-record/hi-ai": {
-      "totalDownloads": 3913,
-      "lastMonth": 111,
+      "totalDownloads": 3945,
+      "lastMonth": 113,
       "since": "2025-07-05"
     }
   },
