@@ -1,17 +1,25 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>2교시 예상문제</title><style>body{font-family:-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;max-width:780px;margin:0 auto;padding:20px 18px 80px;font-size:18px;line-height:1.75;color:#222;background:#fafafa}
-h1{font-size:1.7em;border-bottom:3px solid #e4002b;padding-bottom:6px}h2{font-size:1.4em;margin-top:2em;color:#e4002b}h3{font-size:1.15em;margin-top:1.6em;background:#fff3f4;padding:8px 12px;border-left:5px solid #e4002b;border-radius:4px}
-table{border-collapse:collapse;width:100%;font-size:.85em;display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}body{word-break:keep-all;overflow-wrap:anywhere}td,th{min-width:3em}@media(max-width:600px){body{font-size:16.5px;padding:14px 12px 60px}h3{font-size:1.05em}}th,td{border:1px solid #ddd;padding:6px 8px}th{background:#f0f0f0}
-pre{background:#272822;color:#f8f8f2;padding:12px;border-radius:6px;overflow-x:auto;font-size:.85em}code{background:#eee;padding:1px 4px;border-radius:3px}pre code{background:none}
-blockquote{margin:1em 0;padding:10px 14px;background:#eef6ff;border-left:4px solid #3b82f6;border-radius:4px}
-@media(prefers-color-scheme:dark){body{background:#161616;color:#e6e6e6}h3{background:#2a1a1c}th{background:#2a2a2a}td,th{border-color:#444}code{background:#333}blockquote{background:#16243a}}</style></head><body><h1 id="sk-ai-2026-1-2-16-90">SK하이닉스 AI 해커톤 2026 · 1차 예선 2교시 예상문제 (16문항 / 90분) — 문제와 풀이</h1>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>2교시 예상문제</title><style>*{box-sizing:border-box}body{font-family:-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;max-width:760px;margin:0 auto;padding:14px 12px 60px;font-size:15px;line-height:1.65;color:#222;background:#f3f4f6;word-break:keep-all;overflow-wrap:anywhere}
+h1{font-size:1.45em;border-bottom:3px solid #e4002b;padding-bottom:6px}h2{font-size:1.2em;margin:2em 0 .6em;color:#e4002b}
+.card{background:#fff;border-radius:12px;padding:14px 14px 10px;margin:14px 0;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.card h3{font-size:1.02em;margin:0 0 10px;line-height:1.5;padding-bottom:8px;border-bottom:1px solid #eee}
+.opts{list-style:none;padding:0;margin:8px 0 12px}.opts li{display:flex;gap:8px;padding:7px 10px;margin:5px 0;background:#f7f7f9;border-radius:8px}.opts .n{color:#e4002b;font-weight:700;flex:none}
+.ans{background:#ecfdf3;border-left:4px solid #16a34a;padding:9px 12px;border-radius:6px;margin:10px 0}
+.warn{background:#fff7ed;border-left:4px solid #f97316;padding:9px 12px;border-radius:6px;margin:10px 0}
+.sub{font-weight:700;margin:14px 0 4px;color:#3b5bdb}
+ul{padding-left:1.1em}li{margin:6px 0}li.lab{list-style:none;margin-left:-1.1em;padding:6px 0;border-top:1px dashed #e5e5e5}
+.tag{display:inline-block;font-size:.8em;background:#eef2ff;color:#3b5bdb;padding:1px 8px;border-radius:10px;margin-right:6px}
+table{border-collapse:collapse;width:100%;font-size:.85em;display:block;overflow-x:auto;margin:8px 0}th,td{border:1px solid #e3e3e3;padding:5px 7px;min-width:3.5em}th{background:#f3f3f3}
+pre{background:#272822;color:#f8f8f2;padding:10px;border-radius:6px;overflow-x:auto;font-size:.82em}code{background:#eee;padding:1px 4px;border-radius:3px;font-size:.9em}pre code{background:none}
+blockquote{margin:1em 0;padding:9px 12px;background:#eef6ff;border-left:4px solid #3b82f6;border-radius:6px}
+@media(prefers-color-scheme:dark){body{background:#111;color:#e6e6e6}.card{background:#1c1c1e}.card h3{border-color:#333}.opts li{background:#2a2a2d}.ans{background:#0f2a1a}.warn{background:#2e1d0e}th{background:#2a2a2a}td,th{border-color:#3a3a3a}code{background:#333}blockquote{background:#16243a}.tag{background:#23284a;color:#a5b4fc}li.lab{border-color:#333}}</style></head><body><h1 id="sk-ai-2026-1-2-16-90">SK하이닉스 AI 해커톤 2026 · 1차 예선 2교시 예상문제 (16문항 / 90분) — 문제와 풀이</h1>
 <blockquote>
-<p><strong>⚠️ 예상문제야. 기출이 아니야.</strong> 2교시(10/17 토 15:00~16:30, 16문항/90분)의 실제 문항 유형·배점·내장 AI 모델·문항당 질문 횟수는 공개되지 않았어. 이 별책은 프로그래머스 AI 역량평가 공개 정보를 바탕으로 **"시나리오 판단형 + 시험 안의 AI를 쓰는 과제형"**이 섞인 형태를 <em>추정</em>해서 만든 거야. 지문 속 회사·숫자·문서는 전부 <strong>가상</strong>이야.</p>
+<p><strong>⚠️ 예상문제야. 기출이 아니야.</strong> 2교시(10/17 토 15:00~16:30, 16문항/90분)의 실제 문항 유형·배점·내장 AI 모델·문항당 질문 횟수는 공개되지 않았어. 이 별책은 프로그래머스 AI 역량평가 공개 정보를 바탕으로 <strong>"시나리오 판단형 + 시험 안의 AI를 쓰는 과제형"</strong>이 섞인 형태를 <em>추정</em>해서 만든 거야. 지문 속 회사·숫자·문서는 전부 <strong>가상</strong>이야.</p>
 </blockquote>
 <p><strong>읽는 법:</strong> 실전처럼 16문항이 순서대로 나오고, 각 문항 <strong>바로 아래에 풀이</strong>가 있어. 풀 필요 없이 읽으면 돼. 풀이 구성은 ✅모범 답(또는 핵심 결론) → ❌나쁜 프롬프트 vs ⭕좋은 프롬프트 → 3번 질문 흐름 → 검증 질문 → 5기준 체크 → 감점 함정 순서야.<br />
 <strong>다른 자료와의 관계:</strong> 참고서 Part 2(Q86~Q100), 모의고사 2회차(T1~T4, S1~S4), study.md(B1~B8, C1~C6)와 소재가 겹치지 않게 골랐어.</p>
 <hr />
 <h2 id="0-2">0. 시험 전에 읽는 2쪽</h2>
-<h3 id="0-1-ai">0-1. 공개된 시험 환경 (프로그래머스 AI 역량평가 소개 기준)</h3>
+<section class="card"><h3 id="0-1-ai">0-1. 공개된 시험 환경 (프로그래머스 AI 역량평가 소개 기준)</h3>
 <table>
 <thead>
 <tr>
@@ -38,7 +46,7 @@ blockquote{margin:1em 0;padding:10px 14px;background:#eef6ff;border-left:4px sol
 </tr>
 </tbody>
 </table>
-<h3 id="0-2_1">0-2. 이 별책의 추정 구성과 시간 배분</h3>
+</section><section class="card"><h3 id="0-2_1">0-2. 이 별책의 추정 구성과 시간 배분</h3>
 <table>
 <thead>
 <tr>
@@ -70,7 +78,7 @@ blockquote{margin:1em 0;padding:10px 14px;background:#eef6ff;border-left:4px sol
 </tbody>
 </table>
 <p>실제 시험이 이 비율이 아닐 수 있어. 시작하자마자 <strong>전체 문항 수와 유형을 훑고</strong> 시간표를 다시 짜.</p>
-<h3 id="0-3-3">0-3. 모든 과제형에 쓰는 '3번 질문' 뼈대</h3>
+</section><section class="card"><h3 id="0-3-3">0-3. 모든 과제형에 쓰는 '3번 질문' 뼈대</h3>
 <pre><code>[1번째] 목표: ○○을 위해 △△를 만든다(독자: □□).
         자료: (요약해서 타이핑 / 필요한 파일만 첨부)  ← 지문은 복붙이 막혀 있을 수 있음
         조건: 기준값·단위·금지사항
@@ -81,7 +89,7 @@ blockquote{margin:1em 0;padding:10px 14px;background:#eef6ff;border-left:4px sol
 [3번째] 최종 제출 형식으로 정리 + 남은 불확실성·가정 목록.
 </code></pre>
 <p><strong>30초 쿨타임 활용법:</strong> 기다리는 동안 다음 질문을 미리 써 두고, 자료에서 검산할 숫자 1~2개를 손으로 계산해 둬.</p>
-<h3 id="0-4-2-top-5">0-4. 2교시 감점 패턴 TOP 5 (이 별책 전체에서 반복)</h3>
+</section><section class="card"><h3 id="0-4-2-top-5">0-4. 2교시 감점 패턴 TOP 5 (이 별책 전체에서 반복)</h3>
 <ol>
 <li>첫 질문에 목표·형식이 없음 ("분석해 줘")</li>
 <li>AI 결과를 검증 질문 없이 그대로 제출</li>
@@ -89,19 +97,21 @@ blockquote{margin:1em 0;padding:10px 14px;background:#eef6ff;border-left:4px sol
 <li>기밀·개인정보를 필요 이상으로 AI에 넘김</li>
 <li>AI의 단정("원인은 ~", "~% 절감")을 그대로 옮김</li>
 </ol>
-<h2 id="a-16">A. 시나리오 판단형 (문항 1~6)</h2>
-<h3 id="1-ai">문항 1. [보안 판단] 무료 AI 회의 녹음·요약 앱</h3>
+</section><h2 id="a-16">A. 시나리오 판단형 (문항 1~6)</h2>
+<section class="card"><h3 id="1-ai">문항 1. [보안 판단] 무료 AI 회의 녹음·요약 앱</h3>
 <p>다음 주 고객사와의 기술 미팅(신제품 사양 논의)에서, 팀원이 개인 휴대폰의 무료 AI 회의 녹음·요약 앱을 쓰자고 제안했다. 앱은 녹음을 자사 서버로 올려 받아쓰기·요약을 해 준다. 회사는 이 앱을 승인한 적이 없다.<br />
 (1) 사용 여부를 판단하고 (2) 이유 3가지 (3) 대안 2가지를 쓰시오.</p>
-<p><strong>✅ 모범 답</strong><br />
+<div class="ans"><strong>✅ 모범 답</strong><br />
 (1) <strong>사용하지 않는다.</strong><br />
 (2) 이유: ① 회사가 승인하지 않은 외부 서버로 고객사 기밀(신제품 사양)이 넘어간다(섀도 AI). ② 녹음 파일의 보관 기간·학습 사용 여부를 회사가 통제·확인할 수 없다. ③ 고객사와의 비밀유지 약정 위반 소지가 있고, 녹음 자체에 참석자(특히 고객사) 동의가 필요하다.<br />
-(3) 대안: ① 회사가 승인한 회의록 도구가 있으면 그걸 쓰되 고객사에 녹음 동의를 미리 받는다. ② 승인 도구가 없으면 사람이 핵심 메모를 하고, 미팅 후 기밀 수치를 뺀 메모만 사내 승인 AI로 정리한다.</p>
-<p><strong>시험 안 AI를 쓴다면</strong><br />
-- ❌ "이 앱 써도 돼?" → AI는 상황을 모르니 "편리하다"는 일반론이 나와.<br />
-- ⭕ "판단 목표: 고객사 기술 미팅에서 미승인 무료 녹음 앱 사용 여부. 조건: 앱은 녹음을 외부 서버에 올림, 회사 미승인, 논의 내용은 신제품 사양. 보안·계약·동의 관점에서 위험 3개와 대안 2개를 표로. 확실하지 않은 사실(앱 약관 내용 등)은 '확인 필요'로 표시해."<br />
-- <strong>3번 흐름:</strong> ① 위 → ② "위험 2번은 일반론이야. '녹음 파일의 학습 사용 여부를 회사가 통제 못함'처럼 구체적으로 고쳐" → ③ "팀원에게 보낼 거절+대안 메시지 3줄".<br />
-- <strong>검증 질문:</strong> "네 답 중 앱 약관을 보지 않고 추정한 부분이 어디야?"</p>
+(3) 대안: ① 회사가 승인한 회의록 도구가 있으면 그걸 쓰되 고객사에 녹음 동의를 미리 받는다. ② 승인 도구가 없으면 사람이 핵심 메모를 하고, 미팅 후 기밀 수치를 뺀 메모만 사내 승인 AI로 정리한다.</div>
+<div class="sub">🤖 시험 안 AI를 쓴다면</div>
+<ul>
+<li>❌ "이 앱 써도 돼?" → AI는 상황을 모르니 "편리하다"는 일반론이 나와.</li>
+<li>⭕ "판단 목표: 고객사 기술 미팅에서 미승인 무료 녹음 앱 사용 여부. 조건: 앱은 녹음을 외부 서버에 올림, 회사 미승인, 논의 내용은 신제품 사양. 보안·계약·동의 관점에서 위험 3개와 대안 2개를 표로. 확실하지 않은 사실(앱 약관 내용 등)은 '확인 필요'로 표시해."</li>
+<li class="lab"><b class="tag">3번 흐름</b>① 위 → ② "위험 2번은 일반론이야. '녹음 파일의 학습 사용 여부를 회사가 통제 못함'처럼 구체적으로 고쳐" → ③ "팀원에게 보낼 거절+대안 메시지 3줄".</li>
+<li class="lab"><b class="tag">검증 질문</b>"네 답 중 앱 약관을 보지 않고 추정한 부분이 어디야?"</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -132,8 +142,8 @@ blockquote{margin:1em 0;padding:10px 14px;background:#eef6ff;border-left:4px sol
 </tr>
 </tbody>
 </table>
-<p><strong>감점 함정:</strong> "편리하니 쓰되 조심" 같은 애매한 결론 / 대안 없이 금지만.</p>
-<h3 id="2-roi-ai-3">문항 2. [ROI 판단] AI 도입 제안 3건 우선순위</h3>
+<div class="warn"><strong>⚠️ 감점 함정:</strong> "편리하니 쓰되 조심" 같은 애매한 결론 / 대안 없이 금지만.</div>
+</section><section class="card"><h3 id="2-roi-ai-3">문항 2. [ROI 판단] AI 도입 제안 3건 우선순위</h3>
 <p>예산상 이번 분기엔 1건만 도입할 수 있다. 시간당 인건비 5만 원, 한 달 4주로 계산한다.</p>
 <table>
 <thead>
@@ -174,16 +184,20 @@ blockquote{margin:1em 0;padding:10px 14px;background:#eef6ff;border-left:4px sol
 </tbody>
 </table>
 <p>월 순효과를 계산하고 도입 순서와 이유를 쓰시오.</p>
-<p><strong>✅ 모범 답</strong><br />
-- 순절약 시간: A (3−1)×10×4 = <strong>80시간</strong>, B (0.5−0.1)×50×4 = <strong>80시간</strong>, C (6−2)×5×4 = <strong>80시간</strong> → 세 개 모두 월 80시간 = 400만 원.<br />
-- 월 순효과: A 400−200 = <strong>+200만</strong>, B 400−150 = <strong>+250만</strong>, C 400−300 = <strong>+100만</strong>.<br />
-- <strong>도입 순서: B → A → C.</strong> B는 순효과가 가장 크고 오류 영향이 낮으며 대상이 넓어 확산 효과가 커. C는 순효과가 가장 작고 오류 영향이 '상'이라, 도입하더라도 사람 최종 판정을 둔 파일럿부터 해야 해.<br />
-- 한계: 절약 시간이 실제 다른 업무에 쓰이는지, 50명이 실제로 쓸지(사용률)는 파일럿으로 확인 필요.</p>
-<p><strong>시험 안 AI를 쓴다면</strong><br />
-- ❌ "셋 중 뭐가 좋아?" → 계산 없이 인상 비평이 나와.<br />
-- ⭕ "목표: 분기 예산상 1건 선택. 아래 표로 각 제안의 월 순효과 = (절약−검토)×인원×4주×5만 원 − 월 비용을 계산식과 함께 표로. 그다음 오류 영향까지 고려한 순서와 이유 3줄. 순효과만으로 정하지 말고 위험을 따로 적어."<br />
-- <strong>3번 흐름:</strong> ① 위 → ② "세 제안 순절약 시간이 모두 80시간으로 같은지 다시 검산해. 같다면 결론을 비용·위험으로 설명해" → ③ "팀장 보고용 5줄 요약".<br />
-- <strong>검증 질문:</strong> "각 숫자를 계산식으로 다시 보여 줘." (네가 손으로 B 하나만 검산해도 충분)</p>
+<div class="ans"><strong>✅ 모범 답</strong></div>
+<ul>
+<li>순절약 시간: A (3−1)×10×4 = <strong>80시간</strong>, B (0.5−0.1)×50×4 = <strong>80시간</strong>, C (6−2)×5×4 = <strong>80시간</strong> → 세 개 모두 월 80시간 = 400만 원.</li>
+<li>월 순효과: A 400−200 = <strong>+200만</strong>, B 400−150 = <strong>+250만</strong>, C 400−300 = <strong>+100만</strong>.</li>
+<li class="lab"><b class="tag">도입 순서: B → A → C.</b>B는 순효과가 가장 크고 오류 영향이 낮으며 대상이 넓어 확산 효과가 커. C는 순효과가 가장 작고 오류 영향이 '상'이라, 도입하더라도 사람 최종 판정을 둔 파일럿부터 해야 해.</li>
+<li>한계: 절약 시간이 실제 다른 업무에 쓰이는지, 50명이 실제로 쓸지(사용률)는 파일럿으로 확인 필요.</li>
+</ul>
+<div class="sub">🤖 시험 안 AI를 쓴다면</div>
+<ul>
+<li>❌ "셋 중 뭐가 좋아?" → 계산 없이 인상 비평이 나와.</li>
+<li>⭕ "목표: 분기 예산상 1건 선택. 아래 표로 각 제안의 월 순효과 = (절약−검토)×인원×4주×5만 원 − 월 비용을 계산식과 함께 표로. 그다음 오류 영향까지 고려한 순서와 이유 3줄. 순효과만으로 정하지 말고 위험을 따로 적어."</li>
+<li class="lab"><b class="tag">3번 흐름</b>① 위 → ② "세 제안 순절약 시간이 모두 80시간으로 같은지 다시 검산해. 같다면 결론을 비용·위험으로 설명해" → ③ "팀장 보고용 5줄 요약".</li>
+<li class="lab"><b class="tag">검증 질문</b>"각 숫자를 계산식으로 다시 보여 줘." (네가 손으로 B 하나만 검산해도 충분)</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -214,17 +228,21 @@ blockquote{margin:1em 0;padding:10px 14px;background:#eef6ff;border-left:4px sol
 </tr>
 </tbody>
 </table>
-<p><strong>감점 함정:</strong> 검토 시간을 빼지 않음(그러면 C가 1위처럼 보임: 6×5×4=120시간) / 오류 영향을 무시.</p>
-<h3 id="3-ai">문항 3. [윤리·고영향] AI 면접 영상 자동 탈락</h3>
+<div class="warn"><strong>⚠️ 감점 함정:</strong> 검토 시간을 빼지 않음(그러면 C가 1위처럼 보임: 6×5×4=120시간) / 오류 영향을 무시.</div>
+</section><section class="card"><h3 id="3-ai">문항 3. [윤리·고영향] AI 면접 영상 자동 탈락</h3>
 <p>인사팀이 신입 채용에서 'AI 면접 영상 분석' 점수 하위 30%를 사람 검토 없이 자동 탈락시키는 안을 검토 중이다. 문제점 3가지와, 그래도 쓴다면 지켜야 할 조건 3가지를 쓰시오.</p>
-<p><strong>✅ 모범 답</strong><br />
-- 문제점: ① 채용은 AI 기본법 제2조가 고영향 AI 영역으로 명시한 '채용 등 개인의 권리·의무에 중대한 영향을 미치는 판단·평가'에 해당할 수 있다. ② 학습 데이터·영상 특징(말투, 표정, 조명, 억양)에 따른 <strong>편향</strong>으로 특정 집단이 불리할 수 있다. ③ 사람 검토 없는 자동 탈락이라 <strong>설명·이의 제기</strong>가 어렵고 책임 소재가 흐려진다. (+ 면접 영상은 개인정보라 처리 목적·동의·보관 관리가 필요하다.)<br />
-- 조건: ① AI 점수는 <strong>참고 자료</strong>로만, 탈락 결정은 사람이 하고 이유를 기록. ② 도입 전·운영 중 집단별 결과 차이(편향) 점검. ③ 지원자에게 AI 사용 사실과 평가 방식을 미리 알리고, 이의 제기·재검토 절차를 마련. 법 적용 범위(사업자 의무 해당 여부)는 법무팀 확인.</p>
-<p><strong>시험 안 AI를 쓴다면</strong><br />
-- ❌ "AI 면접 괜찮아?" → 장단점 나열만 나와.<br />
-- ⭕ "목표: 인사팀 안(AI 점수 하위 30% 자동 탈락)의 문제점 3개와 사용 조건 3개. 관점: 한국 AI 기본법(채용은 고영향 AI 영역), 편향, 설명 가능성, 개인정보. 법 조항을 언급할 땐 조항 번호를 쓰고, 확실하지 않으면 '확인 필요'라고 써."<br />
-- <strong>3번 흐름:</strong> ① 위 → ② "조건 2번 '공정하게 운영'은 측정할 수 없어. 무엇을 어떻게 점검할지로 바꿔" → ③ "인사팀에 보낼 의견 5줄".<br />
-- <strong>검증 질문:</strong> "네가 말한 법 조항 내용 중 원문으로 확인해야 할 부분을 알려 줘." (시험장에선 원문 확인이 어려우니 '확인 필요' 표시가 곧 검증 흔적)</p>
+<div class="ans"><strong>✅ 모범 답</strong></div>
+<ul>
+<li>문제점: ① 채용은 AI 기본법 제2조가 고영향 AI 영역으로 명시한 '채용 등 개인의 권리·의무에 중대한 영향을 미치는 판단·평가'에 해당할 수 있다. ② 학습 데이터·영상 특징(말투, 표정, 조명, 억양)에 따른 <strong>편향</strong>으로 특정 집단이 불리할 수 있다. ③ 사람 검토 없는 자동 탈락이라 <strong>설명·이의 제기</strong>가 어렵고 책임 소재가 흐려진다. (+ 면접 영상은 개인정보라 처리 목적·동의·보관 관리가 필요하다.)</li>
+<li>조건: ① AI 점수는 <strong>참고 자료</strong>로만, 탈락 결정은 사람이 하고 이유를 기록. ② 도입 전·운영 중 집단별 결과 차이(편향) 점검. ③ 지원자에게 AI 사용 사실과 평가 방식을 미리 알리고, 이의 제기·재검토 절차를 마련. 법 적용 범위(사업자 의무 해당 여부)는 법무팀 확인.</li>
+</ul>
+<div class="sub">🤖 시험 안 AI를 쓴다면</div>
+<ul>
+<li>❌ "AI 면접 괜찮아?" → 장단점 나열만 나와.</li>
+<li>⭕ "목표: 인사팀 안(AI 점수 하위 30% 자동 탈락)의 문제점 3개와 사용 조건 3개. 관점: 한국 AI 기본법(채용은 고영향 AI 영역), 편향, 설명 가능성, 개인정보. 법 조항을 언급할 땐 조항 번호를 쓰고, 확실하지 않으면 '확인 필요'라고 써."</li>
+<li class="lab"><b class="tag">3번 흐름</b>① 위 → ② "조건 2번 '공정하게 운영'은 측정할 수 없어. 무엇을 어떻게 점검할지로 바꿔" → ③ "인사팀에 보낼 의견 5줄".</li>
+<li class="lab"><b class="tag">검증 질문</b>"네가 말한 법 조항 내용 중 원문으로 확인해야 할 부분을 알려 줘." (시험장에선 원문 확인이 어려우니 '확인 필요' 표시가 곧 검증 흔적)</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -255,23 +273,25 @@ blockquote{margin:1em 0;padding:10px 14px;background:#eef6ff;border-left:4px sol
 </tr>
 </tbody>
 </table>
-<p><strong>감점 함정:</strong> "AI라 공정하다" / 법 조항을 지어서 인용.</p>
-<h3 id="4">문항 4. [논리 오류 찾기] 챗봇 효과 보고</h3>
+<div class="warn"><strong>⚠️ 감점 함정:</strong> "AI라 공정하다" / 법 조항을 지어서 인용.</div>
+</section><section class="card"><h3 id="4">문항 4. [논리 오류 찾기] 챗봇 효과 보고</h3>
 <p>AI가 작성한 보고 문장이다. 오류를 모두 찾고 고친 문장을 쓰시오.</p>
 <blockquote>
 <p>"사내 IT 헬프데스크 챗봇을 10월에 도입한 뒤, 헬프데스크 문의가 9월 400건에서 10월 300건으로 줄었다. 따라서 챗봇이 문의를 25%p 줄였음이 입증되었고, 전 계열사로 확대하면 연간 1,200건이 줄어들 것이다."<br />
 (참고: 9월에는 전사 메일 시스템 교체가 있었고, 10월은 사내 휴무일 때문에 근무일이 9월보다 3일 적었다.)</p>
 </blockquote>
-<p><strong>✅ 모범 답</strong><br />
+<div class="ans"><strong>✅ 모범 답</strong><br />
 1. <strong>단위 오류:</strong> 400→300은 25% 감소(상대)이지 25%p가 아니다. (%p는 비율끼리의 차이에 쓰는 단위)<br />
 2. <strong>인과 단정:</strong> 9월은 메일 시스템 교체로 문의가 평소보다 많았을 수 있고, 10월은 근무일이 3일 적었다. 이 두 요인을 빼지 않고 챗봇 효과라고 "입증"할 수 없다. 비교 기간 1개월도 짧다.<br />
 3. <strong>외삽 오류:</strong> "연간 1,200건"은 월 100건 감소가 12개월 지속된다는 가정이고, 그것도 <em>한 회사</em> 수치다. 계열사별 규모가 다르니 "전 계열사 확대 시"에 그대로 쓸 수 없다.<br />
-- <strong>고친 문장:</strong> "챗봇 도입 후 10월 문의는 300건으로 9월(400건) 대비 25% 줄었다. 다만 9월 메일 시스템 교체와 10월 근무일 감소 효과가 섞여 있어 챗봇 효과는 아직 판단하기 어렵다. 특이 이벤트가 없는 달을 기준으로 근무일당 문의 수와 '챗봇에서 해결된 건수'를 2~3개월 추가로 측정해 판단하겠다."</p>
-<p><strong>시험 안 AI를 쓴다면</strong><br />
-- ❌ "이 문장 고쳐 줘." → 문장만 매끄럽게 다듬고 논리 오류는 그대로 둬.<br />
-- ⭕ "목표: 아래 보고 문장의 오류(단위, 인과, 일반화)를 찾아 근거와 함께 표로(오류 | 근거 | 수정 방향), 그다음 고친 문장. 참고 사실: 9월 메일 시스템 교체, 10월 근무일 3일 적음. 숫자는 계산식으로 확인해."<br />
-- <strong>3번 흐름:</strong> ① 위 → ② "고친 문장에 '효과가 없다'는 단정도 넣지 마. 아직 판단 불가로. 추가로 측정할 지표 2개를 넣어" → ③ 최종.<br />
-- <strong>검증 질문:</strong> "25%와 25%p 계산을 각각 보여 줘."</p>
+- <strong>고친 문장:</strong> "챗봇 도입 후 10월 문의는 300건으로 9월(400건) 대비 25% 줄었다. 다만 9월 메일 시스템 교체와 10월 근무일 감소 효과가 섞여 있어 챗봇 효과는 아직 판단하기 어렵다. 특이 이벤트가 없는 달을 기준으로 근무일당 문의 수와 '챗봇에서 해결된 건수'를 2~3개월 추가로 측정해 판단하겠다."</div>
+<div class="sub">🤖 시험 안 AI를 쓴다면</div>
+<ul>
+<li>❌ "이 문장 고쳐 줘." → 문장만 매끄럽게 다듬고 논리 오류는 그대로 둬.</li>
+<li>⭕ "목표: 아래 보고 문장의 오류(단위, 인과, 일반화)를 찾아 근거와 함께 표로(오류 | 근거 | 수정 방향), 그다음 고친 문장. 참고 사실: 9월 메일 시스템 교체, 10월 근무일 3일 적음. 숫자는 계산식으로 확인해."</li>
+<li class="lab"><b class="tag">3번 흐름</b>① 위 → ② "고친 문장에 '효과가 없다'는 단정도 넣지 마. 아직 판단 불가로. 추가로 측정할 지표 2개를 넣어" → ③ 최종.</li>
+<li class="lab"><b class="tag">검증 질문</b>"25%와 25%p 계산을 각각 보여 줘."</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -302,11 +322,11 @@ blockquote{margin:1em 0;padding:10px 14px;background:#eef6ff;border-left:4px sol
 </tr>
 </tbody>
 </table>
-<p><strong>감점 함정:</strong> 단위 오류만 찾고 인과·외삽을 놓침 / "효과 없음"으로 반대 단정.</p>
-<h3 id="5">문항 5. [에이전트 권한 설계] 출장 정산 에이전트</h3>
+<div class="warn"><strong>⚠️ 감점 함정:</strong> 단위 오류만 찾고 인과·외삽을 놓침 / "효과 없음"으로 반대 단정.</div>
+</section><section class="card"><h3 id="5">문항 5. [에이전트 권한 설계] 출장 정산 에이전트</h3>
 <p>출장 정산을 돕는 사내 에이전트를 만든다. 아래 8개 동작을 <strong>자동 허용 / 사람 승인 후 / 금지</strong>로 나누고 한 줄 이유를 쓰시오.<br />
 ① 업로드한 영수증 이미지에서 금액·날짜 읽기 ② 출장 규정 문서 검색 ③ 정산서 초안 작성 ④ 규정 한도 초과 항목 표시 ⑤ 결재 시스템에 정산서 상신 ⑥ 본인 법인카드 사용 내역 조회 ⑦ 다른 직원의 정산 내역 열람 ⑧ 정산 금액을 계좌로 송금 실행</p>
-<p><strong>✅ 모범 답</strong></p>
+<div class="ans"><strong>✅ 모범 답</strong></div>
 <table>
 <thead>
 <tr>
@@ -359,11 +379,13 @@ blockquote{margin:1em 0;padding:10px 14px;background:#eef6ff;border-left:4px sol
 </tbody>
 </table>
 <p>추가 안전장치: 모든 동작 로그 기록, 영수증·첨부 문서 속 문장을 지시로 따르지 않기(간접 인젝션 방지), 단계 수 상한.</p>
-<p><strong>시험 안 AI를 쓴다면</strong><br />
-- ❌ "정산 에이전트 권한 정해 줘." → 전부 '자동'이거나 전부 '승인'처럼 극단적으로 나와.<br />
-- ⭕ "목표: 출장 정산 에이전트 동작 8개의 권한 분류. 기준: 읽기·초안은 자동, 회사 밖이나 공식 시스템으로 나가는 동작은 사람 승인, 업무상 불필요하거나 돈이 나가는 동작은 금지. 표(동작 | 분류 | 이유 1줄). 분류가 애매한 동작은 '애매'로 표시하고 이유를 써."<br />
-- <strong>3번 흐름:</strong> ① 위 → ② "⑥은 '본인 것만'이라는 범위 제한을 명시해. 첨부 문서 인젝션 대책을 1줄 추가해" → ③ 최종 표.<br />
-- <strong>검증 질문:</strong> "이 설계에서 에이전트가 실수하면 돈이나 정보가 밖으로 나갈 수 있는 경로가 남아 있는지 점검해 줘."</p>
+<div class="sub">🤖 시험 안 AI를 쓴다면</div>
+<ul>
+<li>❌ "정산 에이전트 권한 정해 줘." → 전부 '자동'이거나 전부 '승인'처럼 극단적으로 나와.</li>
+<li>⭕ "목표: 출장 정산 에이전트 동작 8개의 권한 분류. 기준: 읽기·초안은 자동, 회사 밖이나 공식 시스템으로 나가는 동작은 사람 승인, 업무상 불필요하거나 돈이 나가는 동작은 금지. 표(동작 | 분류 | 이유 1줄). 분류가 애매한 동작은 '애매'로 표시하고 이유를 써."</li>
+<li class="lab"><b class="tag">3번 흐름</b>① 위 → ② "⑥은 '본인 것만'이라는 범위 제한을 명시해. 첨부 문서 인젝션 대책을 1줄 추가해" → ③ 최종 표.</li>
+<li class="lab"><b class="tag">검증 질문</b>"이 설계에서 에이전트가 실수하면 돈이나 정보가 밖으로 나갈 수 있는 경로가 남아 있는지 점검해 줘."</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -394,12 +416,12 @@ blockquote{margin:1em 0;padding:10px 14px;background:#eef6ff;border-left:4px sol
 </tr>
 </tbody>
 </table>
-<p><strong>감점 함정:</strong> ⑤ 결재 상신을 자동으로 둠 / ⑦ 타인 열람을 '승인 후'로 둠(업무상 필요 없으니 금지가 맞아).</p>
-<h3 id="6-5">문항 6. [프롬프트 진단] 다음 프롬프트를 5기준으로 진단하고 고쳐 쓰시오.</h3>
+<div class="warn"><strong>⚠️ 감점 함정:</strong> ⑤ 결재 상신을 자동으로 둠 / ⑦ 타인 열람을 '승인 후'로 둠(업무상 필요 없으니 금지가 맞아).</div>
+</section><section class="card"><h3 id="6-5">문항 6. [프롬프트 진단] 다음 프롬프트를 5기준으로 진단하고 고쳐 쓰시오.</h3>
 <blockquote>
 <p>"너는 세계 최고의 품질 전문가야. 첨부한 고객 불만 데이터(고객사명, 담당자 연락처, 불만 내용, 제품 코드 2,000행) 전부 보고 원인 분석해서 대책 세워 줘. 길고 자세하게. 절대 틀리면 안 돼."</p>
 </blockquote>
-<p><strong>✅ 모범 답</strong></p>
+<div class="ans"><strong>✅ 모범 답</strong></div>
 <table>
 <thead>
 <tr>
@@ -444,15 +466,15 @@ blockquote{margin:1em 0;padding:10px 14px;background:#eef6ff;border-left:4px sol
 원인은 단정하지 말고 '원인 후보'로, 데이터로 확인할 방법을 같이 적어.
 </code></pre>
 <ul>
-<li><strong>3번 흐름(이 프롬프트 이후):</strong> ② "기준 확정. 코드 실행으로 전체 2,000행 유형별 건수·월별 추이 표" → ③ "빈도×심각도로 상위 3개 과제와 각 원인 후보·확인 방법".</li>
-<li><strong>검증 질문:</strong> "유형별 건수 합이 2,000(복수 분류면 그 기준)과 맞는지 보여 줘."</li>
+<li class="lab"><b class="tag">3번 흐름(이 프롬프트 이후)</b>② "기준 확정. 코드 실행으로 전체 2,000행 유형별 건수·월별 추이 표" → ③ "빈도×심각도로 상위 3개 과제와 각 원인 후보·확인 방법".</li>
+<li class="lab"><b class="tag">검증 질문</b>"유형별 건수 합이 2,000(복수 분류면 그 기준)과 맞는지 보여 줘."</li>
 </ul>
-<p><strong>감점 함정:</strong> 역할 문구만 고치고 개인정보 열을 그대로 둠 / 고쳐 쓴 프롬프트에 형식이 없음.</p>
-<h2 id="b-ai-716">B. AI 활용 과제형 (문항 7~16)</h2>
+<div class="warn"><strong>⚠️ 감점 함정:</strong> 역할 문구만 고치고 개인정보 열을 그대로 둠 / 고쳐 쓴 프롬프트에 형식이 없음.</div>
+</section><h2 id="b-ai-716">B. AI 활용 과제형 (문항 7~16)</h2>
 <blockquote>
 <p><strong>📦 과제형 공통:</strong> 지문은 복사가 막혀 있을 수 있으니 <strong>핵심만 요약해서 타이핑</strong>하고, 표 자료는 파일 첨부가 되면 첨부해. 제출물은 <em>AI 답 그대로</em>가 아니라 <strong>네가 검증하고 고친 최종본</strong>이어야 해.</p>
 </blockquote>
-<h3 id="7">문항 7. [데이터 분석] 어느 라인이 더 문제인가</h3>
+<section class="card"><h3 id="7">문항 7. [데이터 분석] 어느 라인이 더 문제인가</h3>
 <p>팀장이 "B라인 불량률이 A라인의 3배다. B라인 점검 계획을 세워라"라고 했다. 데이터(가상):</p>
 <table>
 <thead>
@@ -491,7 +513,7 @@ blockquote{margin:1em 0;padding:10px 14px;background:#eef6ff;border-left:4px sol
 </tbody>
 </table>
 <p><strong>제출물:</strong> ① 라인 전체·제품별 불량률 표 ② 팀장 판단에 대한 의견 3줄 ③ 다음에 확인할 것 2개.</p>
-<p><strong>✅ 모범 결과</strong></p>
+<div class="ans"><strong>✅ 모범 결과</strong></div>
 <table>
 <thead>
 <tr>
@@ -562,15 +584,15 @@ blockquote{margin:1em 0;padding:10px 14px;background:#eef6ff;border-left:4px sol
 </tr>
 </tbody>
 </table>
-<p><strong>감점 함정:</strong> 전체 불량률만 보고 "B라인 점검" 결론 / 팀장 가설을 프롬프트에 전제로 넣음.</p>
-<h3 id="8">문항 8. [문서 요약 검증] 요약본의 왜곡 찾기</h3>
+<div class="warn"><strong>⚠️ 감점 함정:</strong> 전체 불량률만 보고 "B라인 점검" 결론 / 팀장 가설을 프롬프트에 전제로 넣음.</div>
+</section><section class="card"><h3 id="8">문항 8. [문서 요약 검증] 요약본의 왜곡 찾기</h3>
 <p>가상의 시험 보고서 원문 요지와, AI가 만든 요약이다.</p>
 <blockquote>
 <p><strong>원문 요지:</strong> (1) 목적: 신규 패드 컨디셔너 B의 수명 평가. (2) 조건: 장비 2대, 4주, 웨이퍼 약 3,000장. (3) 결과: B의 평균 수명은 기존 A보다 약 15% 길었다. 단, 2호기에서는 차이가 3% 이내로 의미 있는 차이가 아니었다. (4) 제거율 편차는 A와 비슷했다. (5) 비용: B의 개당 단가는 A보다 20% 높다. (6) 권고: 장비 2대를 추가해 확인 시험을 한 뒤 도입 여부를 결정한다.</p>
 <p><strong>AI 요약:</strong> "신규 컨디셔너 B는 모든 장비에서 수명이 15% 길었고 제거율 편차도 개선되었다. 단가도 A와 비슷해 즉시 도입을 권고한다."</p>
 </blockquote>
 <p><strong>제출물:</strong> ① 왜곡된 곳과 원문 근거 ② 고친 요약 3문장 ③ 원문 숫자로 본 비용 관점 한 줄.</p>
-<p><strong>✅ 모범 결과</strong></p>
+<div class="ans"><strong>✅ 모범 결과</strong></div>
 <table>
 <thead>
 <tr>
@@ -645,16 +667,18 @@ blockquote{margin:1em 0;padding:10px 14px;background:#eef6ff;border-left:4px sol
 </tr>
 </tbody>
 </table>
-<p><strong>감점 함정:</strong> 4개 중 2개만 찾음(특히 '편차 개선'은 놓치기 쉬움) / 비용 계산을 "15% 길고 20% 비싸니 5% 손해"처럼 단순 뺄셈으로 함.</p>
-<h3 id="9-ai-1">문항 9. [기획서 작성] AI 도입 기획서 1쪽</h3>
+<div class="warn"><strong>⚠️ 감점 함정:</strong> 4개 중 2개만 찾음(특히 '편차 개선'은 놓치기 쉬움) / 비용 계산을 "15% 길고 20% 비싸니 5% 손해"처럼 단순 뺄셈으로 함.</div>
+</section><section class="card"><h3 id="9-ai-1">문항 9. [기획서 작성] AI 도입 기획서 1쪽</h3>
 <p>구매품질팀은 협력사가 보내는 원자재 분석성적서(PDF)를 사람이 열어 규격과 대조한다. 월 600건, 건당 평균 10분, 담당 3명. AI가 성적서에서 수치를 뽑아 규격과 비교하고 이탈 항목을 표시하면, 사람 확인 포함 건당 4분이 될 것으로 <em>가정</em>한다. 도구 비용은 월 100만 원으로 <em>가정</em>. 시간당 인건비 5만 원.<br />
 <strong>제출물:</strong> 기획서 1쪽(배경·목표 / 방식 / 기대효과 계산 / 위험과 통제 / 파일럿 계획).</p>
-<p><strong>✅ 모범 결과(요지)</strong><br />
-- <strong>배경·목표:</strong> 월 600건 × 10분 = 월 100시간의 수작업 대조. 목표는 검토 시간을 줄이되 <strong>이탈 항목 놓침 0건</strong> 유지.<br />
-- <strong>방식:</strong> AI는 수치 추출 + 규격 비교 + 이탈·판독 불확실 항목 표시까지. <strong>합부 판정과 협력사 회신은 사람.</strong><br />
-- <strong>기대효과(가정 기반):</strong> 600 × 4분 = 40시간 → 월 <strong>60시간 절감 = 300만 원</strong>, 도구 비용 100만 원을 빼면 <strong>월 약 200만 원</strong>. 건당 4분은 가정이라 파일럿에서 실측.<br />
-- <strong>위험과 통제:</strong> 숫자 오독(소수점·단위) → 원본 대조 화면, 판독 신뢰도 낮으면 사람에게 넘김 / 협력사 문서 속 숨은 지시(간접 인젝션) → 문서 내용을 지시로 따르지 않게 설정 / 협력사 기밀 → 승인된 사내 환경에서만.<br />
-- <strong>파일럿:</strong> 4주, 최근 성적서 100건을 골든셋으로 사람 판정과 비교. 성공 기준: 이탈 놓침 0건, 건당 시간 5분 이하, 담당자 만족도.</p>
+<div class="ans"><strong>✅ 모범 결과(요지)</strong></div>
+<ul>
+<li class="lab"><b class="tag">배경·목표</b>월 600건 × 10분 = 월 100시간의 수작업 대조. 목표는 검토 시간을 줄이되 <strong>이탈 항목 놓침 0건</strong> 유지.</li>
+<li class="lab"><b class="tag">방식</b>AI는 수치 추출 + 규격 비교 + 이탈·판독 불확실 항목 표시까지. <strong>합부 판정과 협력사 회신은 사람.</strong></li>
+<li class="lab"><b class="tag">기대효과(가정 기반)</b>600 × 4분 = 40시간 → 월 <strong>60시간 절감 = 300만 원</strong>, 도구 비용 100만 원을 빼면 <strong>월 약 200만 원</strong>. 건당 4분은 가정이라 파일럿에서 실측.</li>
+<li class="lab"><b class="tag">위험과 통제</b>숫자 오독(소수점·단위) → 원본 대조 화면, 판독 신뢰도 낮으면 사람에게 넘김 / 협력사 문서 속 숨은 지시(간접 인젝션) → 문서 내용을 지시로 따르지 않게 설정 / 협력사 기밀 → 승인된 사내 환경에서만.</li>
+<li class="lab"><b class="tag">파일럿</b>4주, 최근 성적서 100건을 골든셋으로 사람 판정과 비교. 성공 기준: 이탈 놓침 0건, 건당 시간 5분 이하, 담당자 만족도.</li>
+</ul>
 <p><strong>❌ 나쁜 프롬프트:</strong> "성적서 검토 AI 도입 기획서 써 줘." → 근거 없는 "업무 효율 70% 향상" 같은 수치가 들어가.<br />
 <strong>⭕ 좋은 첫 질문</strong></p>
 <pre><code>목표: 팀장 결재용 1쪽 기획서. 결정 요청: 4주 파일럿 승인.
@@ -694,12 +718,12 @@ blockquote{margin:1em 0;padding:10px 14px;background:#eef6ff;border-left:4px sol
 </tr>
 </tbody>
 </table>
-<p><strong>감점 함정:</strong> 가정을 사실처럼 씀 / 사람과 AI 역할 구분이 없음.</p>
-<h3 id="10-ai">문항 10. [오류 찾기] AI가 쓴 월간 설비 보고서</h3>
+<div class="warn"><strong>⚠️ 감점 함정:</strong> 가정을 사실처럼 씀 / 사람과 AI 역할 구분이 없음.</div>
+</section><section class="card"><h3 id="10-ai">문항 10. [오류 찾기] AI가 쓴 월간 설비 보고서</h3>
 <p>자료(가상): 설비 가동률 9월 82.0%, 10월 86.1%. 10월 주별 다운타임 12·9·15·6시간. 소모품 비용 9월 1,180만 원, 10월 1,250만 원. 9월 말 PM 주기를 변경했다는 기록이 있다.<br />
 AI 보고서: "10월 가동률은 전월 대비 4.1% 상승한 86.1%였다. 10월 총 다운타임은 38시간이다. 소모품 비용은 1.25억 원으로 전월 대비 5.9% 증가했다. 가동률 개선은 PM 주기 변경 덕분이다."<br />
 <strong>제출물:</strong> 오류 목록(맞는 문장은 '맞음'으로) + 고친 보고서.</p>
-<p><strong>✅ 모범 결과</strong></p>
+<div class="ans"><strong>✅ 모범 결과</strong></div>
 <table>
 <thead>
 <tr>
@@ -778,15 +802,17 @@ AI 보고서: "10월 가동률은 전월 대비 4.1% 상승한 86.1%였다. 10�
 </tr>
 </tbody>
 </table>
-<p><strong>감점 함정:</strong> 맞는 문장(5.9%)까지 틀렸다고 함 / 인과 문장을 그대로 둠.</p>
-<h3 id="11">문항 11. [재고 판단] 소모품 주문 여부</h3>
+<div class="warn"><strong>⚠️ 감점 함정:</strong> 맞는 문장(5.9%)까지 틀렸다고 함 / 인과 문장을 그대로 둠.</div>
+</section><section class="card"><h3 id="11">문항 11. [재고 판단] 소모품 주문 여부</h3>
 <p>CMP 패드(소모품)의 최근 6주 사용량(개, 가상): 40, 44, 38, 46, 42, 50. 현재 재고 120개. 발주 후 입고까지 2주. 팀 규칙: <strong>재주문점 = 최근 4주 평균 × 리드타임(주) + 안전재고(최근 4주 평균 1주치)</strong>, 재고가 재주문점보다 적으면 주문, <strong>주문량 = 최근 4주 평균 × 4주를 박스(50개) 단위로 올림.</strong><br />
 <strong>제출물:</strong> 주문 여부, 주문량(박스), 계산 과정, 주의할 점 1개.</p>
-<p><strong>✅ 모범 결과</strong><br />
-- 최근 4주 = 38, 46, 42, 50 → 평균 176/4 = <strong>44개/주</strong><br />
-- 재주문점 = 44 × 2 + 44 = <strong>132개</strong> → 현재 120 &lt; 132 → <strong>이번 주 주문</strong><br />
-- 주문량 = 44 × 4 = 176 → 50개 단위 올림 → <strong>4박스(200개)</strong><br />
-- 주의: 마지막 주 50개로 사용량이 늘고 있어. 다음 주에도 50 이상이면 평균을 다시 보고 안전재고를 늘릴지 검토. (6주 평균 43.3을 쓰면 규칙과 달라져. 규칙은 '최근 4주'야.)</p>
+<div class="ans"><strong>✅ 모범 결과</strong></div>
+<ul>
+<li>최근 4주 = 38, 46, 42, 50 → 평균 176/4 = <strong>44개/주</strong></li>
+<li>재주문점 = 44 × 2 + 44 = <strong>132개</strong> → 현재 120 &lt; 132 → <strong>이번 주 주문</strong></li>
+<li>주문량 = 44 × 4 = 176 → 50개 단위 올림 → <strong>4박스(200개)</strong></li>
+<li>주의: 마지막 주 50개로 사용량이 늘고 있어. 다음 주에도 50 이상이면 평균을 다시 보고 안전재고를 늘릴지 검토. (6주 평균 43.3을 쓰면 규칙과 달라져. 규칙은 '최근 4주'야.)</li>
+</ul>
 <p><strong>❌ 나쁜 프롬프트:</strong> "패드 얼마나 주문해야 돼?" → AI가 자기 방식(예: 6주 평균, 다른 안전재고 공식)으로 계산해.<br />
 <strong>⭕ 좋은 첫 질문</strong></p>
 <pre><code>목표: 팀 규칙대로 이번 주 CMP 패드 주문 여부와 주문량(박스) 결정.
@@ -826,16 +852,18 @@ AI 보고서: "10월 가동률은 전월 대비 4.1% 상승한 86.1%였다. 10�
 </tr>
 </tbody>
 </table>
-<p><strong>감점 함정:</strong> 사용량 순서를 거꾸로 읽어 '최근 4주'를 잘못 고름(40,44,38,46 → 평균 42) / 176을 반올림해 4박스가 아닌 3.5박스나 '180개'로 씀.</p>
-<h3 id="12-voc">문항 12. [VOC 분류·우선순위] 고객 목소리 정리</h3>
+<div class="warn"><strong>⚠️ 감점 함정:</strong> 사용량 순서를 거꾸로 읽어 '최근 4주'를 잘못 고름(40,44,38,46 → 평균 42) / 176을 반올림해 4박스가 아닌 3.5박스나 '180개'로 씀.</div>
+</section><section class="card"><h3 id="12-voc">문항 12. [VOC 분류·우선순위] 고객 목소리 정리</h3>
 <p>고객사 VOC 8건(가상):<br />
 1. 납품 모듈 2개 부팅 불량, 고객 생산라인 정지 2. 포장 라벨 위치가 사양서와 다름 3. 주문 확인 회신이 3일 걸림 4. 데이터시트 최신본을 못 찾겠음 5. 1번과 같은 로트에서 부팅 불량 1건 추가 6. 납기 변경 통보가 늦음 7. 기술 문의 담당자가 자주 바뀜 8. 라벨 바코드가 인식 안 돼 입고 지연<br />
 <strong>제출물:</strong> 분류 체계, 우선순위 기준, 상위 3개와 즉시 조치.</p>
-<p><strong>✅ 모범 결과</strong><br />
-- 분류: 품질(1, 5) / 포장·라벨(2, 8) / 납기·커뮤니케이션(3, 6, 7) / 문서(4).<br />
-- 우선순위 기준: <strong>심각도(고객 생산·출하 영향) × 반복성(같은 원인 재발) × 확산 가능성(같은 로트·제품).</strong><br />
-- 상위 3: ① <strong>1+5 같은 로트 부팅 불량</strong> — 고객 라인 정지 + 반복, 해당 로트 출하 보류·재고 격리, 원인 분석 착수, 고객 공식 회신 일정 공유 ② <strong>8 바코드 인식 불가</strong> — 고객 입고 업무 지연, 라벨 인쇄 사양 확인 ③ <strong>6 납기 변경 통보 지연</strong> — 고객 생산 계획에 영향, 통보 기준 시간 설정.<br />
-- 2(라벨 위치)는 8과 같은 라벨 공정 문제일 수 있어 함께 확인.</p>
+<div class="ans"><strong>✅ 모범 결과</strong></div>
+<ul>
+<li>분류: 품질(1, 5) / 포장·라벨(2, 8) / 납기·커뮤니케이션(3, 6, 7) / 문서(4).</li>
+<li>우선순위 기준: <strong>심각도(고객 생산·출하 영향) × 반복성(같은 원인 재발) × 확산 가능성(같은 로트·제품).</strong></li>
+<li>상위 3: ① <strong>1+5 같은 로트 부팅 불량</strong> — 고객 라인 정지 + 반복, 해당 로트 출하 보류·재고 격리, 원인 분석 착수, 고객 공식 회신 일정 공유 ② <strong>8 바코드 인식 불가</strong> — 고객 입고 업무 지연, 라벨 인쇄 사양 확인 ③ <strong>6 납기 변경 통보 지연</strong> — 고객 생산 계획에 영향, 통보 기준 시간 설정.</li>
+<li>2(라벨 위치)는 8과 같은 라벨 공정 문제일 수 있어 함께 확인.</li>
+</ul>
 <p><strong>❌ 나쁜 프롬프트:</strong> "VOC 중요한 순서로 정렬해 줘." → 기준 없이 순서가 나와 매번 달라져.<br />
 <strong>⭕ 좋은 첫 질문</strong></p>
 <pre><code>목표: 고객 VOC 8건의 분류와 처리 우선순위. 결과는 내일 아침 팀 회의 안건.
@@ -875,14 +903,15 @@ AI 보고서: "10월 가동률은 전월 대비 4.1% 상승한 86.1%였다. 10�
 </tr>
 </tbody>
 </table>
-<p><strong>감점 함정:</strong> 1과 5를 따로 처리해 '반복' 신호를 놓침 / 문서 문제(4)를 상위에 둠.</p>
-<h3 id="13-sql-9-top-5">문항 13. [SQL 작성] 설비별 9월 다운타임 Top 5</h3>
+<div class="warn"><strong>⚠️ 감점 함정:</strong> 1과 5를 따로 처리해 '반복' 신호를 놓침 / 문서 문제(4)를 상위에 둠.</div>
+</section><section class="card"><h3 id="13-sql-9-top-5">문항 13. [SQL 작성] 설비별 9월 다운타임 Top 5</h3>
 <p>사내 DB 테이블 <code>downtime(equip_id, start_time, end_time, reason)</code>. 아직 끝나지 않은 다운타임은 <code>end_time</code>이 NULL. 9월(2026-09-01 00:00 ~ 2026-10-01 00:00)의 설비별 다운타임 합계(시간) 상위 5개를 구하라. DB는 PostgreSQL.<br />
 <strong>제출물:</strong> SQL, 경계 처리 설명, 검증 방법.</p>
-<p><strong>✅ 모범 결과</strong></p>
+<div class="ans"><strong>✅ 모범 결과</strong></div>
 <pre><code class="language-sql">SELECT equip_id,
        ROUND((SUM(EXTRACT(EPOCH FROM (
            LEAST(COALESCE(end_time, TIMESTAMP '2026-10-01 00:00'), TIMESTAMP '2026-10-01 00:00')
+
          - GREATEST(start_time, TIMESTAMP '2026-09-01 00:00')
        ))) / 3600.0)::numeric, 1) AS downtime_hours
 FROM downtime
@@ -936,11 +965,11 @@ SELECT만 쓰고 데이터 변경 문은 쓰지 마.
 </tr>
 </tbody>
 </table>
-<p><strong>감점 함정:</strong> 경계·NULL 처리 누락 / DB 종류를 안 알려 다른 문법(DATEDIFF 등)이 나옴.</p>
-<h3 id="14">문항 14. [팩트체크 계획] 기사 요약 속 주장 검증</h3>
+<div class="warn"><strong>⚠️ 감점 함정:</strong> 경계·NULL 처리 누락 / DB 종류를 안 알려 다른 문법(DATEDIFF 등)이 나옴.</div>
+</section><section class="card"><h3 id="14">문항 14. [팩트체크 계획] 기사 요약 속 주장 검증</h3>
 <p>AI가 업계 기사(가상)를 요약하며 다음 주장 5개를 냈다. 사내 보고에 쓰기 전 <strong>무엇을 어떤 출처로 확인할지</strong> 계획을 세우시오.<br />
 (a) "C사 3분기 매출은 ○조 원으로 전년 대비 ○% 늘었다" (b) "C사가 업계 최초로 ○○ 제품을 양산했다" (c) "전문가들은 내년 시장이 두 배로 성장할 것으로 본다" (d) "정부가 ○○ 규제를 다음 달 시행한다" (e) "C사 CEO는 '○○'라고 말했다"</p>
-<p><strong>✅ 모범 결과</strong></p>
+<div class="ans"><strong>✅ 모범 결과</strong></div>
 <table>
 <thead>
 <tr>
@@ -1024,16 +1053,18 @@ SELECT만 쓰고 데이터 변경 문은 쓰지 마.
 </tr>
 </tbody>
 </table>
-<p><strong>감점 함정:</strong> AI가 "사실입니다"라고 판정한 걸 근거로 씀 / 전망을 사실처럼 보고.</p>
-<h3 id="15-ab">문항 15. [A/B 결과 해석] 챗봇 버전 비교</h3>
+<div class="warn"><strong>⚠️ 감점 함정:</strong> AI가 "사실입니다"라고 판정한 걸 근거로 씀 / 전망을 사실처럼 보고.</div>
+</section><section class="card"><h3 id="15-ab">문항 15. [A/B 결과 해석] 챗봇 버전 비교</h3>
 <p>사내 문서 챗봇 두 버전을 2주간 비교했다(가상). A: 응답자 40명 중 '만족' 30명. B: 38명 중 31명. 담당자는 "B가 만족도 6.6%p 높으니 B로 전환"을 제안했다. 참고: A는 1팀, B는 2팀이 썼다.<br />
 <strong>제출물:</strong> 해석, 결론의 한계, 추가로 필요한 것.</p>
-<p><strong>✅ 모범 결과</strong><br />
-- 만족률: A 30/40 = <strong>75.0%</strong>, B 31/38 ≈ <strong>81.6%</strong>, 차이 약 <strong>6.6%p.</strong><br />
-- 해석: 표본이 40명 안팎이라 이 정도 차이는 <strong>우연으로도 충분히 생길 수 있어.</strong> 두 비율 차이 검정(z검정)을 하면 z ≈ 0.7로, 흔히 쓰는 기준(약 1.96)에 한참 못 미쳐. 즉 "B가 더 낫다"고 말할 근거가 약해.<br />
-- 한계: ① <strong>팀이 달라</strong> 업무·문서 종류 차이가 결과에 섞였을 수 있음(무작위 배정 아님) ② '만족' 한 문항만 봄 ③ 2주라 신기 효과(새것이라 좋게 느끼는 것) 가능.<br />
-- 필요한 것: 같은 팀 안에서 사용자를 무작위로 A/B 배정, 표본 확대, 객관 지표(정답률, 질문 해결률, 응답 시간) 추가, 비용 비교.<br />
-- 결론 문장: "현재 결과로는 B 전환 근거가 부족하다. 무작위 배정·표본 확대로 2주 재시험 후 결정하자."</p>
+<div class="ans"><strong>✅ 모범 결과</strong></div>
+<ul>
+<li>만족률: A 30/40 = <strong>75.0%</strong>, B 31/38 ≈ <strong>81.6%</strong>, 차이 약 <strong>6.6%p.</strong></li>
+<li>해석: 표본이 40명 안팎이라 이 정도 차이는 <strong>우연으로도 충분히 생길 수 있어.</strong> 두 비율 차이 검정(z검정)을 하면 z ≈ 0.7로, 흔히 쓰는 기준(약 1.96)에 한참 못 미쳐. 즉 "B가 더 낫다"고 말할 근거가 약해.</li>
+<li>한계: ① <strong>팀이 달라</strong> 업무·문서 종류 차이가 결과에 섞였을 수 있음(무작위 배정 아님) ② '만족' 한 문항만 봄 ③ 2주라 신기 효과(새것이라 좋게 느끼는 것) 가능.</li>
+<li>필요한 것: 같은 팀 안에서 사용자를 무작위로 A/B 배정, 표본 확대, 객관 지표(정답률, 질문 해결률, 응답 시간) 추가, 비용 비교.</li>
+<li>결론 문장: "현재 결과로는 B 전환 근거가 부족하다. 무작위 배정·표본 확대로 2주 재시험 후 결정하자."</li>
+</ul>
 <p><strong>❌ 나쁜 프롬프트:</strong> "B가 더 좋은 거 맞지?" → 유도 질문이라 AI가 동의하기 쉬워(아첨).<br />
 <strong>⭕ 좋은 첫 질문</strong></p>
 <pre><code>목표: 챗봇 A/B 결과로 'B 전환' 제안이 타당한지 판단.
@@ -1073,16 +1104,18 @@ SELECT만 쓰고 데이터 변경 문은 쓰지 마.
 </tr>
 </tbody>
 </table>
-<p><strong>감점 함정:</strong> 6.6%p 차이를 그대로 '개선'으로 인정 / 팀 차이(배정 문제)를 놓침.</p>
-<h3 id="16-ai-1">문항 16. [정책 문서 작성] 팀 AI 활용 가이드라인 1쪽</h3>
+<div class="warn"><strong>⚠️ 감점 함정:</strong> 6.6%p 차이를 그대로 '개선'으로 인정 / 팀 차이(배정 문제)를 놓침.</div>
+</section><section class="card"><h3 id="16-ai-1">문항 16. [정책 문서 작성] 팀 AI 활용 가이드라인 1쪽</h3>
 <p>팀장이 "우리 팀(공정기술팀 20명) AI 사용 가이드라인 1쪽 초안"을 요청했다. 회사에는 승인된 사내 AI 도구가 1개 있고, 외부 AI 서비스는 승인되지 않았다.<br />
 <strong>제출물:</strong> 1쪽 초안(신호등 방식 권장: 해도 됨 / 확인 후 / 하면 안 됨) + 검증 규칙 + 문의처 칸.</p>
-<p><strong>✅ 모범 결과(요지)</strong><br />
-- <strong>초록(해도 됨, 사내 승인 도구에서):</strong> 공개 자료 요약·번역, 메일·보고 문장 다듬기, 엑셀 수식·코드 초안, 아이디어 정리.<br />
-- <strong>노랑(확인 후):</strong> 사내 공정 데이터 분석(마스킹·최소 열), 고객·협력사 문서 요약(계약상 허용 여부 확인), AI 결과를 외부 문서에 쓰기(검토자 확인).<br />
-- <strong>빨강(하면 안 됨):</strong> 미승인 외부 AI에 사내 자료 입력, 개인정보·고객 기밀 원문 입력, AI 결과만으로 품질 판정·출하·인사 결정, 공유 링크로 대화 외부 공유.<br />
-- <strong>검증 규칙 3개:</strong> ① 숫자는 원자료·도구로 재계산 ② 인용·규정은 원문 대조 ③ 확인 못 한 내용은 '미확인' 표시. 외부로 나가는 문서는 AI 사용 여부를 사내 규칙에 맞게 기록.<br />
-- <strong>문의처:</strong> 정보보호 담당 [ ], 사내 AI 도구 담당 [ ]. 개정 주기: 분기 1회.</p>
+<div class="ans"><strong>✅ 모범 결과(요지)</strong></div>
+<ul>
+<li class="lab"><b class="tag">초록(해도 됨, 사내 승인 도구에서)</b>공개 자료 요약·번역, 메일·보고 문장 다듬기, 엑셀 수식·코드 초안, 아이디어 정리.</li>
+<li class="lab"><b class="tag">노랑(확인 후)</b>사내 공정 데이터 분석(마스킹·최소 열), 고객·협력사 문서 요약(계약상 허용 여부 확인), AI 결과를 외부 문서에 쓰기(검토자 확인).</li>
+<li class="lab"><b class="tag">빨강(하면 안 됨)</b>미승인 외부 AI에 사내 자료 입력, 개인정보·고객 기밀 원문 입력, AI 결과만으로 품질 판정·출하·인사 결정, 공유 링크로 대화 외부 공유.</li>
+<li class="lab"><b class="tag">검증 규칙 3개</b>① 숫자는 원자료·도구로 재계산 ② 인용·규정은 원문 대조 ③ 확인 못 한 내용은 '미확인' 표시. 외부로 나가는 문서는 AI 사용 여부를 사내 규칙에 맞게 기록.</li>
+<li class="lab"><b class="tag">문의처</b>정보보호 담당 [ ], 사내 AI 도구 담당 [ ]. 개정 주기: 분기 1회.</li>
+</ul>
 <p><strong>❌ 나쁜 프롬프트:</strong> "AI 사용 가이드라인 써 줘." → 일반론("윤리적으로 사용하자")만 길게 나와 현장에서 못 써.<br />
 <strong>⭕ 좋은 첫 질문</strong></p>
 <pre><code>목표: 공정기술팀 20명이 바로 따라 할 수 있는 1쪽 AI 사용 가이드라인 초안.
@@ -1122,9 +1155,9 @@ SELECT만 쓰고 데이터 변경 문은 쓰지 마.
 </tr>
 </tbody>
 </table>
-<p><strong>감점 함정:</strong> 일반 윤리 원칙만 나열 / 승인 도구와 미승인 도구 구분이 없음.</p>
+<div class="warn"><strong>⚠️ 감점 함정:</strong> 일반 윤리 원칙만 나열 / 승인 도구와 미승인 도구 구분이 없음.</div>
 <hr />
-<h2 id="1">마지막 점검표 (시험 직전 1분)</h2>
+</section><h2 id="1">마지막 점검표 (시험 직전 1분)</h2>
 <table>
 <thead>
 <tr>
